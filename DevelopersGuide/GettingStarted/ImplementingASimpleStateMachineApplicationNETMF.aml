@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="d94a3585-cd83-45b5-b16c-0487e3401337" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to integrate a <token>StaMa</token> state machine into a <token>.NET Micro Framework</token> based application.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        This step by step description shows how to create a simple state machine application with two states and transitions between them.
+      </para>
+      <para>
+        The <token>Microsoft Visual Studio</token> project and the source code is also available in the release package at <localUri>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.csproj</localUri>.
+      </para>
+      <para>
+        The following environment is assumed to be installed:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <token>Microsoft Visual Studio</token> 2012
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <token>.NET Micro Framework</token> 4.3
+          </para>
+        </listItem>
+      </list>
+      <para>
+        Newer or older versions of the above software will probably not affect the below steps as such, however references to files, paths and versions might be different.
+      </para>
+    </introduction>
+
+    <procedure>
+      <title>Creating the Microsoft Visual Studio application project</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Open <token>Microsoft Visual Studio</token>.
+            </para>
+            <para>
+              From the <ui>File</ui> menu select <ui>New</ui>, then <ui>Project...</ui>. The <ui>New Project</ui> dialog appears.
+            </para>
+            <para>
+              In the <ui>New Project</ui> dialog select <ui>Templates</ui> / <ui>Visual C#</ui> / <ui>Windows</ui> / <ui>Console Application</ui>.
+            </para>
+            <para>
+              Name the new solution and project <localUri>SampleSimpleStateMachineNETMF</localUri>. Close the dialog and create the solution by pressing <ui>OK</ui>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Add assembly references to <localUri>Microsoft.SPOT.Hardware.dll</localUri> and <localUri>Microsoft.SPOT.TinyCore.dll</localUri>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Add a new class with file name <localUri>GPIOButtonInputProvider.cs</localUri> to the project.
+            </para>
+            <para>
+              Copy the following code into the <localUri>GPIOButtonInputProvider.cs</localUri> file:
+            </para>
+            <code language="C#" title="GPIOButtonInputProvider.cs" source="..\Samples\netmf\SampleSimpleStateMachineNETMF\GPIOButtonInputProvider.cs">
+            </code>
+            <para>
+              The code is not related to <token>StaMa</token>.
+              Similar code is created by the .NET Micro Framework code wizard as part of the <token>.NET Micro Framework</token>&#160;<ui>Window Application</ui> default project.
+              The class is a driver for the button pad of the <token>.NET Micro Framework</token> emulator and invokes a handler passed in to the <codeInline>GPIOButtonInputProvider</codeInline> constructor whenever a button connected to the <codeInline>Microsoft.SPOT.Hardware.Cpu.Pin.GPIO_Pin0</codeInline>..<codeInline>GPIO_Pin4</codeInline> is pressed.
+              The handler is called in the thread where the <codeInline>GPIOButtonInputProvider</codeInline> instance was created.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Add a new class with file name <localUri>Display.cs</localUri> to the project.
+            </para>
+            <para>
+              Copy the following code into the <localUri>Display.cs</localUri> file:
+            </para>
+            <code language="C#" title="Display.cs" source="..\Samples\netmf\SampleSimpleStateMachineNETMF\Display.cs">
+            </code>
+            <para>
+              The code is not related to <token>StaMa</token>.
+              The class provides a driver for the display of the <token>.NET Micro Framework</token> emulator and provides a method to write text line by line onto the display.
+            </para>
+            <para>
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Copy the following code into the <localUri>Program.cs</localUri> file:
+            </para>
+            <code language="C#" title="Program.cs" source="..\Samples\netmf\SampleSimpleStateMachineNETMF\ProgramNoStaMa.cs">
+            </code>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Compile the solution. No compiler errors appear.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Execute the solution by selecting "Start Debugging" from the "Debug" menu or by pressing F5.
+            </para>
+            <para>
+              The <token>.NET Micro Framework</token> emulator application appears.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Set a breakpoint to the <codeInline>GPIOButtonInputProvider_ButtonInput</codeInline> method in file <localUri>Program.cs</localUri>.
+            </para>
+            <para>
+              Click the center button of the button pad on the emulator application.
+            </para>
+            <para>
+              The breakpoint in <localUri>Program.cs</localUri> is hit (twice, first for button down, then for button up)
+              Information about the button action is shown in the <token>Microsoft Visual Studio</token> Output panel.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The above project provides generic application frame with basic input capabilities, hosted within the emulator application.
+            The steps in the next section will add a simple state machine based on <token>StaMa</token>.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Adding the simple StaMa state machine.</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Add assembly references to <localUri>StaMa.dll</localUri> and <localUri>System.Text.RegularExpressions.dll</localUri>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Add a new class with file name <localUri>SampleSimpleStateMachineNETMF.cs</localUri> to the project.
+            </para>
+            <para>
+              Copy the following code into the <localUri>SampleSimpleStateMachineNETMF.cs</localUri> file:
+            </para>
+            <code language="C#" title="SampleSimpleStateMachineNETMF.cs" source="..\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.cs">
+            </code>
+            <para>
+              The above code adds a state machine with two states "State1" and "State2", a transition "Transition1to2" from "State1" to "State2" which is triggered through signal "Event1" and a
+              transition "Transition2to1" from "State2" to "State1" which is triggered through signal "TimeoutState2" sent from the tick event handler of a <codeEntityReference linkText="Microsoft.Spot.DispatcherTimer">T:Microsoft.Spot.DispatcherTimer</codeEntityReference> after 2 seconds.
+            </para>
+            <para>
+              "State1" has an entry action <codeInline>EnterState1</codeInline> and an exit action <codeInline>ExitState1</codeInline> and
+              "State2" has an entry action <codeInline>EnterState2</codeInline> and an exit action <codeInline>ExitState2</codeInline>.
+              These are executed when the state machine switches the state from "State1" to "State2" or back from "State2" to "State1" .
+            </para>
+            <para>
+              The <codeInline>ButtonUp</codeInline> method sends the signal "Event1" to the state machine, triggering "Transition1to2" when the state machine is in state "State1".
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Create a new <codeInline>SampleSimpleStateMachineNETMF</codeInline> instance at the beginning of the <codeInline>Main</codeInline> method in file <localUri>Program.cs</localUri>.
+            </para>
+            <para>
+              Invoke the <codeInline>SampleSimpleStateMachine.ButtonUp</codeInline> method from within in the <codeInline>GPIOButtonInputProvider_ButtonInput</codeInline> handler when a button is released.
+            </para>
+            <code language="C#" title="Program.cs" source="..\Samples\netmf\SampleSimpleStateMachineNETMF\Program.cs">
+            </code>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Set a breakpoint at the end of method <codeInline>SampleSimpleStateMachine.TraceStateChange</codeInline> and start the debugger e.g. by pressing F5.
+            </para>
+            <para>
+              Click the center button of the button pad on the emulator application.
+              Releasing the button on the emulator button panel triggers the <codeInline>GPIOButtonInputProvider</codeInline> which invokes the <codeInline>Program.GPIOButtonInputProvider_ButtonInput</codeInline> method on the main thread which in turn invokes <codeInline>SampleSimpleStateMachineNETMF.ButtonUp</codeInline> method.
+            </para>
+            <para>
+              The breakpoint in <codeInline>SampleSimpleStateMachine.TraceStateChange</codeInline> is hit (three times):
+            </para>
+            <list class="ordered">
+              <listItem>
+                <para>
+                  During startup when the state machine enters its initial state.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Triggered through "Transition1to2" when the state machine transitions from "State1" to "State2" in response to the signal "Event1".
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Triggered through "Transition2to1" when the state machine transitions from "State2" to "State1" in response to the timeout signal "TimeoutState2".
+                </para>
+              </listItem>
+            </list>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The above code provides a minimal executable state machine that can be extended with composite states or orthogonal sub-regions.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

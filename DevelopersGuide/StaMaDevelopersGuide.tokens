@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<content xml:space="preserve" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <item id=".NET Micro Framework"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>.NET Micro Framework</ddue:linkText>
+    <ddue:linkUri>http://www.netmf.com/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id=".NET Windows Desktop Framework"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>.NET Windows Desktop Framework</ddue:linkText>
+    <ddue:linkUri>http://msdn.microsoft.com/netframework/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="Microsoft Visio"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>Microsoft Visio</ddue:linkText>
+    <ddue:linkUri>http://office.microsoft.com/visio/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="Microsoft Visual Studio"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>Microsoft Visual Studio</ddue:linkText>
+    <ddue:linkUri>http://www.visualstudio.com/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="Microsoft Windows"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>Microsoft Windows</ddue:linkText>
+    <ddue:linkUri>http://windows.microsoft.com/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="Region">Region</item>
+  <item id="StaMa"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>StaMa</ddue:linkText>
+    <ddue:linkUri>http://stama.codeplex.com</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="StaMaLib"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>StaMa State Machine Controller Library</ddue:linkText>
+    <ddue:linkUri>http://stama.codeplex.com</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="StaMaShapes"><ddue:link xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa">StaMa Visio Shapes</ddue:link></item>
+  <item id="State">State</item>
+  <item id="StateConfiguration">StateConfiguration</item>
+  <item id="StateMachine">StateMachine</item>
+  <item id="StateMachineTemplate">StateMachineTemplate</item>
+  <item id="Transition">Transition</item>
+  <item id="UMLSpec"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>OMG UML Specification</ddue:linkText>
+    <ddue:linkUri>http://www.omg.org/spec/UML/2.5/Beta2/PDF/</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="VBA"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>Visual Basic for Applications</ddue:linkText>
+    <ddue:linkUri>http://msdn.microsoft.com/en-us/library/office/gg264383.aspx</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="VBScript"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>Visual Basic Script</ddue:linkText>
+    <ddue:linkUri>http://msdn.microsoft.com/en-us/library/d1wf56tt.aspx</ddue:linkUri>
+</ddue:externalLink></item>
+  <item id="NuGet"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
+    <ddue:linkText>NuGet</ddue:linkText>
+    <ddue:linkUri>https://www.nuget.org/</ddue:linkUri>
+</ddue:externalLink></item>
+</content>

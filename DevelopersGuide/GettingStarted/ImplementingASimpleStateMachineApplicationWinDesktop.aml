@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="f5262f47-1501-476f-b1c0-25e83deba0b0" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to integrate a <token>StaMa</token> state machine into a <token>.NET Windows Desktop Framework</token> based application.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        This step by step description shows how to create a simple console application that uses a <token>StaMa</token> state machine with two states and transitions between them.
+      </para>
+      <para>
+        The <token>Microsoft Visual Studio</token> project and the source code is also available in the release package at <localUri>StaMa_State_Machine_Controller_Library\Samples\netfwk\SampleSimpleStateMachineNETFWK\SampleSimpleStateMachineNETFWK.csproj</localUri>.
+      </para>
+      <para>
+        The following environment is assumed to be installed:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <token>Microsoft Visual Studio</token> 2013
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <token>.NET Windows Desktop Framework</token> 4.0 or higher.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        Newer or older versions of the above software will probably not affect the below steps as such, however references to files, paths and versions might be different.
+      </para>
+    </introduction>
+
+    <procedure>
+      <title>Creating the Microsoft Visual Studio application project</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Open <token>Microsoft Visual Studio</token>.
+            </para>
+            <para>
+              From the <ui>File</ui> menu select <ui>New</ui>, then <ui>Project...</ui>. The <ui>New Project</ui> dialog appears.
+            </para>
+            <para>
+              In the <ui>New Project</ui> dialog select <ui>Templates</ui> / <ui>Visual C#</ui> / <ui>Windows Desktop</ui> / <ui>Console Application</ui>.
+            </para>
+            <para>
+              Name the new solution and project <localUri>SampleSimpleStateMachineNETFWK</localUri>. Close the dialog and create the solution by pressing <ui>OK</ui>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Copy the following code into the <localUri>Program.cs</localUri> file:
+            </para>
+            <code language="C#" title="Program.cs" source="..\Samples\netfwk\SampleSimpleStateMachineNETFWK\ProgramNoStaMa.cs">
+            </code>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Compile the solution. No compiler errors appear.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Execute the solution by selecting "Start Debugging" from the "Debug" menu or by pressing F5.
+            </para>
+            <para>
+              The console application window appears.
+            </para>
+            <para>
+              Press the <ui>E</ui> key on the keyboard. The application displays <phrase>You pressed E!</phrase>.
+            </para>
+            <para>
+              Press the <ui>Space</ui> key on the keyboard. The application displays <phrase>Closing application.</phrase> with short duration and ends.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The above project provides a frame that allows to send events (keystrokes) to an application and handle them.
+            The steps in the next section will add a simple state machine based on <token>StaMa</token>.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Adding the simple StaMa state machine.</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Add the assembly reference to <localUri>StaMa.dll</localUri>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Add a new class with file name <localUri>SampleSimpleStateMachineNETFWK.cs</localUri> to the project.
+            </para>
+            <para>
+              Copy the following code into the <localUri>SampleSimpleStateMachineNETFWK.cs</localUri> file:
+            </para>
+            <code language="C#" title="SampleSimpleStateMachineNETFWK.cs" source="..\Samples\netfwk\SampleSimpleStateMachineNETFWK\SampleSimpleStateMachineNETFWK.cs">
+            </code>
+            <para>
+              The above code adds a state machine with two states "State1" and "State2", a transition "Transition1to2" from "State1" to "State2" which is triggered through signal "Event1" and a
+              transition "Transition2to1" from "State2" to "State1" which is active when the timeout for the transition elapsed. The timeout is represented through the transition guard condition.
+            </para>
+            <para>
+              "State1" has an entry action <codeInline>EnterState1</codeInline> and an exit action <codeInline>ExitState1</codeInline> and
+              "State2" has an entry action <codeInline>EnterState2</codeInline> and an exit action <codeInline>ExitState2</codeInline>.
+              These are executed when the state machine switches the state from "State1" to "State2" or back from "State2" to "State1" .
+            </para>
+            <para>
+              The <codeInline>KeyPressed</codeInline> method sends the <codeInline>"Event1"</codeInline> signal to the state machine which executes the "Transition1to2" when the state machine is in state "State1".
+            </para>
+            <para>
+              The <codeInline>CheckTimeouts</codeInline> method sends the <literal>null</literal> signal to the state machine which causes that transitions with only a transition guard condition are checked.
+              This causes "Transition2to1" to be executed when the state machine is in state "State2" and the guard condition returns <literal>true</literal>.
+            </para>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Extend the <localUri>Program.cs</localUri> file to invoke the methods of the <codeInline>SampleSimpleStateMachineNETFWK</codeInline> class:
+            </para>
+            <para>
+              Create a new <codeInline>SampleSimpleStateMachineNETFWK</codeInline> instance at the beginning of the <codeInline>Main</codeInline> method.
+            </para>
+            <para>
+              Invoke the <codeInline>SampleSimpleStateMachineNETFWK.KeyPressed</codeInline> method from within in the <codeInline>case ConsoleKey.E:</codeInline> branch.
+            </para>
+            <para>
+              Invoke the <codeInline>SampleSimpleStateMachineNETFWK.CheckTimeouts</codeInline> method when no key is pressed (<codeInline>Console.KeyAvailable</codeInline> returning <literal>false</literal>).
+            </para>
+            <para>
+              Invoke the <codeInline>SampleSimpleStateMachineNETFWK.Finish</codeInline> method from within in the <codeInline>case ConsoleKey.X:</codeInline> branch.
+            </para>
+            <para>
+              The code should now look similar to this:
+            </para>
+            <code language="C#" title="Program.cs" source="..\Samples\netfwk\SampleSimpleStateMachineNETFWK\Program.cs">
+            </code>
+          </content>
+        </step>
+
+        <step>
+          <content>
+            <para>
+              Set a breakpoint at the end of method <codeInline>SampleSimpleStateMachineNETFWK.TraceStateChange</codeInline> and start the debugger e.g. by pressing F5.
+            </para>
+            <para>
+              Press the <ui>E</ui> key on the keyboard, then press the <ui>Space</ui> key.
+            </para>
+            <para>
+              The breakpoint in <codeInline>SampleSimpleStateMachineNETFWK.TraceStateChange</codeInline> is hit (four times):
+            </para>
+            <list class="ordered">
+              <listItem>
+                <para>
+                  During startup when the state machine enters its initial state.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Triggered through "Transition1to2" when the state machine transitions from "State1" to "State2" in response to the signal "Event1".
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Triggered through "Transition2to1" when the state machine transitions from "State2" to "State1" in response to the timeout.
+                </para>
+              </listItem>
+              <listItem>
+                <para>
+                  Finally when the application is ended.
+                </para>
+              </listItem>
+            </list>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The above code provides a minimal executable state machine that can be extended with composite states or orthogonal sub-regions.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

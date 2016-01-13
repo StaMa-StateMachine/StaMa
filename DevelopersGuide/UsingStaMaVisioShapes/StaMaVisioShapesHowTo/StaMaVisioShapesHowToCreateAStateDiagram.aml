@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="b118384c-7479-4dd8-82e8-18e9a13b35f6" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to create a basic state diagram in <token>Microsoft Visio</token> and generate C# code for a <token>StaMa</token> state machine from the diagram.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        State diagrams for the <token>StaMa</token> code generator are created through the <localUri>StaMaShapes.vst</localUri>&#160;<token>Microsoft Visio</token> template.
+        The <localUri>StaMaShapes.vst</localUri> template contains all neccessary shapes to draw a state diagram plus a set of VBA macros to generate code and a default state diagram as the starting point.
+        Double clicking the <localUri>StaMaShapes.vst</localUri> template file in Windows Explorer launches <token>Microsoft Visio</token> and creates a normal <token>Microsoft Visio</token> drawing
+        which is a copy of the entire template file. Hence the new drawing is self-contained and contains all the shapes and VBA macros neccessary to extend the default state diagrams and to generate code.
+      </para>
+      <para>
+        This tutorial assumes that <token>Microsoft Visio</token> 32-bit version (<link xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa#Visio32bitLimitation">more info</link>) is installed and the reader has basic knowledge about how to use the application.
+        The <localUri>StaMaShapes.vst</localUri> template doesn't require a specific <token>Microsoft Visio</token> version and should be compatible with all versions since 2002, however is currently tested only with <token>Microsoft Visio</token> 2010.
+      </para>
+    </introduction>
+
+    <procedure>
+      <title>Prerequisite: Preparing the Microsoft Visual Studio project as a target for the generated code</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Depending on the target framework:
+            </para>
+            <para>
+              Execute the steps from <link xlink:href="d94a3585-cd83-45b5-b16c-0487e3401337"/> or use the <localUri>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.csproj</localUri>
+              project from the <localUri>StaMa_State_Machine_Controller_Library_Vx.y.zip</localUri> release package.
+            </para>
+            <para>
+              -or-
+            </para>
+            <para>
+              Execute the steps from <link xlink:href="f5262f47-1501-476f-b1c0-25e83deba0b0"/> or use the <localUri>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachine\SampleSimpleStateMachineNETMF.csproj</localUri>
+              project from the <localUri>StaMa_State_Machine_Controller_Library_Vx.y.zip</localUri> release package.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Compile and run the <token>Microsoft Visual Studio</token> project to ensure its quality.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>The above steps yield a minimal executable state machine project that can be used as the target for the code generator.</para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Creating the Microsoft Visio diagram file</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the <localUri>StaMaShapes.vst</localUri> template file from the <localUri>StaMa_State_Machine_Controller_Library_Vx.y.zip</localUri> release package in Windows Explorer.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Double click the <localUri>StaMaShapes.vst</localUri> file.
+              <token>Microsoft Visio</token> will start with a new diagram created from the <localUri>StaMaShapes.vst</localUri> file.
+            </para>
+            <para>
+              -or-
+            </para>
+            <para>
+              Start <token>Microsoft Visio</token>.
+              In the <ui>File</ui> ribbon select <ui>New</ui>.
+              In the <ui>Other Ways to Get Started</ui> panel at the bottom of the application window click <ui>New from existing</ui>.
+              A file selection dialog appears.
+              Select the <localUri>StaMaShapes.vst</localUri> file and press <ui>Create New</ui>.
+            </para>
+            <para>
+              -or-
+            </para>
+            <para>
+              Install the <localUri>StaMaShapes.vst</localUri> file according to <link xlink:href="e33381e0-fa7d-494b-ba46-f728e47edec7"/>.
+              In the <ui>File</ui> ribbon select <ui>New</ui>.
+              In the <ui>Template Categories</ui> panel double click <ui>StaMaShapes</ui>.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Save the new diagram with the name <localUri>SampleSimpleStateMachine.vsd</localUri> in the project directory as a sibling file to the <localUri>.csproj</localUri>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The <localUri>StaMaShapes.vst</localUri> template brings with a diagram containing a root region with two states <codeInline>State1</codeInline> and <codeInline>State2</codeInline>,
+            a transition from <codeInline>State1</codeInline> to <codeInline>State2</codeInline> that can be triggered through the event <codeInline>Event1</codeInline>, and
+            a reverse transition that automatically returns from <codeInline>State2</codeInline> to <codeInline>State1</codeInline> (triggered through a completion event).
+          </para>
+          <para>
+            Also there are two boxes outside of the root region that represent attributes for the code generator.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Generating C# code for a StaMa state machine from the Microsoft Visio diagram</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the rectangular code generator shapes in the diagram. Check that these Shapes are connected with the root region execution order box.
+            </para>
+            <para>
+              Check that the path value of the <ui>Target File</ui> property matches the <localUri>SampleSimpleStateMachineNETMF.cs</localUri> file of the <token>Microsoft Visual Studio</token> project.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              In the <token>Microsoft Visio</token>&#160;<ui>Add-Ins</ui> ribbon locate and press the <ui>StaMa</ui> menu button. A menu appears.
+              From the menu execute the <ui>Generate code</ui> menu entry to generate the code into the <placeholder>target file</placeholder>.
+            </para>
+            <para>
+              -or-
+            </para>
+            <para>
+              Ensure <token>Microsoft Visio</token> is the active application and no dialogs are open. Then press <ui>Ctrl+G</ui> to generate the code into the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Open or activate <token>Microsoft Visual Studio</token> with the target project.
+            </para>
+            <para>
+              Open the <localUri>SampleSimpleStateMachineNETMF.cs</localUri> file that is already part of the project.
+            </para>
+            <para>
+              Check that there is a block of text similar to the following:
+            </para>
+            <code language="C#" title="SampleSimpleStateMachineNETMF.cs" >
+              <![CDATA[
+//## Begin StateMachineTemplateNN
+// Generated from <file:...\SampleSimpleStateMachineNETMF.vsd>
+// at DD-MM-YYYY HH:MM:SS using StaMaShapes Version 2
+t.Region(State1, false);
+    t.State(State1, null, ExitState1);
+        t.Transition(Transi4, State2, Event1, null, null);
+    t.EndState();
+    t.State(State2, EnterState2, null);
+        t.Transition(Transi6, State1, null, null, null);
+    t.EndState();
+t.EndRegion();
+//## End StateMachineTemplateNN
+]]>
+            </code>
+            <para>
+              Check that the DD-MM-YYYY HH:MM:SS values reflect the timepoint when the code was generated.
+            </para>
+            <para>
+              Move the entire block including the lines marked with //## to the location where the similar manually written code resides and remove the manually written code.
+              Save the <localUri>SampleSimpleStateMachineNETMF.cs</localUri> file.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Compile and run the <token>Microsoft Visual Studio</token> project to ensure its quality.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            Generating code again from the <localUri>SampleSimpleStateMachine.vsd</localUri>&#160;<token>Microsoft Visio</token> diagram will now search for the <codeInline>//## Begin StateMachineTemplateNN</codeInline> and <codeInline>//## End StateMachineTemplateNN</codeInline>
+            markers and generate the code into this location by overwriting the previous content.
+            The previous file content is kept with a <localUri>.bak</localUri> file extension.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="9110ef28-d0d9-40ac-a09d-2263809f5f45" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to add second (or any other), orthogonal region to a composite state in a <token>StaMaShapes</token> state diagram.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        Composite states can contain multiple orthogonal sub-regions, each of these sub-regions in turn contain states, one of the states in each sub-region must be marked as the initial state.
+      </para>
+      <para>
+        The multiple orthogonal sub-regions are represented through separate region shapes that are graphically embedded into the graphical group provided through the composite state that contains them.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Composite state with one sub-region containing a simple state that is marked as the initial state</caption>
+        <image placement="center" xlink:href="CompositeStateContainingOneRegion"/>
+      </mediaLink>
+      <para>
+        A composite state can be extended with additional, orthogonal regions.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Composite state with two sub-regions each containing a simple state</caption>
+        <image placement="center" xlink:href="CompositeStateContainingTwoRegions"/>
+      </mediaLink>
+    </introduction>
+    <procedure>
+      <title>Adding a second, orthogonal region to a composite state</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate a composite state with one sub-region or execute <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/> to create such a composite state.
+              The composite state may have one or multiple sub-states, for simplicity the following description uses the composite state from <fictitiousUri>Figure 1</fictitiousUri>.
+              Make sure there is some blank space to the right of the state.
+            </para>
+            <para>
+              Select the composite state and double its width by dragging the right border selection handle.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Composite state enlarged</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegionsMakeRoomEnlargeContainer"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Open the context menu of the state e.g. by right clicking the state and execute the menu item <ui>Configure Sub-Regions...</ui>.
+              A window named <ui>... &lt;GROUP&gt;</ui> opens, containing the existing sub-region.
+            </para>
+            <para>
+              Select the sub-region by clicking on the border or on the region order rectangle and reduce its width by dragging the right border selection handle.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Sub-region of composite state reduced</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegionsMakeRoomReduce1stRegion"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Arrange the <ui>... &lt;GROUP&gt;</ui> window so that both the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> and the window are visible in the <token>Microsoft Visio</token> application.
+            </para>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Region</ui> shape and drag and drop it to the contents window of the composite state.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 5">Second sub-region of composite state dropped</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegionsAdding2ndRegion"/>
+            </mediaLink>
+            <para>
+              Resize the dropped region shape to exactly match the size of the entire drawing area.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 6">Second sub-region of composite state resized</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegions2ndRegionSized"/>
+            </mediaLink>
+            <para>
+              Close the <ui>... &lt;GROUP&gt;</ui> window of the composite state.
+              The composite state should now look similar to <fictitiousUri>Figure 7</fictitiousUri>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 7">Composite state with two sub-regions</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegionsClosed2ndRegion"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Define the execution order of the sub-regions:
+            </para>
+            <para>
+              Double click the region execution order rectangle.
+              The <ui>Shape data</ui> properties dialog of the region appears.
+              In the <ui>Execution Order</ui> edit box enter "2_SubRegionB".
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 8">Region properties dialog</caption>
+              <image placement="center" xlink:href="RegionProperties"/>
+            </mediaLink>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Add an initial state to the second sub-region:
+            </para>
+            <para>
+              Drag a <ui>State</ui> shape from the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> to the composite state and drop it as described in <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 9">Dragging the state shape to the second sub-region</caption>
+              <image placement="center" xlink:href="CompositeStateTwoRegionsDraggingState"/>
+            </mediaLink>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Segment</ui> shape and drag it over the border of the new simple state of the second sub-region.
+              Drag the line end of the transition segment with the arrow over the target state border until the small red rectangle appears on the source state.
+              Drop the transition segment shape.
+            </para>
+            <para>
+              Double click the transition segment. The <ui>Shape data</ui> properties dialog of the transition segment appears.
+              In the <ui>Segment Type</ui> combo box select <ui>Initial state</ui>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 10">Transition segment properties dialog</caption>
+              <image placement="center" xlink:href="TransitionSegmentShapeProperties"/>
+            </mediaLink>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Verify that in the <placeholder>target file</placeholder> the composite state has a sub-region and that it adresses the simple state in the sub-region as the initial state.
+            </para>
+            <para>
+              The <placeholder>target file</placeholder> can be opened through the <ui>Open Target File</ui> context menu item of the code generator shape and will be opened in the operating system default editor.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The composite state now contains two sub-region that can host states.
+            Further orthogonal sub-regions can be added the same way.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="7e6981a4-284a-4027-9e21-50d195fe0169"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

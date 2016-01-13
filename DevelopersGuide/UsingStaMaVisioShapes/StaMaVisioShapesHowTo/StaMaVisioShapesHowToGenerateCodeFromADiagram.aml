@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="2879867d-8e74-4dbd-861a-292bc54d505b" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to add a basic code generation to a state diagram and how to generate enumerations of state names, signal events or action names used in the state diagram.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The main objective of code generation is to extract code for the <codeEntityReference qualifyHint="true">T:StaMa.StateMachineTemplate</codeEntityReference> structure from the <token>Microsoft Visio</token> state diagram.
+        In addition to that code often requires state names, signal events, action method names and such as enumerations or lists.
+      </para>
+      <para>
+        The <token>StaMaShapes</token> code generation is conveyed through the <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8">Code generator</link> shapes.
+        A <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8">Code generator</link> shape must be attached to the root region of a state diagram and will generate code into a <localUri>.cs</localUri> file that can be specified in the properties of the shape.
+        Multiple <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8">Code generator</link> shapes may be attached to the root region, each generating a separate code chunk into the same (or if needed a different) file.
+        Generated code chunks have a marker frame of comments that surrounds the C# code to identify the begin and end of a code chunk. The frame enables the code generator to identify the code chunk on subsequent code generation actions and to update the
+        content.
+      </para>
+      <code language="C#" title="CodeChunkMarker.cs" >
+        <![CDATA[
+//## Begin StateMachineTemplate10
+// Generated from <file:E:\Drawing1.vsd>
+// at 30-02-2014 10:17:51 using StaMaShapes Version 2
+
+...
+
+//## End StateMachineTemplate10
+]]>
+      </code>
+      <para>
+        The following procedures will use a simple state machine diagram as in <fictitiousUri>Figure 1</fictitiousUri> below.
+        To keep things simple, the state machine has two states named "State1" and "State2" and two transitions triggered through "Event1" and "Event2".
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Code generator reference state machine.</caption>
+        <image placement="center" xlink:href="CodegenReferenceStateMachine"/>
+      </mediaLink>
+    </introduction>
+    <procedure>
+      <title>Adding basic code generation for the state machine structure</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <ui>
+                <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link>
+              </ui> locate the <ui>Code Generator</ui> shape and drag it over the region execution order rectangle of the root region in the diagram.
+            </para>
+            <para>
+              Drag the code generator shape until a small red rectangle appears on the region execution order rectangle.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 2">Drag code generator shape over the region execution order rectangle</caption>
+              <image placement="center" xlink:href="CodegenDraggingOverRegion"/>
+            </mediaLink>
+            <para>
+              Drop the code generator shape. A properties dialog <ui>Shape data</ui> appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Basic properties of code generator shape</caption>
+              <image placement="center" xlink:href="CodegenPropertiesBasic"/>
+            </mediaLink>
+            <para>
+              In the <ui>Custom1</ui> field enter the identifier for the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance that is used in the code.
+            </para>
+            <para>
+              Leave the <ui>Custom2</ui> field empty. It is not used by the code generator.
+            </para>
+            <para>
+              In the <ui>Custom3</ui> field enter a <token>VBScript</token> expression that evaluates to the desired indentation of nested regions and states.
+              The default is 4 spaces of indentation per level and a general indentation of 4 * 4 spaces to accomodate for namespace, class, and method scopes.
+            </para>
+            <para>
+              The <ui>Custom4</ui> field contains the <ui>EconomizeTransitionSourceState=True</ui> option string that instructs the code generator to omit the source state in the generated <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statement if possible.
+              Keep the setting unless source states shall be explicitly generated.
+            </para>
+            <para>
+              In the <ui>Target File</ui> field enter the path of the target file or leave it unchanged if it already matches.
+              The default content is the path of the <token>Microsoft Visio</token> diagram file with a <localUri>.cs</localUri> extension and will be updated when the <token>Microsoft Visio</token> diagram file is moved or renamed.
+            </para>
+            <para>
+              In the <ui>Ident</ui> field enter an identifier that allows the code generator to locate the generated chunk within the target file in order to update the code on subsequent code generation actions.
+              The default content is generated from the shape id in the Visio diagram and should therefore already be unique, so it can usually be kept as is.
+            </para>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+            </para>
+            <para>
+              Open the <placeholder>target file</placeholder> and verify that it contains a code chunk that starts with a line <literal>//## Begin &lt;ident&gt;</literal> and has the expected content.
+              The <placeholder>target file</placeholder> can be opened through the <ui>Open Target File</ui> context menu item of the code generator shape and will be opened in the operating system default editor.
+            </para>
+            <para>
+              The contents of the generated file for the state machine from <fictitiousUri>Figure 1</fictitiousUri> should now look like this:
+            </para>
+            <code language="C#" title="CodeGeneratorDemo.cs" >
+              <![CDATA[
+//## Begin StateMachineTemplate10
+// Generated from <file:E:\Drawing1.vsd>
+// at 30-02-2014 10:17:51 using StaMaShapes Version 2
+t.Region(State1, false);
+    t.State(State1, null, null);
+        t.Transition(Transi4, State2, Event1, null, null);
+    t.EndState();
+    t.State(State2, null, null);
+        t.Transition(Transi6, State1, null, null, null);
+    t.EndState();
+t.EndRegion();
+//## End StateMachineTemplate10
+]]>
+            </code>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              By adding the using declarations, a namespace, a class and a handy getter method this code chunk can be transformed into an appropriate class that might look as below.
+              Please observe that the generated code is now placed in the middle of a <localUri>.cs</localUri> file and subsequent code generator actions will overwrite the contents of the chunk while leaving the rest unchanged.
+            </para>
+            <code language="C#" title="CodeGeneratorDemoWithClass.cs" >
+              <![CDATA[
+using System;
+using StaMa;
+
+namespace CodeGeneratorDemo
+{
+    class CodeGeneratorDemo
+    {
+        private StateMachineTemplate m_stateMachineTemplate;
+
+        private StateMachineTemplate GetStateMachineTemplate()
+        {
+            if (m_stateMachineTemplate == null)
+            {
+                StateMachineTemplate t = new StateMachineTemplate();
+
+                //## Begin StateMachineTemplate10
+                // Generated from <file:E:\Drawing4.vsd>
+                // at 30-02-2014 10:18:51 using StaMaShapes Version 2
+                t.Region(State1, false);
+                    t.State(State1, null, null);
+                        t.Transition(Transi4, State2, Event1, null, null);
+                    t.EndState();
+                    t.State(State2, null, null);
+                        t.Transition(Transi6, State1, Event2, null, null);
+                    t.EndState();
+                t.EndRegion();
+                //## End StateMachineTemplate10
+
+                m_stateMachineTemplate = t;
+            }
+            return m_stateMachineTemplate;
+        }
+    }
+}
+]]>
+            </code>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The generated code chunk now contains the statements for the structural definition as needed for the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> definition.
+            In order to make it compiling, the identifiers <literal>State1</literal>, <literal>State2</literal>, <literal>Transi4</literal>, <literal>Transi6</literal> are missing as well as the event signal names <literal>Event1</literal> and <literal>Event2</literal>.
+            The <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> methods require state and transition names as <codeEntityReference>T:System.String</codeEntityReference>s. Event signal names may be any type, but for simplicity we choose them here to be <codeEntityReference>T:System.String</codeEntityReference>s also.
+            These <codeEntityReference>T:System.String</codeEntityReference>s should be defined as constants in order to let the compiler detect typing errors.
+            The next procedure shows how to add for every identifier a static readonly member to the class.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Adding code generation for state name constants</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <ui>Document Stencil</ui> locate the <ui>Consts Code Generator</ui> shape and drag it over the region execution order rectangle of the root region in the diagram.
+            </para>
+            <para>
+              Drag the code generator shape until a small red rectangle appears on the region execution order rectangle.
+              For the moment ignore that the new shape hides or overlaps the existing <ui>Code Generator</ui> shape. It can be moved later.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Drag code generator shape over the region execution order rectangle</caption>
+              <image placement="center" xlink:href="CodegenConstsDraggingOverRegion"/>
+            </mediaLink>
+            <para>
+              Drop the code generator shape. A properties dialog <ui>Shape data</ui> appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 5">Basic properties of code generator shape</caption>
+              <image placement="center" xlink:href="CodegenConstsPropertiesBasic"/>
+            </mediaLink>
+            <para>
+              In the <ui>Custom3</ui> field enter a <token>VBScript</token> expression that evaluates to the desired indentation of nested regions and states.
+              The default is 2 * 4 spaces of indentation to accomodate for namespace and class scopes.
+            </para>
+            <para>
+              Leave the <ui>Custom1</ui>, <ui>Custom2</ui> and <ui>Custom4</ui> fields empty. They are not used by the code generator.
+            </para>
+            <para>
+              In the <ui>Target File</ui> field enter the path of the target file or leave it unchanged if it already matches.
+              The default content is the path of the <token>Microsoft Visio</token> diagram file with a <localUri>.cs</localUri> extension and will be updated when the <token>Microsoft Visio</token> diagram file is moved or renamed.
+            </para>
+            <para>
+              In the <ui>Ident</ui> field enter an identifier that allows the code generator to locate the generated chunk within the target file in order to update the code on subsequent code generation actions.
+              The default content is generated from the shape id in the visio diagram and should therefore already be unique, so it can usually be kept as is.
+            </para>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Locate the small yellow diamond at the bottom left corner of the new code generator shape. Drag it to move the shape to a favorable location.
+            </para>
+            <para>
+              In case the connector line of the new code generator shape crosses the earlier added code generator shape, lift the bottom code generator shape to the topmost graphical z-order.
+              To do this open the context menu of shape that is below the line and select <ui>Bring to front</ui> in the context menu.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 6">Arrange the overlapping consts code generator shape</caption>
+              <image placement="center" xlink:href="CodegenConstsArrange"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+            </para>
+            <para>
+              Open the <placeholder>target file</placeholder> and verify that at the end of the file it has a new code chunk that starts with a line <literal>//## Begin &lt;ident&gt;</literal> and has the expected content.
+            </para>
+            <para>
+              Move the entire code chunk including the <literal>//## Begin &lt;ident&gt;</literal> and <literal>//## End &lt;ident&gt;</literal> lines into the class scope.
+            </para>
+            <para>
+              The result for the state machine from <fictitiousUri>Figure 4</fictitiousUri> should now look like this:
+            </para>
+            <code language="C#" title="CodeGeneratorDemoComplete.cs" >
+              <![CDATA[
+using System;
+using StaMa;
+
+namespace CodeGeneratorDemo
+{
+    class CodeGeneratorDemo
+    {
+        //## Begin StateAndTransitionNames12
+        // Generated from <file:E:\Drawing4.vsd>
+        // at 09-16-2014 21:06:11 using StaMaShapes Version 2
+        private static readonly string State1 = "State1";
+        private static readonly string Transi4 = "Transi4";
+        private static readonly string Event1 = "Event1";
+        private static readonly string State2 = "State2";
+        private static readonly string Transi6 = "Transi6";
+        private static readonly string Event2 = "Event2";
+        //## End StateAndTransitionNames12
+
+        private StateMachineTemplate m_stateMachineTemplate;
+
+        private StateMachineTemplate GetStateMachineTemplate()
+        {
+            if (m_stateMachineTemplate == null)
+            {
+                StateMachineTemplate t = new StateMachineTemplate();
+
+                //## Begin StateMachineTemplate10
+                // Generated from <file:E:\Drawing4.vsd>
+                // at 09-16-2014 21:06:11 using StaMaShapes Version 2
+                t.Region(State1, false);
+                    t.State(State1, null, null);
+                        t.Transition(Transi4, State2, Event1, null, null);
+                    t.EndState();
+                    t.State(State2, null, null);
+                        t.Transition(Transi6, State1, Event2, null, null);
+                    t.EndState();
+                t.EndRegion();
+                //## End StateMachineTemplate10
+
+                m_stateMachineTemplate = t;
+            }
+            return m_stateMachineTemplate;
+        }
+    }
+}
+]]>
+            </code>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The class is now compiling and can be extended with written code or updated with generated code from the diagram.
+          </para>
+          <para>
+            In case the event signal constants need to be part of a public interface, an additional <ui>Consts Code Generator</ui> shape can be added to the diagram and both can be adapted to generate only the corresponding subsets of identifiers.
+            Details about the code generator capabilities can be found in <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8"/>.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

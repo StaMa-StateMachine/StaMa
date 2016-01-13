@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="c9b743d2-ae47-40d8-ad45-639e473271c1" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to add a state to a <token>StaMaShapes</token> state diagram and control the code generated for the state.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        States are added to a state diagram by draging and dropping the state shape from the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> to a region in the state diagram.
+      </para>
+      <para>
+        See also <link xlink:href="b118384c-7479-4dd8-82e8-18e9a13b35f6"/>.
+      </para>
+    </introduction>
+    <procedure>
+      <title>Adding the state</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>State</ui> shape and drag it over a region on the state diagram. The border of the region changes its appearance.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 1">Dragging the new state into the region accentuates the region border</caption>
+              <image placement="center" xlink:href="CreateStateDragChangesRegionBorder"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Hover over the regions in the state diagram to select the desired region. Drop the state shape. A properties dialog <ui>Shape data</ui> appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 2">Create state asks for name</caption>
+              <image placement="center" xlink:href="CreateStateAskNameDialog"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Enter the state name and press <ui>OK</ui>.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the new State has been added to the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+
+            You can drag the state within the region. The border of the region will change its appearance when the state is moved outside of the region.
+          </para>
+        </content>
+
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Renaming the State</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the state name in the diagram and double click in this area. The <ui>Shape data</ui> properties dialog of the state appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">State properties dialog</caption>
+              <image placement="center" xlink:href="StateProperties"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Change the <ui>Name</ui> field and press <ui>OK</ui> to close the dialog.
+              The state name in the diagram changes and the width of the state is adapted to the new name.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the new State has been added to the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+
+            You can change the sort order of the states in the generated code by changing the <ui>Sort Order</ui> field in the above <ui>Shape data</ui> properties dialog.
+            States are generated according to the alphabetical order of the field values in their <ui>Sort Order</ui> field.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Setting Entry and Exit Actions</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the state name in the diagram and double click in this area. The <ui>Shape data</ui> properties dialog of the state appears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Change the <ui>Entry Action</ui> and/or the <ui>Exit Action</ui> field and press <ui>OK</ui> to close the dialog.
+              The <ui>entry /</ui> and/or <ui>exit /</ui> description in the diagram changes and the width of the state is adapted to the content.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the new State has been updated properly in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The contents of the <ui>Entry Action</ui> and <ui>Exit Action</ui> field are usually speaking method names of the embedding class of the state machine.
+            However anonymous delegates or lambda expressions are also valid content for the fields and may be perfectly reasonable for some applications.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Changing the Location of the State in the Generated Code Relative to the Other State</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the state name in the diagram and double click in this area. The <ui>Shape data</ui> properties dialog of the state appears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              The code generator creates the states ordered alphabetically according to the values in the <ui>Sort Order</ui> field.
+              Considering the <ui>Sort Order</ui> field values of the other states in the same region, choose a reasonable value for this state and enter it to the <ui>Sort Order</ui> field of the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the new State has the desired relative location in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+
+            Numeric values may be a perfect choice for the <ui>Sort Order</ui> field, however please consider they are also sorted alphabetically.
+            The <ui>Sort Order</ui> field value itself is not written into the generated code.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <relatedTopics>
+      <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

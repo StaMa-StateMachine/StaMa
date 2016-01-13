@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="9d4e9992-3c8d-49a8-9818-18f5d488af7e" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to convert a simple state into a composite state in a <token>StaMaShapes</token> state diagram.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        Composite states contain orthogonal sub-regions, at least one. Sub-regions in turn contain states just like the root region.
+        Through this double step recursion it is possible to create an arbitrary deep nested hierarchy of states.
+      </para>
+      <para>
+        This nesting hierarchy of a state machine is reproduced with <token>StaMaShapes</token> through the concept that the region shape is a grouping container for states and the state is a group container for regions.
+        Regions are represented by the region shape, which is a group container that can contain multiple states.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Region containing a single simple state that is marked as the initial state</caption>
+        <image placement="center" xlink:href="RegionContainingSimpleState"/>
+      </mediaLink>
+      <para>
+        States are represented through the state shape which is usually a simple state but can be converted to a composite state that can contain one or more sub-regions.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Composite state with a sub-region containing a simple state that is marked as the initial state</caption>
+        <image placement="center" xlink:href="CompositeStateContainingOneRegion"/>
+      </mediaLink>
+      <para>
+        Please notice the graphical similarity of <fictitiousUri>Figure 1</fictitiousUri> with the contents of the <ui>CompositeState</ui> in <fictitiousUri>Figure 2</fictitiousUri>.
+        Essentially these contents are created by adding the same graphical objects as in <fictitiousUri>Figure 1</fictitiousUri> into a <token>Microsoft Visio</token> group object that is made available through the embedding state.
+      </para>
+    </introduction>
+    <procedure>
+      <title>Converting the Simple State Shape to a Composite State Shape</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Convert the simple state into a group container that can accept sub-regions:
+            </para>
+            <para>
+              Locate the simple state in the state diagram.
+              Make sure there is some blank space below and to the right of the state.
+            </para>
+            <para>
+              Open the context menu of the state e.g. by right clicking the state and execute the menu item <ui>Convert to Composite State...</ui>.
+              The simple state expands its size and provides now an inner area.
+              When the state is selected, it can now be resized by dragging the selection handles.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Add a region to the composite state:
+            </para>
+            <para>
+              Open the context menu of the state e.g. by right clicking the state and execute the menu item <ui>Configure Sub-Regions...</ui>.
+              A new window opens containing an empty drawing area.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Configure sub-regions window</caption>
+              <image placement="center" xlink:href="CompositeStateConfigSubRegionsEmpty"/>
+            </mediaLink>
+            <para>
+              The window represents the contents of composite state.
+              Arrange the new window so that both the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> and the new window are visible in the <token>Microsoft Visio</token> application.
+            </para>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Region</ui> shape and drag and drop it to the contents window of the composite state.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Sub-region of composite state dropped</caption>
+              <image placement="center" xlink:href="CompositeStateConfigSubRegionsDropped"/>
+            </mediaLink>
+            <para>
+              Resize the dropped region shape to exactly match the size of the entire drawing area.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 5">Second sub-region of composite state aligned</caption>
+              <image placement="center" xlink:href="CompositeStateConfigSubRegionsAligned"/>
+            </mediaLink>
+            <para>
+              Close the configure sub-regions window of the composite state.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Add a simple state to the composite state:
+            </para>
+            <para>
+              Drag a <ui>State</ui> shape from the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> to the composite state and drop it as described in <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 6">Dragging the state into the sub-region. Region border changes appearance</caption>
+              <image placement="center" xlink:href="CompositeStateContainingOneRegionDragState"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Define the newly added simple state as the initial state of the region:
+            </para>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Segment</ui> shape and drag it over the border of the simple state in the composite state.
+              Drag the line end of the transition segment with the arrow over the target state border until a small red rectangle appears on the source state.
+              Drop the transition segment shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Convert the transition segment to an initial state marker:
+            </para>
+            <para>
+              Double click the transition segment. The <ui>Shape data</ui> properties dialog of the transition segment appears.
+              In the <ui>Segment Type</ui> combo box select <ui>Initial state</ui>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 7">Transition segment properties dialog</caption>
+              <image placement="center" xlink:href="TransitionSegmentShapeProperties"/>
+            </mediaLink>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Verify that in the <placeholder>target file</placeholder> the composite state has a sub-region and adresses the simple state in the sub-region as the initial state.
+            </para>
+            <para>
+              The <placeholder>target file</placeholder> can be opened through the <ui>Open Target File</ui> context menu item of the code generator shape and will be opened in the operating system default editor.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The composite state now contains one sub-region that can host states.
+            Add simple states to the composite state through drag and drop as described in <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>.
+            It is not neccessary to open the contents window of the composite state except for adding another sub-region.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="182b6093-fb30-4549-90d3-addc7c2dd2fb"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="0898043b-ab92-416b-9347-1ff54fcbd5a8" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the visual appearance, usage, context menus and properties of the code generator shape and the concept of code generation.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The <ui>Code Generator</ui> and <ui>Consts Code Generator</ui> shapes are visual representatives for executing and parametrizing the code generator.
+        The code generator is embedded as a <token>VBA</token> module into the state machine diagram <localUri>.vsd</localUri> file.
+      </para>
+      <para>
+        The <ui>Code Generator</ui> and <ui>Consts Code Generator</ui> shapes must be connected with the root <link xlink:href="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1">region shape</link> of the state machine diagram.
+        Through this connection the code generator knows for which diagram to generate code.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Code generator shape connected to root region</caption>
+        <image placement="center" xlink:href="CodegenShapeConnected"/>
+      </mediaLink>
+      <para>
+        The <ui>Ctrl+G</ui> application shortcut executes the code generation of all <ui>Code Generator</ui> shapes of the current diagram and writes the output to the <ui>Target File</ui> shown in the <ui>Code Generator</ui> shape.
+      </para>
+      <para>
+        The <ui>Code Generator</ui> shape moves together with the root <link xlink:href="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1">region shape</link> to which it is connected.
+        Dragging the shape will disconnect it from the region.
+      </para>
+      <para>
+        The yellow diamond at the lower right corner of the <ui>Code Generator</ui> shape (visible when the shape is selected) allows to position the shape relative to the connected region.
+      </para>
+    </introduction>
+
+    <section address="WhatDoYouWantToDo">
+      <title>What Do You Want to Do?</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="b118384c-7479-4dd8-82e8-18e9a13b35f6"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="2879867d-8e74-4dbd-861a-292bc54d505b"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="CodeGeneratorProcess">
+      <title>How code generation works</title>
+      <content>
+        <para>
+          The code generator algorithm traverses the state machine diagram and builds an internal tree of regions, states and transitions, similar to the structure of regions, states and transitions in the <codeEntityReference qualifyHint="true">T:StaMa.StateMachineTemplate</codeEntityReference>.
+        </para>
+        <para>
+          After creating the internal tree, a visitor pattern algorithm traverses all nodes of the internal tree and evaluates <token>VBScript</token> expressions configured in the <ui>Code Generator</ui> shape properties that return a string that will be written to the target file.
+          The <token>VBScript</token> expressions from the <ui>Code Generator</ui> shape may use <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables">variables as defined below</link>.
+          Modifying the expressions in the <ui>Code Generator</ui> allows to customize the generated code.
+        </para>
+        <para>
+          Finally all generated text output is surrounded with the code marker frame and the target file is updated with this block of lines.
+        </para>
+      </content>
+    </section>
+
+    <section address="CodeGeneratorShapeProperties">
+      <title>Code Generator Shape Properties</title>
+      <content>
+        <para>
+          The code generator shape has a properties dialog that can be opened either by double clicking on the shape info rectangle or by opening the context menu of the shape info rectangle and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 2">Code generator basic properties</caption>
+          <image placement="center" xlink:href="CodegenPropertiesBasic"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Custom1</ui>, <ui>Custom2</ui>, <ui>Custom3</ui>, <ui>Custom4</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                These properties are general purpose text fields that may be referenced in the code generator <token>VBScript</token> expressions.
+                Their meaning depends on the usage within the code generator <token>VBScript</token> expressions.
+                The <ui>Prompt</ui> field at the bottom of the properties dialog shall give a hint for their intended meaning.
+                See also <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables"/> for more details about customization of the code generator.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Target&#160;File</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Defines the target file for the code generator.
+                As long as the value is not manually changed, the path will be in the same directory as the state machine diagram <localUri>.vsd</localUri> file and have the same file name, but with a <localUri>.cs</localUri> file extension.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Ident</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Defines a unique identifier needed to identify the code chunk generated from this code generator shape within the <localUri>.cs</localUri> file.
+                The default value is usually unique for a state machine diagram but can be changed if needed.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <section address="StateShapeContextMenu">
+      <title>Code Generator Shape Context Menu</title>
+      <content>
+        <para>
+          The code generator shape has the following additional context menu items:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Context Menu Item</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Generate&#160;Code</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Executes the code generator for this code generator shape.
+                The generated code chunk can be found in the file specified by the <ui>Target&#160;File</ui> property and is tagged with the unique identifier of the <ui>Ident</ui> property.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Open&#160;Target&#160;File</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Opens the the file specified by the <ui>Target&#160;File</ui> property in the system default editor for <localUri>.cs</localUri> files.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Show&#160;Advanced&#160;Properties</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Expands or collapses the display of advanced code generator <token>VBScript</token> expressions in the properties dialog.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+
+    <section address="CodeGeneratorExpressionsAndVariables">
+      <title>Code generator expressions and variables</title>
+      <content>
+        <para>
+          The advanced properties of the <ui>Code Generator</ui> shape contain <token>VBScript</token> expressions that generate strings whenever the
+          code generator traverses a particular node of the internal tree as described in <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorProcess"/>
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 3">Code generator advanced properties</caption>
+          <image placement="center" xlink:href="CodegenPropertiesAdvanced"/>
+        </mediaLink>
+        <para>
+          The advanced properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Code&#160;Chunk&#160;Marker</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that returns the frame for the generated code chunk.
+                The returned string is used and needed to identify the code chunk when generated code chunk is updated (generated again)).
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Comment</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that formats a commented line.
+                The code generator uses this expression to add context information like the <token>Microsoft Visio</token>&#160;<localUri>.vsd</localUri> file, the generation date and time and the gode generator version.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Region&#160;Begin</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator starts to run across a region containing simple or composite states.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Region&#160;End</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator has finished a region.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>State&#160;Begin</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator starts to run across a state that may be a composite state with orthogonal sub-regions.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>State&#160;End</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator has finished a state.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;Begin</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator starts to run across a transition, before the source or target definition.
+                Transition source and target states are handled through the <ui>Transi&#160;From/To&#160;Begin</ui>, <ui>Transi&#160;From/To&#160;More</ui> and <ui>Transi&#160;From/To&#160;End</ui>.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;End</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator has finished a transition.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;From/To&#160;Begin</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator starts either a source or a target definition.
+                Writing state names is handled through the <ui>Transi&#160;Segment</ui> property.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;From/To&#160;More</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator runs across an additional transition segment of a source or a target definition.
+                This expression is intended to separate state names of the transition source or target state configuration.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;From/To&#160;End</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator has finished a transition source or a target definition.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transi&#160;Segment</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a <token>VBScript</token> expression that is evaluated when the code generator runs across a transition segment within a transition source or a target definition.
+              </para>
+            </entry>
+          </row>
+        </table>
+        <para>
+          The following line shows the default expression of the <ui>Code Generator</ui> shape for the <ui>State Begin</ui> property which is evaluated when the code generator starts traversing a state node and its sub-tree:
+        </para>
+        <para>
+          <codeInline>=Custom3 &amp; Custom1 &amp; ".State(" &amp; State &amp; ", " &amp; IIf(Len(EntryAction)&gt;0, EntryAction, "null") &amp; ", " &amp; IIf(Len(ExitAction)&gt;0, ExitAction, "null") &amp; IIf(Len(DoAction)&gt;0, ", " &amp; DoAction, "") &amp; ");" &amp; vbNewLine</codeInline>
+        </para>
+        <para>
+          These string expressions may use all visual basic script functions plus the following special functions:
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              An inline <codeInline>IIf</codeInline> function as known from <externalLink><linkText>VBA</linkText><linkUri>http://msdn.microsoft.com/en-us/library/office/gg264412.aspx</linkUri></externalLink>.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              Numerical two argument <codeInline>Min</codeInline> and <codeInline>Max</codeInline> functions.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              The special purpose <codeInline>IsDone</codeInline> and <codeInline>MarkDone</codeInline> functions that allow to query and maintain a set of identifiers within the code generator expressions.
+              These methods are intended to support suppression of duplicate code generation for enumerations of event signals or actions.
+              The methods require two parameters, the first parameter is a <codeInline>string</codeInline> that defines the scope and the second parameter is the <codeInline>string</codeInline> for the identifier.
+            </para>
+     		<para>
+              The following expression in the <ui>Transi&#160;End</ui> advanced property will generate a list of event signal names without duplicates:
+            </para>
+            <para>
+              <codeInline>=IIf((Len(EventSignal)>0) And Not IsDone("EventSignal", EventSignal), Custom3 &amp; EventSignal &amp; "," &amp; vbNewLine &amp; MarkDone("EventSignal", EventSignal), "")</codeInline>
+            </para>
+     		<para>
+              Every invocation of the <codeInline>MarkDone</codeInline> function adds the identifier to the table of identifiers, subsequent visits of the code generator expression will check through the <codeInline>IsDone</codeInline> function if the identifier was already encountered.
+            </para>
+          </listItem>
+        </list>
+        <para>
+          In order to write the state names, entry actions, exit actions, transition actions and similar, the expressions may reference a set of variables that correspond with the properties of the region, state and transition shapes.
+          The following table lists these variables and the <ui>Code Generator</ui> shape properties in which they are defined:
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 4">Code generator variables</caption>
+          <image placement="center" xlink:href="CodegenVariables"/>
+        </mediaLink>
+        <para>
+          The code generator is a <token>VBA</token> algorithm embedded into the state machine <localUri>.vsd</localUri> file.
+          It can be inspected by opening the built-in <token>Microsoft Visio</token>&#160;<token>VBA</token> editor and debugger through the shortcut <ui>Alt+F11</ui> or through the menu (<ui>View Code</ui> entry in <ui>Developer</ui> ribbon).
+          The <codeInline>Public Sub GenerateCodeAll()</codeInline> is a suitable starting point for stepping through with the debugger.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

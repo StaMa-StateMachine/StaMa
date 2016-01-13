@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="d3287120-e3fa-45ed-8986-ba6d78244c1c" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <introduction>
+      <para>
+        Welcome to the <token>StaMaLib</token>.
+      </para>
+    </introduction>
+
+    <section address="AboutStaMa">
+      <title>About the StaMa State Machine Controller Library</title>
+      <content>
+        <para>
+          <token>StaMa</token> provides an execution algorithm for state machines.
+          Advanced state machine concepts like <newTerm>composite state</newTerm>, <newTerm>orthogonal sub-region</newTerm>, <newTerm>fork transition</newTerm>, <newTerm>join transition</newTerm> and <newTerm>history state</newTerm> are supported.
+        </para>
+        <para>
+          Using <token>StaMa</token> a state machine is created by setting up a structure of <newTerm>state</newTerm>, <newTerm>transition</newTerm> and <newTerm>region</newTerm> objects in a compact chunk of code using C#.
+          The structure directly reflects the tree structure of the state machine diagram.
+          Translating a <externalLink><linkText>UML state machine diagram</linkText><linkUri>http://en.wikipedia.org/wiki/UML_state_machine</linkUri><linkTarget>_blank</linkTarget></externalLink> into <token>StaMa</token> state, transition and region objects is straightforward.
+        </para>
+        <para>
+          Based on the <token>Microsoft Visio</token> drawing application the <token>StaMaLib</token> additionally provides a set of prepared graphic objects (<newTerm>shapes</newTerm>) to draw state machine diagrams in <token>Microsoft Visio</token> and generate the <token>StaMa</token> related C# code from it.
+          The code generator requires the <token>Microsoft Visio</token> 32-bit version (<link xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa#Visio32bitLimitation">more info</link>).
+        </para>
+        <para>
+          Particular attention has been given to the aspect that <token>StaMa</token> shall not use any operating system functionality like threads, timers, locks and other synchronisation mechanisms.
+          This enhances the use of the library in a broad range of projects with an existing threading, synchronization and tracing infrastructure.
+        </para>
+        <para>
+          <token>StaMa</token> is available as a <token>NuGet</token> package, see <link xlink:href="e33381e0-fa7d-494b-ba46-f728e47edec7"/> for details.
+        </para>
+        <para>
+          The following sample diagram and code shows how to setup the <token>StaMa</token> state machine structure for a diagram and how to send events to the state machine to trigger the execution of transitions.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 1">Disk player controller</caption>
+          <image placement="center" xlink:href="WelcomeSample"/>
+        </mediaLink>
+        <code language="C#" title="WelcomeSample.cs" >
+        <![CDATA[
+using System;
+using StaMa;
+        
+class Program
+{
+    static void Main(string[] args)
+    {
+        StateMachineTemplate t = new StateMachineTemplate();
+        t.Region("Stopped", false);
+            t.State("Stopped");
+                t.Transition("T1", "Running", "Play");
+            t.EndState();
+            t.State("Loaded", StartMotor, StopMotor);
+                t.Transition("T2", "Stopped", "Stop");
+                t.Region("Running", false);
+                    t.State("Running", EngageHead, ReleaseHead);
+                        t.Transition("T3", "Paused", "Pause");
+                    t.EndState();
+                    t.State("Paused");
+                        t.Transition("T4", "Running", "Play");
+                    t.EndState();
+                t.EndRegion();
+            t.EndState();
+        t.EndRegion();
+    
+        StateMachine stateMachine = t.CreateStateMachine();
+    
+        stateMachine.Startup();
+        stateMachine.SendTriggerEvent("Play");
+        stateMachine.SendTriggerEvent("Pause");
+        stateMachine.SendTriggerEvent("Stop");
+        stateMachine.Finish();
+    }
+
+    private static void StartMotor(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+        System.Console.WriteLine("StartMotor");
+    }
+
+    private static void StopMotor(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+        System.Console.WriteLine("StopMotor");
+    }
+
+    private static void EngageHead(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+        System.Console.WriteLine("EngageHead");
+    }
+
+    private static void ReleaseHead(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+        System.Console.WriteLine("ReleaseHead");
+    }
+}
+]]>
+        </code>
+        <para>
+          The <codeInline>"Play"</codeInline>, <codeInline>"Pause"</codeInline> or <codeInline>"Stop"</codeInline> events trigger the execution of transitions and
+          as a result the <newTerm>exit actions</newTerm> and <newTerm>entry actions</newTerm>&#160;<codeInline>StartMotor</codeInline>, <codeInline>StopMotor</codeInline>, <codeInline>EngageHead</codeInline> and <codeInline>ReleaseHead</codeInline> of the involved states.
+        </para>
+        <para>
+          One or more state machine instances may be created from the same immutable state machine template structure in order to economize resources.
+        </para>
+      </content>
+    </section>
+    <section address="OlderVersions">
+      <title>Older Versions</title>
+      <content>
+        <para>
+          <externalLink><linkText>Online Help V2.2.0.2</linkText><linkUri>http://stama.org/V2202/</linkUri><linkTarget>_blank</linkTarget></externalLink>
+        </para>
+      </content>
+    </section>
+    <section address="AboutDocument">
+      <title>About this document</title>
+      <content>
+        <para>
+          This helpfile contains information about how to use the <token>StaMaLib</token>.
+        </para>
+        <para>
+          It is not intended to be a general introduction to state machine modelling.
+        </para>
+        <para>
+          The main parts are
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="003c5297-0c49-41e9-ac8b-9f603358ac66"/>: How to deploy <token>StaMa</token> for the different target environments.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>: How to use <token>StaMa</token> to implement basic and advanced state machine concepts like <newTerm>composite state</newTerm>, <newTerm>orthogonal sub-region</newTerm>, <newTerm>fork transition</newTerm>, <newTerm>join transition</newTerm> and <newTerm>history state</newTerm>.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="c9aa27b0-4173-4bcb-a275-908a0d0f8070"/>: Explanations for the samples in the package.
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+             <link xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa"/>: How to use the attached <token>Microsoft Visio</token>&#160;<newTerm>shapes</newTerm> to draw a state machine diagram and generate the state machine code from the drawing.
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+    <section address="AboutAuthor">
+      <title>About the author</title>
+      <content>
+        <para>
+          Not really about me but about my point of view:
+        </para>
+        <para>
+          Within the many years of my professional life as an application and system developer I was exposed to only a moderate number of components where a state machine approach seemed to be reasonable.
+          If however the problem is suitable, the state machine approach can unfold its power and yields a software implementation with unequaled robustness,
+          predictability of behavior and ability to analyse the behavior.
+        </para>
+        <para>
+          It seems that the real complexity of software components with dynamic behavior is often understood very late during software development process.
+          Sometimes only after the code has been completed and behavior is somewhat settled but leaves some bugs or unexpected behavior.
+          Availability of an established state machine execution engine might encourage developers to take the step and design the component to use the state machine approach.
+        </para>
+        <para>
+          A graphical representation of the state machine is essential for efficient communication and understanding of the software.
+          The state machine diagram is the street map of the behavior, without it the developer is lost in the urban canyons of the code.
+          Needless to say that the graphical representation must be in sync with the implementation at any time.
+          This can easiest be achieved by generating the code from the graphical representation.
+          Round trip or reverse generation of the graphical representation from the code turned out to be unsatisfactory.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

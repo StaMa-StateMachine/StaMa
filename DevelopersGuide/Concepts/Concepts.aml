@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="298801d3-40ad-4fae-816e-5a7e1afb0ff0" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the functionality provided through the <token>StaMaLib</token>
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The main conceptual reference for <token>StaMa</token> is the state chart formalism as described by <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0#References">David Harel</link>.
+        The <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0#References">OMG UML Specification</link> adopted these concepts and is the reference for the terminology used within <token>StaMa</token>.
+      </para>
+      <para>
+        <token>StaMa</token> provides a subset of the state chart features that seemed both essential and implementable with reasonable effort and complexity.
+      </para>
+      <para>
+        This section explains how to use <token>StaMa</token> to implement basic state machines and state machines that use the advanced concepts of the state chart formalism.
+      </para>
+      <para>
+        Basically a state machine is composed of <newTerm>states</newTerm> and <newTerm>transitions</newTerm> between them.
+        Transitions are triggered through events sent to the state machine.
+        Whenever a transition executes, it will leave the current state and enter the target state of the transition,
+        thereby executing (if present) an exit action of the state that is left, a transition specific action and an entry action of the state that is entered.
+      </para>
+  	  <para>
+        The following block diagram tries to visualize this.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">The state machine algorithm</caption>
+        <image placement="center" xlink:href="StateMachineAlgorithm"/>
+      </mediaLink>
+      <para>
+        One of the fundamental achievements of the state chart formalism is, that it provides a visual notation for many aspects of a state machine that would otherwise only be part of the implementation code.
+      </para>
+  	  <para>
+        If the state machine behavior is defined through a state diagram, the first step for implementing the state machine is usually to transform the state diagram structure into code.
+        <token>StaMa</token> supports this by providing a set of methods that bridge the semantic gap between state diagram and implementation code.
+      </para>
+  	  <para>
+  	    The state diagram structure is an immutable description of the behavior of the state machine.
+  	    The main changing entity of a state machine is the current active state.
+        <token>StaMa</token> separates the immutable state machine structure from the current active active state through the state machine instance concept.
+        Events are delivered to the state machine instance and the state machine algorithm evaluates which actions are to be executed depending on the state machine structure and the current active state.
+      </para>
+  	  <para>
+        When an event is delivered to the state machine, the algorithm considers the current active state, checks the transitions outgoing from this state and eventually selects a transition that shall be executed.
+        For this transition the system invokes the exit actions, invokes the transition action, changes the current state to the target state of the transition and invokes the entry action.
+        This algorithm is the fundamental behavior of the state machine and is refined through concepts like composite states, orthogonal regions and fork and join transitions.
+      </para>
+      <para>
+        Even the simplest useful state machine has multiple states.
+        States are always aggregated within a container named <newTerm>region</newTerm> which also defines the initial state.
+        Regions are also used to convey the concept of nesting states within composite states and the concept of orthogonal sub-regions as defined in the state chart formalism.
+      </para>
+      <para>
+        The following sub-sections explain the usage of the classes and methods of the <codeEntityReference>N:StaMa</codeEntityReference> namespace in detail.
+      </para>
+    </introduction>
+
+    <section address="BasicConcepts">
+      <title>Basic Concepts</title>
+      <content>
+        <para>
+          Understanding the following <token>StaMa</token> concepts is necessary to implement a flat state machine.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="954456b3-e05a-4e1d-af00-4f400fd43f47"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="16986707-6029-42de-a453-8b359b07248a"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="AdvancedConcepts">
+      <title>Advanced Concepts</title>
+      <content>
+        <para>
+          The following <token>StaMa</token> concepts are needed to implement a state machine that utilizes composite states and/or orthogonal regions.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="182b6093-fb30-4549-90d3-addc7c2dd2fb"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="7e6981a4-284a-4027-9e21-50d195fe0169"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="badfe5ab-643a-45d2-bd27-ad6536a62b6c"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="Other">
+      <title>Other Hopefully Useful Stuff</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="93712910-2b27-4731-a3a5-38da29702b5e"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="References">
+      <title>References</title>
+      <content>
+        <para>
+          Below publications explain the general concepts of state machines.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              [1] <externalLink><linkText>OMG</linkText><linkUri>http://www.omg.org/spec/UML/</linkUri><linkTarget>_blank</linkTarget></externalLink>,
+              <externalLink><linkText>UML Specification 2.5 (ptc/2013-09-05)</linkText><linkUri>http://www.omg.org/spec/UML/2.5/Beta2/PDF</linkUri><linkTarget>_blank</linkTarget></externalLink>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              [2] <externalLink><linkText>David Harel</linkText><linkUri>http://www.wisdom.weizmann.ac.il/~harel/</linkUri><linkTarget>_blank</linkTarget></externalLink>,
+              <externalLink><linkText>The STATEMATE Semantics of Statecharts</linkText><linkUri>http://www.wisdom.weizmann.ac.il/~harel/SCANNED.PAPERS/SemanticsofStatecharts.pdf</linkUri><linkTarget>_blank</linkTarget></externalLink>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="ComparisonToStateDesignPattern">
+      <title>Comparison to the state design pattern</title>
+      <content>
+        <para>
+          <token>StaMa</token> is not based on the <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0#References">state design pattern</link>.
+          The original state design pattern provides a solution to modify the behavior of methods of an object.
+          It does this by providing a rich interface at the "context" object and all polymorphic subclasses of the state class.
+          The original state design pattern is often reduced to provide a single method that accepts an event and the state subclasses handle the event specific for the current state.
+          The implementation spreads the structural information of the state diagram onto multiple classes which might be less maintainable and readable compared to a condensed code representation through a domain specific language.
+          The state pattern doesn't provide a proposal how to provide the state chart formalism functionality.
+        </para>
+        <para>
+         See also <externalLink><linkText>State Pattern</linkText><linkUri>http://en.wikipedia.org/wiki/State_pattern</linkUri><linkTarget>_blank</linkTarget></externalLink>,
+         as described in Erich Gamma; Richard Helm, Ralph Johnson, John M. Vlissides <externalLink><linkText>Design Patterns: Elements of Reusable Object-Oriented Software</linkText><linkUri>http://dl.acm.org/citation.cfm?id=186897</linkUri><linkTarget>_blank</linkTarget></externalLink>
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

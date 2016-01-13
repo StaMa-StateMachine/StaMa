@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="e33381e0-fa7d-494b-ba46-f728e47edec7" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to install the <token>StaMaLib</token> on a developer machine.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        <token>StaMa</token> is essentially a single assembly without specific installation and deployment needs.
+      </para>
+      <para>
+        The assembly is provided through the <token>NuGet</token>&#160;<localUri>StaMa.StateMachine</localUri> package
+        or through the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file on the <externalLink><linkText>Codeplex project home</linkText><linkUri>http://stama.codeplex.com/releases/</linkUri><linkTarget>_blank</linkTarget></externalLink>.
+      </para>
+      <para>
+        Samples are available through the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file.
+      </para>
+      <para>
+        The following points are provided as a checklist and might be worth to consider:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            The contained <localUri>StaMa.dll</localUri> assembly might not match Your .NET Framework version.
+          </para>
+          <para>
+            In this case please obtain the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> from the <externalLink><linkText>Codeplex project home</linkText><linkUri>http://stama.codeplex.com/releases/</linkUri><linkTarget>_blank</linkTarget></externalLink>, extract the contents
+            to a local folder and re-compile <localUri>StaMa.dll</localUri> after adapting the <localUri>StaMa.csproj</localUri> or <localUri>StaMaNETMF.csproj</localUri> file to Your projects needs.
+          </para>
+          <para>
+            See <link xlink:href="b2a532fd-f7bb-4cce-b601-7563bca224d1"/> for details how to re-compile.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            It is not suggested to add <localUri>StaMa.dll</localUri> to the Global-Assembly-Cache (GAC).
+            Nevertheless the <localUri>StaMa.dll</localUri> provided in the package is signed and might be added to the GAC.
+            In case <localUri>StaMa.dll</localUri> has to be re-compiled with signing, a file named <localUri>StaMa.snk</localUri> would have to be created in the directory where <localUri>StaMa.csproj</localUri> is located.
+            To re-compile without signing, please un-check "Sign the assembly" in the <localUri>StaMa.csproj</localUri> properties.
+          </para>
+          <para>
+            See <link xlink:href="b2a532fd-f7bb-4cce-b601-7563bca224d1"/> for details how to re-compile.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            The <localUri>StaMaShapes.vst</localUri>&#160;<token>Microsoft Visio</token> document template file provides <token>Microsoft Visio</token> shapes to draw state diagrams and a corresponding code generator to generate code for <token>StaMa</token> based state machines.
+          </para>
+          <para>
+            Please use the <token>Microsoft Visio</token> 32-bit version (<link xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa#Visio32bitLimitation">more info</link>).
+          </para>
+          <para>
+            The simplest way to create a diagram is to double-click the extracted <localUri>StaMaShapes.vst</localUri> template file in <token>Microsoft Windows</token> Explorer and save the generated <localUri>.vsd</localUri> document file to the desired location.
+          </para>
+          <para>
+            The <localUri>StaMaShapes.vst</localUri> template can also be configured to appear on the <token>Microsoft Visio</token>&#160;<newTerm>Backstage view</newTerm>.
+            <token>Microsoft Visio</token> shows all <localUri>.vst</localUri> templates on the Backstage view that are contained in the <newTerm>templates folder</newTerm> path that can be configured in the <ui>File Locations</ui> dialog of <ui>Visio Options</ui>.
+            See below procedure "How to Configure StaMa Visio Shapes".
+          </para>
+          <para>
+            See <link xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa"/> for details about how to use <token>Microsoft Visio</token> to draw state machine diagrams and generate code from them.
+          </para>
+        </listItem>
+      </list>
+      <para>&#160;</para>
+    </introduction>
+
+    <procedure>
+      <title>Adding StaMa to a Visual Studio Project through NuGet</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In <token>Microsoft Visual Studio</token>&#160;<ui>Solution Explorer</ui>, right-click the <ui>References</ui> node and click <ui>Manage NuGet Packages...</ui>.
+            </para>
+            <para>
+              The <ui>&lt;ProjectName&gt; - Manage NuGet Packages</ui> dialog appears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Click the <ui>Online</ui> tab to display the list of available packages.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              In the <ui>Search Online</ui> text box enter <userInput>StaMa</userInput>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 1">Manage NuGet Packages</caption>
+              <image placement="center" xlink:href="NuGetManagePackages"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Click <ui>Install</ui> on the <ui>StaMa.StateMachine</ui> package.
+            </para>
+            <para>
+              A folder <localUri>packages\StaMa.StateMachine.&lt;version&gt;</localUri> will be created in the project folder with a sub-folder <localUri>lib</localUri> containing the <localUri>StaMa.dll</localUri> library.
+              The sub-folders <localUri>src</localUri> and <localUri>tools</localUri> contain the source code for debugging purposes and the <localUri>StaMaShapes.vst</localUri> and the <localUri>StaMaDevelopersGuide.chm</localUri> files respectively.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+             <localUri>StaMa.dll</localUri> is now added as a reference library and can be used.
+          </para>
+          <para>
+             See also <externalLink><linkText>Managing NuGet Packages Using the Dialog</linkText><linkUri>http://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog</linkUri><linkTarget>_blank</linkTarget></externalLink> for details regarding <token>NuGet</token>.
+          </para>
+          <para>&#160;</para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>How to Configure the StaMa Visio Template to Appear on the Visio Backstage View</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Open <token>Microsoft Visio</token>.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Click the <ui>File</ui> ribbon, then <ui>Options</ui>. The <ui>Visio Options</ui> dialog appears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              In the <ui>Visio Options</ui> dialog click <ui>Advanced</ui>, navigate to the <ui>General</ui> group, click on <ui>File Locations...</ui>.
+              The <ui>File Locations</ui> dialog appears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              In the <ui>File Locations</ui> dialog go to the <ui>Templates</ui> row, press the <ui>Choose Folder</ui> button.
+              In the <ui>Choose Folder</ui> dialog navigate to the folder where <localUri>StaMaShapes.vst</localUri> was extracted from the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri>.
+              Press <ui>Select</ui>.
+            </para>
+            <para>
+              -or-
+            </para>
+            <para>
+              Copy the path from the <ui>My Shapes</ui> row to the <ui>Templates</ui> row.
+              Copy the <localUri>StaMaShapes.vst</localUri> (extracted from the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri>) to the corresponding folder.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Accept all dialogs with <ui>OK</ui>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            <token>Microsoft Visio</token> will now list an icon named <ui>StaMaShapes</ui> in the <ui>Template Categories</ui> of the Backstage view.
+            Double click this icon to create a new state diagram.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

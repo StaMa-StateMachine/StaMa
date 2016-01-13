@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="93712910-2b27-4731-a3a5-38da29702b5e" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Presents the class diagram for the entities of a <token>StaMa</token> state machine
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        Below class diagram shows the entities of a <token>StaMa</token> state machine.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">StaMa class diagram.</caption>
+        <image placement="center" xlink:href="StateMachineConceptsClassDiagram"/>
+      </mediaLink>
+      <para>
+      </para>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

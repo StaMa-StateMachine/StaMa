@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EFC8447C-4149-406B-ABF1-527F281CCF48}"
+	ProjectSection(SolutionItems) = preProject
+		ChangeLog.txt = ChangeLog.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMaNETMF", "StaMa\StaMaNETMF.csproj", "{67A318B0-6A13-4A84-ABF2-451620ABCC96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketVendingNETMF", "Samples\netmf\TicketVendingNETMF\TicketVendingNETMF.csproj", "{17F15E27-0A16-4182-8331-025C1B262277}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevelopersGuide", "DevelopersGuide", "{43F07A73-B156-4811-BC5B-BD7768B5CE02}"
+	ProjectSection(SolutionItems) = preProject
+		DevelopersGuide\StaMaDevelopersGuide.shfbproj = DevelopersGuide\StaMaDevelopersGuide.shfbproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSimpleStateMachineNETMF", "Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.csproj", "{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMaTestNETMF", "Tests\StaMaTest\StaMaTestNETMF.csproj", "{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StaMa\\StaMaNETMF.csproj
+		SccProjectName1 = StaMa
+		SccLocalPath1 = StaMa
+		SccProjectUniqueName2 = Samples\\netmf\\TicketVendingNETMF\\TicketVendingNETMF.csproj
+		SccProjectName2 = Samples/netmf/TicketVendingNETMF
+		SccLocalPath2 = Samples\\netmf\\TicketVendingNETMF
+		SccProjectUniqueName3 = Samples\\netmf\\SampleSimpleStateMachineNETMF\\SampleSimpleStateMachineNETMF.csproj
+		SccProjectName3 = Samples/netmf/SampleSimpleStateMachineNETMF
+		SccLocalPath3 = Samples\\netmf\\SampleSimpleStateMachineNETMF
+		SccProjectUniqueName4 = Tests\\StaMaTestNETMF\\StaMaTestNETMF.csproj
+		SccProjectName4 = Tests/StaMaTestNETMF
+		SccLocalPath4 = Tests\\StaMaTestNETMF
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67A318B0-6A13-4A84-ABF2-451620ABCC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A318B0-6A13-4A84-ABF2-451620ABCC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A318B0-6A13-4A84-ABF2-451620ABCC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A318B0-6A13-4A84-ABF2-451620ABCC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F15E27-0A16-4182-8331-025C1B262277}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E0A850E-6A28-4CAD-8527-53BCEBEDB054}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43F07A73-B156-4811-BC5B-BD7768B5CE02} = {EFC8447C-4149-406B-ABF1-527F281CCF48}
+	EndGlobalSection
+EndGlobal

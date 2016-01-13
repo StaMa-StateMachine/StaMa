@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="badfe5ab-643a-45d2-bd27-ad6536a62b6c" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Explains what a <codeEntityReference linkText="StateConfiguration">T:StaMa.StateConfiguration</codeEntityReference> is and where it is used.</para>
+    </summary>
+    <introduction>
+      <para>
+        Describing the active state of a plain state machine is simple: A reference to a single state is sufficient.
+        Source and target states of transitions in a plain state machine can simply be addressed through references to single states.
+        Also the active state in a hierarchical state machine is sufficiently defined through the ultimate leaf simple state, regardless of nesting depth.
+        Transitions starting or ending at a composite state can be described through the reference to the composite state.
+      </para>
+      <para>
+        Things start to become more complex with orthogonal sub-states:
+      </para>
+      <para>
+        Defining the active state in the presence of orthogonal sub-regions requires references to multiple states in case the state machine is in the orthogonal sub-states.
+        The same applies for transition source and target states.
+        While it would be possible to handle active states and transition source and target states as a simple array of state references, it turns out that this is
+        computationally inefficient when questions have to be answered like these:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            Is a set of states really valid, which means are the referenced states really in separate orthogonal sub-regions?
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            What is the common region between the source and target of a transition, i.e. the tree node up to which exit actions and from which entry actions have to be executed in case the transition is executed?
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Is the active state identical to (or is it a sub-state of) a particular transition's source state? The answer of this question is needed to identify the reached transitions, and it is particular complex to answer in case of a partially defined source state of a join transition.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        This is where the <codeEntityReference linkText="StaMa.StateConfiguration">T:StaMa.StateConfiguration</codeEntityReference> type helps.
+        <codeEntityReference>T:StaMa.StateConfiguration</codeEntityReference> instances are used to keep the <codeEntityReference linkText="active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> of a <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> and
+        for the <codeEntityReference linkText="SourceState">P:StaMa.Transition.SourceState</codeEntityReference> and <codeEntityReference linkText="TargetState">P:StaMa.Transition.TargetState</codeEntityReference> properties of <codeEntityReference linkText="Transition">T:StaMa.Transition</codeEntityReference>s.
+      </para>
+      <para>
+        For the client code there is usually no need to explicitly create <codeEntityReference>T:StaMa.StateConfiguration</codeEntityReference> instances, as the <codeEntityReference linkText="StateMachineTemplate.Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statement accepts arrays of state names for defining the source and target states of fork and join <codeEntityReference>T:StaMa.Transition</codeEntityReference>s.
+        For special cases <codeEntityReference>T:StaMa.StateConfiguration</codeEntityReference> instances can be created through the <codeEntityReference linkText="StateMachineTemplate.CreateStateConfiguration">Overload:StaMa.StateMachineTemplate.CreateStateConfiguration</codeEntityReference> method, if needed.
+      </para>
+      <para>
+        The <codeEntityReference linkText="StateConfiguration">T:StaMa.StateConfiguration</codeEntityReference> for the <codeEntityReference linkText="active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> property is managed internally.
+      </para>
+      <para>
+        In order to get a human readable format for tracing or debugging, the <codeEntityReference linkText="StateConfiguration.ToString">M:StaMa.StateConfiguration.ToString</codeEntityReference> method returns the referenced state name or state names concatenated into a single <codeEntityReference>T:System.String</codeEntityReference>.
+        See <codeEntityReference linkText="StateConfiguration.ToString">M:StaMa.StateConfiguration.ToString</codeEntityReference> for details of the format.
+      </para>
+    </introduction>
+    <section address="StateConfigurationVisitor">
+      <title>Creating a Customized Human Readable Format for a StateConfiguration Instance</title>
+      <content>
+        <para>
+          The built-in <codeEntityReference linkText="StateConfiguration.ToString">M:StaMa.StateConfiguration.ToString</codeEntityReference> method traverses the state machine structure and collects all state names in a <codeEntityReference>T:System.String</codeEntityReference> with some
+          structure formatting characters like <codeInline>'('</codeInline>, <codeInline>')'</codeInline>, <codeInline>','</codeInline> and <codeInline>'*'</codeInline> by utilizing the <codeEntityReference linkText="StateConfiguration.PassThrough">M:StaMa.StateConfiguration.PassThrough(StaMa.IStateConfigurationVisitor)</codeEntityReference> method.
+        </para>
+        <para>
+          The following code shows how to implement an individual formatting method.
+        </para>
+        <code language="C#" title="IStateConfigurationVisitor implementation"  source="..\Samples\netmf\SampleSimpleStateMachineNETMF\StateConfigurationFormatter.cs" region="DevelopersGuide_classStateConfigurationUtils">
+        </code>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

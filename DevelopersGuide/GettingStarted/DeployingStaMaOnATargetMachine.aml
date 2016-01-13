@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="afdec6d6-fee1-4b99-b160-1e45bd76d8a2" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to deploy StaMa on the target execution environment.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        <localUri>StaMa.dll</localUri> can be deployed by copying it to the target execution environment. No further actions should be necessary.
+      </para>
+    </introduction>
+  </developerHowToDocument>
+</topic>

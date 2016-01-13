@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="04562727-a5a7-4eda-b96a-44800a77bc7e" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Provides the license and copyright for this software component.</para>
+    </summary>
+
+    <introduction>
+      <para>
+      A license is an important part of an off-the-shelve software component delivery to ensure the legality of the user's usage of the software component.
+      </para>
+      <para>
+      <token>StaMaLib</token> is published under the <externalLink><linkText>BSD 3-Clause License</linkText><linkUri>http://opensource.org/licenses/BSD-3-Clause</linkUri></externalLink>,
+      which is one of the most rights-granting licences available (see e.g. <externalLink><linkText>Comparison of free and open-source software licenses</linkText><linkUri>http://en.wikipedia.org/wiki/Comparison_of_free_and_open-source_software_licenses</linkUri></externalLink>).
+      </para>
+    </introduction>
+
+    <section address="LicenseStatement">
+      <title>StaMa State Machine Library License</title>
+      <content>
+        <para>
+        Copied from <externalLink><linkText>here:</linkText><linkUri>http://stama.codeplex.com/license</linkUri></externalLink>
+        </para>
+        <para>
+		Copyright (c) 2005-2014, Roland Schneider
+		All rights reserved.
+        </para>
+        <para>
+		Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+        </para>
+        <para>
+		* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        </para>
+        <para>
+		* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+        </para>
+        <para>
+		* Neither the name of StaMa nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+        </para>
+        <para>
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS
+        OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+        AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+        CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+        USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+        WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+        ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+		</para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

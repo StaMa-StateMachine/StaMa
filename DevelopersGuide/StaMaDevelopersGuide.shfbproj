@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which assemblies to include from solution and
+				 project documentation sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28fc2bf9-37d7-48bc-aae2-5a1bb644e63f}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.9.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <FrameworkVersion>.NET Micro Framework 4.3</FrameworkVersion>
+    <OutputPath>..\bin\netmf\DevelopersGuide\</OutputPath>
+    <HtmlHelpName>StaMaDevelopersGuide</HtmlHelpName>
+    <Language>en-US</Language>
+    <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
+    <HelpFileFormat>HtmlHelp1, Website</HelpFileFormat>
+    <IndentHtml>False</IndentHtml>
+    <KeepLogFile>True</KeepLogFile>
+    <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <CleanIntermediates>True</CleanIntermediates>
+    <MaximumGroupParts>2</MaximumGroupParts>
+    <NamespaceGrouping>False</NamespaceGrouping>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <SdkLinkTarget>Blank</SdkLinkTarget>
+    <Version>2.3.0.2</Version>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <PresentationStyle>VS2013</PresentationStyle>
+    <Preliminary>False</Preliminary>
+    <NamingMethod>MemberName</NamingMethod>
+    <HelpTitle>StaMa - State Machine Controller Library {%40Version} - Developers Guide and Reference</HelpTitle>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+    <MissingTags>Summary, Parameter, Returns, Namespace, TypeParameter</MissingTags>
+    <WorkingPath>..\bin\netmf\DevelopersGuide\Working\</WorkingPath>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\bin\netmf\AnyCPU\Debug\StaMa.dll" xmlns="" />
+      <DocumentationSource sourceFile="..\bin\netmf\AnyCPU\Debug\StaMa.xml" xmlns="" />
+    </DocumentationSources>
+    <FeedbackEMailLinkText>
+    </FeedbackEMailLinkText>
+    <FeedbackEMailAddress>
+    </FeedbackEMailAddress>
+    <RootNamespaceTitle>API Reference</RootNamespaceTitle>
+    <ApiFilter>
+      <Filter entryType="Namespace" fullName="StaMa" isExposed="True">
+        <Filter entryType="Class" fullName="StaMa.Region" filterName="Region" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.Region.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.RegionCollection" filterName="RegionCollection" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.RegionCollection.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.State" filterName="State" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.State.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.StateCollection" filterName="StateCollection" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.StateCollection.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.StateConfiguration" filterName="StateConfiguration" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.StateConfiguration.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.StateMachine" filterName="StateMachine" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.StateMachine.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.StateMachineTemplate" filterName="StateMachineTemplate" isExposed="True">
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateRegion" filterName="InternalCreateRegion" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateRegionCollection" filterName="InternalCreateRegionCollection" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateState" filterName="InternalCreateState" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateStateCollection" filterName="InternalCreateStateCollection" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateStateConfiguration" filterName="InternalCreateStateConfiguration" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateStateMachine" filterName="InternalCreateStateMachine" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateTransition" filterName="InternalCreateTransition" isExposed="False" />
+          <Filter entryType="Method" fullName="StaMa.StateMachineTemplate.InternalCreateTransitionCollection" filterName="InternalCreateTransitionCollection" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.Transition" filterName="Transition" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.Transition.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+        <Filter entryType="Class" fullName="StaMa.TransitionCollection" filterName="TransitionCollection" isExposed="True">
+          <Filter entryType="Constructor" fullName="StaMa.TransitionCollection.#ctor" filterName=".ctor" isExposed="False" />
+        </Filter>
+      </Filter>
+    </ApiFilter>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
+    <CopyrightText>Report issues at http://stama.codeplex.com/</CopyrightText>
+    <CopyrightHref>http://stama.codeplex.com/workitem/list/basic</CopyrightHref>
+    <FooterText>Documentation generated on {%40BuildDate:dd-MMM-yyyy} &amp;amp%3b#160%3b</FooterText>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="StaMa" isDocumented="True" />
+    </NamespaceSummaries>
+    <TransformComponentArguments>
+      <Argument Key="logoFile" Value="StaMa32x32.png" />
+      <Argument Key="logoHeight" Value="" />
+      <Argument Key="logoWidth" Value="" />
+      <Argument Key="logoAltText" Value="StaMa" />
+      <Argument Key="logoPlacement" Value="left" />
+      <Argument Key="logoAlignment" Value="left" />
+      <Argument Key="maxVersionParts" Value="" />
+      <Argument Key="defaultLanguage" Value="cs" />
+    </TransformComponentArguments>
+    <HeaderText>
+    </HeaderText>
+  </PropertyGroup>
+  <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
+			 the build.  The others are optional common platform types that may appear. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Glossary.aml" />
+    <None Include="Concepts\Concepts.aml" />
+    <None Include="GettingStarted\ImplementingASimpleStateMachineApplicationNETMF.aml" />
+    <None Include="GettingStarted\GettingStarted.aml" />
+    <None Include="Concepts\CompositeState.aml" />
+    <None Include="Concepts\EntitiesAndRelations.aml" />
+    <None Include="Concepts\OrthogonalRegions.aml" />
+    <None Include="Concepts\StateAndRegionAndTransition.aml" />
+    <None Include="Concepts\StateMachineTemplateAndStateMachine.aml" />
+    <None Include="Concepts\StateConfigurations.aml" />
+    <None Include="IntegratingWithTheApplication\IntegratingWithTheApplication.aml" />
+    <None Include="IntegratingWithTheApplication\Tracing.aml" />
+    <None Include="IntegratingWithTheApplication\ExceptionHandlingInActions.aml" />
+    <None Include="GettingStarted\CompilingStaMaAssemblyForASpecificTargetFrameworkVersion.aml" />
+    <None Include="GettingStarted\InstallingStaMaOnADeveloperMachine.aml" />
+    <None Include="GettingStarted\DeployingStaMaOnATargetMachine.aml" />
+    <None Include="GettingStarted\ImplementingASimpleStateMachineApplicationWinDesktop.aml" />
+    <None Include="IntegratingWithTheApplication\EventDrivenAndScanCycle.aml" />
+    <None Include="IntegratingWithTheApplication\PersistenceAndResumingStateMachines.aml" />
+    <None Include="Samples\DotNetFramework\SampleSimpleStateMachineNETFWK.aml" />
+    <None Include="Samples\DotNetMicroFramework\SampleSimpleStateMachineNETMF.aml" />
+    <None Include="Samples\DotNetMicroFramework\SampleTicketVendingNETMF.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToAddAStateToARegion.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToGenerateCodeFromADiagram.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAnOrthogonalRegion.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateACompositeState.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateASimpleTransition.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAForkTransition.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAJoinTransition.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAStateDiagram.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioCodeGeneratorShape.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionSegmentShape.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionKnotShape.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioRegionShape.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioStateShape.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioShapeTypes.aml" />
+    <None Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowTo.aml" />
+    <None Include="UsingStaMaVisioShapes\UsingStaMaVisioShapes.aml" />
+    <None Include="Samples\DotNetFramework\SampleClock.aml" />
+    <None Include="Samples\DotNetFramework\SamplesNetFwk.aml" />
+    <None Include="Samples\DotNetMicroFramework\SamplesNETMF.aml" />
+    <None Include="Samples\Samples.aml" />
+    <None Include="Welcome.aml" />
+    <None Include="LicenseAndCopyright.aml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ContentLayout Include="StaMaDevelopersGuide.content" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GettingStarted\" />
+    <Folder Include="Concepts\" />
+    <Folder Include="IntegratingWithTheApplication\" />
+    <Folder Include="Images\" />
+    <Folder Include="icons\" />
+    <Folder Include="UsingStaMaVisioShapes\StaMaVisioShapesHowTo\" />
+    <Folder Include="UsingStaMaVisioShapes\StaMaVisioShapeTypes\" />
+    <Folder Include="UsingStaMaVisioShapes\" />
+    <Folder Include="StaMaDesign\" />
+    <Folder Include="Samples\DotNetMicroFramework\" />
+    <Folder Include="Samples\DotNetFramework\" />
+    <Folder Include="Samples\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Tokens Include="StaMaDevelopersGuide.tokens" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Images\DropTransitionSegment.png">
+      <ImageId>DropTransitionSegment</ImageId>
+      <AlternateText>Drop Transition Segment</AlternateText>
+    </Image>
+    <Image Include="Images\DropTransitionKnot.png">
+      <ImageId>DropTransitionKnot</ImageId>
+      <AlternateText>Drop Transition Knot</AlternateText>
+    </Image>
+    <Image Include="Images\ConnectTransitionSegmentToTransitionKnot.png">
+      <ImageId>ConnectTransitionSegmentToTransitionKnot</ImageId>
+      <AlternateText>Connect Transition Segment To Transition Knot</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionKnotShapeProperties.png">
+      <ImageId>TransitionKnotShapeProperties</ImageId>
+      <AlternateText>Transition Properties</AlternateText>
+    </Image>
+    <Image Include="Images\CreateStateAskNameDialog.png">
+      <ImageId>CreateStateAskNameDialog</ImageId>
+      <AlternateText>Create State Ask Name Dialog</AlternateText>
+    </Image>
+    <Image Include="Images\StateProperties.png">
+      <ImageId>StateProperties</ImageId>
+      <AlternateText>State Properties</AlternateText>
+    </Image>
+    <Image Include="Images\CreateStateDragChangesRegionBorder.png">
+      <ImageId>CreateStateDragChangesRegionBorder</ImageId>
+      <AlternateText>Create State Drag Changes Region Border</AlternateText>
+    </Image>
+    <Image Include="Images\RegionContainingSimpleState.png">
+      <ImageId>RegionContainingSimpleState</ImageId>
+      <AlternateText>Region Containing Simple State</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateContainingTwoRegions.png">
+      <ImageId>CompositeStateContainingTwoRegions</ImageId>
+      <AlternateText>Composite State Containing Two Regions</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionSegmentShapeProperties.png">
+      <ImageId>TransitionSegmentShapeProperties</ImageId>
+      <AlternateText>Transition Segment Properties</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateContainingOneRegion.png">
+      <ImageId>CompositeStateContainingOneRegion</ImageId>
+      <AlternateText>Composite State Containing One Region</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegions2ndRegionSized.png">
+      <ImageId>CompositeStateTwoRegions2ndRegionSized</ImageId>
+      <AlternateText>Composite State Two Regions 2nd Region Sized</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsAdding2ndRegion.png">
+      <ImageId>CompositeStateTwoRegionsAdding2ndRegion</ImageId>
+      <AlternateText>Composite State Two Regions Adding 2nd Region</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsClosed2ndRegion.png">
+      <ImageId>CompositeStateTwoRegionsClosed2ndRegion</ImageId>
+      <AlternateText>Composite State Two Regions Closed 2nd Region</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsDraggingState.png">
+      <ImageId>CompositeStateTwoRegionsDraggingState</ImageId>
+      <AlternateText>Composite State Two Regions Dragging State</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsExecOrder.png">
+      <ImageId>CompositeStateTwoRegionsExecOrder</ImageId>
+      <AlternateText>Composite State Two Regions Exec Order</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsMakeRoomEnlargeContainer.png">
+      <ImageId>CompositeStateTwoRegionsMakeRoomEnlargeContainer</ImageId>
+      <AlternateText>Composite State Two Regions Make Room Enlarge Container</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateTwoRegionsMakeRoomReduce1stRegion.png">
+      <ImageId>CompositeStateTwoRegionsMakeRoomReduce1stRegion</ImageId>
+      <AlternateText>Composite State Two Regions Make Room Reduce 1st Region</AlternateText>
+    </Image>
+    <Image Include="Images\RegionProperties.png">
+      <ImageId>RegionProperties</ImageId>
+      <AlternateText>Region Properties</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransition.png">
+      <ImageId>ForkTransition</ImageId>
+      <AlternateText>Fork Transition</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionConnectingTransitionSegmentA.png">
+      <ImageId>ForkTransitionConnectingTransitionSegmentA</ImageId>
+      <AlternateText>Fork Transition Connecting Transition SegmentA</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionConnectingTransitionSegmentB.png">
+      <ImageId>ForkTransitionConnectingTransitionSegmentB</ImageId>
+      <AlternateText>Fork Transition Connecting Transition SegmentB</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionDraggingTransitionKnot.png">
+      <ImageId>ForkTransitionDraggingTransitionKnot</ImageId>
+      <AlternateText>Fork Transition Dragging Transition Knot</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionDraggingTransitionSegmentA.png">
+      <ImageId>ForkTransitionDraggingTransitionSegmentA</ImageId>
+      <AlternateText>Fork Transition Dragging Transition SegmentA</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionDraggingTransitionSegmentB.png">
+      <ImageId>ForkTransitionDraggingTransitionSegmentB</ImageId>
+      <AlternateText>Fork Transition Dragging Transition SegmentB</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionTransitionKnotBringToFront.png">
+      <ImageId>ForkTransitionTransitionKnotBringToFront</ImageId>
+      <AlternateText>Fork Transition Transition Knot Bring To Front</AlternateText>
+    </Image>
+    <Image Include="Images\DocumentStencilWindow.png">
+      <ImageId>DocumentStencilWindow</ImageId>
+      <AlternateText>Document Stencil Window</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransition.png">
+      <ImageId>JoinTransition</ImageId>
+      <AlternateText>Join Transition</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionConnectingTransitionSegmentSourceA.png">
+      <ImageId>JoinTransitionConnectingTransitionSegmentSourceA</ImageId>
+      <AlternateText>Join Transition Connecting Transition Segment SourceA</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionConnectingTransitionSegmentSourceB.png">
+      <ImageId>JoinTransitionConnectingTransitionSegmentSourceB</ImageId>
+      <AlternateText>Join Transition Connecting Transition Segment SourceB</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionConnectingTransitionSegmentTarget.png">
+      <ImageId>JoinTransitionConnectingTransitionSegmentTarget</ImageId>
+      <AlternateText>Join Transition Connecting Transition Segment Target</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionConvertTransitionKnotToAnchorOnly.png">
+      <ImageId>JoinTransitionConvertTransitionKnotToAnchorOnly</ImageId>
+      <AlternateText>Join Transition Convert Transition Knot To Anchor Only</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionConvertTransitionSegmentAToFromState.png">
+      <ImageId>JoinTransitionConvertTransitionSegmentAToFromState</ImageId>
+      <AlternateText>Join Transition Convert Transition SegmentATo From State</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionDraggingTransitionKnot.png">
+      <ImageId>JoinTransitionDraggingTransitionKnot</ImageId>
+      <AlternateText>Join Transition Dragging Transition Knot</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionDraggingTransitionSegmentSourceA.png">
+      <ImageId>JoinTransitionDraggingTransitionSegmentSourceA</ImageId>
+      <AlternateText>Join Transition Dragging Transition Segment SourceA</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionDraggingTransitionSegmentSourceB.png">
+      <ImageId>JoinTransitionDraggingTransitionSegmentSourceB</ImageId>
+      <AlternateText>Join Transition Dragging Transition Segment SourceB</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionDraggingTransitionSegmentTarget.png">
+      <ImageId>JoinTransitionDraggingTransitionSegmentTarget</ImageId>
+      <AlternateText>Join Transition Dragging Transition Segment Target</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionTransitionKnotBringToFront.png">
+      <ImageId>JoinTransitionTransitionKnotBringToFront</ImageId>
+      <AlternateText>Join Transition Transition Knot Bring To Front</AlternateText>
+    </Image>
+    <Image Include="Images\JoinTransitionAddedAllSegmentSources.png">
+      <ImageId>JoinTransitionAddedAllSegmentSources</ImageId>
+      <AlternateText>Join Transition Added All Segment Sources</AlternateText>
+    </Image>
+    <Image Include="Images\ForkTransitionAddedAllSegmentTargets.png">
+      <ImageId>ForkTransitionAddedAllSegmentTargets</ImageId>
+      <AlternateText>Fork Transition Added All Segment Targets</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenDraggingOverRegion.png">
+      <ImageId>CodegenDraggingOverRegion</ImageId>
+      <AlternateText>Codegen Dragging Over Region</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenPropertiesAdvanced.png">
+      <ImageId>CodegenPropertiesAdvanced</ImageId>
+      <AlternateText>Codegen Properties Advanced</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenPropertiesBasic.png">
+      <ImageId>CodegenPropertiesBasic</ImageId>
+      <AlternateText>Codegen Properties Basic</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenConstsArrange.png">
+      <ImageId>CodegenConstsArrange</ImageId>
+      <AlternateText>Codegen Consts Arrange</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenConstsDraggingOverRegion.png">
+      <ImageId>CodegenConstsDraggingOverRegion</ImageId>
+      <AlternateText>Consts code generator shape dragging over region</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenConstsPropertiesBasic.png">
+      <ImageId>CodegenConstsPropertiesBasic</ImageId>
+      <AlternateText>Consts code generator shape properties basic</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenReferenceStateMachine.png">
+      <ImageId>CodegenReferenceStateMachine</ImageId>
+      <AlternateText>Code generator reference state machine</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenShapeConnected.png">
+      <ImageId>CodegenShapeConnected</ImageId>
+      <AlternateText>Code generator shape connected</AlternateText>
+    </Image>
+    <Image Include="Images\CodegenVariables.png">
+      <ImageId>CodegenVariables</ImageId>
+      <AlternateText>Code generator variables</AlternateText>
+    </Image>
+    <Image Include="Images\StateShapeSimpleAndComposite.png">
+      <ImageId>StateShapeSimpleAndComposite</ImageId>
+      <AlternateText>State Shape Simple And Composite</AlternateText>
+    </Image>
+    <Image Include="Images\RegionShapeRootRegionAndSubRegion.png">
+      <ImageId>RegionShapeRootRegionAndSubRegion</ImageId>
+      <AlternateText>Region Shape Root Region And Sub Region</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionKnotShapeAndTransitionSegmentShape.png">
+      <ImageId>TransitionKnotShapeAndTransitionSegmentShape</ImageId>
+      <AlternateText>Transition Knot Shape And Transition Segment Shape</AlternateText>
+    </Image>
+    <Image Include="Images\StateShapeConnectionPoints.png">
+      <ImageId>StateShapeConnectionPoints</ImageId>
+      <AlternateText>State Shape Connection Points</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringConvertToSimpleState.png">
+      <ImageId>RefactoringConvertToSimpleState</ImageId>
+      <AlternateText>Refactoring Convert To Simple State</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringDragStateA.png">
+      <ImageId>RefactoringDragStateA</ImageId>
+      <AlternateText>Refactoring Drag StateA</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringDragStateB.png">
+      <ImageId>RefactoringDragStateB</ImageId>
+      <AlternateText>Refactoring Drag StateB</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringDropStateA.png">
+      <ImageId>RefactoringDropStateA</ImageId>
+      <AlternateText>Refactoring Drop StateA</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringDropStateB.png">
+      <ImageId>RefactoringDropStateB</ImageId>
+      <AlternateText>Refactoring Drop StateB</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringInitial.png">
+      <ImageId>RefactoringInitial</ImageId>
+      <AlternateText>Refactoring Initial</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringSubRegionDeleted.png">
+      <ImageId>RefactoringSubRegionDeleted</ImageId>
+      <AlternateText>Refactoring Sub Region Deleted</AlternateText>
+    </Image>
+    <Image Include="Images\RefactoringSubRegionSelected.png">
+      <ImageId>RefactoringSubRegionSelected</ImageId>
+      <AlternateText>Refactoring Sub Region Selected</AlternateText>
+    </Image>
+    <Image Include="Images\RegionShapeHistory.png">
+      <ImageId>RegionShapeHistory</ImageId>
+      <AlternateText>Region Shape History</AlternateText>
+    </Image>
+    <Image Include="Images\RegionShapeRootRegionAndCompositeState.png">
+      <ImageId>RegionShapeRootRegionAndCompositeState</ImageId>
+      <AlternateText>Region Shape Root Region And Composite State</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionKnotShapeConnectorLineProperties.png">
+      <ImageId>TransitionKnotShapeConnectorLineProperties</ImageId>
+      <AlternateText>Transition Knot Shape Connector Line Properties</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionKnotShapeSimpleAndForkAndJoin.png">
+      <ImageId>TransitionKnotShapeSimpleAndForkAndJoin</ImageId>
+      <AlternateText>Transition Knot Shape Simple And Fork And Join</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionKnotShapePriorities.png">
+      <ImageId>TransitionKnotShapePriorities</ImageId>
+      <AlternateText>Transition Knot Shape Priorities</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineAlgorithm.png">
+      <ImageId>StateMachineAlgorithm</ImageId>
+      <AlternateText>State Machine Algorithm</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsSimpleStateMachine.png">
+      <ImageId>StateMachineConceptsSimpleStateMachine</ImageId>
+      <AlternateText>State Machine Concepts Simple State Machine</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsSimpleStateMachineTree.png">
+      <ImageId>StateMachineConceptsSimpleStateMachineTree</ImageId>
+      <AlternateText>State Machine Concepts Simple State Machine Tree</AlternateText>
+    </Image>
+    <Image Include="Images\TransitionSegmentShapeSimpleAndForkAndJoinAndInitial.png">
+      <ImageId>TransitionSegmentShapeSimpleAndForkAndJoinAndInitial</ImageId>
+      <AlternateText>Transition Segment Shape Simple And Fork And Join And Initial</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsCompositeStateTransitions.png">
+      <ImageId>StateMachineConceptsCompositeStateTransitions</ImageId>
+      <AlternateText>State Machine Concepts Composite State Transitions</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsCompositeStateMachineTree.png">
+      <ImageId>StateMachineConceptsCompositeStateMachineTree</ImageId>
+      <AlternateText>State Machine Concepts Composite State Machine Tree</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsOrthogonalRegionForkJoin.png">
+      <ImageId>StateMachineConceptsOrthogonalRegionForkJoin</ImageId>
+      <AlternateText>State Machine Concepts Orthogonal Region Fork Join</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png">
+      <ImageId>StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree</ImageId>
+      <AlternateText>State Machine Concepts Orthogonal Region Fork Join State Machine Tree</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsClassDiagram.png">
+      <ImageId>StateMachineConceptsClassDiagram</ImageId>
+      <AlternateText>State Machine Concepts Class Diagram</AlternateText>
+    </Image>
+    <Image Include="Images\SampleClockUserInterface.png">
+      <ImageId>SampleClockUserInterface</ImageId>
+      <AlternateText>Sample Clock User Interface</AlternateText>
+    </Image>
+    <Image Include="Images\SampleClockStateMachine.png">
+      <ImageId>SampleClockStateMachine</ImageId>
+      <AlternateText>Sample Clock State Machine</AlternateText>
+    </Image>
+    <Image Include="Images\SampleTicketVendingEmulator.png">
+      <ImageId>SampleTicketVendingEmulator</ImageId>
+      <AlternateText>Sample Ticket Vending Emulator</AlternateText>
+    </Image>
+    <Image Include="Images\SampleTicketVendingStateMachine.png">
+      <ImageId>SampleTicketVendingStateMachine</ImageId>
+      <AlternateText>Sample Ticket Vending State Machine</AlternateText>
+    </Image>
+    <Image Include="Images\StateMachineConceptsStateGuardedTransition.png">
+      <ImageId>StateMachineConceptsStateGuardedTransition</ImageId>
+      <AlternateText>State Machine Concepts State Guarded Transition</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateConfigSubRegionsAligned.png">
+      <ImageId>CompositeStateConfigSubRegionsAligned</ImageId>
+      <AlternateText>Composite State Config Sub Regions Aligned</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateConfigSubRegionsDropped.png">
+      <ImageId>CompositeStateConfigSubRegionsDropped</ImageId>
+      <AlternateText>Composite State Config Sub Regions Dropped</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateConfigSubRegionsEmpty.png">
+      <ImageId>CompositeStateConfigSubRegionsEmpty</ImageId>
+      <AlternateText>Composite State Config Sub Regions Empty</AlternateText>
+    </Image>
+    <Image Include="Images\CompositeStateContainingOneRegionDragState.png">
+      <ImageId>CompositeStateContainingOneRegionDragState</ImageId>
+      <AlternateText>Composite State Containing One Region Drag State</AlternateText>
+    </Image>
+    <Image Include="Images\SampleSimpleStateMachineNETFWK.png">
+      <ImageId>SampleSimpleStateMachineNETFWK</ImageId>
+      <AlternateText>Sample Simple State MachineNETFWK</AlternateText>
+    </Image>
+    <Image Include="Images\SampleSimpleStateMachineNETMF.png">
+      <ImageId>SampleSimpleStateMachineNETMF</ImageId>
+      <AlternateText>Sample Simple State MachineNETMF</AlternateText>
+    </Image>
+    <Image Include="Images\WelcomeSample.png">
+      <ImageId>WelcomeSample</ImageId>
+      <AlternateText>Welcome Sample</AlternateText>
+    </Image>
+    <Image Include="Images\NuGetManagePackages.png">
+      <ImageId>NuGetManagePackages</ImageId>
+      <AlternateText>NuGet Manage Packages</AlternateText>
+    </Image>
+    <Content Include="icons\StaMa32x32.png">
+      <ImageId>StaMa32x32</ImageId>
+      <AlternateText>StaMa</AlternateText>
+    </Content>
+    <Image Include="Images\Visio64WarningMsComCtlOcx.png">
+      <ImageId>Visio64WarningMsComCtlOcx</ImageId>
+      <AlternateText>Visio64WarningMsComCtlOcx</AlternateText>
+    </Image>
+    <Image Include="Images\Visio64WarningStaMaCodegen.png">
+      <ImageId>Visio64WarningStaMaCodegen</ImageId>
+      <AlternateText>Visio64WarningStaMaCodegen</AlternateText>
+    </Image>
+    <Image Include="Images\Visio64WarningVbaCompileError.png">
+      <ImageId>Visio64WarningVbaCompileError</ImageId>
+      <AlternateText>Visio64WarningVbaCompileError</AlternateText>
+    </Image>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

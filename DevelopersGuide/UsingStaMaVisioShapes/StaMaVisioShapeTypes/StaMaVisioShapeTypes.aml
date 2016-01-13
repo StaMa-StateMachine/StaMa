@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="a4db1100-01f4-4594-b23c-948cbd01b5e7" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Introduces the different <token>StaMaShapes</token> and explains their functionality.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        <token>StaMaShapes</token> are set of <token>Microsoft Visio</token> shapes that serve to assemble an arbitrary deep nested hierarchical state machine and generate the structural code for a <token>StaMa</token> based implementation of the state machine.
+      </para>
+      <para>
+        The shapes can be found in the <ui>Document Stencil</ui> window when creating a drawing from the <localUri>StaMaShapes.vst</localUri> template.
+        The general concept is to drag the shapes from the <ui>Document Stencil</ui> into the state diagram and position and connect them there.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">The Document stencil window</caption>
+        <image placement="center" xlink:href="DocumentStencilWindow"/>
+      </mediaLink>
+    </introduction>
+    <section address="ShapeTypes">
+      <title>Shape Types</title>
+      <content>
+        <para>
+          The shape types are described in the following sections:
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="31807e1f-17b3-484d-b250-1cc6eb0e85bf"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9611a508-1db1-452a-8d6e-3ae59b29b5e1" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="20d05290-66a0-43f9-8210-b3f384666daf" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8" />
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+    <relatedTopics>
+      <link xlink:href="d84688d1-ab43-4437-b9fe-aeecc03b5d0e"/>.
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="746051ae-9d56-487c-8f06-db2b968d175f" visible="True" noFile="true" isExpanded="true" title="Developer's Guide">
+    <Topic id="d3287120-e3fa-45ed-8986-ba6d78244c1c" visible="True" isDefault="true" title="Welcome" />
+    <Topic id="04562727-a5a7-4eda-b96a-44800a77bc7e" visible="True" title="License and Copyright" />
+    <Topic id="003c5297-0c49-41e9-ac8b-9f603358ac66" visible="True" isExpanded="true" title="Getting Started">
+      <Topic id="e33381e0-fa7d-494b-ba46-f728e47edec7" visible="True" title="Installing StaMa on a Developer Machine" tocTitle="Installing StaMa on a Developer Machine" />
+      <Topic id="b2a532fd-f7bb-4cce-b601-7563bca224d1" visible="True" title="Compiling the StaMa Assembly For a Specific Target Framework Version" tocTitle="Compiling the StaMa Assembly For a Specific Target Framework Version" />
+      <Topic id="d94a3585-cd83-45b5-b16c-0487e3401337" visible="True" title="Implementing a Simple State Machine Application for .NET Micro Framework" tocTitle="Implementing a Simple State Machine Application for .NET Micro Framework" />
+      <Topic id="f5262f47-1501-476f-b1c0-25e83deba0b0" visible="True" title="Implementing a Simple State Machine Application for .NET Windows Desktop Framework" tocTitle="Implementing a Simple State Machine Application for .NET Windows Desktop Framework" />
+      <Topic id="afdec6d6-fee1-4b99-b160-1e45bd76d8a2" visible="True" title="Deploying the StaMa Assembly on the Target Machine" tocTitle="Deploying the StaMa Assembly on the Target Machine" />
+    </Topic>
+    <Topic id="298801d3-40ad-4fae-816e-5a7e1afb0ff0" visible="True" isExpanded="true" title="Programming State Machines" tocTitle="Programming State Machines">
+      <Topic id="954456b3-e05a-4e1d-af00-4f400fd43f47" visible="True" title="States, Transitions and Regions" tocTitle="States, Transitions and Regions" />
+      <Topic id="16986707-6029-42de-a453-8b359b07248a" visible="True" title="StateMachineTemplate and StateMachine" tocTitle="StateMachineTemplate and StateMachine" />
+      <Topic id="182b6093-fb30-4549-90d3-addc7c2dd2fb" visible="True" title="Composite States" tocTitle="Composite States" />
+      <Topic id="7e6981a4-284a-4027-9e21-50d195fe0169" visible="True" title="Orthogonal Regions" tocTitle="Orthogonal Regions" />
+      <Topic id="badfe5ab-643a-45d2-bd27-ad6536a62b6c" visible="True" title="State Configurations" tocTitle="State Configurations" />
+      <Topic id="93712910-2b27-4731-a3a5-38da29702b5e" visible="True" title="State Machine Entities and Relations" tocTitle="State Machine Entities and Relations" />
+    </Topic>
+    <Topic id="ae34a73e-1561-4b10-ab33-a7564f4026e7" visible="True" isExpanded="true" title="Integrating the State Machine with the Application">
+      <Topic id="a02f7e6a-627a-44f5-a250-52c62339f6f5" visible="True" isSelected="true" title="Event Driven and Scan Cycle Driven State Machines" />
+      <Topic id="a8e4100d-7357-49b1-80c8-7960bb51e540" visible="True" title="Error and Exception Handling" tocTitle="Error and Exception Handling" />
+      <Topic id="16c7903d-977c-4d5d-bc01-5b0480e944fe" visible="True" title="Tracing State Changes, Transition Testing and Event Dispatching" tocTitle="Tracing State Changes, Transition Testing and Event Dispatching" />
+      <Topic id="A98FB6B4-A211-412D-9D81-1DFF5695DDE9" visible="True" title="Persistence of State Machines" tocTitle="Persistence of State Machines" />
+    </Topic>
+    <Topic id="c9aa27b0-4173-4bcb-a275-908a0d0f8070" visible="True" title="Samples">
+      <Topic id="e703c27a-d129-4c7b-a3d9-880aa839e85a" visible="True" title=".NET Micro Framework Samples" tocTitle=".NET Micro Framework">
+        <Topic id="ee58caad-02cf-4d26-9b25-033cd452dd77" visible="True" title="Simple State Machine Sample .NET Micro Framework" tocTitle="Simple State Machine Sample .NET Micro Framework" />
+        <Topic id="29a68e43-5dbc-4a2c-894e-81a59e9c847b" visible="True" title="Ticket Vending Sample" tocTitle="Ticket Vending Sample" />
+      </Topic>
+      <Topic id="7ecae87c-d38a-4a66-9c61-438fd6a25dc9" visible="True" title=".NET Framework Samples" tocTitle=".NET Framework">
+        <Topic id="57f842bf-bcdf-4aff-9720-d0bf87ad5103" visible="True" title="Simple State Machine Sample .NET Framework" tocTitle="Simple State Machine Sample .NET Framework" />
+        <Topic id="5c40f085-995b-40d4-b823-a4471a6ec564" visible="True" title="Clock Sample" tocTitle="Clock Sample" />
+      </Topic>
+    </Topic>
+    <Topic id="ca217c97-dd3c-4c6c-a0e7-5893315663aa" visible="True" isExpanded="true" title="Using Visio Shapes" tocTitle="Using Visio Shapes">
+      <Topic id="a4db1100-01f4-4594-b23c-948cbd01b5e7" visible="True" isExpanded="true" title="Shape Types">
+        <Topic id="31807e1f-17b3-484d-b250-1cc6eb0e85bf" visible="True" title="State Shape" tocTitle="State Shape">
+          <HelpKeywords>
+            <HelpKeyword index="K" term="Visio Shapes, State Shape" />
+          </HelpKeywords>
+        </Topic>
+        <Topic id="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1" visible="True" title="Region Shape" tocTitle="Region Shape">
+          <HelpKeywords>
+            <HelpKeyword index="K" term="Visio Shapes, Region Shape" />
+          </HelpKeywords>
+        </Topic>
+        <Topic id="9611a508-1db1-452a-8d6e-3ae59b29b5e1" visible="True" title="Transition Knot Shape" tocTitle="Transition Knot Shape">
+          <HelpKeywords>
+            <HelpKeyword index="K" term="Visio Shapes, Transition Knot Shape" />
+          </HelpKeywords>
+        </Topic>
+        <Topic id="20d05290-66a0-43f9-8210-b3f384666daf" visible="True" title="Transition Segment Shape" tocTitle="Transition Segment Shape">
+          <HelpKeywords>
+            <HelpKeyword index="K" term="Visio Shapes, Transition Segment Shape" />
+          </HelpKeywords>
+        </Topic>
+        <Topic id="0898043b-ab92-416b-9347-1ff54fcbd5a8" visible="True" title="Code Generator Shape" tocTitle="Code Generator Shape">
+          <HelpKeywords>
+            <HelpKeyword index="K" term="Visio Shapes, Code Generator Shape" />
+          </HelpKeywords>
+        </Topic>
+      </Topic>
+      <Topic id="d84688d1-ab43-4437-b9fe-aeecc03b5d0e" visible="True" isExpanded="true" title="Step by Step Descriptions for Tasks">
+        <Topic id="b118384c-7479-4dd8-82e8-18e9a13b35f6" visible="True" title="Create a Basic State Diagram and Generate Code from It Using StaMa Visio Shapes" tocTitle="Create a Basic State Diagram and Generate Code from It" />
+        <Topic id="c9b743d2-ae47-40d8-ad45-639e473271c1" visible="True" title="Add a State to a State Diagram and Control Its Generated Code Using StaMa Visio Shapes" tocTitle="Add a State to a State Diagram and Control Its Generated Code" />
+        <Topic id="1b54bfbf-f269-4c50-8695-8ff430dee73b" visible="True" title="Create a Plain Transition and Control Its Generated Code Using StaMa Visio Shapes" tocTitle="Create a Plain Transition and Control Its Generated Code " />
+        <Topic id="2879867d-8e74-4dbd-861a-292bc54d505b" visible="True" title="Generate Code for Enumerations of States, Signal Events and Actions from a Diagram Using StaMa Visio Shapes" tocTitle="Generate Code for Enumerations of States, Signal Events and Actions" />
+        <Topic id="9d4e9992-3c8d-49a8-9818-18f5d488af7e" visible="True" title="Create a Composite State Using StaMa Visio Shapes" tocTitle="Create a Composite State" />
+        <Topic id="9110ef28-d0d9-40ac-a09d-2263809f5f45" visible="True" title="Add a Second, Orthogonal Region to a Composite State Using StaMa Visio Shapes" tocTitle="Add a Second, Orthogonal Region to a Composite State" />
+        <Topic id="6ac8c54b-c9fa-4085-80f9-b816430ae62d" visible="True" title="Create a Fork Transition Using StaMa Visio Shapes" tocTitle="Create a Fork Transition" />
+        <Topic id="5a2e1160-ce69-4b22-97fe-bf986343fd1e" visible="True" title="Create a Join Transition Using StaMa Visio Shapes" tocTitle="Create a Join Transition" />
+        <Topic id="f3839c42-ee1f-4437-b495-b9522ba6d024" visible="True" title="Revert a Composite State Back to a Basic State When Using StaMa Visio Shapes" tocTitle="Revert a Composite State Back to a Basic State" />
+      </Topic>
+    </Topic>
+    <Topic id="497592ea-471d-422b-b7fc-eff4b705ac37" visible="True" title="Glossary" />
+  </Topic>
+</Topics>

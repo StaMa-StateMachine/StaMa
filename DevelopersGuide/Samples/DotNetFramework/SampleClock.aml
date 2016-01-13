@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="5c40f085-995b-40d4-b823-a4471a6ec564" revisionNumber="1">
+  <developerSampleDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The clock sample replicates the behavior of a LCD wrist watch with 3 buttons <ui>Mode</ui>, <ui>Set</ui> and <ui>Up</ui>.
+        It is implemented as a <externalLink><linkText>Windows Forms</linkText><linkUri>http://msdn.microsoft.com/en-us/library/dd30h2yb.aspx</linkUri><linkTarget>_blank</linkTarget></externalLink> application.
+        Like its original, it needs some fumbling to set the alarm or use the stopwatch.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Clock sample user interface</caption>
+        <image placement="center" xlink:href="SampleClockUserInterface"/>
+      </mediaLink>
+      <para>
+        The bottom text in the application window shows the <codeEntityReference linkText="state machine active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> as provided through the <codeEntityReference linkText="StateConfiguration.ToString">M:StaMa.StateConfiguration.ToString</codeEntityReference> method.
+      </para>
+      <para>
+        The central points of the sample are:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            The button pressed events of the <ui>Mode</ui>, <ui>Set</ui> and <ui>Up</ui> buttons trigger different transitions dependent on the state machine active state.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            3 orthogonal regions represent the display unit, the stopwatch unit and the alarm unit of the watch.
+            They provide a state for the stopwatch and alarm while the display shows something different.
+            When the alarm is due, the display is switched to the AlarmDisplay and reverts back to the previous mode inside NormalDisplay through the history function.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            The code for setting up the state machine structure and string constants for the states and transitions are generated from <token>Microsoft Visio</token>.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Usage of state guarded transitions:
+            If the display unit of the state machine is in the state StopwatchMode, the outgoing transitions with priority 3 and 4 both react on the <ui>Up</ui> button.
+            These transitions are active dependent on the state of the stopwatch unit.
+            When the stopwatch unit is in state StopwatchStopped, the transition with priority 3 is active through its source state reference to StopwatchStopped.
+            When the stopwatch unit is in state StopwatchRunning, the transition with priority 4 is active through its source state reference to StopwatchRunning.
+          </para>
+        </listItem>
+      </list>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Clock sample state machine</caption>
+        <image placement="center" xlink:href="SampleClockStateMachine"/>
+      </mediaLink>
+      <para>
+        The clock sample uses a 10ms <externalLink><linkText>Windows Forms timer</linkText><linkUri>http://msdn.microsoft.com/en-us/library/system.windows.forms.timer.aspx</linkUri><linkTarget>_blank</linkTarget></externalLink> to update the time display in the UI (what a waste!) and an additional array of timers each with 15sec for timeouts of the modes.
+      </para>
+      <para>
+        There are several aspects of Windows Forms usage that should be improved, still the sample shows quite well the <token>StaMa</token> functionality.
+      </para>
+    </introduction>
+    <!-- <procedure></procedure> -->
+    <!-- <requirements></requirements> -->
+    <!-- <demonstrates></demonstrates> -->
+    <!-- <codeExample></codeExample> -->
+    <relatedTopics>
+    </relatedTopics>
+  </developerSampleDocument>
+</topic>

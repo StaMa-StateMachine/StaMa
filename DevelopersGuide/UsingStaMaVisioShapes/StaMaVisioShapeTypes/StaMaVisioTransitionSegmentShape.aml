@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="20d05290-66a0-43f9-8210-b3f384666daf" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the visual appearance, usage, context menus and properties of the transition segment shape.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The transition segment shape is used to define the target states for a transition, the source states for a join transition and the initial state of a region.
+        It connects to a <link xlink:href="31807e1f-17b3-484d-b250-1cc6eb0e85bf">state shape</link> to define the referenced state and to a <link xlink:href="9611a508-1db1-452a-8d6e-3ae59b29b5e1">transition knot shape</link> to define the transition.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Usage of the transition segment shape in a simple two ended transition, in a fork transition, in a join transition and attached to a state for defining the initial state</caption>
+        <image placement="center" xlink:href="TransitionSegmentShapeSimpleAndForkAndJoinAndInitial"/>
+      </mediaLink>
+    </introduction>
+
+    <section address="WhatDoYouWantToDo">
+      <title>What Do You Want to Do?</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="6ac8c54b-c9fa-4085-80f9-b816430ae62d"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="5a2e1160-ce69-4b22-97fe-bf986343fd1e"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="TransitionSegmentShapeProperties">
+      <title>Transition Segment Shape Properties</title>
+      <content>
+        <para>
+          The properties dialog of the the transition segment shape can be opened either by double clicking the connector line or by opening the context menu of the connector line and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 2">Transition segment shape properties</caption>
+          <image placement="center" xlink:href="TransitionSegmentShapeProperties"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Segment&#160;Type</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Switches the intention of the segment.
+                Choose between <ui>From&#160;state</ui>, <ui>To&#160;state</ui> and <ui>Initial&#160;state</ui>.
+                <ui>From&#160;state</ui> is used to define source states of a join transition.
+                <ui>To&#160;state</ui> is used to define target states of a fork transition.
+                <ui>Initial&#160;state</ui> is used to define the initial state of a region, see also <link xlink:href="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1">region shape</link>.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <section address="TransitionSegmentShapeContextMenu">
+      <title>Transition Segment Shape Context Menu</title>
+      <content>
+        <para>
+          The transition segment shape has the following additional context menu items:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Context Menu Item</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Select&#160;Segment&#160;Type</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Opens the <link xlink:href="20d05290-66a0-43f9-8210-b3f384666daf#TransitionSegmentShapeProperties">properties dialog</link> of this transition segment shape.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="31807e1f-17b3-484d-b250-1cc6eb0e85bf" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the visual appearance, usage, context menus and properties of the state shape.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The state shape is one of the 4 principal shapes used to compose a state diagram.
+      </para>
+      <para>
+        The state shape may represent either a simple state or, after switching the visualization, a composite state.
+        In the composite mode sub-regions can be added to the state shape. The sub-regions provide the drawing real estate for sub-states.
+        A detailed description about how to create a composite state can be found in <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/>.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Simple state, simple state with actions, composite state with one sub-region and composite state with two sub-regions</caption>
+        <image placement="center" xlink:href="StateShapeSimpleAndComposite"/>
+      </mediaLink>
+      <para>
+        The state shape has multiple connection points at its outer border that shall be used to connect transition end points.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">State shape connection points</caption>
+        <image placement="center" xlink:href="StateShapeConnectionPoints"/>
+      </mediaLink>
+    </introduction>
+
+    <section address="WhatDoYouWantToDo">
+      <title>What Do You Want to Do?</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="f3839c42-ee1f-4437-b495-b9522ba6d024"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="StateShapeProperties">
+      <title>State Shape Properties</title>
+      <content>
+        <para>
+          The state shape has a properties dialog that can be opened either by double clicking on the state name or by opening the context menu of the state and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 3">State shape properties</caption>
+          <image placement="center" xlink:href="StateProperties"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Name</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides the state name for the code generator.
+                The default code generator shape will use the value of this property as the state name parameter for the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.State</codeEntityReference> method.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Entry&#160;Action</ui>, <ui>Exit&#160;Action</ui>, <ui>Do&#160;Action</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                These properties provide method names (or delegates or lambda expressions) for the code generator.
+                The default code generator shape will use the values of these properties as parameters for the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.State</codeEntityReference> method.
+                See <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables"/> how to customize the code generator shape if needed.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Sort&#160;Order</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>Provides a key that defines the sequential order of the state in the generated code. The states are ordered alphabetically within the region.</para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <section address="StateShapeContextMenu">
+      <title>State Shape Context Menu</title>
+      <content>
+        <para>
+          The state shape has the following additional context menu items:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Context Menu Item</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Convert&#160;to&#160;Composite&#160;State</ui> -or- <ui>Convert to Simple State</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Converts the simple state to a composite state that initially contains no sub-regions.
+                Sub-regions have to be added through the <token>Microsoft Visio</token> diagram window that appears through the menu item <ui>Configure Sub-Regions...</ui>.
+                When the state is a composite state, the menu item changes to <ui>Convert to Simple State</ui>.
+                The <ui>Convert to Simple State</ui> remains disabled while the state has sub-regions.
+                See <link xlink:href="f3839c42-ee1f-4437-b495-b9522ba6d024"/> for details how to revert a composite state to a simple state.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Configure&#160;Sub-Regions...</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Opens a <token>Microsoft Visio</token> diagram window that allows to add sub-regions.
+                See <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/> for details.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Show&#160;Actions</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Turns on or off visibility of the action names in the diagram (to reduce drawing space).
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

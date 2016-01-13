@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="29a68e43-5dbc-4a2c-894e-81a59e9c847b" revisionNumber="1">
+  <developerSampleDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The ticket vending sample demonstrates <token>StaMa</token> running on the Microsoft <token>.NET Micro Framework</token> emulator.
+      </para>
+      <para>
+        As with real ticket vending machines, the usage of the vending machine is intricate.
+        The introduction text on the left side screenshot below explains how to use the buttons to fetch something out of the machine. Good luck!
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Startup and idle state of the ticket vending sample user interface</caption>
+        <image placement="center" xlink:href="SampleTicketVendingEmulator"/>
+      </mediaLink>
+      <para>
+        The central points of the sample are:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            The button pressed events of the <ui>UP</ui>, <ui>DOWN</ui>, <ui>SELECT</ui> and <ui>RIGHT</ui> buttons trigger different transitions dependent on the state machine active state.
+            <ui>UP</ui> and <ui>DOWN</ui> iterate through the selected list (either <ui>Destination</ui> or <ui>Coin</ui>), <ui>SELECT</ui> executes an action and <ui>RIGHT</ui> cancels.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            In the implementation there is a single exit action <codeInline>ExitEmitRequired</codeInline> of the composite state <codeInline>EmitRequired</codeInline> which ensures that the vending machine delivers in any case either the inserted money or the product or the product and change pair.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            The code for setting up the state machine structure and string constants for the states and transitions are generated from <token>Microsoft Visio</token>.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Timeouts are implemented through <codeEntityReference linkText="Microsoft.SPOT.DispatcherTimer">T:Microsoft.SPOT.DispatcherTimer</codeEntityReference> instances.
+          </para>
+        </listItem>
+      </list>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Ticket vending sample state machine</caption>
+        <image placement="center" xlink:href="SampleTicketVendingStateMachine"/>
+      </mediaLink>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerSampleDocument>
+</topic>

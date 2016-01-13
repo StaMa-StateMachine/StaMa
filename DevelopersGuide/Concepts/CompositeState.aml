@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="182b6093-fb30-4549-90d3-addc7c2dd2fb" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Describes how composite states and hierarchical state machines are created and how they function.</para>
+    </summary>
+    <introduction>
+      <para>
+        Hierarchical state machines allow to enclose a group of states within a composite state.
+      </para>
+      <para>
+        This introduces a bunch of new situations for transitions within a state machine.
+        Regardless of the fact that transtions may start from or end on composite states, the state machine will transfer the active state of the state machine from a leaf simple state to (usually) another leaf simple state.
+        For such cases the transition effectively crosses the border of the involved composite states which causes that
+        the entry or exit actions of the composite state are executed additionally to the entry or exit actions of the ultimate leaf simple states.
+      </para>
+      <para>
+        The transition excution rules are as follows:
+      </para>
+      <list class="ordered">
+        <listItem>
+          <para>
+            Targeting a sub-state of a composite state from outside of the composite state will execute the entry action of the composite state and then the entry action of the target state.
+            The actions of the composite state are common for all sub-states.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Targeting a composite state at its border instead of a sub-state will enter the defined initial state of the enclosed group of sub-states, unless the history functionality is enabled.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Targeting a state outside of a composite state from one of its sub-states will execute the exit action of the leaf simple state and then the exit action of the composite state.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Starting a transition at the composite state will exit from any sub-state in case the state machine resides in a sub-state.
+            Both the exit action of the sub-state and the exit action of the composite state will be executed.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Starting a transition from a sub-state and targeting a sub-state within the same composite state will execute only the exit and entry actions of the
+            sub-states and not those of the composite state.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Starting a transition from a sub-state, leaving the composite state and re-entering a composite state (eventually the same) will execute the composition of all exit and entry actions of the involved states.
+          </para>
+          <para>
+            This transition attaches with a special aggregation symbol to the composite state, but the actual source state is a sub-state of the composite state.
+            The aggregation symbol has two effects:
+            First it defines to which state the transition belongs and which priority it has in case of conflicting transitions.
+            Second it defines that the composite state shall be left and re-entered.
+          </para>
+          <para>
+          </para>
+        </listItem>
+      </list>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">State machine diagram with composite state and transitions.</caption>
+        <image placement="center" xlink:href="StateMachineConceptsCompositeStateTransitions"/>
+      </mediaLink>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Tree structure for the above state machine with composite state.</caption>
+        <image placement="center" xlink:href="StateMachineConceptsCompositeStateMachineTree"/>
+      </mediaLink>
+      <para>
+        Sub-states of a composite state are added as a sequence of <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>..<codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference> statement pairs
+        grouped through an embedding <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>..<codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference> statement pair
+        inside the composite state <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>..<codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference> statement pair,
+        after any <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statements of the composite state.
+      </para>
+      <para>
+        See below sample code:
+      </para>
+      <code language="C#" title="StateMachineTemplate creation code for the state machine with composite state" >
+        <![CDATA[
+StateMachineTemplate t = new StateMachineTemplate();
+t.Region(StateA, false);
+    t.State(StateA, null, null);
+        t.Transition(Transit1, StateB1A, Event1, null, null);
+        t.Transition(Transit2, StateB, Event2, null, null);
+    t.EndState();
+    t.State(StateB, null, null);
+        t.Transition(Transit4, StateA, Event4, null, null);
+        t.Transition(Transit6, StateB1A, StateB1B, Event6, null, null);
+        t.Region(StateB1A, false);
+            t.State(StateB1A, null, null);
+                t.Transition(Transit3, StateA, Event3, null, null);
+                t.Transition(Transit5, StateB1B, Event5, null, null);
+            t.EndState();
+            t.State(StateB1B, null, null);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+t.EndRegion();
+]]>
+      </code>
+      <para>
+        All transitions of the current state and its hierarchical ancestors are subject to be executed if their event arrives and/or the guard condition is fulfilled.
+        In order to maintain a defined precedence across conflicting transitions, the transitions starting from the outer composite states take precedence over transitions starting from a sub-state.
+      </para>
+      <para>
+        Unlike the other transitions, <codeInline>Transit6</codeInline> explicitly specifies the source state <codeInline>StateB1A</codeInline> to indicate that the
+        transition starts from a sub-state of the state to which it is aggregated.
+      </para>
+      <para>&#160;</para>
+    </introduction>
+    <section address="History">
+      <title>Enable the history function for a sub-region</title>
+      <content>
+        <para>
+          The history function tracks the most recently used state of a region and allows to enter this state when the state machine revisits the region.
+        </para>
+        <para>
+          The history function basically overrides the default initial state of the sub-region.
+          The initial history state is the default initial state. When the state machine leaves the sub-region, the last active state within the sub-region is stored in the history.
+          Transitions that target the border of the composite state will enter the last active state of the sub-region instead of the default initial state.
+        </para>
+        <para>
+          In case a defined initial state is needed for some transitions, these transitions can directly target the desired state within the sub-region.
+        </para>
+        <para>
+          The provided history function is most similar to the shallow history of the <token>UMLSpec</token>. In case a deep history is needed, all nested sub-regions shall recursively enable the history function.
+        </para>
+        <para>
+          The history function can be enabled through the <codeInline>hasHistory</codeInline> parameter of the <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference> statement.
+        </para>
+        <para>
+          A history for the <codeEntityReference linkText="Root">P:StaMa.StateMachineTemplate.Root</codeEntityReference>&#160;<codeEntityReference linkText="Region">T:StaMa.Region</codeEntityReference> instance is useless and thus not supported.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

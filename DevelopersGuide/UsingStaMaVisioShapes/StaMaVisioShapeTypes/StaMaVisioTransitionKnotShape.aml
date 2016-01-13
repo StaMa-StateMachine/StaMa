@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="9611a508-1db1-452a-8d6e-3ae59b29b5e1" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the visual appearance, usage, context menus and properties of the transition knot shape.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The transition knot shape is the pivot shape of any transition.
+        It connects to a <link xlink:href="31807e1f-17b3-484d-b250-1cc6eb0e85bf">state shape</link> to define the source state of the transition and must be connected to at least one <link xlink:href="20d05290-66a0-43f9-8210-b3f384666daf">transition segment shape</link> to define the target state to form a complete transition.
+      </para>
+      <para>
+        The transition knot carries the event signal, the transition guard condition and the transition action.
+      </para>
+      <para>
+        Simple two endeded transitions as well as complex fork and join transitions have a single transition knot shape.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Usage of transition knot shape in simple two ended transition, fork transition and join transition</caption>
+        <image placement="center" xlink:href="TransitionKnotShapeSimpleAndForkAndJoin"/>
+      </mediaLink>
+      <para>
+        The transition knot shape displays a number near the connection of the shape with the source state, which is used to define the priority of the transition compared to other transitions emanating from the same source state.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Priority visualization of transition knot shape</caption>
+        <image placement="center" xlink:href="TransitionKnotShapePriorities"/>
+      </mediaLink>
+    </introduction>
+
+    <section address="WhatDoYouWantToDo">
+      <title>What Do You Want to Do?</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="6ac8c54b-c9fa-4085-80f9-b816430ae62d"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="5a2e1160-ce69-4b22-97fe-bf986343fd1e"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="TransitionKnotShapeProperties">
+      <title>Transition Knot Shape Properties</title>
+      <content>
+        <para>
+          The transition knot shape has two property dialogs accessible through different parts of the transition knot shape. Each property dialog relates to different aspects of the transition knot shape.
+        </para>
+        <para>
+          The properties dialog of the rectangle of the transition knot shape can be opened either by double clicking on the rectangle or by opening the context menu of the rectangle and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 3">Transition knot shape rectangle properties</caption>
+          <image placement="center" xlink:href="TransitionKnotShapeProperties"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Event&#160;Signal</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides the event signal of the transition.
+                The default code generator shape will use this property to fill the <codeInline>triggerEvent</codeInline> parameter of the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> method.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Guard&#160;Condition</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a function name (or delegate or lambda expression) for the guard condition of the transition.
+                The default code generator shape will use this property to fill the <codeInline>guard</codeInline> parameter of the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> method.
+                See <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables"/> how to customize the code generator shape if needed.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Transition&#160;Action</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a method name (or delegate or lambda expression) for the transition action.
+                The default code generator shape will use this property to fill the <codeInline>transitionAction</codeInline> parameter of the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> method.
+                See <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables"/> how to customize the code generator shape if needed.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Priority</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Defines the priority of the transition through an integer value.
+                The code generator sorts the transitions of a state according to this value which has the effect that transitions with lower numbers take precedence over transitons with higher numbers.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>Identification</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Provides a human readable name for the for the transition that can be used to identify the transition during tracing.
+                The code generator shape will use this property to fill the <codeInline>name</codeInline> parameter of the <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> method.
+                See <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables"/> how to customize the code generator shape if needed.
+              </para>
+            </entry>
+          </row>
+        </table>
+
+        <para>
+          The properties dialog of the connector line of the transition knot shape can be opened either by double clicking on the connector line or by opening the context menu of the connector line and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 4">Transition knot shape connector line properties</caption>
+          <image placement="center" xlink:href="TransitionKnotShapeConnectorLineProperties"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Segment&#160;Type</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Defines if the connector line shall act as the source state definition for the transition, or if it shall act only as an anchor and the source states are defined through transition segment shapes (see <link xlink:href="5a2e1160-ce69-4b22-97fe-bf986343fd1e"/>).
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <section address="TransitionKnotShapeContextMenu">
+      <title>Transition Knot Shape Rectangle Context Menu</title>
+      <content>
+        <para>
+          The transition knot shape rectangle has the following additional context menu items:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Context Menu Item</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Show&#160;Actions</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Turns on or off visibility of all actions in the diagram (to reduce drawing space).
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference qualifyHint="true">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

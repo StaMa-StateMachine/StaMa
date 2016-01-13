@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="b2a532fd-f7bb-4cce-b601-7563bca224d1" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes how to adapt the <token>StaMa</token>&#160;<token>Microsoft Visual Studio</token> project for a different target framework.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        <token>StaMa</token> is prepared for the following target .NET frameworks:
+      </para>
+      <table>
+        <tableHeader>
+          <row>
+            <entry>
+              <para>Target Framework</para>
+            </entry>
+            <entry>
+              <para>
+                <token>Microsoft Visual Studio</token> Solution
+              </para>
+            </entry>
+            <entry>
+              <para>
+                <token>Microsoft Visual Studio</token> Project
+              </para>
+            </entry>
+            <entry>
+              <para>Output Path</para>
+            </entry>
+          </row>
+        </tableHeader>
+        <row>
+          <entry>
+            <para>
+              <token>.NET Micro Framework</token>
+            </para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\StaMaNETMF.sln</para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\StaMa\StaMaNETMF.csproj</para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\bin\netmf\AnyCPU\Debug\StaMa.dll</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para>
+              <token>.NET Windows Desktop Framework</token>
+            </para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\StaMa.sln</para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\StaMa\StaMa.csproj</para>
+          </entry>
+          <entry>
+            <para>StaMa_State_Machine_Controller_Library\bin\net-2.0\AnyCPU\Debug\StaMa.dll</para>
+          </entry>
+        </row>
+      </table>
+      <para>
+        The release package <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> contains pre-built assemblies for the above frameworks.
+        The actual target framework version will vary from release to release.
+      </para>
+      <para>
+        In order to adapt the above <token>Microsoft Visual Studio</token> projects to a different target framework version (e.g. .NET Framework 4.5.1 or .NET Micro Framework 4.2) it should usually be sufficient
+        to change the <ui>Target Framework</ui> property in the project properties configuration panel.
+        See below procedure "How to adapt to a different .NET framework version".
+      </para>
+      <para>
+        Specific functionality for the <token>.NET Micro Framework</token> is marked in the code with conditional compile directives using the symbol MF_FRAMEWORK.
+        If MF_FRAMEWORK is not set, the compilation defaults to <token>.NET Windows Desktop Framework</token>.
+      </para>
+    </introduction>
+    <procedure>
+      <title>How to adapt to a different .NET framework version</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Open the solution file according to the above table in <token>Microsoft Visual Studio</token>.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Select the project according to the above table and open its <ui>Properties</ui> configuration panel. In the <ui>Application</ui> group of the panel select the desired version in the <ui>Target Framework</ui> combo box.
+            </para>
+            <para>
+              Select the same target framework in all other projects of the solution or remove the other projects from the solution.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Consider to change the <ui>Output path</ui> property in the <ui>Build</ui> group of the configuration panel if it doesn't match the changed target framework.
+              Don't forget to adapt the other projects in the solution.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              From the <ui>Build</ui> menu select <ui>Clean Solution</ui>, then <ui>Build Solution</ui>.
+            </para>
+            <alert class="note">
+              <para>
+                With <token>.NET Micro Framework</token> V4.3 the <ui>Rebuild Solution</ui> menu item frequently causes the following error:
+              </para>
+              <para>
+                C:\Program Files (x86)\MSBuild\Microsoft\.NET Micro Framework\v4.3\Device.targets(403,5): error MSB3030: Could not copy the file "...\StaMa_State_Machine_Controller_Library\bin\netmf\AnyCPU\Debug\LE\StaMa.pe" because it was not found.
+              </para>
+              <para>
+                This error doesn't appear with the above sequence of clean and build.
+              </para>
+            </alert>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            Find the <localUri>StaMa.dll</localUri> assembly according to the above table.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

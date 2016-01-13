@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="7ecae87c-d38a-4a66-9c61-438fd6a25dc9" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The <token>StaMaLib</token> provides the following samples for the .NET Framework:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <link xlink:href="57f842bf-bcdf-4aff-9720-d0bf87ad5103"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="5c40f085-995b-40d4-b823-a4471a6ec564"/>
+          </para>
+        </listItem>
+      </list>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

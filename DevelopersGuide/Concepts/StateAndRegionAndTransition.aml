@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="954456b3-e05a-4e1d-af00-4f400fd43f47" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Describes how to define the states and transitions for a basic state machine and what a region is.</para>
+    </summary>
+    <introduction>
+      <para>
+        <token>StaMa</token> represents the structure of a state machine through a tree structure of <codeEntityReference>T:StaMa.Region</codeEntityReference>, <codeEntityReference>T:StaMa.State</codeEntityReference> and
+        <codeEntityReference>T:StaMa.Transition</codeEntityReference> instances, each instance represents a node in the tree.
+      </para>
+      <para>
+        The purpose of state and transition instances is fairly obvious.
+      </para>
+      <para>
+        The concept of regions is not immediately apparent from the state diagram:
+        A <codeEntityReference>T:StaMa.Region</codeEntityReference> instance is the container for states.
+        The rule of thumb is, that a <codeEntityReference>T:StaMa.Region</codeEntityReference> instance is always involved when the state machine diagram defines an initial state.
+        Accordingly <codeEntityReference>T:StaMa.Region</codeEntityReference> instances are needed for top level states, for the sub-states of a <link xlink:href="182b6093-fb30-4549-90d3-addc7c2dd2fb">composite state</link> and for every <link xlink:href="7e6981a4-284a-4027-9e21-50d195fe0169">orthogonal sub-region</link>.
+        Composite states and orthogonal regions are explained later.
+      </para>
+      <para>
+        The tree structure is aggregated at the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance through the <codeEntityReference linkText="StateMachineTemplate.Root">P:StaMa.StateMachineTemplate.Root</codeEntityReference> property.
+        The <codeEntityReference>T:StaMa.Region</codeEntityReference>, <codeEntityReference>T:StaMa.State</codeEntityReference> and
+        <codeEntityReference>T:StaMa.Transition</codeEntityReference> tree nodes are created through the factory methods
+        <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>,
+        <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference> and
+        <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference>
+        of the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance.
+      </para>
+      <para>
+        For a simple two state diagram with transitions between the states as in <fictitiousUri>Figure 1</fictitiousUri> the corresponding tree structure can be created as shown in the subsequent code chunk.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Simple state machine diagram with two states and transitions.</caption>
+        <image placement="center" xlink:href="StateMachineConceptsSimpleStateMachine"/>
+      </mediaLink>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Tree structure for the above simple state machine.</caption>
+        <image placement="center" xlink:href="StateMachineConceptsSimpleStateMachineTree"/>
+      </mediaLink>
+      <code language="C#" title="StateMachineTemplate creation code for the simple state machine" >
+        <![CDATA[
+StateMachineTemplate t = new StateMachineTemplate();
+t.Region("State1", false);
+    t.State("State1", null, ExitState1);
+        t.Transition("Transit1", "State2", "Event1", null, null);
+    t.EndState();
+    t.State("State2", EnterState2, null);
+        t.Transition("Transit2", "State1", null, null, null);
+    t.EndState();
+t.EndRegion();
+]]>
+      </code>
+      <para>
+        Writing the <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>,
+        <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference>,
+        <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>,
+        <codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference>
+        and <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statements in this way yields a domain specific language for state machines.
+        Nested tree nodes enclosed within a <placeholder>Node</placeholder>...End<placeholder>Node</placeholder> scope are automatically linked as childs of the enclosing tree node.
+      </para>
+      <para>
+        The recommended indentation improves the visualization of the tree structure and helps reading the code.
+      </para>
+      <para>
+        The closing <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference> statement (for every <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference> statement) and
+        <codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference> statement (for every <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference> statement) indicates that the sub-structure of the corresponding tree node has been completed.
+        For regions the <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference> statement indicates that all states have been specified.
+        For states the <codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference> statement indicates that all transitions and all orthogonal sub-regions have been specified.
+      </para>
+      <para>
+        Execution of the final (balanced) <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference> statement assigns the <codeEntityReference linkText="StateMachineTemplate.Root">P:StaMa.StateMachineTemplate.Root</codeEntityReference> property
+        and starts a syntactic check that all referenced state names are existing and unique, that the region initial states are part of the region, that the transition source states and target states are valid and other syntactic conditions.
+        If there are syntactic errors, a <codeEntityReference>T:StaMa.StateMachineException</codeEntityReference> is thrown with a <codeEntityReference linkText="Message">P:System.Exception.Message</codeEntityReference> that explains the error.
+        The <codeEntityReference>T:StaMa.Region</codeEntityReference>, <codeEntityReference>T:StaMa.State</codeEntityReference> and
+        <codeEntityReference>T:StaMa.Transition</codeEntityReference> instances are immutable after the final <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference> statement.
+      </para>
+      <alert class="note">
+        <para>
+          The <token>UMLSpec</token> suggests that transitions shall be owned by the region that contains the transition.
+        </para>
+        <para>
+          <token>StaMa</token> aggregates transitions at the state where the transition starts. This choice is natural as it easily allows to find all reached candidate transitions for the active state of the state machine.
+        </para>
+      </alert>
+    </introduction>
+    <section address="TransitionPriority">
+      <title>Transition Priority</title>
+      <content>
+        <para>
+          Multiple transitions may start from the same state.
+          These are added through a sequence of <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statements
+          after the <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference> statement.
+        </para>
+        <para>
+          Of course only a single transition can execute at one time.
+          In case multiple transitions of this group are eligible to be executed at the same time, the first one as appearing in the code is executed.
+        </para>
+        <para>
+          The below sample state diagram shows a state with three transitions that would be triggered through the same signal.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 3">Multiple transitions starting from the same state.</caption>
+          <image placement="center" xlink:href="TransitionKnotShapePriorities"/>
+        </mediaLink>
+        <alert class="note">
+          <para>
+            The <token>UMLSpec</token> doesn't define a precedence for transitions.
+          </para>
+          <para>
+            In a state diagram this precedence (or priority) could be clarified by adorning each transition with a priority number.
+            <token>StaMaShapes</token> provide a priority property for transitions that defines the order in which the transitions are generated.
+          </para>
+        </alert>
+        <code language="C#" title="StateMachineTemplate creation code for multiple transitions" >
+          <![CDATA[
+StateMachineTemplate t = new StateMachineTemplate();
+t.Region("State1", false);
+    t.State("State1", null, null);
+        t.Transition("Transit1", "State2", "Event", null, null);
+        t.Transition("Transit2", "State3", "Event", null, null);
+        t.Transition("Transit3", "State4", "Event", null, null);
+    t.EndState();
+    t.State("State2", null, null);
+    t.EndState();
+    t.State("State3", null, null);
+    t.EndState();
+    t.State("State4", null, null);
+    t.EndState();
+t.EndRegion();
+]]>
+        </code>
+        <para>
+          In the above sample the transition named "Transit1" will execute when calling the <codeEntityReference linkText="StateMachine.SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method with the <codeInline>triggerEvent</codeInline> parameter set to <codeInline>"Event"</codeInline>.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

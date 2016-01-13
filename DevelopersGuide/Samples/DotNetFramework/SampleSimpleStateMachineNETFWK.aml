@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="57f842bf-bcdf-4aff-9720-d0bf87ad5103" revisionNumber="1">
+  <developerSampleDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The simple state machine sample demonstrates a minimal <token>StaMa</token> based state machine with two states and transtions between them.
+        It runs in a Windows console application.
+      </para>
+      <para>
+        The sample doesn't have relevant real world functionality but can be used as a ready to use base for experiments with state machines.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Sample simple state machine console application</caption>
+        <image placement="center" xlink:href="SampleSimpleStateMachineNETFWK"/>
+      </mediaLink>
+    </introduction>
+    <!-- <procedure></procedure> -->
+    <!-- <requirements></requirements> -->
+    <demonstrates>
+      <content>
+        <para>
+          The basic programming model for a <token>StaMa</token> based state machine.
+        </para>
+        <para>
+          How to implement a timeout transition based on a transition guard condition and the current time.
+        </para>
+      </content>
+    </demonstrates>
+    <codeExample>
+      <description>
+        <content>
+          <para>
+            The sample polls for keyboard input in a 100 msec loop in the main thread.
+            The keyboard input is then forwarded through an event to the state machine.
+          </para>
+          <para>
+            If no keyboard input is available, the state machine checks the transition guard conditions, in particular the timeout.
+          </para>
+        </content>
+      </description>
+      <code language="C#" title="Program.cs"  source="..\Samples\netfwk\SampleSimpleStateMachineNETFWK\Program.cs">
+      </code>
+      <code language="C#" title="SampleSimpleStateMachineNETFWK.cs"  source="..\Samples\netfwk\SampleSimpleStateMachineNETFWK\SampleSimpleStateMachineNETFWK.cs">
+      </code>
+    </codeExample>
+    <relatedTopics>
+    </relatedTopics>
+  </developerSampleDocument>
+</topic>

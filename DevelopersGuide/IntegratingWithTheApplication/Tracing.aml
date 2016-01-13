@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="16c7903d-977c-4d5d-bc01-5b0480e944fe" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Explains how to monitor what is going on in the state machine when events are sent to the state machine</para>
+    </summary>
+    <introduction>
+      <para>
+        In a sense a state machine is a black box that receives events and executes actions in response to the events.
+        Although the rules are clearly defined what shall happen in case an event is sent to the state machine, it can sometimes turn out as complex to figure out what is actually going on in a non-trivial state machine.
+      </para>
+      <para>
+        <token>StaMa</token> provides a few hooks in the state machine execution algorithm that assist tracking the current state and the progress of evaluation of the events sent to the state machine.
+      </para>
+      <para>
+        All hooks are solely intended to provide tracing and debug information.
+        They shall never send events to the state machine or change any data evaluated within guard conditions.
+      </para>
+      <para>&#160;</para>
+    </introduction>
+    <section address="TraceStateChangeEventHandler">
+      <title>Tracing State Changes</title>
+      <content>
+        <para>
+          Set the <codeEntityReference linkText="StateMachine.TraceStateChange">P:StaMa.StateMachine.TraceStateChange</codeEntityReference> property to track whenever
+          the <codeEntityReference linkText="active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> of a <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance changes.
+        </para>
+        <code language="C#" title="TraceStateChange callback implementation" >
+          <![CDATA[
+private static void TraceStateChange(StateMachine stateMachine, StateConfiguration stateConfigurationFrom, StateConfiguration stateConfigurationTo, Transition transition)
+{
+    string info = "ActiveState=\"" + stateConfigurationTo.ToString() + "\"" + " Transition=" + ((transition != null) ? "\"" + transition.Name + "\"" : "Startup/Finish");
+    System.Console.WriteLine(info);
+}
+]]>
+        </code>
+        <para>&#160;</para>
+      </content>
+    </section>
+    <section address="TraceDispatchTriggerEventEventHandler">
+      <title>Tracing When Events Are Dequeued and What the Run to Completion Execution Does</title>
+      <content>
+        <para>
+          Set the <codeEntityReference linkText="StateMachine.TraceDispatchTriggerEvent">P:StaMa.StateMachine.TraceDispatchTriggerEvent</codeEntityReference> property to track whenever
+          the state machine fetches an event instance from the queue as part of the run-to-completion processing and dispatches it to the state machine algorithm.
+        </para>
+        <code language="C#" title="TraceDispatchTriggerEvent callback implementation" >
+          <![CDATA[
+private void TraceDispatchTriggerEvent(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+{
+    String message = String.Format("Dispatch event {0} in state {1}",
+                                   (triggerEvent != null) ? triggerEvent.ToString() : "*",
+                                   stateMachine.ActiveStateConfiguration.ToString());
+    System.Console.WriteLine(info);
+}
+]]>
+        </code>
+        <para>&#160;</para>
+      </content>
+    </section>
+    <section address="TraceTestTransitionEventHandler">
+      <title>Tracing Which Transitions Are Tested While an Event Is Evaluated by the State Machine</title>
+      <content>
+        <para>
+          Set the <codeEntityReference linkText="StateMachine.TraceTestTransition">P:StaMa.StateMachine.TraceTestTransition</codeEntityReference> property to track whenever
+          the state machine reached a transition and will test if the transition can be executed.
+        </para>
+        <code language="C#" title="TraceTestTransition callback implementation" >
+          <![CDATA[
+private void TraceTestTransition(StateMachine stateMachine, Transition transition, object triggerEvent, EventArgs eventArgs)
+{
+    String message = String.Format("Test transition {0} with event {1} in state {2}",
+                                   transition.ToString(),
+                                   (triggerEvent != null) ? triggerEvent.ToString() : "*",
+                                   stateMachine.ActiveStateConfiguration.ToString());
+    System.Console.WriteLine(info);
+}
+]]>
+        </code>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

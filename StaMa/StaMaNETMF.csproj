@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67A318B0-6A13-4A84-ABF2-451620ABCC96}</ProjectGuid>
+    <AssemblyName>StaMa</AssemblyName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>StaMa</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkVersion>v4.3</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\bin\netmf\AnyCPU\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MF_FRAMEWORK</DefineConstants>
+    <DocumentationFile>..\bin\netmf\AnyCPU\Debug\StaMa.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>0444</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\bin\netmf\AnyCPU\Release\</OutputPath>
+    <DefineConstants>TRACE;MF_FRAMEWORK</DefineConstants>
+    <DocumentationFile>..\bin\netmf\AnyCPU\Release\StaMa.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FrameworkAbstractionUtils.cs" />
+    <Compile Include="IStateConfigurationVisitor.cs" />
+    <Compile Include="IStateMachineTemplateVisitor.cs" />
+    <Compile Include="Region.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="State.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StateConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StateMachine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StateMachineException.cs" />
+    <Compile Include="StateMachineReaderWriterNETMF.cs" />
+    <Compile Include="StateMachineTemplate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="System.Text.RegularExpressions" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

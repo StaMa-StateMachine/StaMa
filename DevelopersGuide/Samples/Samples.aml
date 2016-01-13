@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="c9aa27b0-4173-4bcb-a275-908a0d0f8070" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Lists which samples are provided.</para>
+    </summary>
+    <introduction>
+      <para>
+        The <token>StaMaLib</token> provides the following samples:
+      </para>
+    </introduction>
+
+    <section address="SamplesNETMF">
+      <title>.NET Micro Framework</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="ee58caad-02cf-4d26-9b25-033cd452dd77"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="29a68e43-5dbc-4a2c-894e-81a59e9c847b"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="SamplesNET">
+      <title>.NET Framework</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="57f842bf-bcdf-4aff-9720-d0bf87ad5103"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="5c40f085-995b-40d4-b823-a4471a6ec564"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>StaMa.StateMachine</id>
+    <version>2.3.0.2</version>
+    <authors>RolandSchneider</authors>
+    <owners>RolandSchneider</owners>
+    <licenseUrl>http://stama.codeplex.com/license</licenseUrl>
+    <projectUrl>http://stama.codeplex.com/</projectUrl>
+    <iconUrl>http://www.7fun.de/StaMa/StaMa120x120.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>
+      UML and Statechart inspired state machine library with hierarchical and orthogonal states.
+    </summary>
+    <description>
+UML and Statechart inspired state machine library with hierarchical and orthogonal states.
+See description on http://StaMa.org/.
+This package includes:
+- Portable assembly for .NET Framework 4, Silverlight 5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8 and higher versions. Runs on Mono.
+- Assembly for .NET Micro Framework 4.3
+------ Features ------
+Fork and join transitions.
+Entry-, exit-, do- and transition-actions.
+Guard conditions.
+Shallow history.
+Run-to-completion processing.
+Provides Statecharts functionality comparable to SCXML.
+Low garbage object creation during runtime.
+Free from runtime thread synchronization calls.
+Multiple state machine instances can be created from a single state machine definition.
+Optional code generation based on Microsoft Visio diagrams.
+    </description>
+    <releaseNotes>See http://stama.codeplex.com/releases. </releaseNotes>
+    <tags>state-machine statechart netmf mono linux android xamarin macos ios gadgeteer netduino embedded</tags>
+    <!--<frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Text.RegularExpressions" targetFramework="netmf43" />
+      <frameworkAssembly assemblyName="Microsoft.SPOT.Native" targetFramework="netmf43" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework="netmf43" />
+    </frameworkAssemblies>-->
+  </metadata>
+  <files>
+    <file src="bin\net-4.0\AnyCPU\Debug\StaMa.dll" target="lib\portable-net40+sl50+win+wpa81+wp80" />
+    <file src="bin\net-4.0\AnyCPU\Debug\StaMa.pdb" target="lib\portable-net40+sl50+win+wpa81+wp80" />
+    <file src="bin\net-4.0\AnyCPU\Debug\StaMa.xml" target="lib\portable-net40+sl50+win+wpa81+wp80" />
+    <file src="bin\netmf\AnyCPU\Debug\StaMa.dll" target="lib\netmf43" />
+    <file src="bin\netmf\AnyCPU\Debug\StaMa.pdb" target="lib\netmf43" />
+    <file src="bin\netmf\AnyCPU\Debug\StaMa.xml" target="lib\netmf43" />
+    <file src="bin\netmf\AnyCPU\Debug\le\StaMa.dll" target="lib\netmf43\le" />
+    <file src="bin\netmf\AnyCPU\Debug\le\StaMa.pdb" target="lib\netmf43\le" />
+    <file src="bin\netmf\AnyCPU\Debug\le\StaMa.pdbx" target="lib\netmf43\le" />
+    <file src="bin\netmf\AnyCPU\Debug\le\StaMa.pe" target="lib\netmf43\le" />
+    <file src="bin\netmf\AnyCPU\Debug\be\StaMa.dll" target="lib\netmf43\be" />
+    <file src="bin\netmf\AnyCPU\Debug\be\StaMa.pdb" target="lib\netmf43\be" />
+    <file src="bin\netmf\AnyCPU\Debug\be\StaMa.pdbx" target="lib\netmf43\be" />
+    <file src="bin\netmf\AnyCPU\Debug\be\StaMa.pe" target="lib\netmf43\be" />
+
+    <file src="StaMa\FrameworkAbstractionUtils.cs" target="src"/>
+    <file src="StaMa\IStateConfigurationVisitor.cs" target="src"/>
+    <file src="StaMa\IStateMachineTemplateVisitor.cs" target="src"/>
+    <file src="StaMa\Region.cs" target="src"/>
+    <file src="StaMa\State.cs" target="src"/>
+    <file src="StaMa\StateMachineException.cs" target="src"/>
+    <file src="StaMa\StateMachineTemplate.cs" target="src"/>
+    <file src="StaMa\StateConfiguration.cs" target="src"/>
+    <file src="StaMa\Transition.cs" target="src"/>
+    <file src="StaMa\StateMachine.cs" target="src"/>
+    <file src="StaMa\StateMachineReaderWriterNETMF.cs" target="src"/>
+
+    <file src="bin\netmf\DevelopersGuide\StaMaDevelopersGuide.chm" target="tools"/>
+    <file src="StaMaShapes.vst" target="tools"/>
+  </files>
+  <!-- nuget pack \StaMa_State_Machine_Controller_Library\StaMa.StateMachine.nuspec -Symbols -OutputDirectory \StaMa_State_Machine_Controller_Library\bin -->
+</package>

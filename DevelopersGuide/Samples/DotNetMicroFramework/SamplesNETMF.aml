@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="e703c27a-d129-4c7b-a3d9-880aa839e85a" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The <token>StaMaLib</token> provides the following samples for the .NET Micro Framework:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <link xlink:href="ee58caad-02cf-4d26-9b25-033cd452dd77"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="29a68e43-5dbc-4a2c-894e-81a59e9c847b"/>
+          </para>
+        </listItem>
+      </list>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

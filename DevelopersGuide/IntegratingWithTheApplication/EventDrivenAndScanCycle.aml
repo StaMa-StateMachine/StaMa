@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="a02f7e6a-627a-44f5-a250-52c62339f6f5" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Explains typical approaches how to execute a state machine within a thread.</para>
+    </summary>
+    <introduction>
+      <para>
+        Running a state machine means checking for enabled transitions.
+        The check can either be triggered when an event arrives or can be done periodically.
+        In case the check identifies an enabled transition, the transition must be executed.
+        In order to ensure consistency within the state machine, all checking and excution of transitions has to be done sequentially.
+        The most natural approach is to run this within a single thread to avoid synchronization and locking within the state machine.
+      </para>
+      <para>
+        In <token>StaMa</token> transition checking and excution of transitions is triggered through the <codeEntityReference linkText="StateMachine.SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method.
+        <token>StaMa</token> is intended for the single threaded approach and explicitly omits usage of runtime system synchronisation mechanisms like locks, monitors, mutexes, semaphores or whatever may exist.
+        Provided that proper synchronization mechanisms are in place, it would in principle be possible to run every single invocation of <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> in an arbitrary thread,
+        however it is strongly recommended to execute <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> always in the same thread to avoid confusing execution of the actions from varying threads.
+      </para>
+      <para>
+        Different state machine instances may be run in the same or individual threads, as needed.
+      </para>
+      <para>
+        Often the state machine can be executed in the main thread while asynchronous operation requests, triggered through the actions, are executed in background threads and call back into the main thread when they are completed.
+      </para>
+      <para>
+        The <codeEntityReference linkText="StateMachine.SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method runs an entire run-to-completion cycle which means that
+        this method synchronously checks for an enabled transition and executes the transition in a loop until the state machine has reached a stable state where no further transitions are enabled.
+      </para>
+      <para>
+        As suggested initially, there are two major strategies how to trigger checking for transitions of a state machine:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            Event driven state machines evaluate the state machine only when an event arrives.
+            Applications with a significant amount of asynchronous operations usually use this mode of operation.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Cycle driven state machines periodically evaluate the state machine at a fixed time interval.
+            This mode is particularly useful to coordinate the activation of binary or analog, open or closed loop controllers in programmable logic controller (PLC) like applications.
+            Such loop controller state machines typically utilize state specific do-actions which are executed in every cycle to calculate the current controller output variables.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        Mixtures of these strategies are possible, e.g. an event driven state machine might regularly check for elapsed timeouts of transitions or other changes.
+      </para>
+      <para>&#160;</para>
+    </introduction>
+    <section address="EventDrivenStateMachineOperation">
+      <title>Event driven state machine operation</title>
+      <content>
+        <para>
+          Event driven state machines are typically executed in a message driven thread.
+        </para>
+        <para>
+          Typical message driven threads in <token>.NET Windows Desktop Framework</token> applications are the UI main threads.
+        </para>
+        <para>
+          For WinForms the <codeEntityReference linkText="Application.Run">M:System.Windows.Forms.Application.Run</codeEntityReference> methods start a message loop.
+          Messages can be sent to the thread using the <codeEntityReference linkText="SynchronizationContext.Post">M:System.Threading.SynchronizationContext.Post(System.Threading.SendOrPostCallback,System.Object)</codeEntityReference> method of the
+          <codeEntityReference linkText="SynchronizationContext">T:System.Threading.SynchronizationContext</codeEntityReference> instance
+          returned through the <codeEntityReference linkText="SynchronizationContext.Current">P:System.Threading.SynchronizationContext.Current</codeEntityReference> property of the message loop thread.
+        </para>
+        <para>
+          For WPF the <codeEntityReference linkText="Application.Run">M:System.Windows.Application.Run</codeEntityReference> methods internally start the <codeEntityReference linkText="Dispatcher.Run">M:System.Windows.Threading.Dispatcher.Run</codeEntityReference> method.
+          Messages can be sent to the thread using the <codeEntityReference linkText="Dispatcher.InvokeAsync">Overload:System.Windows.Threading.Dispatcher.InvokeAsync</codeEntityReference> methods on the
+          <codeEntityReference linkText="Dispatcher">T:System.Windows.Threading.Dispatcher</codeEntityReference> instance returned through
+          <codeEntityReference linkText="Dispatcher.FromThread">M:System.Windows.Threading.Dispatcher.FromThread(System.Threading.Thread)</codeEntityReference> or through the
+          <codeEntityReference linkText="Dispatcher">P:System.Windows.Threading.DispatcherObject.Dispatcher</codeEntityReference> property of most WPF related objects.
+        </para>
+        <para>
+          In <token>.NET Micro Framework</token> applications the <codeEntityReference linkText="Dispatcher.Run">M:Microsoft.SPOT.Dispatcher.Run</codeEntityReference> method executes a message loop.
+          Messages can be sent to the thread using the <codeEntityReference linkText="Dispatcher.BeginInvoke">M:Microsoft.SPOT.Dispatcher.BeginInvoke(Microsoft.SPOT.DispatcherOperationCallback,System.Object)</codeEntityReference> method of the
+          <codeEntityReference linkText="Dispatcher">T:Microsoft.SPOT.Dispatcher</codeEntityReference> instance returned through
+          <codeEntityReference linkText="Dispatcher.FromThread">M:Microsoft.SPOT.Dispatcher.FromThread(System.Threading.Thread)</codeEntityReference> or through the
+          <codeEntityReference linkText="Dispatcher">F:Microsoft.SPOT.DispatcherObject.Dispatcher</codeEntityReference> property of objects that inherit from
+          <codeEntityReference linkText="DispatcherObject">T:Microsoft.SPOT.DispatcherObject</codeEntityReference>.
+        </para>
+        <para>
+          Definitely there are many other ways to set up a thread that runs a message loop, eventually more performant, however the easiest way is to reuse existing base library functionality.
+        </para>
+        <para>&#160;</para>
+      </content>
+    </section>
+    <section address="CycleDrivenStateMachineOperation">
+      <title>Cycle driven state machine operation</title>
+      <content>
+        <para>
+          Cycle driven state machines are usually a part of a control system.
+          They are executed in a thread that regularly activates itself in a loop.
+          A single loop of such a control system typically consists of reading the input from sensors, executing the logic and driving the actors.
+          The logic execution is (at least partially) implemented through a state machine that is typically solely based on guard conditions at the transitions.
+          The guard conditions evaluate the input from the sensors, while the entry and exit actions drive the actors.
+        </para>
+        <para>
+          Entry and exit actions of a state machine are only executed during state transitions, however open or closed loop control circuits need to respond to changes
+          of the sensors and do work while the state machine stays <legacyItalic>in</legacyItalic> a state.
+          In order to facilitate this mode, so called <newTerm>do actions</newTerm> can be assigned to the states of the state machine, and the do actions are executed without a state change e.g. as part of the regular check for transitions.
+        </para>
+        <para>
+          <token>StaMa</token> supports this model of state machine operation through the
+          <codeEntityReference linkText="StateMachineTemplate.State">M:StaMa.StateMachineTemplate.State(System.String,StaMa.StateMachineActionCallback,StaMa.StateMachineActionCallback,StaMa.StateMachineDoActionCallback)</codeEntityReference> method overload that allows to specify a do action and
+          and through the <codeEntityReference linkText="StateMachineTemplate(StateMachineOptions.UseDoActions)">M:StaMa.StateMachineTemplate.#ctor(StaMa.StateMachineOptions)</codeEntityReference> constructor that enables the
+          do action processing within the <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method.
+        </para>
+        <para>
+          Do actions must be enabled explicitly as they cause an additional check for active transitions within every call to <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference>.
+          This is because executing the do actions may cause a change in variables used by guard conditions or may enqueue an event which has to be checked as part of the run-to-completion processing.
+          Event driven state machines don't need do actions, thus the small performance disadvantage can be avoided by only explicitly enabling do actions.
+        </para>
+        <para>
+          See also <externalLink><linkText>Introductory PLC Programming</linkText><linkUri>http://en.wikibooks.org/wiki/Introductory_PLC_Programming</linkUri></externalLink>
+          for a short description how programmable logic controllers work.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

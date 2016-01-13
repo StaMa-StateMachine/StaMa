@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ca217c97-dd3c-4c6c-a0e7-5893315663aa" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to use the accompanying <token>Microsoft Visio</token> template and shapes to create a state machine diagram and generate the state machine structure definition code from it.
+      </para>
+    </summary>
+
+    <introduction>
+      <para>
+        Plain state diagrams are a common means to sketch the behavior of a component during its inception phase.
+        Apparently the state machine design approach is inherently a visual design technique.
+      </para>
+      <para>
+        A state diagram is essential for communicating the state machine behavior to other stakeholders in the software development process.
+        It should never go out of sync with the actual implementation, as it is a superior communication media compared to the source code.
+      </para>
+      <para>
+        Generating the code from the diagram ensures the visual representation of the component behavior is always up to date and in sync with the source code implementation.
+      </para>
+      <para>
+        <token>StaMa</token> provides a document Template and a set of shapes for <token>Microsoft Visio</token> that support drawing state diagrams and generate code from them.
+      </para>
+      <para>
+        The <token>Microsoft Visio</token> template and shapes can generate the <link xlink:href="16986707-6029-42de-a453-8b359b07248a">StateMachineTemplate</link> structure definition with the
+        <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>,
+        <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference>,
+        <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>,
+        <codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference>
+        and <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statements.
+        Further the code generator can be adapted to emit lists of identifiers for states, transitions, events, actions and conditions.
+      </para>
+      <para>
+        Action and condition code is not defined within the diagram, instead it is suggested to encapsulate the action and condition code within methods and functions with speaking names.
+        These methods and functions are referenced in the diagram as entry actions, exit actions, transition actions and guard conditions.
+      </para>
+      <alert class="caution">
+        <para>
+          The visual representation of regions, states and transitions created with <token>StaMaShapes</token> is partially different from the description of <token>UMLSpec</token>.
+        </para>
+        <para>
+          Generally there shouldn't be a problem to map diagrams created with <token>StaMaShapes</token> to the corresponding visual representations and semantic constructs of <token>UMLSpec</token>.
+          However the collaboration with developers that expect a <token>UMLSpec</token> conformant visualization may be impaired.
+        </para>
+      </alert>
+     <alert class="caution">
+        <para>
+          The code generator requires the <token>Microsoft Visio</token> 32-bit version.
+        </para>
+        <para>
+          If <token>StaMaShapes</token> based diagrams are openend with the 64-bit version of <token>Microsoft Visio</token>, one or more of the message boxes as <link xlink:href="#Visio32bitLimitation">below</link> will be shown.
+        </para>
+      </alert>
+   </introduction>
+
+    <section address="ShapeTypes">
+      <title>Shape Types</title>
+      <content>
+        <para>
+          The below set of <token>Microsoft Visio</token> shapes allows to assemble state diagrams of any complexity as explained in <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>
+        </para>
+        <para>
+          The shapes must be arranged and connected in a specific way to form a valid state machine diagram.
+          If they are not properly connected, the code generator emits incomplete code that usually doesn't compile.
+        </para>
+        <para>
+          Seen from a <token>Microsoft Visio</token> graphical object point of view
+          the composition hierarchy of states and regions is provided through the <token>Microsoft Visio</token> grouping concept with an arbitrary depth nesting.
+          Transitions are top level graphical objects that connect to the states.
+          Each transition is composed of a transition knot that must be connected to the source state and a transition segment that must be connected to the targt state.
+          In case of join and fork transitions the single transition knot must be extended with additional transition segments that connect to the multiple source and target states.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="31807e1f-17b3-484d-b250-1cc6eb0e85bf"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9611a508-1db1-452a-8d6e-3ae59b29b5e1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="20d05290-66a0-43f9-8210-b3f384666daf"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="HowToSections">
+      <title>HowTo Sections</title>
+      <content>
+        <para>
+          The following sections describe step by step how to use the shapes to create a particular state machine fragment.
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="b118384c-7479-4dd8-82e8-18e9a13b35f6" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9110ef28-d0d9-40ac-a09d-2263809f5f45" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="6ac8c54b-c9fa-4085-80f9-b816430ae62d" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="5a2e1160-ce69-4b22-97fe-bf986343fd1e" />
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="2879867d-8e74-4dbd-861a-292bc54d505b" />
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="Visio32bitLimitation">
+      <title>Limitation to Visio 32-bit version</title>
+      <content>
+        <para>
+          The code generator requires the <token>Microsoft Visio</token> 32-bit version.
+        </para>
+        <para>
+          If <token>StaMaShapes</token> based diagrams are openend with the 64-bit version of <token>Microsoft Visio</token>, one or more of the following message boxes will be shown:
+        </para>
+        <mediaLink>
+          <image placement="center" xlink:href="Visio64WarningMsComCtlOcx"/>
+        </mediaLink>
+        <mediaLink>
+          <image placement="center" xlink:href="Visio64WarningStaMaCodegen"/>
+        </mediaLink>
+        <mediaLink>
+          <image placement="center" xlink:href="Visio64WarningVbaCompileError"/>
+        </mediaLink>
+        <para>
+          The <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8">code generator shapes</link> use <link xlink:href="0898043b-ab92-416b-9347-1ff54fcbd5a8#CodeGeneratorExpressionsAndVariables">expressions</link> written in <token>VBScript</token> to customize the generated code. <token>VBScript</token> is provided through the Microsoft Script Control (msscript.ocx) which is only available for 32-bit applications.
+        </para>
+        <para>
+          See also
+          <externalLink><linkText>64-bit versions of Office</linkText><linkUri>https://technet.microsoft.com/en-us/library/ee681792.aspx</linkUri><linkTarget>_blank</linkTarget></externalLink> and
+          <externalLink><linkText>Choose the 32-bit or 64-bit version of Office</linkText><linkUri>https://support.office.com/en-CA/article/Choose-the-32-bit-or-64-bit-version-of-Office-2dee7807-8f95-4d0c-b5fe-6c6f49b8d261</linkUri><linkTarget>_blank</linkTarget></externalLink>
+          regarding provider recommendations about Office versions.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

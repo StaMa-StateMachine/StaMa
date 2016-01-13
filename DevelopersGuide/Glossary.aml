@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="497592ea-471d-422b-b7fc-eff4b705ac37" revisionNumber="1">
+  <developerGlossaryDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <glossary>
+        <glossaryEntry>
+          <terms>
+            <term termId="Region">region</term>
+          </terms>
+          <definition>
+            <para>
+              Every state of a state machine is contained in a region.
+              For a plain state machine with only simple states there is one root region that contains all the states.
+              States of a hierarchical state machine contain one or more sub-regions that again contain states, which are called sub-states.
+              Every region requires an initial state that indicates which state to enter when the region becomes active, for the root region this is the state machine startup.
+              Nesting regions within states allows to create an arbitrary deep nested state machine.
+              For details about the behavior of the state machine please see <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>.
+            </para>
+          </definition>
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term termId="RootRegion">root region</term>
+          </terms>
+          <definition>
+            <para>
+              The root region is the topmost container for the states of a state machine and is needed for every state machine.
+            </para>
+          </definition>
+          <relatedEntry termId="Region" />
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term termId="OrthogonalState">orthogonal state</term>
+          </terms>
+          <definition>
+            <para>Orthogonal states are states which are active at the same time within a single state machine.
+            Orthogonal states are part of separate sibling regions.
+            They are said to be orthogonal because the other states within the respective regions can be varied independently and thus span orthogonal state spaces.</para>
+          </definition>
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term termId="ActiveState">active state</term>
+          </terms>
+          <definition>
+            <para>
+            The active state is the state or state configuration in which the state machine is.
+            </para>
+          </definition>
+          <relatedEntry termId="StateConfiguration" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="StateConfiguration">state configuration</term>
+          </terms>
+          <definition>
+            <para>
+            A state configuration describes the active state of a state machine, the source of a transition or the target of a transition.
+            A state configuration can uniquely specify a single state (e.g. the active state of a state machine) or it can leave some degree of freedom through not specifying the states of one or more orthogonal sub-regions.
+            </para>
+          </definition>
+          <relatedEntry termId="ActiveState" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term>concurrent state</term>
+          </terms>
+          <definition>
+          </definition>
+          <relatedEntry termId="OrthogonalState" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term>initial state</term>
+          </terms>
+          <definition>
+            <para>
+              Every region has one initial state that is entered when the region is entered without a specified state.
+              This is the case for the root region when the state machine is started.
+              Sub-regions are entered without a specified state when a transition is executed that ends at the outer border of the embedding composite state.
+              The history state, if configured, replaces the initial state on second entry of the region.
+            </para>
+          </definition>
+          <relatedEntry termId="Region" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term>history state</term>
+          </terms>
+          <definition>
+            <para>
+              A sub-region may be configured to remember the state that is active when the region is left.
+              This state will be re-entered when the region is entered again without a specified state.
+            </para>
+          </definition>
+          <relatedEntry termId="Region" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="HierarchicalState">hierarchical state</term>
+          </terms>
+          <definition>
+            <para>
+            Hierarchical states are states that have at least one nested region with sub-states.
+            </para>
+          </definition>
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term>composite state</term>
+          </terms>
+          <definition>
+          </definition>
+          <relatedEntry termId="HierarchicalState" />
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term>sub-state</term>
+          </terms>
+          <definition>
+            <para>
+             A state nested within a sub-region of a composite state.
+            </para>
+          </definition>
+          <relatedEntry termId="HierarchicalState" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="TransitionAnchor">transtion anchor</term>
+          </terms>
+          <definition>
+            <para>
+             Transitions are aggregated at states.
+             The transition anchor defines at which state a transition is aggregated.
+             For plain transitions the transition anchor is identical with the transition source state.
+             Complex transitions like join transitions have a transition anchor that is (typically) the common parent state of the source states.
+             The transition anchor state is also the starting point for identifying the least common ancestor of the transition.
+            </para>
+            <para>
+             In some specific situations one or more source states may also be outside the closure of the transition anchor.
+             The outside states are not left when the transition executes, however they still participate as a precondition for the transition to become enabled (state gated transition).
+            </para>
+          </definition>
+          <relatedEntry termId="Transition" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="LCA">least common ancestor of a transition</term>
+          </terms>
+          <definition>
+            <para>
+              The least common ancestor is the smallest region that contains both the transition anchor state and the transition target.
+              When a transition is executed, it leaves (nested) states up to the state that is a direct child of the least common ancestor region and enters (nested) states starting from the child state of the least common ancestor region.
+            </para>
+          </definition>
+          <relatedEntry termId="Transition" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="Transition">Transition</term>
+          </terms>
+          <definition>
+            <para>
+            </para>
+          </definition>
+        </glossaryEntry>
+        
+        <glossaryEntry>
+          <terms>
+            <term>Enabled transition</term>
+          </terms>
+          <definition>
+            <para>
+            A transition is said to be enabled during dispatch of an event if
+            (1) the transitions source state configuration matches the state machine active state configuration, if
+            (2) the current trigger event matches the transitions signal event and if
+            (3) the guard condition is true.
+            Multiple transitions may be enabled during a dispatch which is called conflicting transitions.
+            </para>
+          </definition>
+          <relatedEntry termId="Transition" />
+          <relatedEntry termId="TransitionConflict" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term termId="TransitionConflict">Conflicting transitions</term>
+          </terms>
+          <definition>
+            <para>
+            Transition are said to be in conflict, if more than one transition is enabled during dispatch of an event.
+            Rules to solve the conflict are:
+            </para>
+            <list class="ordered">
+                <listItem>
+                    <para>
+                    If they are in a hierarchical relationship, the outermost transition has precendence over the others.
+                    </para>
+                </listItem>
+                <listItem>
+                    <para>
+                    If they emanate from the same state, there is a priority number that defines the precedence.
+                    </para>
+                </listItem>
+                <listItem>
+                    <para>
+                    If they are part of orthogonal sub-regions, all will be executed according to the sub-region execution order.
+                    </para>
+                </listItem>
+            </list>
+          </definition>
+          <relatedEntry termId="Transition" />
+        </glossaryEntry>
+
+        <glossaryEntry>
+          <terms>
+            <term>Reached transition</term>
+          </terms>
+          <definition>
+            <para>
+            A transition is said to be reached when the the transitions source state configuration matches the state machine active state configuration.
+            The transition will be evaluated on the next dispatch of an event.
+            </para>
+          </definition>
+          <relatedEntry termId="Transition" />
+        </glossaryEntry>
+
+    </glossary>
+  </developerGlossaryDocument>
+</topic>

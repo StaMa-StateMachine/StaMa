@@ -1,0 +1,102 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EFC8447C-4149-406B-ABF1-527F281CCF48}"
+	ProjectSection(SolutionItems) = preProject
+		ChangeLog.txt = ChangeLog.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMa", "StaMa\StaMa.csproj", "{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clock", "Samples\netfwk\Clock\Clock.csproj", "{BF132061-30C8-475F-945C-319E310DBEB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSimpleStateMachineNETFWK", "Samples\netfwk\SampleSimpleStateMachineNETFWK\SampleSimpleStateMachineNETFWK.csproj", "{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevelopersGuide", "DevelopersGuide", "{B80C8517-9AE2-499B-BED9-3D45298CFD2F}"
+	ProjectSection(SolutionItems) = preProject
+		DevelopersGuide\StaMaDevelopersGuide.shfbproj = DevelopersGuide\StaMaDevelopersGuide.shfbproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMaTest", "Tests\StaMaTest\StaMaTest.csproj", "{53625CF7-9255-4C91-9D33-085E0EE7D48A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StaMa\\StaMa.csproj
+		SccProjectName1 = StaMa
+		SccLocalPath1 = StaMa
+		SccProjectUniqueName2 = Samples\\netfwk\\Clock\\Clock.csproj
+		SccProjectName2 = Samples/netfwk/Clock
+		SccLocalPath2 = Samples\\netfwk\\Clock
+		SccProjectUniqueName3 = Samples\\netfwk\\SampleSimpleStateMachineNETFWK\\SampleSimpleStateMachineNETFWK.csproj
+		SccProjectName3 = Samples/netfwk/SampleSimpleStateMachineNETFWK
+		SccLocalPath3 = Samples\\netfwk\\SampleSimpleStateMachineNETFWK
+		SccProjectUniqueName4 = Tests\\StaMaTest\\StaMaTest.csproj
+		SccProjectName4 = Tests/StaMaTest
+		SccLocalPath4 = Tests\\StaMaTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F5B44BD-37F9-4343-82CF-C4C4515F9F52}.Release|x86.ActiveCfg = Release|Any CPU
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|x64.ActiveCfg = Debug|x64
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|x64.Build.0 = Debug|x64
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|x86.ActiveCfg = Debug|x86
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Debug|x86.Build.0 = Debug|x86
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|x64.ActiveCfg = Release|x64
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|x64.Build.0 = Release|x64
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|x86.ActiveCfg = Release|x86
+		{BF132061-30C8-475F-945C-319E310DBEB9}.Release|x86.Build.0 = Release|x86
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|x64.ActiveCfg = Debug|x64
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|x64.Build.0 = Debug|x64
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|x86.ActiveCfg = Debug|x86
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Debug|x86.Build.0 = Debug|x86
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|x64.ActiveCfg = Release|x64
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|x64.Build.0 = Release|x64
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|x86.ActiveCfg = Release|x86
+		{ACFCA05A-3F67-4600-A07D-8A9B0B630EA2}.Release|x86.Build.0 = Release|x86
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|x64.ActiveCfg = Debug|x64
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|x64.Build.0 = Debug|x64
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|x86.ActiveCfg = Debug|x86
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Debug|x86.Build.0 = Debug|x86
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|x64.ActiveCfg = Release|x64
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|x64.Build.0 = Release|x64
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|x86.ActiveCfg = Release|x86
+		{53625CF7-9255-4C91-9D33-085E0EE7D48A}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B80C8517-9AE2-499B-BED9-3D45298CFD2F} = {EFC8447C-4149-406B-ABF1-527F281CCF48}
+	EndGlobalSection
+EndGlobal

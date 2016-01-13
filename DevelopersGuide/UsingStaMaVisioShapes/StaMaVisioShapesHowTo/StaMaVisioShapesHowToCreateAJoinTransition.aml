@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="5a2e1160-ce69-4b22-97fe-bf986343fd1e" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to extend a standard transition with additional transition source states to create a join transition in a <token>StaMaShapes</token> state diagram.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        Join transitions are transitions that require that a specific state configuration is active  multiple states within different sub-regions of a composite state like <fictitiousUri>Figure 1</fictitiousUri>.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Join transition</caption>
+        <image placement="center" xlink:href="JoinTransition"/>
+      </mediaLink>
+      <para>
+        Join transitions are composed of the same shapes as two ended transitions but have two or more additional transition segment shapes that address the source states.
+      </para>
+      <para>
+        The steps for creating a join transition are similar to the steps for the two ended transitions in <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>.
+      </para>
+      <para>
+        The following description assumes a a composite state with two sub-regions each containing a simple state as the source states and a simple state as the target state.
+        A description how to create a composite state with multiple sub-regions can be found in <link xlink:href="9110ef28-d0d9-40ac-a09d-2263809f5f45"/>.
+      </para>
+    </introduction>
+    <procedure>
+      <title>Creating the transition knot and defining the transition anchor state</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Knot</ui> shape and drag it over the border of the composite state in the state diagram.
+            </para>
+            <para>
+              Drag the line end of the transition knot over the composite state border until a small red rectangle appears on the composite state.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 2">Drag transition knot over the source state border</caption>
+              <image placement="center" xlink:href="JoinTransitionDraggingTransitionKnot"/>
+            </mediaLink>
+            <para>
+              Drop the transition knot shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              The composite state itself is not the source state of the join transition, therefore the transition knot connection from the composite state has to be declared as the transition anchor:
+            </para>
+            <para>
+              Double click the transition knot connection line.
+              The <ui>Shape data</ui> properties dialog of the transition knot connection appears.
+              In the <ui>Segment Type</ui> combo box select <ui>Anchor only</ui>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Convert transition segment to source state.</caption>
+              <image placement="center" xlink:href="JoinTransitionConvertTransitionKnotToAnchorOnly"/>
+            </mediaLink>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The transition knot is now prepared to be connected to the real source states.
+          </para>
+          <para>
+            Properties of the transition like the signal event, a guard condition, a transition action, the priority and a human readable identifier can be set as described in <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Defining the first source state of the transition</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Segment</ui> shape and drag it over the border of the source state in the first sub-region.
+            </para>
+            <para>
+              Drag the line end of the transition segment with the arrow over the source state border until a small red rectangle appears on the source state.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Drag transition segment over the source state border</caption>
+              <image placement="center" xlink:href="JoinTransitionDraggingTransitionSegmentSourceA"/>
+            </mediaLink>
+            <para>
+              Drop the transition segment shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              When the transition segment is selected, it has a small yellow diamond at its dangling end.
+              Drag the small yellow diamond over the center of the transition knot box until a small red rectangle appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 5">Drag dangling transition segment end over transition knot box</caption>
+              <image placement="center" xlink:href="JoinTransitionConnectingTransitionSegmentSourceA"/>
+            </mediaLink>
+            <para>
+              Drop (release the mouse button) to connect the dangling line end with the transition knot.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Convert the transition segment to a source state reference:
+            </para>
+            <para>
+              Double click the transition segment.
+              The <ui>Shape data</ui> properties dialog of the transition segment appears.
+              In the <ui>Segment Type</ui> combo box select <ui>From state</ui>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 6">Convert transition segment to source state.</caption>
+              <image placement="center" xlink:href="JoinTransitionConvertTransitionSegmentAToFromState"/>
+            </mediaLink>
+            <para>
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The transition segment may start on any nested state of the transition anchor state.
+          </para>
+          <para>
+            In case the transition segments starts on a state outside of the anchor state and the resulting source state configuration is still valid, the outside state contributes to the enabled condition of the transition.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Defining the second source state of the transition</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Repeat the above steps for the second source state.
+            </para>
+            <para>
+              The diagram should now look as in <fictitiousUri>Figure 7</fictitiousUri>.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 7">Join transition intermediate result after adding second source state.</caption>
+              <image placement="center" xlink:href="JoinTransitionAddedAllSegmentSources"/>
+            </mediaLink>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            An arbitrary number of source states can be added this way. Consistency of the resulting state configuration will be checked at runtime of the generated state machine.
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Defining the target state of the transition</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Segment</ui> shape and drag it over the border of the intended target state in the state diagram.
+            </para>
+            <para>
+              Drag the line end of the transition segment with the arrow over the target state border until a small red rectangle appears on the source state.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 8">Drag transition segment over the target state border</caption>
+              <image placement="center" xlink:href="JoinTransitionDraggingTransitionSegmentTarget"/>
+            </mediaLink>
+            <para>
+              Drop the transition segment shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              When the transition segment is selected, it has a small yellow diamond at its dangling end.
+              Drag the small yellow diamond over the center of the transition knot box until a small red rectangle appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 9">Drag dangling transition segment end over transition knot box</caption>
+              <image placement="center" xlink:href="JoinTransitionConnectingTransitionSegmentTarget"/>
+            </mediaLink>
+            <para>
+              Drop (release the mouse button) to connect the dangling line end with the transition knot.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The transition target may also be a nested state within a sub-region of a state.
+          </para>
+          <para>
+            In case the transition shall fork to multiple sub-regions, the single transition segment can be replaced with multiple transition segments as described in <link xlink:href="6ac8c54b-c9fa-4085-80f9-b816430ae62d"/>
+          </para>
+        </content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Improving the visual appearance of the transition</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Depending on the order of adding the transition knot and the transition segment they now have an unwanted graphical z-order which causes the
+              transition segment to cross the transition knot box.
+              By lifting the transition knot to the topmost graphical z-order, the transition knot box will cover the transition segment which looks much better.
+            </para>
+            <para>
+              Open the context menu of the transition knot by right-clicking with the mouse on its line, not on the box.
+              The context menu appears (and the two yellow diamonds).
+            </para>
+            <para>
+              In the context menu select <ui>Bring to front</ui>. The part of the transition segment line that crosses the transition knot box disappears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 10">Bring transition knot shape to front</caption>
+              <image placement="center" xlink:href="JoinTransitionTransitionKnotBringToFront"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              The transition knot position, the transition knot connection line routing and transition segment line routing may be adapted as described in <link xlink:href="1b54bfbf-f269-4c50-8695-8ff430dee73b"/>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content></content>
+      </conclusion>
+    </procedure>
+    <procedure>
+      <title>Checking the generated code</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the transition has properly been generated, the <placeholder>target file</placeholder> should now contain a piece of code similar to the following:
+            </para>
+            <code language="C#" title="JoinTransition.cs" >
+              <![CDATA[
+t.Region(CompositeState, false);
+    t.State(CompositeState, null, null);
+        t.Transition(TransiNN, new string[] {StateInSubRegionA, StateInSubRegionB}, SimpleState, Event, null, null);
+        t.Region(StateInSubRegionA, false);
+            t.State(StateInSubRegionA, null, null);
+            t.EndState();
+        t.EndRegion();
+        t.Region(StateInSubRegionB, false);
+            t.State(StateInSubRegionB, null, null);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+    t.State(SimpleState, null, null);
+    t.EndState();
+t.EndRegion();
+]]>
+            </code>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content></content>
+      </conclusion>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="7e6981a4-284a-4027-9e21-50d195fe0169"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

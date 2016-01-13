@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="A98FB6B4-A211-412D-9D81-1DFF5695DDE9" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Shows how to persist the current state of a state machine and how to resume from persistent storage</para>
+    </summary>
+    <introduction>
+      <para>
+        In case a process crashes or the process must be shut down for some other reason, it might sometimes be desired to resume the state machine execution at the state where it was before. 
+      </para>
+      <para>
+        The <token>StaMa</token>&#160;<codeEntityReference linkText="StateMachine">T:StaMa.StateMachine</codeEntityReference> class provides the methods
+        <codeEntityReference linkText="SaveState">M:StaMa.StateMachine.SaveState(System.IO.Stream)</codeEntityReference> and
+        <codeEntityReference linkText="Resume">M:StaMa.StateMachine.Resume(System.IO.Stream,System.Boolean)</codeEntityReference> to save the
+        <codeEntityReference linkText="state machine active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> (and the history if present) to a
+        <codeEntityReference linkText="Stream">T:System.IO.Stream</codeEntityReference> and to initialize the
+        <codeEntityReference linkText="active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> from a
+        <codeEntityReference linkText="Stream">T:System.IO.Stream</codeEntityReference>.
+      </para>
+      <para>
+        The <codeEntityReference linkText="Resume">M:StaMa.StateMachine.Resume(System.IO.Stream,System.Boolean)</codeEntityReference> may optionally
+        execute entry actions or skip execution. It is up to the application to ensure that there is a consistent
+        understanding regarding which conditions are given when the state machine has been resumed from a persisted state and resides within that state.
+      </para>
+    </introduction>
+    <section address="SaveStateAndResume">
+      <title>Saving and resuming</title>
+      <content>
+        <para>
+          The following code shows how to use the <codeEntityReference linkText="SaveState">M:StaMa.StateMachine.SaveState(System.IO.Stream)</codeEntityReference> and
+          <codeEntityReference linkText="Resume">M:StaMa.StateMachine.Resume(System.IO.Stream,System.Boolean)</codeEntityReference> methods:
+        </para>
+        <code language="cs" title="SaveState and Resume"  source="..\Tests\StaMaTest\SaveStateResumeTests.cs" region="DevelopersGuide_SaveStateAndResume">
+        </code>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ae34a73e-1561-4b10-ab33-a7564f4026e7" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains topics to be considered when embedding a <token>StaMa</token> based state machines into an application.
+      </para>
+    </summary>
+
+    <introduction>
+      <para>
+        <token>StaMa</token> based state machines do not require or enforce a specific application infrastructure beyond a few basic <token>.NET Windows Desktop Framework</token> or <token>.NET Micro Framework</token> functionalities.
+        If is assumed that the <token>StaMaLib</token> can be ported to other .NET Framwork derivatives without major effort.
+      </para>
+      <para>
+        The following sections provide a few additional topics to consider in order to get the most out of the library:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <link xlink:href="a02f7e6a-627a-44f5-a250-52c62339f6f5"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="a8e4100d-7357-49b1-80c8-7960bb51e540"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="16c7903d-977c-4d5d-bc01-5b0480e944fe"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="A98FB6B4-A211-412D-9D81-1DFF5695DDE9"/>
+          </para>
+        </listItem>
+      </list>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

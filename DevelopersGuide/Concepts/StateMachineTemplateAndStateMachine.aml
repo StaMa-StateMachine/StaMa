@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="16986707-6029-42de-a453-8b359b07248a" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Describes how a state machine is started and how the state machine is triggered to do its work.</para>
+    </summary>
+    <introduction>
+      <para>
+        When the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> is successfully prepared, it allows to create <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instances through
+        the <codeEntityReference linkText="StateMachineTemplate.CreateStateMachine">M:StaMa.StateMachineTemplate.CreateStateMachine</codeEntityReference> method.
+      </para>
+      <para>
+        A <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance holds all the mutable data of a state machine. Actually this is not very much:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            A reference to the <codeEntityReference>T:StaMa.State</codeEntityReference> instance that is currently active.
+            In case the state machine has composite states or orthogonal sub-regions there may also be multiple of them, depending on the nesting depth and orthogonality rank.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            In case the history mechanism is used within the state machine, references to the last active <codeEntityReference>T:StaMa.State</codeEntityReference> instances have to be stored per <codeEntityReference>T:StaMa.Region</codeEntityReference> that uses the history mechanism.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            A queue of event instances that are sent to the state machine.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            A reference to an arbitrary client specific context object which is usually a reference to the wrapper class that hosts the state machine.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            A backward reference to the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance from which the <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance was created.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            A few internal references to tracing related delegate functions.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        The following code sample shows how a <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance is created from a <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> through the
+        <codeEntityReference linkText="StateMachineTemplate.CreateStateMachine">M:StaMa.StateMachineTemplate.CreateStateMachine</codeEntityReference> method.
+        The <codeEntityReference linkText="StateMachine.Startup">M:StaMa.StateMachine.Startup</codeEntityReference> method enters the initial state and the
+        <codeEntityReference linkText="StateMachine.SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method sends the <codeInline>"Event1"</codeInline> signal to the state machine which triggers
+        the transition <codeInline>"Transit1"</codeInline>.
+      </para>
+      <code language="C#" title="StateMachine creation, startup and sending an event" >
+        <![CDATA[
+class SimpleStateMachine
+{
+    private StateMachine m_stateMachine;
+
+    public SimpleStateMachine()
+    {
+        StateMachineTemplate t = new StateMachineTemplate();
+        t.Region("State1", false);
+            t.State("State1", null, ExitState1);
+                t.Transition("Transit1", "State2", "Event1", null, null);
+            t.EndState();
+            t.State("State2", EnterState2, null);
+                t.Transition("Transit2", "State1", null, null, null);
+            t.EndState();
+        t.EndRegion();
+
+        m_stateMachine = t.CreateInstance();
+        m_stateMachine.Startup();
+        m_stateMachine.SendTriggerEvent("Event1");
+    }
+    
+    private void ExitState1(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+    }
+
+    private void EnterState2(StateMachine stateMachine, object triggerEvent, EventArgs eventArgs)
+    {
+    }
+}
+]]>
+      </code>
+      <para>
+        The following sections will discuss:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            How to enable tracing to find out what's going on in the state machine.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            How to reuse the same <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> for multiple <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instances.
+          </para>
+        </listItem>
+      </list>
+      <para>&#160;</para>
+    </introduction>
+    <section address="StateMachineTracing">
+      <title>Enable Tracing for State Changes, for Event Processing and for Transition Checking</title>
+      <content>
+        <para>
+          The <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance has properties to set callback methods that are called in the following situations:
+        </para>
+        <table>
+          <row>
+            <entry>
+              <para>
+                <codeEntityReference linkText="StateMachine.TraceStateChange">P:StaMa.StateMachine.TraceStateChange</codeEntityReference>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                The state machine executes a transition and switches to a state.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <codeEntityReference linkText="StateMachine.TraceDispatchTriggerEvent">P:StaMa.StateMachine.TraceDispatchTriggerEvent</codeEntityReference>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                The state machine fetches an event instance from the queue as part of the run-to-completion processing and dispatches it.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <codeEntityReference linkText="StateMachine.TraceTestTransition">P:StaMa.StateMachine.TraceTestTransition</codeEntityReference>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                The state machine dispatched an event and reached a transition that will be tested if it can be executed.
+              </para>
+            </entry>
+          </row>
+        </table>
+        <para>
+          See also <link xlink:href="16c7903d-977c-4d5d-bc01-5b0480e944fe"/>.
+        </para>
+        <para>&#160;</para>
+      </content>
+    </section>
+    <section address="ReuseStateMachineTemplate">
+      <title>Reuse the StateMachineTemplate for multiple StateMachine instances</title>
+      <content>
+        <para>
+          The above sample code chunk creates a <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance for every instance of the <codeInline>SimpleStateMachine</codeInline> class and <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance.
+          This is usually a reasonable programming style as it allows to directly use member methods of the wrapper class in the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> tree definition.
+        </para>
+        <para>
+          However there may be cases, where many <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instances are needed and instance creation performance and footprint require further optimization.
+          In such cases it is possible to create multiple <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instances from the same <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> instance.
+          This approach takes advantage of fact that the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> is immutable after the tree definition is completed.
+          The somewhat complex <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> tree definition with syntax and consistency checks are needed only once.
+        </para>
+        <para>
+          For this coding approach the <codeEntityReference>T:StaMa.StateMachineTemplate</codeEntityReference> is created as a static member of the wrapper class and the action callbacks are mede static methods of the wrapper class.
+          In order to invoke instance methods of the wrapper class, the static methods fetch the <codeEntityReference linkText="StateMachine.Context">P:StaMa.StateMachine.Context</codeEntityReference> property value,
+          cast it to the wrapper class type and invoke the corresponding instance method of the wrapper class.
+          The <codeEntityReference linkText="StateMachine.Context">P:StaMa.StateMachine.Context</codeEntityReference> property is initialized through the context parameter of the <codeEntityReference linkText="StateMachineTemplate.CreateStateMachine(Object)">M:StaMa.StateMachineTemplate.CreateStateMachine(System.Object)</codeEntityReference> factory method.
+        </para>
+        <para>
+          The following code sample shows the approach:
+        </para>
+        <code language="C#" title="SampleSimpleStateMachineNETMFMultiInstance.cs"  source="..\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMFMultiInstance.cs" region="DevelopersGuide_classSampleSimpleStateMachineNETMFMultiInstance">
+        </code>
+        <para>
+          The repeated coding of static to instance routing methods can be automated through a code generator shape in <token>StaMaShapes</token>.
+        </para>
+      </content>
+    </section>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

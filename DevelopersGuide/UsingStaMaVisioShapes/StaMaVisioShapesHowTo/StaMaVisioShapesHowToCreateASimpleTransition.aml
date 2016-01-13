@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="1b54bfbf-f269-4c50-8695-8ff430dee73b" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to create a simple transition between two states in a <token>StaMaShapes</token> state diagram and control the code generated for the transition.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        Common two ended transitions are composed of two shapes in in <token>StaMaShapes</token>:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            The transition knot shape that carries the transition event signal, the guard and the transition action.
+            This shape is connected to the source state.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            A transition segment that is connected to the target state and to the transition knot.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        The transition parts can be bent after being placed in order to achieve a convenient diagram layout.
+        The shapes can be added by drag and drop from the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> to the diagram by drag and drop and can be connected later.
+      </para>
+    </introduction>
+    <procedure>
+      <title>Adding the transition</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Knot</ui> shape and drag it over the border of the intended source state in the state diagram.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 1">Drag transition knot over the source state border</caption>
+              <image placement="center" xlink:href="DropTransitionKnot"/>
+            </mediaLink>
+            <para>
+              Drag the line end of the transition knot over the source state border until a small red rectangle appears on the source state.
+              Drop the transition knot shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              In the <link xlink:href="a4db1100-01f4-4594-b23c-948cbd01b5e7">Document Stencil</link> locate the <ui>Transition Segment</ui> shape and drag it over the border of the intended target state in the state diagram.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 2">Drag transition segment over the target state border</caption>
+              <image placement="center" xlink:href="DropTransitionSegment"/>
+            </mediaLink>
+            <para>
+              Drag the line end of the transition segment with the arrow over the target state border until a small red rectangle appears on the source state.
+              Drop the transition segment shape.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              When the transition segment is selected, it has a small yellow diamond at its dangling end.
+              Drag the small yellow diamond over the center of the transition knot box until a small red rectangle appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Drag dangling transition segment end over transition knot box</caption>
+              <image placement="center" xlink:href="ConnectTransitionSegmentToTransitionKnot"/>
+            </mediaLink>
+            <para>
+              Drop (release the mouse button) to connect the dangling line end with the transition knot.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              When the transition segment or the transition knot are selected, they have a second small yellow diamond which is usually not placed on the graphics of the shape.
+              This yellow diamond defines the curvature of the shape.
+              Drag it to modify the curvature and to achieve a convenient transition layout.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Depending on the order of adding the transition knot and the transition segment they now have an unwanted graphical z-order which causes the
+              transition segment to cross the transition knot box.
+              By lifting the transition knot to the topmost graphical z-order, the transition knot box will cover the transition segment which looks much better.
+            </para>
+            <para>
+              Open the context menu of the transition knot by right-clicking with the mouse on its line, not on the box.
+              The context menu appears (and the two yellow diamonds).
+            </para>
+            <para>
+              In the context menu select <ui>Bring to front</ui>. The part of the transition segment line that crosses the transition knot box disappears.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the new Transition is properly generated in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+          <para>
+            The transition is now properly connected.
+            In order to further arrange the state diagram, the source or target state or the yellow diamond in the center of the transition knot box can be dragged and will not disconnect the transition.
+          </para>
+          <para>
+            16 connection points are distributed along the state border, 3 at each side and 1 at each rounded corner of the state. Multiple transitions may start or end at a connection point.
+          </para>
+        </content>
+
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Setting the Transition Signal Event, Guard Condition and Transition Action</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the transition knot box in the diagram and double click in this area. The <ui>Shape data</ui> properties dialog of the transition knot appears.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Transition properties</caption>
+              <image placement="center" xlink:href="TransitionKnotShapeProperties"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Change the <ui>Event Signal</ui>, <ui>Guard</ui> or <ui>Action</ui> field and press <ui>OK</ui>.
+              Press <ui>OK</ui> to close the dialog.
+              The content in the transition knot box changes and shows the transition information and the size of the transition knot box is adapted.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the modified transition properties have properly been updated in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+        </content>
+
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Setting the Transition Priority to Define the Precedence of Conflicting Transitions</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Transitions appearing earlier in the generated code take precedence over others in case of conflicting transitions.
+              The <ui>Priority</ui> field of the <ui>Shape data</ui> properties dialog of the transition allows to control the order how transitions are generated in the code.
+              The code generator creates outgoing transitions from the same state ordered alphabetically according to the values in the <ui>Priority</ui> field.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Locate the transition knot box in the diagram and double click into the box.
+              The <ui>Shape data</ui> properties dialog of the transition knot appears (same dialog as used for setting the signal event).
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              The code generator creates the transitions ordered alphabetically according to the values in the <ui>Priority</ui> field.
+              Considering the <ui>Priority</ui> field values of the other transitions outgoing from the same state, choose a reasonable value for this transition and enter it into the <ui>Priority</ui> field of the dialog.
+              Press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the location of the transition has properly been updated in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <procedure>
+      <title>Setting a Human Readable Identifier for the Transition to Identify it during Tracing and Debugging</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Locate the transition knot box in the diagram and double click into the box.
+              The <ui>Shape data</ui> properties dialog of the transition knot appears (same dialog as used for setting the signal event).
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              The <ui>Identification</ui> field contains an automatically generated identifier for the transition that might not be speaking when it comes to tracing or debugging.
+              Enter a meaningful name for the transition into the <ui>Identification</ui> field and press <ui>OK</ui> to close the dialog.
+            </para>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Generate the code into the <placeholder>target file</placeholder> e.g. by pressing <ui>Ctrl+G</ui>.
+              Check that the transition has properly been updated in the <placeholder>target file</placeholder>.
+            </para>
+          </content>
+        </step>
+      </steps>
+      <conclusion>
+        <content>
+        </content>
+      </conclusion>
+    </procedure>
+
+    <relatedTopics>
+      <link xlink:href="298801d3-40ad-4fae-816e-5a7e1afb0ff0"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

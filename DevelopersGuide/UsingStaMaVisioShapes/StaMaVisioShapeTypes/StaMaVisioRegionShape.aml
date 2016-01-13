@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains the visual appearance, usage, context menus and properties of the region shape.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        The region shape is one of the 4 principal shapes used to compose a state diagram.
+      </para>
+      <para>
+        The region shape is the grouping container for state shapes.
+      </para>
+      <para>
+        Every state machine diagram must contain a top level region shape which is the container for all states of the state machine.
+      </para>
+      <para>
+        Region shapes can further be embedded into state shapes which makes the state a composite state.
+        This is accomplished by first converting the state shape to a composite state shape and then adding the region shape as a grouped object to the state shape.
+        A detailed description about this procedure can be found in <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/>.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Root region with two states, composite state containing one and composite state containing two sub-regions</caption>
+        <image placement="center" xlink:href="RegionShapeRootRegionAndCompositeState"/>
+      </mediaLink>
+      <para>
+        The region shape has a property to define its sequential order in the generated code (execution order) and a property to enable the shallow history function.
+      </para>
+      <para>
+        The value of the execution order property is shown in a rectangle in the lower left corner of the region.
+      </para>
+      <para>
+        A circle in the lower left corner containing an "H" indicates that the region has a history. If needed, this history marker can be moved to a different place by dragging its yellow diamond.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 2">Sub-region with history</caption>
+        <image placement="center" xlink:href="RegionShapeHistory"/>
+      </mediaLink>
+      <para>
+        The initial state of the region, needed for the <codeEntityReference qualifyHint="true">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference> method,
+        is defined through a <link xlink:href="20d05290-66a0-43f9-8210-b3f384666daf">transition segment shape</link> of type <ui>Initial State</ui> which is connected to a state within the region.
+      </para>
+    </introduction>
+
+    <section address="WhatDoYouWantToDo">
+      <title>What Do You Want to Do?</title>
+      <content>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <link xlink:href="c9b743d2-ae47-40d8-ad45-639e473271c1"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9d4e9992-3c8d-49a8-9818-18f5d488af7e"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="9110ef28-d0d9-40ac-a09d-2263809f5f45"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="6ac8c54b-c9fa-4085-80f9-b816430ae62d"/>
+            </para>
+          </listItem>
+          <listItem>
+            <para>
+              <link xlink:href="5a2e1160-ce69-4b22-97fe-bf986343fd1e"/>
+            </para>
+          </listItem>
+        </list>
+      </content>
+    </section>
+
+    <section address="RegionShapeProperties">
+      <title>Region Shape Properties</title>
+      <content>
+        <para>
+          The region shape has a properties dialog that can be opened either by double clicking on the execution order rectangle or by opening the context menu on the execution order rectangle and executing the menu item <ui>Properties...</ui>.
+        </para>
+        <mediaLink>
+          <caption placement="after" lead="Figure 3">Region shape properties</caption>
+          <image placement="center" xlink:href="RegionProperties"/>
+        </mediaLink>
+        <para>
+          The properties are as follows:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Property</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Execution&#160;Order</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                In the generated code sub-regions of a composite state are ordered alphabetically according to this property.
+                Any text is allowed here, only the alphabetical sort order is relevant.
+                This property can be used to give the region a speaking name within the diagram, as long as the execution order of the generated code is not affected in an unintended way.
+              </para>
+            </entry>
+          </row>
+          <row>
+            <entry>
+              <para>
+                <ui>History</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Indicates if the region has a shallow history.
+                This property is used in the code generator to fill the corresponding <codeEntityReference qualifyHint="true">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference> method parameter.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <section address="RegionShapeContextMenu">
+      <title>Region Shape Context Menu</title>
+      <content>
+        <para>
+          The region shape has the following additional context menu items:
+        </para>
+        <table>
+          <tableHeader>
+            <row>
+              <entry>
+                <para>Context Menu Item</para>
+              </entry>
+              <entry>
+                <para>Purpose</para>
+              </entry>
+            </row>
+          </tableHeader>
+          <row>
+            <entry>
+              <para>
+                <ui>Show&#160;Sub-States</ui>
+              </para>
+            </entry>
+            <entry>
+              <para>
+                Opens a new window that opens the <token>Microsoft Visio</token> group of the region, usually containing only the states of the region.
+              </para>
+            </entry>
+          </row>
+        </table>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <codeEntityReference qualifyHint="true">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

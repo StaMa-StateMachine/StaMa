@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="ee58caad-02cf-4d26-9b25-033cd452dd77" revisionNumber="1">
+  <developerSampleDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>
+        The simple state machine sample demonstrates a minimal <token>StaMa</token> based state machine with two states and transtions between them.
+        It runs on the Microsoft <token>.NET Micro Framework</token> emulator.
+      </para>
+      <para>
+        The sample doesn't have relevant real world functionality but can be used as a ready to use base for experiments with state machines.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Sample simple state machine in the emulator</caption>
+        <image placement="center" xlink:href="SampleSimpleStateMachineNETMF"/>
+      </mediaLink>
+    </introduction>
+    <!-- <procedure></procedure> -->
+    <!-- <requirements></requirements> -->
+    <demonstrates>
+      <content>
+        <para>
+          The basic programming model for a <token>StaMa</token> based state machine.
+        </para>
+        <para>
+          How the run-to-completion processing executes multiple transitions within one call to <codeEntityReference qualifyHint="false">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference>.
+        </para>
+      </content>
+    </demonstrates>
+    <codeExample>
+      <description>
+        <content>
+          <para>
+            The sample runs a <codeEntityReference linkText="Microsoft.Spot.Dispatcher">T:Microsoft.Spot.Dispatcher</codeEntityReference> in the main thread.
+            Pressing a button on the button pad creates an interrupt which is routed to the main thread through the
+            <codeEntityReference linkText="Dispatcher.BeginInvoke">M:Microsoft.Spot.Dispatcher.BeginInvoke(Microsoft.SPOT.DispatcherOperationCallback,System.Object)</codeEntityReference> method,
+            which in turn invokes the <codeEntityReference qualifyHint="false">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> method.
+          </para>
+        </content>
+      </description>
+      <code language="C#" title="Program.cs"  source="..\Samples\netmf\SampleSimpleStateMachineNETMF\Program.cs">
+      </code>
+      <code language="C#" title="SampleSimpleStateMachineNETMF.cs"  source="..\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.cs">
+      </code>
+    </codeExample>
+    <relatedTopics>
+    </relatedTopics>
+  </developerSampleDocument>
+</topic>

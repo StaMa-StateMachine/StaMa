@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="a8e4100d-7357-49b1-80c8-7960bb51e540" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>Provides some aspects about handling errors and exceptions in a state machine</para>
+    </summary>
+    <introduction>
+      <para>
+        Errors and exceptions in a state machine occur when a transition is executed and the corresponding actions fail to do, what they are expected to do.
+      </para>
+      <para>
+        Errors can also happen during checking of guard conditions, however their impact is usually low as these can often be handled graciously within the guard condition by returning a suitable fallback value.
+      </para>
+      <para>
+		<newTerm>Exceptions</newTerm> are program execution issues that can be handled at runtime of the program, whereas <newTerm>errors</newTerm> cannot be handled without restart of the program, most often the program has to be fixed.
+      </para>
+      <para>
+        Unfortunately this common definition overloads the C# <codeEntityReference linkText="exception">T:System.Exception</codeEntityReference> language construct with the conceptual term <newTerm>exception</newTerm>.
+        In this description an uppercase link to the runtime <codeEntityReference linkText="Exception">T:System.Exception</codeEntityReference> class is used where C# exceptions are meant, otherwise the plain word exception is used.
+      </para>
+      <para>
+        <token>StaMa</token> throws <codeEntityReference linkText="Exceptions">T:System.Exception</codeEntityReference> of type <codeEntityReference linkText="StateMachineException">T:StaMa.StateMachineException</codeEntityReference>
+        during setup of the <codeEntityReference linkText="StateMachineTemplate">T:StaMa.StateMachineTemplate</codeEntityReference> structure from the 
+        <codeEntityReference linkText="Region">M:StaMa.StateMachineTemplate.Region(System.String,System.Boolean)</codeEntityReference>,
+        <codeEntityReference linkText="EndRegion">M:StaMa.StateMachineTemplate.EndRegion</codeEntityReference>,
+        <codeEntityReference linkText="State">Overload:StaMa.StateMachineTemplate.State</codeEntityReference>,
+        <codeEntityReference linkText="EndState">M:StaMa.StateMachineTemplate.EndState</codeEntityReference> and
+        <codeEntityReference linkText="Transition">Overload:StaMa.StateMachineTemplate.Transition</codeEntityReference> statements.
+        These execptions are defined in the corresponding method documentation.
+      </para>
+      <para>
+        <token>StaMa</token> will not throw execptions after the <codeEntityReference>T:StaMa.StateMachine</codeEntityReference> instance has been created and while executing the
+        <codeEntityReference linkText="Startup">M:StaMa.StateMachine.Startup</codeEntityReference>,
+        <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> and
+        <codeEntityReference linkText="Finish">M:StaMa.StateMachine.Finish</codeEntityReference> methods, unless something very bad happened like multithreaded access or otherwise violent manipulations.
+        All <codeEntityReference linkText="Exceptions">T:System.Exception</codeEntityReference> thrown out of these methods come from the actions or guard conditions.
+        Such <codeEntityReference linkText="Exceptions">T:System.Exception</codeEntityReference> immediately terminate the execution of the 
+        <codeEntityReference linkText="Startup">M:StaMa.StateMachine.Startup</codeEntityReference>,
+        <codeEntityReference linkText="SendTriggerEvent">Overload:StaMa.StateMachine.SendTriggerEvent</codeEntityReference> or
+        <codeEntityReference linkText="Finish">M:StaMa.StateMachine.Finish</codeEntityReference> methods, potentially leaving the state machine inconsistent.
+      </para>
+      <para>
+        Inconsistent means that the exit actions of a state may have been executed but the <codeEntityReference linkText="active state">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference>
+        has not been set to the new state, or that the new state has already been set, but the entry actions have not been executed completely.
+      </para>
+      <para>
+		In particular the following rules apply:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            In case the <codeEntityReference linkText="Exception">T:System.Exception</codeEntityReference> is thrown from a transition guard, the event is lost but the state machine remains unchanged and consistent.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            In case the <codeEntityReference linkText="Exception">T:System.Exception</codeEntityReference> is thrown from an exit action or from the transition action, the <codeEntityReference linkText="StateMachine.ActiveStateConfiguration">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> remains in the old state,
+            but no entry actions are executed and the run-to-completion processing is aborted.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            In case the <codeEntityReference linkText="Exception">T:System.Exception</codeEntityReference> is thrown from an entry method, the <codeEntityReference linkText="StateMachine.ActiveStateConfiguration">P:StaMa.StateMachine.ActiveStateConfiguration</codeEntityReference> is already changed to the target state of the transition,
+            but the run-to-completion processing is aborted.
+          </para>
+        </listItem>
+      </list>
+      <para>
+        <codeEntityReference linkText="Exceptions">T:System.Exception</codeEntityReference> like
+        <codeEntityReference linkText="NullReferenceException">T:System.NullReferenceException</codeEntityReference>,
+        <codeEntityReference linkText="InvalidOperationException">T:System.InvalidOperationException</codeEntityReference>,
+        <codeEntityReference linkText="ArgumentException ">T:System.ArgumentException </codeEntityReference>,
+        <codeEntityReference linkText="NotSupportedException">T:System.NotSupportedException</codeEntityReference>,
+        <codeEntityReference linkText="NotImplementedException">T:System.NotImplementedException</codeEntityReference>,
+        <codeEntityReference linkText="OutOfMemoryException">T:System.OutOfMemoryException</codeEntityReference>,
+        <codeEntityReference linkText="ObjectDisposedException">T:System.ObjectDisposedException</codeEntityReference>,
+        <codeEntityReference linkText="IndexOutOfRangeException">T:System.IndexOutOfRangeException</codeEntityReference> and many others
+        usually indicate an error that can not be handled without restart of the program and a change of the program.
+      </para>
+      <para>
+        Sometimes it may be possible to catch <codeEntityReference linkText="Exceptions">T:System.Exception</codeEntityReference> like
+        <codeEntityReference linkText="SocketException">T:System.Net.Sockets.SocketException</codeEntityReference>,
+        <codeEntityReference linkText="IOException">T:System.IO.IOException</codeEntityReference> or similar and handle it through strategies described below.
+      </para>
+      <para>
+        Just as any other piece of code also execption handling in a state machine is specific for the individual state machine.
+        There are few strategies to handle exceptions.
+        Ideally exceptions shall be avoided by anticipating the condition that could cause an execption in the state machine execution flow.
+        The remaining scenarios, where an execption cannot be avoided, might be cured through the following approaches:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            State machines that purely use transition actions and avoid entry and exit actions are somewhat robust against exceptions within the transition actions.
+            An exception in the single transition action can be implemented in a way that it leaves the state machine in a stable and consistent state by cleaning up locally within the transition action.
+            The transition can then usually safely be retried by sending the event again.
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            Some exceptions in entry and exit actions can be handled by catching them and bringing the state machine to a <phrase>fault state</phrase> with the immediate next transition.
+            In this case the exception handler of the failed action could set a property that enables transition with a single guard condition on a very outer level in the state machine.
+            Such a transition on an outer composite states will take precedence in the immediate next step of the run-to-completion processing over all other nested transitions.
+            A coordinated re-start or re-initialization of the state machine can then be tried from the <phrase>fault state</phrase>.
+          </para>
+        </listItem>
+      </list>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

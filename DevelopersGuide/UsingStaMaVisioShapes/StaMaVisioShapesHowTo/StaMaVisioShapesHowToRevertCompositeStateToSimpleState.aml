@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="f3839c42-ee1f-4437-b495-b9522ba6d024" revisionNumber="1">
+  <developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Explains how to convert the visual representation of a composite state back to a simple state.
+      </para>
+    </summary>
+    <introduction>
+      <para>
+        During refactoring a state machine it might happen that a composite state shall be reverted to a simple state.
+        If multiple transitions end at the state or the state contains a complex sub-region, it may sometimes be desirable to deconstruct the composite state.
+      </para>
+      <para>
+        The main point for deconstructing is that there is no easy way to remove an entire region or multi-selection of shapes from a composite state.
+        In case the states within the sub-region are to be reused, the easiest way is to drag the individual states from the sub-region to another region and then delete the obsolete empty sub-region.
+        Semantically and for code generation purposes the empty composite state will work like a simple state, however the visual representation is inappropriate as it still looks like a composite state.
+      </para>
+      <para>
+        The following procedures show how to appropriately disassemble a composite state as shown in <fictitiousUri>Figure 1</fictitiousUri>.
+      </para>
+      <mediaLink>
+        <caption placement="after" lead="Figure 1">Starting point for refactoring a composite state</caption>
+        <image placement="center" xlink:href="RefactoringInitial"/>
+      </mediaLink>
+    </introduction>
+    <procedure>
+      <title>Removing the contents of a composite state</title>
+      <steps class="ordered">
+        <step>
+          <content>
+            <para>
+              Select the first state of the sub-region and drag it outside the sub-region.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 2">Drag a single state out of a sub-region</caption>
+              <image placement="center" xlink:href="RefactoringDragStateA"/>
+            </mediaLink>
+            <para>
+              Drop the state over an unused area.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 3">Drop the state</caption>
+              <image placement="center" xlink:href="RefactoringDropStateA"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Repeat the above steps for all other states of the sub-region.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 4">Drag other state out of the sub-region</caption>
+              <image placement="center" xlink:href="RefactoringDragStateB"/>
+            </mediaLink>
+            <mediaLink>
+              <caption placement="after" lead="Figure 5">Drop the state</caption>
+              <image placement="center" xlink:href="RefactoringDropStateB"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Select the sub-region group container by clicking onto the region order rectangle.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 6">Sub-region selected</caption>
+              <image placement="center" xlink:href="RefactoringSubRegionSelected"/>
+            </mediaLink>
+            <para>
+              Delete the sub-region group container.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 7">Sub-region deleted</caption>
+              <image placement="center" xlink:href="RefactoringSubRegionDeleted"/>
+            </mediaLink>
+          </content>
+        </step>
+        <step>
+          <content>
+            <para>
+              Reduce the size of the composite state below the size of the state name label and execute <ui>Convert to Simple State</ui> from the context menu of the state shape.
+            </para>
+            <mediaLink>
+              <caption placement="after" lead="Figure 8">Composite state reverted to simple state</caption>
+              <image placement="center" xlink:href="RefactoringConvertToSimpleState"/>
+            </mediaLink>
+          </content>
+        </step>
+      </steps>
+    </procedure>
+    <relatedTopics>
+      <link xlink:href="31807e1f-17b3-484d-b250-1cc6eb0e85bf"/>
+    </relatedTopics>
+  </developerHowToDocument>
+</topic>

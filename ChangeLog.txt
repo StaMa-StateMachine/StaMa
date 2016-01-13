@@ -1,0 +1,36 @@
+
+Changes in reverse chronological order:
+
+StaMa 2.3.0.2
+- Adapt Visio files to load in Visio 64-bit version and show a warning about missing code generator functionality. Document the limitation in developers guide.
+
+StaMa 2.3.0.0
+- Make sourceState parameter in StateMachineTemplate.Transition configuration method optional.
+  This reduces configuration code for simple state machines where the transition source is obvious.
+  StaMaShapes.vst adapted to omit sourceState if applicable.
+- Uploading of pdb and source to symbolsource.org
+- Checked compatibility with Mono and added more advertising statements into Nuget config file.
+- Support persisting a state machine through the methods StateMachine.SaveState and StateMachine.Resume which provide saving the current state to a Stream and resuming the StateMachine active state from persisted data.
+- Adapted unit tests to run in the NETMF simulator for NETMF and in NUnit 2.6.3 for .NET Framework.
+
+StaMa 2.2.0.2
+- Make StaMa.dll for .NET Framework a portable assembly to allow its use in Silverlight and Windows Phone applications. 
+
+StaMa 2.2.0.1
+- Provide StaMa.dll as a NuGet package.
+
+StaMa 2.2.0.0
+- StaMaShapes/Codegen: Suppress duplicate code output when generating lists of event signals.
+- Fix unintended execution of transitions in orthogonal regions when the region was already exited through a transition of an earlier orthogonal region.
+- Added documentation, see StaMaDevelopersGuide.chm.
+- Added support for Do-Actions in StaMa and Visio shapes.
+- Changed usage of the compilaton symbol MF_FRAMEWORK_VERSION_V4_2 in the code to the more generic MF_FRAMEWORK and defined it in the .csproj
+- Changed the term "Activity" to "Action" (Entry-Action, Exit-Action, Do-Action, Transition-Action). If this causes trouble with legacy implementations, please try compiling StaMa with the STAMA_COMPATIBLE21 compilaton symbol defined.
+
+StaMa 2.1.0.0
+- Ported to .NET Micro Framework (StaMaNETMF.sln, StaMa\StaMaNETMF.csproj). See #if MF_FRAMEWORK_VERSION_V4_2. Added sample for NETMF (Samples\TicketVendingNETMF\TicketVendingNETMF.csproj).
+- Replaced trace events with delegate properties.
+- RegionCollection, StateCollection, TransitionCollection now implement ICollection<T> to support LINQ.
+- Throw new StateMachineException instead of InvalidOperationException wherever state machine syntactic or semantic checks fail.
+- Added CODE_ANALYSIS to project and fixed/suppressed corresponding warnings, mainly change from uint to int.
+- Update .csproj to VisualStudio 2010.

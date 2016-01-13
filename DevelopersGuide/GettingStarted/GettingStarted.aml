@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="003c5297-0c49-41e9-ac8b-9f603358ac66" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <summary>
+      <para>
+        Describes steps necessary to create and run an application using the <token>StaMaLib</token>.
+      </para>
+    </summary>
+
+    <introduction>
+      <para>
+        The <token>StaMaLib</token> is a single assembly without specific installation and deployment needs.
+      </para>
+      <para>
+        In short words it is sufficient to extract the contents of the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file to some reasonable folder, reference the <localUri>StaMa.dll</localUri> in the <token>Microsoft Visual Studio</token> project and use the API in the code.
+      </para>
+      <para>
+        The following sections present some more detailed explanations:
+      </para>
+      <list class="bullet">
+        <listItem>
+          <para>
+            <link xlink:href="e33381e0-fa7d-494b-ba46-f728e47edec7"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="b2a532fd-f7bb-4cce-b601-7563bca224d1"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="d94a3585-cd83-45b5-b16c-0487e3401337"/>
+          </para>
+          <para>
+            -or-
+          </para>
+          <para>
+            <link xlink:href="f5262f47-1501-476f-b1c0-25e83deba0b0"/>
+          </para>
+        </listItem>
+        <listItem>
+          <para>
+            <link xlink:href="afdec6d6-fee1-4b99-b160-1e45bd76d8a2"/>
+          </para>
+        </listItem>
+      </list>
+    </introduction>
+    <relatedTopics>
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>
