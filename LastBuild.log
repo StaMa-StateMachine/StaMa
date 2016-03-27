@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="S:\StaMa\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="28.03.2016 00:54:28">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="S:\StaMa\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="28.03.2016 01:36:20">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
@@ -30,7 +30,7 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00,0312
+</plugIn>    Last step completed in 00:00:00,0156
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
@@ -39,7 +39,7 @@ Generating API filter for MRefBuilder...
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
 [C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - GenerateRefInfo.proj]
-Build started 28.03.2016 00:54:29.
+Build started 28.03.2016 01:36:20.
 Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
 PrepareForBuild:
@@ -59,13 +59,13 @@ Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateR
 
 Build succeeded.
 
-Time Elapsed 00:00:01.09
-    Last step completed in 00:00:01,4219
+Time Elapsed 00:00:01.07
+    Last step completed in 00:00:01,4063
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - TransformManifest.proj]
-Build started 28.03.2016 00:54:30.
+Build started 28.03.2016 01:36:22.
 Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; on node 1 (default targets).
 Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
 TransformManifest:
@@ -107,7 +107,7 @@ Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\Transform
 Build succeeded.
 
 Time Elapsed 00:00:00.81
-    Last step completed in 00:00:01,1250
+    Last step completed in 00:00:01,1094
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
@@ -309,7 +309,7 @@ Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     ConceptualManifest.xml
-    Last step completed in 00:00:00,0469
+    Last step completed in 00:00:00,0625
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
@@ -324,7 +324,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 28.03.2016 00:54:32.
+Build started 28.03.2016 01:36:23.
 Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
 GenerateIntermediateTOC:
@@ -336,9 +336,9 @@ Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateI
 
 Build succeeded.
 
-Time Elapsed 00:00:00.54
+Time Elapsed 00:00:00.59
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00,8594
+    Last step completed in 00:00:00,9219
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
@@ -356,7 +356,7 @@ S:\StaMa\bin\netmf\DevelopersGuide\Working\conceptual.config
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - BuildConceptualTopics.proj]
-Build started 28.03.2016 00:54:33.
+Build started 28.03.2016 01:36:24.
 Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
 BuildConceptualTopics:
@@ -374,13 +374,13 @@ Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConc
 
 Build succeeded.
 
-Time Elapsed 00:00:02.40
-    Last step completed in 00:00:02,7031
+Time Elapsed 00:00:02.28
+    Last step completed in 00:00:02,5781
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - BuildReferenceTopics.proj]
-Build started 28.03.2016 00:54:36.
+Build started 28.03.2016 01:36:27.
 Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
 BuildReferenceTopics:
@@ -396,12 +396,12 @@ Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildRefe
 
 Build succeeded.
 
-Time Elapsed 00:00:03.78
-    Last step completed in 00:00:04,0938
+Time Elapsed 00:00:03.73
+    Last step completed in 00:00:04,0469
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00,0156
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
@@ -424,7 +424,7 @@ Processed 200 HTML files
 Sorting keywords and generating See Also indices
 Saving website keyword index to S:\StaMa\bin\netmf\DevelopersGuide\Working\WebKI.xml
 Saving website table of contents to S:\StaMa\bin\netmf\DevelopersGuide\Working\WebTOC.xml
-    Last step completed in 00:00:01,2344
+    Last step completed in 00:00:01,2031
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
@@ -565,7 +565,7 @@ C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyle
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocOpen.gif
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding-Website.js
 C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:00,1563
+    Last step completed in 00:00:00,2500
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
@@ -607,11 +607,11 @@ Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown
   
   
   
-  Created s:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,956 bytes
+  Created s:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,866 bytes
   
-  Compression decreased file by 1,881,203 bytes.
+  Compression decreased file by 1,881,293 bytes.
   
-    Last step completed in 00:00:05,0156
+    Last step completed in 00:00:05,2344
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -622,21 +622,21 @@ Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:00,7969
+</plugIn>    Last step completed in 00:00:00,8594
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
 Copied 442 files for the website content
-    Last step completed in 00:00:01,5000
+    Last step completed in 00:00:01,5469
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:01,0000
+    Last step completed in 00:00:01,1094
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 28.03.2016 00:54:49.  Total time: 00:00:21,0000
+Build completed successfully at 28.03.2016 01:36:41.  Total time: 00:00:21,3750
 
 </buildStep>
 </shfbBuild>
