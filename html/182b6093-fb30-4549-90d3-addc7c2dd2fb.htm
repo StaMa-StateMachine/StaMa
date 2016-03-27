@@ -1,0 +1,77 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Composite States</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="182b6093-fb30-4549-90d3-addc7c2dd2fb" /><meta name="Description" content="Describes how composite states and hierarchical state machines are created and how they function." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="298801d3-40ad-4fae-816e-5a7e1afb0ff0.htm" title="Programming State Machines" tocid="298801d3-40ad-4fae-816e-5a7e1afb0ff0">Programming State Machines</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="954456b3-e05a-4e1d-af00-4f400fd43f47.htm" title="States, Transitions and Regions" tocid="954456b3-e05a-4e1d-af00-4f400fd43f47">States, Transitions and Regions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16986707-6029-42de-a453-8b359b07248a.htm" title="StateMachineTemplate and StateMachine" tocid="16986707-6029-42de-a453-8b359b07248a">StateMachineTemplate and StateMachine</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="182b6093-fb30-4549-90d3-addc7c2dd2fb.htm" title="Composite States" tocid="182b6093-fb30-4549-90d3-addc7c2dd2fb">Composite States</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7e6981a4-284a-4027-9e21-50d195fe0169.htm" title="Orthogonal Regions" tocid="7e6981a4-284a-4027-9e21-50d195fe0169">Orthogonal Regions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm" title="State Configurations" tocid="badfe5ab-643a-45d2-bd27-ad6536a62b6c">State Configurations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="93712910-2b27-4731-a3a5-38da29702b5e.htm" title="State Machine Entities and Relations" tocid="93712910-2b27-4731-a3a5-38da29702b5e">State Machine Entities and Relations</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Composite States</td></tr></table><span class="introStyle"></span><div class="summary"><p>Describes how composite states and hierarchical state machines are created and how they function.</p></div><div class="introduction"><p>
+        Hierarchical state machines allow to enclose a group of states within a composite state.
+      </p><p>
+        This introduces a bunch of new situations for transitions within a state machine.
+        Regardless of the fact that transtions may start from or end on composite states, the state machine will transfer the active state of the state machine from a leaf simple state to (usually) another leaf simple state.
+        For such cases the transition effectively crosses the border of the involved composite states which causes that
+        the entry or exit actions of the composite state are executed additionally to the entry or exit actions of the ultimate leaf simple states.
+      </p><p>
+        The transition excution rules are as follows:
+      </p><ol><li><p>
+            Targeting a sub-state of a composite state from outside of the composite state will execute the entry action of the composite state and then the entry action of the target state.
+            The actions of the composite state are common for all sub-states.
+          </p></li><li><p>
+            Targeting a composite state at its border instead of a sub-state will enter the defined initial state of the enclosed group of sub-states, unless the history functionality is enabled.
+          </p></li><li><p>
+            Targeting a state outside of a composite state from one of its sub-states will execute the exit action of the leaf simple state and then the exit action of the composite state.
+          </p></li><li><p>
+            Starting a transition at the composite state will exit from any sub-state in case the state machine resides in a sub-state.
+            Both the exit action of the sub-state and the exit action of the composite state will be executed.
+          </p></li><li><p>
+            Starting a transition from a sub-state and targeting a sub-state within the same composite state will execute only the exit and entry actions of the
+            sub-states and not those of the composite state.
+          </p></li><li><p>
+            Starting a transition from a sub-state, leaving the composite state and re-entering a composite state (eventually the same) will execute the composition of all exit and entry actions of the involved states.
+          </p><p>
+            This transition attaches with a special aggregation symbol to the composite state, but the actual source state is a sub-state of the composite state.
+            The aggregation symbol has two effects:
+            First it defines to which state the transition belongs and which priority it has in case of conflicting transitions.
+            Second it defines that the composite state shall be left and re-entered.
+          </p><p /></li></ol><div class="mediaCenter"><img alt="State Machine Concepts Composite State Transitions" src="../media/StateMachineConceptsCompositeStateTransitions.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>State machine diagram with composite state and transitions.</div></div><div class="mediaCenter"><img alt="State Machine Concepts Composite State Machine Tree" src="../media/StateMachineConceptsCompositeStateMachineTree.png" /><div class="caption"><span class="captionLead">Figure 2:
+						</span>Tree structure for the above state machine with composite state.</div></div><p>
+        Sub-states of a composite state are added as a sequence of <a href="Overload_StaMa_StateMachineTemplate_State.htm">State</a>..<a href="M_StaMa_StateMachineTemplate_EndState.htm">EndState</a> statement pairs
+        grouped through an embedding <a href="M_StaMa_StateMachineTemplate_Region.htm">Region</a>..<a href="M_StaMa_StateMachineTemplate_EndRegion.htm">EndRegion</a> statement pair
+        inside the composite state <a href="Overload_StaMa_StateMachineTemplate_State.htm">State</a>..<a href="M_StaMa_StateMachineTemplate_EndState.htm">EndState</a> statement pair,
+        after any <a href="Overload_StaMa_StateMachineTemplate_Transition.htm">Transition</a> statements of the composite state.
+      </p><p>
+        See below sample code:
+      </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADCAAA_tab1" class="codeSnippetContainerTabSingle">StateMachineTemplate creation code for the state machine with composite state</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+t.Region(StateA, <span class="highlight-keyword">false</span>);
+    t.State(StateA, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit1, StateB1A, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit2, StateB, Event2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+    t.State(StateB, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit4, StateA, Event4, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit6, StateB1A, StateB1B, Event6, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Region(StateB1A, <span class="highlight-keyword">false</span>);
+            t.State(StateB1A, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transit3, StateA, Event3, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transit5, StateB1B, Event5, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(StateB1B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+t.EndRegion();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADCAAA");</script><p>
+        All transitions of the current state and its hierarchical ancestors are subject to be executed if their event arrives and/or the guard condition is fulfilled.
+        In order to maintain a defined precedence across conflicting transitions, the transitions starting from the outer composite states take precedence over transitions starting from a sub-state.
+      </p><p>
+        Unlike the other transitions, <span class="code">Transit6</span> explicitly specifies the source state <span class="code">StateB1A</span> to indicate that the
+        transition starts from a sub-state of the state to which it is aggregated.
+      </p><p> </p></div><div class="collapsibleAreaRegion" id="History"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Enable the history function for a sub-region</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          The history function tracks the most recently used state of a region and allows to enter this state when the state machine revisits the region.
+        </p><p>
+          The history function basically overrides the default initial state of the sub-region.
+          The initial history state is the default initial state. When the state machine leaves the sub-region, the last active state within the sub-region is stored in the history.
+          Transitions that target the border of the composite state will enter the last active state of the sub-region instead of the default initial state.
+        </p><p>
+          In case a defined initial state is needed for some transitions, these transitions can directly target the desired state within the sub-region.
+        </p><p>
+          The provided history function is most similar to the shallow history of the <a href="http://www.omg.org/spec/UML/2.5/Beta2/PDF/" target="_blank">OMG UML Specification</a>. In case a deep history is needed, all nested sub-regions shall recursively enable the history function.
+        </p><p>
+          The history function can be enabled through the <span class="code">hasHistory</span> parameter of the <a href="M_StaMa_StateMachineTemplate_Region.htm">Region</a> statement.
+        </p><p>
+          A history for the <a href="P_StaMa_StateMachineTemplate_Root.htm">Root</a> <a href="T_StaMa_Region.htm">Region</a> instance is useless and thus not supported.
+        </p></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

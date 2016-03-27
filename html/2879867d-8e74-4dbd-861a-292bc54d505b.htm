@@ -1,0 +1,193 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Generate Code for Enumerations of States, Signal Events and Actions from a Diagram Using StaMa Visio Shapes</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="2879867d-8e74-4dbd-861a-292bc54d505b" /><meta name="Description" content="Describes how to add a basic code generation to a state diagram and how to generate enumerations of state names, signal events or action names used in the state diagram." /><meta name="Microsoft.Help.ContentType" content="How To" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm" title="Using Visio Shapes" tocid="ca217c97-dd3c-4c6c-a0e7-5893315663aa">Using Visio Shapes</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d84688d1-ab43-4437-b9fe-aeecc03b5d0e.htm" title="Step by Step Descriptions for Tasks" tocid="d84688d1-ab43-4437-b9fe-aeecc03b5d0e">Step by Step Descriptions for Tasks</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b118384c-7479-4dd8-82e8-18e9a13b35f6.htm" title="Create a Basic State Diagram and Generate Code from It" tocid="b118384c-7479-4dd8-82e8-18e9a13b35f6">Create a Basic State Diagram and Generate Code from It</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c9b743d2-ae47-40d8-ad45-639e473271c1.htm" title="Add a State to a State Diagram and Control Its Generated Code" tocid="c9b743d2-ae47-40d8-ad45-639e473271c1">Add a State to a State Diagram and Control Its Generated Code</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm" title="Create a Plain Transition and Control Its Generated Code " tocid="1b54bfbf-f269-4c50-8695-8ff430dee73b">Create a Plain Transition and Control Its Generated Code </a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="2879867d-8e74-4dbd-861a-292bc54d505b.htm" title="Generate Code for Enumerations of States, Signal Events and Actions" tocid="2879867d-8e74-4dbd-861a-292bc54d505b">Generate Code for Enumerations of States, Signal Events and Actions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9d4e9992-3c8d-49a8-9818-18f5d488af7e.htm" title="Create a Composite State" tocid="9d4e9992-3c8d-49a8-9818-18f5d488af7e">Create a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9110ef28-d0d9-40ac-a09d-2263809f5f45.htm" title="Add a Second, Orthogonal Region to a Composite State" tocid="9110ef28-d0d9-40ac-a09d-2263809f5f45">Add a Second, Orthogonal Region to a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6ac8c54b-c9fa-4085-80f9-b816430ae62d.htm" title="Create a Fork Transition" tocid="6ac8c54b-c9fa-4085-80f9-b816430ae62d">Create a Fork Transition</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5a2e1160-ce69-4b22-97fe-bf986343fd1e.htm" title="Create a Join Transition" tocid="5a2e1160-ce69-4b22-97fe-bf986343fd1e">Create a Join Transition</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f3839c42-ee1f-4437-b495-b9522ba6d024.htm" title="Revert a Composite State Back to a Basic State" tocid="f3839c42-ee1f-4437-b495-b9522ba6d024">Revert a Composite State Back to a Basic State</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Generate Code for Enumerations of States, Signal Events and Actions from a Diagram Using StaMa Visio Shapes</td></tr></table><span class="introStyle"></span><div class="summary"><p>
+        Describes how to add a basic code generation to a state diagram and how to generate enumerations of state names, signal events or action names used in the state diagram.
+      </p></div><div class="introduction"><p>
+        The main objective of code generation is to extract code for the <a href="T_StaMa_StateMachineTemplate.htm">StaMa<span id="LSTD95712D0_0"></span><script type="text/javascript">AddLanguageSpecificTextSet("LSTD95712D0_0?cs=.|vb=.|cpp=::|nu=.|fs=.");</script>StateMachineTemplate</a> structure from the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> state diagram.
+        In addition to that code often requires state names, signal events, action method names and such as enumerations or lists.
+      </p><p>
+        The <a href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm">StaMa Visio Shapes</a> code generation is conveyed through the <a href="0898043b-ab92-416b-9347-1ff54fcbd5a8.htm">Code generator</a> shapes.
+        A <a href="0898043b-ab92-416b-9347-1ff54fcbd5a8.htm">Code generator</a> shape must be attached to the root region of a state diagram and will generate code into a <em>.cs</em> file that can be specified in the properties of the shape.
+        Multiple <a href="0898043b-ab92-416b-9347-1ff54fcbd5a8.htm">Code generator</a> shapes may be attached to the root region, each generating a separate code chunk into the same (or if needed a different) file.
+        Generated code chunks have a marker frame of comments that surrounds the C# code to identify the begin and end of a code chunk. The frame enables the code generator to identify the code chunk on subsequent code generation actions and to update the
+        content.
+      </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACDAAA_tab1" class="codeSnippetContainerTabSingle">CodeChunkMarker.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACDAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACDAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACDAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">//## Begin StateMachineTemplate10</span>
+<span class="highlight-comment">// Generated from &lt;file:E:\Drawing1.vsd&gt;</span>
+<span class="highlight-comment">// at 30-02-2014 10:17:51 using StaMaShapes Version 2</span>
+
+...
+
+<span class="highlight-comment">//## End StateMachineTemplate10</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACDAAA");</script><p>
+        The following procedures will use a simple state machine diagram as in <em>Figure 1</em> below.
+        To keep things simple, the state machine has two states named "State1" and "State2" and two transitions triggered through "Event1" and "Event2".
+      </p><div class="mediaCenter"><img alt="Code generator reference state machine" src="../media/CodegenReferenceStateMachine.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>Code generator reference state machine.</div></div></div><h3 class="procedureSubHeading">Adding basic code generation for the state machine structure</h3><div class="subSection"><ol><li><p>
+              In the <span class="ui"><a href="a4db1100-01f4-4594-b23c-948cbd01b5e7.htm">Document Stencil</a></span> locate the <span class="ui">Code Generator</span> shape and drag it over the region execution order rectangle of the root region in the diagram.
+            </p><p>
+              Drag the code generator shape until a small red rectangle appears on the region execution order rectangle.
+            </p><div class="mediaCenter"><img alt="Codegen Dragging Over Region" src="../media/CodegenDraggingOverRegion.png" /><div class="caption"><span class="captionLead">Figure 2:
+						</span>Drag code generator shape over the region execution order rectangle</div></div><p>
+              Drop the code generator shape. A properties dialog <span class="ui">Shape data</span> appears.
+            </p><div class="mediaCenter"><img alt="Codegen Properties Basic" src="../media/CodegenPropertiesBasic.png" /><div class="caption"><span class="captionLead">Figure 3:
+						</span>Basic properties of code generator shape</div></div><p>
+              In the <span class="ui">Custom1</span> field enter the identifier for the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> instance that is used in the code.
+            </p><p>
+              Leave the <span class="ui">Custom2</span> field empty. It is not used by the code generator.
+            </p><p>
+              In the <span class="ui">Custom3</span> field enter a <a href="http://msdn.microsoft.com/en-us/library/d1wf56tt.aspx" target="_blank">Visual Basic Script</a> expression that evaluates to the desired indentation of nested regions and states.
+              The default is 4 spaces of indentation per level and a general indentation of 4 * 4 spaces to accomodate for namespace, class, and method scopes.
+            </p><p>
+              The <span class="ui">Custom4</span> field contains the <span class="ui">EconomizeTransitionSourceState=True</span> option string that instructs the code generator to omit the source state in the generated <a href="Overload_StaMa_StateMachineTemplate_Transition.htm">Transition</a> statement if possible.
+              Keep the setting unless source states shall be explicitly generated.
+            </p><p>
+              In the <span class="ui">Target File</span> field enter the path of the target file or leave it unchanged if it already matches.
+              The default content is the path of the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> diagram file with a <em>.cs</em> extension and will be updated when the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> diagram file is moved or renamed.
+            </p><p>
+              In the <span class="ui">Ident</span> field enter an identifier that allows the code generator to locate the generated chunk within the target file in order to update the code on subsequent code generation actions.
+              The default content is generated from the shape id in the Visio diagram and should therefore already be unique, so it can usually be kept as is.
+            </p><p>
+              Press <span class="ui">OK</span> to close the dialog.
+            </p></li><li><p>
+              Generate the code into the <span class="placeholder">target file</span> e.g. by pressing <span class="ui">Ctrl+G</span>.
+            </p><p>
+              Open the <span class="placeholder">target file</span> and verify that it contains a code chunk that starts with a line <span class="literal">//## Begin &lt;ident&gt;</span> and has the expected content.
+              The <span class="placeholder">target file</span> can be opened through the <span class="ui">Open Target File</span> context menu item of the code generator shape and will be opened in the operating system default editor.
+            </p><p>
+              The contents of the generated file for the state machine from <em>Figure 1</em> should now look like this:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABBCAAA_tab1" class="codeSnippetContainerTabSingle">CodeGeneratorDemo.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">//## Begin StateMachineTemplate10</span>
+<span class="highlight-comment">// Generated from &lt;file:E:\Drawing1.vsd&gt;</span>
+<span class="highlight-comment">// at 30-02-2014 10:17:51 using StaMaShapes Version 2</span>
+t.Region(State1, <span class="highlight-keyword">false</span>);
+    t.State(State1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transi4, State2, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+    t.State(State2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transi6, State1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+t.EndRegion();
+<span class="highlight-comment">//## End StateMachineTemplate10</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABBCAAA");</script></li><li><p>
+              By adding the using declarations, a namespace, a class and a handy getter method this code chunk can be transformed into an appropriate class that might look as below.
+              Please observe that the generated code is now placed in the middle of a <em>.cs</em> file and subsequent code generator actions will overwrite the contents of the chunk while leaving the rest unchanged.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAABCAAA_tab1" class="codeSnippetContainerTabSingle">CodeGeneratorDemoWithClass.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAABCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAABCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAABCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> StaMa;
+
+<span class="highlight-keyword">namespace</span> CodeGeneratorDemo
+{
+    <span class="highlight-keyword">class</span> CodeGeneratorDemo
+    {
+        <span class="highlight-keyword">private</span> StateMachineTemplate m_stateMachineTemplate;
+
+        <span class="highlight-keyword">private</span> StateMachineTemplate GetStateMachineTemplate()
+        {
+            <span class="highlight-keyword">if</span> (m_stateMachineTemplate == <span class="highlight-keyword">null</span>)
+            {
+                StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+                <span class="highlight-comment">//## Begin StateMachineTemplate10</span>
+                <span class="highlight-comment">// Generated from &lt;file:E:\Drawing4.vsd&gt;</span>
+                <span class="highlight-comment">// at 30-02-2014 10:18:51 using StaMaShapes Version 2</span>
+                t.Region(State1, <span class="highlight-keyword">false</span>);
+                    t.State(State1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                        t.Transition(Transi4, State2, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                    t.EndState();
+                    t.State(State2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                        t.Transition(Transi6, State1, Event2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                    t.EndState();
+                t.EndRegion();
+                <span class="highlight-comment">//## End StateMachineTemplate10</span>
+
+                m_stateMachineTemplate = t;
+            }
+            <span class="highlight-keyword">return</span> m_stateMachineTemplate;
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAABCAAA");</script></li></ol><p>
+            The generated code chunk now contains the statements for the structural definition as needed for the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> definition.
+            In order to make it compiling, the identifiers <span class="literal">State1</span>, <span class="literal">State2</span>, <span class="literal">Transi4</span>, <span class="literal">Transi6</span> are missing as well as the event signal names <span class="literal">Event1</span> and <span class="literal">Event2</span>.
+            The <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> methods require state and transition names as <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a>s. Event signal names may be any type, but for simplicity we choose them here to be <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a>s also.
+            These <a href="http://msdn2.microsoft.com/en-us/library/s1wwdcbf" target="_blank">String</a>s should be defined as constants in order to let the compiler detect typing errors.
+            The next procedure shows how to add for every identifier a static readonly member to the class.
+          </p></div><h3 class="procedureSubHeading">Adding code generation for state name constants</h3><div class="subSection"><ol><li><p>
+              In the <span class="ui">Document Stencil</span> locate the <span class="ui">Consts Code Generator</span> shape and drag it over the region execution order rectangle of the root region in the diagram.
+            </p><p>
+              Drag the code generator shape until a small red rectangle appears on the region execution order rectangle.
+              For the moment ignore that the new shape hides or overlaps the existing <span class="ui">Code Generator</span> shape. It can be moved later.
+            </p><div class="mediaCenter"><img alt="Consts code generator shape dragging over region" src="../media/CodegenConstsDraggingOverRegion.png" /><div class="caption"><span class="captionLead">Figure 4:
+						</span>Drag code generator shape over the region execution order rectangle</div></div><p>
+              Drop the code generator shape. A properties dialog <span class="ui">Shape data</span> appears.
+            </p><div class="mediaCenter"><img alt="Consts code generator shape properties basic" src="../media/CodegenConstsPropertiesBasic.png" /><div class="caption"><span class="captionLead">Figure 5:
+						</span>Basic properties of code generator shape</div></div><p>
+              In the <span class="ui">Custom3</span> field enter a <a href="http://msdn.microsoft.com/en-us/library/d1wf56tt.aspx" target="_blank">Visual Basic Script</a> expression that evaluates to the desired indentation of nested regions and states.
+              The default is 2 * 4 spaces of indentation to accomodate for namespace and class scopes.
+            </p><p>
+              Leave the <span class="ui">Custom1</span>, <span class="ui">Custom2</span> and <span class="ui">Custom4</span> fields empty. They are not used by the code generator.
+            </p><p>
+              In the <span class="ui">Target File</span> field enter the path of the target file or leave it unchanged if it already matches.
+              The default content is the path of the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> diagram file with a <em>.cs</em> extension and will be updated when the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> diagram file is moved or renamed.
+            </p><p>
+              In the <span class="ui">Ident</span> field enter an identifier that allows the code generator to locate the generated chunk within the target file in order to update the code on subsequent code generation actions.
+              The default content is generated from the shape id in the visio diagram and should therefore already be unique, so it can usually be kept as is.
+            </p><p>
+              Press <span class="ui">OK</span> to close the dialog.
+            </p></li><li><p>
+              Locate the small yellow diamond at the bottom left corner of the new code generator shape. Drag it to move the shape to a favorable location.
+            </p><p>
+              In case the connector line of the new code generator shape crosses the earlier added code generator shape, lift the bottom code generator shape to the topmost graphical z-order.
+              To do this open the context menu of shape that is below the line and select <span class="ui">Bring to front</span> in the context menu.
+            </p><div class="mediaCenter"><img alt="Codegen Consts Arrange" src="../media/CodegenConstsArrange.png" /><div class="caption"><span class="captionLead">Figure 6:
+						</span>Arrange the overlapping consts code generator shape</div></div></li><li><p>
+              Generate the code into the <span class="placeholder">target file</span> e.g. by pressing <span class="ui">Ctrl+G</span>.
+            </p><p>
+              Open the <span class="placeholder">target file</span> and verify that at the end of the file it has a new code chunk that starts with a line <span class="literal">//## Begin &lt;ident&gt;</span> and has the expected content.
+            </p><p>
+              Move the entire code chunk including the <span class="literal">//## Begin &lt;ident&gt;</span> and <span class="literal">//## End &lt;ident&gt;</span> lines into the class scope.
+            </p><p>
+              The result for the state machine from <em>Figure 4</em> should now look like this:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAABBAAA_tab1" class="codeSnippetContainerTabSingle">CodeGeneratorDemoComplete.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAABBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAABBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAABBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> StaMa;
+
+<span class="highlight-keyword">namespace</span> CodeGeneratorDemo
+{
+    <span class="highlight-keyword">class</span> CodeGeneratorDemo
+    {
+        <span class="highlight-comment">//## Begin StateAndTransitionNames12</span>
+        <span class="highlight-comment">// Generated from &lt;file:E:\Drawing4.vsd&gt;</span>
+        <span class="highlight-comment">// at 09-16-2014 21:06:11 using StaMaShapes Version 2</span>
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> State1 = <span class="highlight-literal">"State1"</span>;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> Transi4 = <span class="highlight-literal">"Transi4"</span>;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> Event1 = <span class="highlight-literal">"Event1"</span>;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> State2 = <span class="highlight-literal">"State2"</span>;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> Transi6 = <span class="highlight-literal">"Transi6"</span>;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span> Event2 = <span class="highlight-literal">"Event2"</span>;
+        <span class="highlight-comment">//## End StateAndTransitionNames12</span>
+
+        <span class="highlight-keyword">private</span> StateMachineTemplate m_stateMachineTemplate;
+
+        <span class="highlight-keyword">private</span> StateMachineTemplate GetStateMachineTemplate()
+        {
+            <span class="highlight-keyword">if</span> (m_stateMachineTemplate == <span class="highlight-keyword">null</span>)
+            {
+                StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+                <span class="highlight-comment">//## Begin StateMachineTemplate10</span>
+                <span class="highlight-comment">// Generated from &lt;file:E:\Drawing4.vsd&gt;</span>
+                <span class="highlight-comment">// at 09-16-2014 21:06:11 using StaMaShapes Version 2</span>
+                t.Region(State1, <span class="highlight-keyword">false</span>);
+                    t.State(State1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                        t.Transition(Transi4, State2, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                    t.EndState();
+                    t.State(State2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                        t.Transition(Transi6, State1, Event2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                    t.EndState();
+                t.EndRegion();
+                <span class="highlight-comment">//## End StateMachineTemplate10</span>
+
+                m_stateMachineTemplate = t;
+            }
+            <span class="highlight-keyword">return</span> m_stateMachineTemplate;
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAABBAAA");</script></li></ol><p>
+            The class is now compiling and can be extended with written code or updated with generated code from the diagram.
+          </p><p>
+            In case the event signal constants need to be part of a public interface, an additional <span class="ui">Consts Code Generator</span> shape can be added to the diagram and both can be adapted to generate only the corresponding subsets of identifiers.
+            Details about the code generator capabilities can be found in <a href="0898043b-ab92-416b-9347-1ff54fcbd5a8.htm">Code Generator Shape</a>.
+          </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="0898043b-ab92-416b-9347-1ff54fcbd5a8.htm">Code Generator Shape</a></div></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

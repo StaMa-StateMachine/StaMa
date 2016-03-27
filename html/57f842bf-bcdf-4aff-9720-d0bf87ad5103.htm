@@ -1,0 +1,158 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Simple State Machine Sample .NET Framework</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="57f842bf-bcdf-4aff-9720-d0bf87ad5103" /><meta name="Description" content="The simple state machine sample demonstrates a minimal StaMa https://StaMa-StateMachine.github.io/ based state machine with two states and transtions between them. It runs in a Windows console application." /><meta name="Microsoft.Help.ContentType" content="Samples" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c9aa27b0-4173-4bcb-a275-908a0d0f8070.htm" title="Samples" tocid="c9aa27b0-4173-4bcb-a275-908a0d0f8070">Samples</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="7ecae87c-d38a-4a66-9c61-438fd6a25dc9.htm" title=".NET Framework" tocid="7ecae87c-d38a-4a66-9c61-438fd6a25dc9">.NET Framework</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="57f842bf-bcdf-4aff-9720-d0bf87ad5103.htm" title="Simple State Machine Sample .NET Framework" tocid="57f842bf-bcdf-4aff-9720-d0bf87ad5103">Simple State Machine Sample .NET Framework</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5c40f085-995b-40d4-b823-a4471a6ec564.htm" title="Clock Sample" tocid="5c40f085-995b-40d4-b823-a4471a6ec564">Clock Sample</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Simple State Machine Sample .NET Framework</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+        The simple state machine sample demonstrates a minimal <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> based state machine with two states and transtions between them.
+        It runs in a Windows console application.
+      </p><p>
+        The sample doesn't have relevant real world functionality but can be used as a ready to use base for experiments with state machines.
+      </p><div class="mediaCenter"><img alt="Sample Simple State MachineNETFWK" src="../media/SampleSimpleStateMachineNETFWK.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>Sample simple state machine console application</div></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Demonstrates</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          The basic programming model for a <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> based state machine.
+        </p><p>
+          How to implement a timeout transition based on a transition guard condition and the current time.
+        </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Example</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+            The sample polls for keyboard input in a 100 msec loop in the main thread.
+            The keyboard input is then forwarded through an event to the state machine.
+          </p><p>
+            If no keyboard input is available, the state machine checks the transition guard conditions, in particular the timeout.
+          </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABBAAA_tab1" class="codeSnippetContainerTabSingle">Program.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETFWK
+{
+    <span class="highlight-keyword">class</span> Program
+    {
+        [STAThread]
+        <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main(<span class="highlight-keyword">string</span>[] args)
+        {
+            Console.WriteLine(<span class="highlight-literal">"Press E to trigger the transition from State1 to State2."</span>);
+            Console.WriteLine(<span class="highlight-literal">"Expect 2 seconds delay for timeout transition from State2 to State1."</span>);
+            Console.WriteLine(<span class="highlight-literal">"Press X or Space or ESC to exit."</span>);
+
+            SampleSimpleStateMachineNETFWK stateMachine = <span class="highlight-keyword">new</span> SampleSimpleStateMachineNETFWK();
+
+            <span class="highlight-keyword">bool</span> exit = <span class="highlight-keyword">false</span>;
+            <span class="highlight-keyword">while</span> (!exit)
+            {
+                DateTime startTime = DateTime.Now;
+                <span class="highlight-keyword">if</span> (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(<span class="highlight-keyword">true</span>);
+                    <span class="highlight-keyword">switch</span> (key.Key)
+                    {
+                        <span class="highlight-keyword">case</span> ConsoleKey.E:
+                            Console.WriteLine(<span class="highlight-literal">"{0} You pressed E!"</span>, DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>));
+                            stateMachine.KeyPressed(key.Key);
+                            <span class="highlight-keyword">break</span>;
+                        <span class="highlight-keyword">case</span> ConsoleKey.X:
+                        <span class="highlight-keyword">case</span> ConsoleKey.Spacebar:
+                        <span class="highlight-keyword">case</span> ConsoleKey.Escape:
+                            Console.WriteLine(<span class="highlight-literal">"{0} Closing application."</span>, DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>));
+                            stateMachine.Finish();
+                            exit = <span class="highlight-keyword">true</span>;
+                            <span class="highlight-keyword">break</span>;
+                        <span class="highlight-keyword">default</span>:
+                            <span class="highlight-keyword">break</span>;
+                    }
+                }
+                <span class="highlight-keyword">else</span>
+                {
+                    stateMachine.CheckTimeouts();
+                }
+                System.Threading.Thread.Sleep(<span class="highlight-number">100</span>); <span class="highlight-comment">// Throttle CPU load.</span>
+            }
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABBAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAABAAA_tab1" class="codeSnippetContainerTabSingle">SampleSimpleStateMachineNETFWK.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> StaMa;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETFWK
+{
+    <span class="highlight-keyword">class</span> SampleSimpleStateMachineNETFWK
+    {
+        <span class="highlight-keyword">private</span> StateMachine m_stateMachine;
+        <span class="highlight-keyword">private</span> DateTime m_state2Entered;
+
+
+        <span class="highlight-keyword">public</span> SampleSimpleStateMachineNETFWK()
+        {
+            StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+            <span class="highlight-comment">//## Begin Structure</span>
+            <span class="highlight-comment">// Generated from &lt;file:S:\StaMa_State_Machine_Controller_Library\StaMaShapesMaster.vst&gt; page "SampleSimpleStateMachineNETFWK"</span>
+            <span class="highlight-comment">// at 07-22-2015 22:09:50 using StaMaShapes Version 2300</span>
+            t.Region(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">false</span>);
+                t.State(<span class="highlight-literal">"State1"</span>, EnterState1, ExitState1);
+                    t.Transition(<span class="highlight-literal">"Transition1to2"</span>, <span class="highlight-literal">"State2"</span>, <span class="highlight-literal">"Event1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+                t.State(<span class="highlight-literal">"State2"</span>, EnterState2, ExitState2);
+                    t.Transition(<span class="highlight-literal">"Transition2to1"</span>, <span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">null</span>, IsState2Timeout, <span class="highlight-keyword">null</span>);
+                t.EndState();
+            t.EndRegion();
+            <span class="highlight-comment">//## End Structure</span>
+
+            m_stateMachine = t.CreateStateMachine();
+            m_stateMachine.TraceStateChange = <span class="highlight-keyword">this</span>.TraceStateChange;
+
+            m_stateMachine.Startup();
+        }
+
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Finish()
+        {
+            m_stateMachine.Finish();
+        }
+
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> KeyPressed(ConsoleKey key)
+        {
+            m_stateMachine.SendTriggerEvent(<span class="highlight-literal">"Event1"</span>);
+        }
+
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> CheckTimeouts()
+        {
+            m_stateMachine.SendTriggerEvent(<span class="highlight-keyword">null</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Console.WriteLine(<span class="highlight-literal">"Called EnterState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Console.WriteLine(<span class="highlight-literal">"Called ExitState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Console.WriteLine(<span class="highlight-literal">"Called EnterState2"</span>);
+            m_state2Entered = DateTime.Now;
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Console.WriteLine(<span class="highlight-literal">"Called ExitState2"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">bool</span> IsState2Timeout(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            <span class="highlight-keyword">return</span> DateTime.Now - m_state2Entered &gt; <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">2</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> TraceStateChange(StateMachine stateMachine,
+                                      StateConfiguration stateConfigurationFrom,
+                                      StateConfiguration stateConfigurationTo,
+                                      Transition transition)
+        {
+            Console.WriteLine(<span class="highlight-literal">"{0} ActiveState={1} entered through Transition={2}"</span>,
+                              DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>),
+                              stateConfigurationTo.ToString(),
+                              (transition != <span class="highlight-keyword">null</span>) ? transition.Name : <span class="highlight-literal">"Startup/Finish"</span>);
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

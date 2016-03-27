@@ -1,0 +1,89 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Create a Basic State Diagram and Generate Code from It Using StaMa Visio Shapes</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="b118384c-7479-4dd8-82e8-18e9a13b35f6" /><meta name="Description" content="Explains how to create a basic state diagram in Microsoft Visio http://office.microsoft.com/visio/ and generate C# code for a StaMa https://StaMa-StateMachine.github.io/ state machine from the diagram." /><meta name="Microsoft.Help.ContentType" content="How To" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm" title="Using Visio Shapes" tocid="ca217c97-dd3c-4c6c-a0e7-5893315663aa">Using Visio Shapes</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d84688d1-ab43-4437-b9fe-aeecc03b5d0e.htm" title="Step by Step Descriptions for Tasks" tocid="d84688d1-ab43-4437-b9fe-aeecc03b5d0e">Step by Step Descriptions for Tasks</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="b118384c-7479-4dd8-82e8-18e9a13b35f6.htm" title="Create a Basic State Diagram and Generate Code from It" tocid="b118384c-7479-4dd8-82e8-18e9a13b35f6">Create a Basic State Diagram and Generate Code from It</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c9b743d2-ae47-40d8-ad45-639e473271c1.htm" title="Add a State to a State Diagram and Control Its Generated Code" tocid="c9b743d2-ae47-40d8-ad45-639e473271c1">Add a State to a State Diagram and Control Its Generated Code</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm" title="Create a Plain Transition and Control Its Generated Code " tocid="1b54bfbf-f269-4c50-8695-8ff430dee73b">Create a Plain Transition and Control Its Generated Code </a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2879867d-8e74-4dbd-861a-292bc54d505b.htm" title="Generate Code for Enumerations of States, Signal Events and Actions" tocid="2879867d-8e74-4dbd-861a-292bc54d505b">Generate Code for Enumerations of States, Signal Events and Actions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9d4e9992-3c8d-49a8-9818-18f5d488af7e.htm" title="Create a Composite State" tocid="9d4e9992-3c8d-49a8-9818-18f5d488af7e">Create a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9110ef28-d0d9-40ac-a09d-2263809f5f45.htm" title="Add a Second, Orthogonal Region to a Composite State" tocid="9110ef28-d0d9-40ac-a09d-2263809f5f45">Add a Second, Orthogonal Region to a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6ac8c54b-c9fa-4085-80f9-b816430ae62d.htm" title="Create a Fork Transition" tocid="6ac8c54b-c9fa-4085-80f9-b816430ae62d">Create a Fork Transition</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="5a2e1160-ce69-4b22-97fe-bf986343fd1e.htm" title="Create a Join Transition" tocid="5a2e1160-ce69-4b22-97fe-bf986343fd1e">Create a Join Transition</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f3839c42-ee1f-4437-b495-b9522ba6d024.htm" title="Revert a Composite State Back to a Basic State" tocid="f3839c42-ee1f-4437-b495-b9522ba6d024">Revert a Composite State Back to a Basic State</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Create a Basic State Diagram and Generate Code from It Using StaMa Visio Shapes</td></tr></table><span class="introStyle"></span><div class="summary"><p>
+        Explains how to create a basic state diagram in <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> and generate C# code for a <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> state machine from the diagram.
+      </p></div><div class="introduction"><p>
+        State diagrams for the <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> code generator are created through the <em>StaMaShapes.vst</em> <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> template.
+        The <em>StaMaShapes.vst</em> template contains all neccessary shapes to draw a state diagram plus a set of VBA macros to generate code and a default state diagram as the starting point.
+        Double clicking the <em>StaMaShapes.vst</em> template file in Windows Explorer launches <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> and creates a normal <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> drawing
+        which is a copy of the entire template file. Hence the new drawing is self-contained and contains all the shapes and VBA macros neccessary to extend the default state diagrams and to generate code.
+      </p><p>
+        This tutorial assumes that <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> 32-bit version (<a href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm#Visio32bitLimitation">more info</a>) is installed and the reader has basic knowledge about how to use the application.
+        The <em>StaMaShapes.vst</em> template doesn't require a specific <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> version and should be compatible with all versions since 2002, however is currently tested only with <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> 2010.
+      </p></div><h3 class="procedureSubHeading">Prerequisite: Preparing the Microsoft Visual Studio project as a target for the generated code</h3><div class="subSection"><ol><li><p>
+              Depending on the target framework:
+            </p><p>
+              Execute the steps from <a href="d94a3585-cd83-45b5-b16c-0487e3401337.htm">Implementing a Simple State Machine Application for .NET Micro Framework</a> or use the <em>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.csproj</em>
+              project from the <em>StaMa_State_Machine_Controller_Library_Vx.y.zip</em> release package.
+            </p><p>
+              -or-
+            </p><p>
+              Execute the steps from <a href="f5262f47-1501-476f-b1c0-25e83deba0b0.htm">Implementing a Simple State Machine Application for .NET Windows Desktop Framework</a> or use the <em>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachine\SampleSimpleStateMachineNETMF.csproj</em>
+              project from the <em>StaMa_State_Machine_Controller_Library_Vx.y.zip</em> release package.
+            </p></li><li><p>
+              Compile and run the <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> project to ensure its quality.
+            </p></li></ol><p>The above steps yield a minimal executable state machine project that can be used as the target for the code generator.</p></div><h3 class="procedureSubHeading">Creating the Microsoft Visio diagram file</h3><div class="subSection"><ol><li><p>
+              Locate the <em>StaMaShapes.vst</em> template file from the <em>StaMa_State_Machine_Controller_Library_Vx.y.zip</em> release package in Windows Explorer.
+            </p></li><li><p>
+              Double click the <em>StaMaShapes.vst</em> file.
+              <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> will start with a new diagram created from the <em>StaMaShapes.vst</em> file.
+            </p><p>
+              -or-
+            </p><p>
+              Start <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a>.
+              In the <span class="ui">File</span> ribbon select <span class="ui">New</span>.
+              In the <span class="ui">Other Ways to Get Started</span> panel at the bottom of the application window click <span class="ui">New from existing</span>.
+              A file selection dialog appears.
+              Select the <em>StaMaShapes.vst</em> file and press <span class="ui">Create New</span>.
+            </p><p>
+              -or-
+            </p><p>
+              Install the <em>StaMaShapes.vst</em> file according to <a href="e33381e0-fa7d-494b-ba46-f728e47edec7.htm">Installing StaMa on a Developer Machine</a>.
+              In the <span class="ui">File</span> ribbon select <span class="ui">New</span>.
+              In the <span class="ui">Template Categories</span> panel double click <span class="ui">StaMaShapes</span>.
+            </p></li><li><p>
+              Save the new diagram with the name <em>SampleSimpleStateMachine.vsd</em> in the project directory as a sibling file to the <em>.csproj</em>.
+            </p></li></ol><p>
+            The <em>StaMaShapes.vst</em> template brings with a diagram containing a root region with two states <span class="code">State1</span> and <span class="code">State2</span>,
+            a transition from <span class="code">State1</span> to <span class="code">State2</span> that can be triggered through the event <span class="code">Event1</span>, and
+            a reverse transition that automatically returns from <span class="code">State2</span> to <span class="code">State1</span> (triggered through a completion event).
+          </p><p>
+            Also there are two boxes outside of the root region that represent attributes for the code generator.
+          </p></div><h3 class="procedureSubHeading">Generating C# code for a StaMa state machine from the Microsoft Visio diagram</h3><div class="subSection"><ol><li><p>
+              Locate the rectangular code generator shapes in the diagram. Check that these Shapes are connected with the root region execution order box.
+            </p><p>
+              Check that the path value of the <span class="ui">Target File</span> property matches the <em>SampleSimpleStateMachineNETMF.cs</em> file of the <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> project.
+            </p></li><li><p>
+              In the <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> <span class="ui">Add-Ins</span> ribbon locate and press the <span class="ui">StaMa</span> menu button. A menu appears.
+              From the menu execute the <span class="ui">Generate code</span> menu entry to generate the code into the <span class="placeholder">target file</span>.
+            </p><p>
+              -or-
+            </p><p>
+              Ensure <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> is the active application and no dialogs are open. Then press <span class="ui">Ctrl+G</span> to generate the code into the <span class="placeholder">target file</span>.
+            </p></li><li><p>
+              Open or activate <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> with the target project.
+            </p><p>
+              Open the <em>SampleSimpleStateMachineNETMF.cs</em> file that is already part of the project.
+            </p><p>
+              Check that there is a block of text similar to the following:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACABBBAAA_tab1" class="codeSnippetContainerTabSingle">SampleSimpleStateMachineNETMF.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACABBBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACABBBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACABBBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-comment">//## Begin StateMachineTemplateNN</span>
+<span class="highlight-comment">// Generated from &lt;file:...\SampleSimpleStateMachineNETMF.vsd&gt;</span>
+<span class="highlight-comment">// at DD-MM-YYYY HH:MM:SS using StaMaShapes Version 2</span>
+t.Region(State1, <span class="highlight-keyword">false</span>);
+    t.State(State1, <span class="highlight-keyword">null</span>, ExitState1);
+        t.Transition(Transi4, State2, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+    t.State(State2, EnterState2, <span class="highlight-keyword">null</span>);
+        t.Transition(Transi6, State1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+t.EndRegion();
+<span class="highlight-comment">//## End StateMachineTemplateNN</span></pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACABBBAAA");</script><p>
+              Check that the DD-MM-YYYY HH:MM:SS values reflect the timepoint when the code was generated.
+            </p><p>
+              Move the entire block including the lines marked with //## to the location where the similar manually written code resides and remove the manually written code.
+              Save the <em>SampleSimpleStateMachineNETMF.cs</em> file.
+            </p></li><li><p>
+              Compile and run the <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> project to ensure its quality.
+            </p></li></ol><p>
+            Generating code again from the <em>SampleSimpleStateMachine.vsd</em> <a href="http://office.microsoft.com/visio/" target="_blank">Microsoft Visio</a> diagram will now search for the <span class="code">//## Begin StateMachineTemplateNN</span> and <span class="code">//## End StateMachineTemplateNN</span>
+            markers and generate the code into this location by overwriting the previous content.
+            The previous file content is kept with a <em>.bak</em> file extension.
+          </p></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="298801d3-40ad-4fae-816e-5a7e1afb0ff0.htm">Programming State Machines</a></div></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

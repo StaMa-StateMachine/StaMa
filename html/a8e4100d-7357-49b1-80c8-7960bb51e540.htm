@@ -1,0 +1,67 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Error and Exception Handling</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="a8e4100d-7357-49b1-80c8-7960bb51e540" /><meta name="Description" content="Provides some aspects about handling errors and exceptions in a state machine" /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ae34a73e-1561-4b10-ab33-a7564f4026e7.htm" title="Integrating the State Machine with the Application" tocid="ae34a73e-1561-4b10-ab33-a7564f4026e7">Integrating the State Machine with the Application</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a02f7e6a-627a-44f5-a250-52c62339f6f5.htm" title="Event Driven and Scan Cycle Driven State Machines" tocid="a02f7e6a-627a-44f5-a250-52c62339f6f5">Event Driven and Scan Cycle Driven State Machines</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="a8e4100d-7357-49b1-80c8-7960bb51e540.htm" title="Error and Exception Handling" tocid="a8e4100d-7357-49b1-80c8-7960bb51e540">Error and Exception Handling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16c7903d-977c-4d5d-bc01-5b0480e944fe.htm" title="Tracing State Changes, Transition Testing and Event Dispatching" tocid="16c7903d-977c-4d5d-bc01-5b0480e944fe">Tracing State Changes, Transition Testing and Event Dispatching</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="A98FB6B4-A211-412D-9D81-1DFF5695DDE9.htm" title="Persistence of State Machines" tocid="A98FB6B4-A211-412D-9D81-1DFF5695DDE9">Persistence of State Machines</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Error and Exception Handling</td></tr></table><span class="introStyle"></span><div class="summary"><p>Provides some aspects about handling errors and exceptions in a state machine</p></div><div class="introduction"><p>
+        Errors and exceptions in a state machine occur when a transition is executed and the corresponding actions fail to do, what they are expected to do.
+      </p><p>
+        Errors can also happen during checking of guard conditions, however their impact is usually low as these can often be handled graciously within the guard condition by returning a suitable fallback value.
+      </p><p><span class="term">Exceptions</span> are program execution issues that can be handled at runtime of the program, whereas <span class="term">errors</span> cannot be handled without restart of the program, most often the program has to be fixed.
+      </p><p>
+        Unfortunately this common definition overloads the C# <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">exception</a> language construct with the conceptual term <span class="term">exception</span>.
+        In this description an uppercase link to the runtime <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exception</a> class is used where C# exceptions are meant, otherwise the plain word exception is used.
+      </p><p><a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> throws <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exceptions</a> of type <a href="T_StaMa_StateMachineException.htm">StateMachineException</a>
+        during setup of the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> structure from the 
+        <a href="M_StaMa_StateMachineTemplate_Region.htm">Region</a>,
+        <a href="M_StaMa_StateMachineTemplate_EndRegion.htm">EndRegion</a>,
+        <a href="Overload_StaMa_StateMachineTemplate_State.htm">State</a>,
+        <a href="M_StaMa_StateMachineTemplate_EndState.htm">EndState</a> and
+        <a href="Overload_StaMa_StateMachineTemplate_Transition.htm">Transition</a> statements.
+        These execptions are defined in the corresponding method documentation.
+      </p><p><a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> will not throw execptions after the <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance has been created and while executing the
+        <a href="M_StaMa_StateMachine_Startup.htm">Startup</a>,
+        <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> and
+        <a href="M_StaMa_StateMachine_Finish.htm">Finish</a> methods, unless something very bad happened like multithreaded access or otherwise violent manipulations.
+        All <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exceptions</a> thrown out of these methods come from the actions or guard conditions.
+        Such <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exceptions</a> immediately terminate the execution of the 
+        <a href="M_StaMa_StateMachine_Startup.htm">Startup</a>,
+        <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> or
+        <a href="M_StaMa_StateMachine_Finish.htm">Finish</a> methods, potentially leaving the state machine inconsistent.
+      </p><p>
+        Inconsistent means that the exit actions of a state may have been executed but the <a href="P_StaMa_StateMachine_ActiveStateConfiguration.htm">active state</a>
+        has not been set to the new state, or that the new state has already been set, but the entry actions have not been executed completely.
+      </p><p>
+		In particular the following rules apply:
+      </p><ul><li><p>
+            In case the <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exception</a> is thrown from a transition guard, the event is lost but the state machine remains unchanged and consistent.
+          </p></li><li><p>
+            In case the <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exception</a> is thrown from an exit action or from the transition action, the <a href="P_StaMa_StateMachine_ActiveStateConfiguration.htm">StateMachine.ActiveStateConfiguration</a> remains in the old state,
+            but no entry actions are executed and the run-to-completion processing is aborted.
+          </p></li><li><p>
+            In case the <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exception</a> is thrown from an entry method, the <a href="P_StaMa_StateMachine_ActiveStateConfiguration.htm">StateMachine.ActiveStateConfiguration</a> is already changed to the target state of the transition,
+            but the run-to-completion processing is aborted.
+          </p></li></ul><p><a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exceptions</a> like
+        <a href="http://msdn2.microsoft.com/en-us/library/8w0s4024" target="_blank">NullReferenceException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/2asft85a" target="_blank">InvalidOperationException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/3w1b3114" target="_blank">ArgumentException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/8a7a4e64" target="_blank">NotSupportedException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/6byb74h9" target="_blank">NotImplementedException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/5afc3sdf" target="_blank">OutOfMemoryException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/y31w16ca" target="_blank">ObjectDisposedException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/77c5xay2" target="_blank">IndexOutOfRangeException</a> and many others
+        usually indicate an error that can not be handled without restart of the program and a change of the program.
+      </p><p>
+        Sometimes it may be possible to catch <a href="http://msdn2.microsoft.com/en-us/library/c18k6c59" target="_blank">Exceptions</a> like
+        <a href="http://msdn2.microsoft.com/en-us/library/hsh2dfbb" target="_blank">SocketException</a>,
+        <a href="http://msdn2.microsoft.com/en-us/library/hccy4eyd" target="_blank">IOException</a> or similar and handle it through strategies described below.
+      </p><p>
+        Just as any other piece of code also execption handling in a state machine is specific for the individual state machine.
+        There are few strategies to handle exceptions.
+        Ideally exceptions shall be avoided by anticipating the condition that could cause an execption in the state machine execution flow.
+        The remaining scenarios, where an execption cannot be avoided, might be cured through the following approaches:
+      </p><ul><li><p>
+            State machines that purely use transition actions and avoid entry and exit actions are somewhat robust against exceptions within the transition actions.
+            An exception in the single transition action can be implemented in a way that it leaves the state machine in a stable and consistent state by cleaning up locally within the transition action.
+            The transition can then usually safely be retried by sending the event again.
+          </p></li><li><p>
+            Some exceptions in entry and exit actions can be handled by catching them and bringing the state machine to a <span class="phrase">fault state</span> with the immediate next transition.
+            In this case the exception handler of the failed action could set a property that enables transition with a single guard condition on a very outer level in the state machine.
+            Such a transition on an outer composite states will take precedence in the immediate next step of the run-to-completion processing over all other nested transitions.
+            A coordinated re-start or re-initialization of the state machine can then be tried from the <span class="phrase">fault state</span>.
+          </p></li></ul></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

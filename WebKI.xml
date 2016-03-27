@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="ActiveStateConfiguration property" Url="html/P_StaMa_StateMachine_ActiveStateConfiguration.htm" />
+  <HelpKINode Title="BeginSubStates method" Url="html/M_StaMa_IStateConfigurationVisitor_BeginSubStates.htm" />
+  <HelpKINode Title="ClearEventQueue method" Url="html/M_StaMa_StateMachine_ClearEventQueue.htm" />
+  <HelpKINode Title="Clone method" Url="html/M_StaMa_StateConfiguration_Clone.htm" />
+  <HelpKINode Title="ConcurrencyDegree property" Url="html/P_StaMa_StateMachineTemplate_ConcurrencyDegree.htm" />
+  <HelpKINode Title="Context property" Url="html/P_StaMa_StateMachine_Context.htm" />
+  <HelpKINode Title="Count property">
+    <HelpKINode Title="RegionCollection.Count Property " Url="html/P_StaMa_RegionCollection_Count.htm" />
+    <HelpKINode Title="StateCollection.Count Property " Url="html/P_StaMa_StateCollection_Count.htm" />
+    <HelpKINode Title="TransitionCollection.Count Property " Url="html/P_StaMa_TransitionCollection_Count.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateStateConfiguration method" Url="html/Overload_StaMa_StateMachineTemplate_CreateStateConfiguration.htm" />
+  <HelpKINode Title="CreateStateMachine method" Url="html/Overload_StaMa_StateMachineTemplate_CreateStateMachine.htm" />
+  <HelpKINode Title="DoAction property" Url="html/P_StaMa_State_DoAction.htm" />
+  <HelpKINode Title="EndRegion method">
+    <HelpKINode Title="IStateMachineTemplateVisitor.EndRegion Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_EndRegion.htm" />
+    <HelpKINode Title="StateMachineTemplate.EndRegion Method " Url="html/M_StaMa_StateMachineTemplate_EndRegion.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EndState method">
+    <HelpKINode Title="IStateMachineTemplateVisitor.EndState Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_EndState.htm" />
+    <HelpKINode Title="StateMachineTemplate.EndState Method " Url="html/M_StaMa_StateMachineTemplate_EndState.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EndSubStates method" Url="html/M_StaMa_IStateConfigurationVisitor_EndSubStates.htm" />
+  <HelpKINode Title="EntryAction property" Url="html/P_StaMa_State_EntryAction.htm" />
+  <HelpKINode Title="ExecutionOrder property" Url="html/P_StaMa_Region_ExecutionOrder.htm" />
+  <HelpKINode Title="ExitAction property" Url="html/P_StaMa_State_ExitAction.htm" />
+  <HelpKINode Title="Finish method" Url="html/M_StaMa_StateMachine_Finish.htm" />
+  <HelpKINode Title="GetEnumerator method">
+    <HelpKINode Title="RegionCollection.GetEnumerator Method " Url="html/M_StaMa_RegionCollection_GetEnumerator.htm" />
+    <HelpKINode Title="StateCollection.GetEnumerator Method " Url="html/M_StaMa_StateCollection_GetEnumerator.htm" />
+    <HelpKINode Title="TransitionCollection.GetEnumerator Method " Url="html/M_StaMa_TransitionCollection_GetEnumerator.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Guard property" Url="html/P_StaMa_Transition_Guard.htm" />
+  <HelpKINode Title="HasHistory property" Url="html/P_StaMa_Region_HasHistory.htm" />
+  <HelpKINode Title="HistoryIndex property" Url="html/P_StaMa_Region_HistoryIndex.htm" />
+  <HelpKINode Title="HistoryMax property" Url="html/P_StaMa_StateMachineTemplate_HistoryMax.htm" />
+  <HelpKINode Title="InitialState property" Url="html/P_StaMa_Region_InitialState.htm" />
+  <HelpKINode Title="IsInState method" Url="html/M_StaMa_StateMachine_IsInState.htm" />
+  <HelpKINode Title="IsMatching method" Url="html/M_StaMa_StateConfiguration_IsMatching.htm" />
+  <HelpKINode Title="IStateConfigurationVisitor interface">
+    <HelpKINode Title="IStateConfigurationVisitor Interface" Url="html/T_StaMa_IStateConfigurationVisitor.htm" />
+    <HelpKINode Title="about IStateConfigurationVisitor interface" Url="html/T_StaMa_IStateConfigurationVisitor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_IStateConfigurationVisitor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IStateConfigurationVisitor.BeginSubStates method" Url="html/M_StaMa_IStateConfigurationVisitor_BeginSubStates.htm" />
+  <HelpKINode Title="IStateConfigurationVisitor.EndSubStates method" Url="html/M_StaMa_IStateConfigurationVisitor_EndSubStates.htm" />
+  <HelpKINode Title="IStateConfigurationVisitor.NextSubState method" Url="html/M_StaMa_IStateConfigurationVisitor_NextSubState.htm" />
+  <HelpKINode Title="IStateConfigurationVisitor.State method" Url="html/M_StaMa_IStateConfigurationVisitor_State.htm" />
+  <HelpKINode Title="IStateConfigurationVisitor.StateAny method" Url="html/M_StaMa_IStateConfigurationVisitor_StateAny.htm" />
+  <HelpKINode Title="IStateMachineTemplateVisitor interface">
+    <HelpKINode Title="IStateMachineTemplateVisitor Interface" Url="html/T_StaMa_IStateMachineTemplateVisitor.htm" />
+    <HelpKINode Title="about IStateMachineTemplateVisitor interface" Url="html/T_StaMa_IStateMachineTemplateVisitor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_IStateMachineTemplateVisitor.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IStateMachineTemplateVisitor.EndRegion method" Url="html/M_StaMa_IStateMachineTemplateVisitor_EndRegion.htm" />
+  <HelpKINode Title="IStateMachineTemplateVisitor.EndState method" Url="html/M_StaMa_IStateMachineTemplateVisitor_EndState.htm" />
+  <HelpKINode Title="IStateMachineTemplateVisitor.Region method" Url="html/M_StaMa_IStateMachineTemplateVisitor_Region.htm" />
+  <HelpKINode Title="IStateMachineTemplateVisitor.State method" Url="html/M_StaMa_IStateMachineTemplateVisitor_State.htm" />
+  <HelpKINode Title="IStateMachineTemplateVisitor.Transition method" Url="html/M_StaMa_IStateMachineTemplateVisitor_Transition.htm" />
+  <HelpKINode Title="IsValidIdentifier method" Url="html/M_StaMa_StateMachineTemplate_IsValidIdentifier.htm" />
+  <HelpKINode Title="Item property">
+    <HelpKINode Title="RegionCollection.Item Property " Url="html/P_StaMa_RegionCollection_Item.htm" />
+    <HelpKINode Title="StateCollection.Item Property " Url="html/Overload_StaMa_StateCollection_Item.htm" />
+    <HelpKINode Title="TransitionCollection.Item Property " Url="html/P_StaMa_TransitionCollection_Item.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LeastCommonAncestor property" Url="html/P_StaMa_Transition_LeastCommonAncestor.htm" />
+  <HelpKINode Title="Name property">
+    <HelpKINode Title="State.Name Property " Url="html/P_StaMa_State_Name.htm" />
+    <HelpKINode Title="Transition.Name Property " Url="html/P_StaMa_Transition_Name.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NextSubState method" Url="html/M_StaMa_IStateConfigurationVisitor_NextSubState.htm" />
+  <HelpKINode Title="None enumeration member" Url="html/T_StaMa_StateMachineOptions.htm" />
+  <HelpKINode Title="Parent property">
+    <HelpKINode Title="Region.Parent Property " Url="html/P_StaMa_Region_Parent.htm" />
+    <HelpKINode Title="State.Parent Property " Url="html/P_StaMa_State_Parent.htm" />
+    <HelpKINode Title="Transition.Parent Property " Url="html/P_StaMa_Transition_Parent.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PassThrough method">
+    <HelpKINode Title="StateConfiguration.PassThrough Method " Url="html/M_StaMa_StateConfiguration_PassThrough.htm" />
+    <HelpKINode Title="StateMachineTemplate.PassThrough Method " Url="html/M_StaMa_StateMachineTemplate_PassThrough.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Region class">
+    <HelpKINode Title="Region Class" Url="html/T_StaMa_Region.htm" />
+    <HelpKINode Title="about Region class" Url="html/T_StaMa_Region.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_Region.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_Region.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Region method">
+    <HelpKINode Title="IStateMachineTemplateVisitor.Region Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_Region.htm" />
+    <HelpKINode Title="StateMachineTemplate.Region Method " Url="html/M_StaMa_StateMachineTemplate_Region.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Region.ExecutionOrder property" Url="html/P_StaMa_Region_ExecutionOrder.htm" />
+  <HelpKINode Title="Region.HasHistory property" Url="html/P_StaMa_Region_HasHistory.htm" />
+  <HelpKINode Title="Region.HistoryIndex property" Url="html/P_StaMa_Region_HistoryIndex.htm" />
+  <HelpKINode Title="Region.InitialState property" Url="html/P_StaMa_Region_InitialState.htm" />
+  <HelpKINode Title="Region.Parent property" Url="html/P_StaMa_Region_Parent.htm" />
+  <HelpKINode Title="Region.StateConfigurationIndex property" Url="html/P_StaMa_Region_StateConfigurationIndex.htm" />
+  <HelpKINode Title="Region.States property" Url="html/P_StaMa_Region_States.htm" />
+  <HelpKINode Title="Region.ToString method" Url="html/M_StaMa_Region_ToString.htm" />
+  <HelpKINode Title="RegionCollection class">
+    <HelpKINode Title="RegionCollection Class" Url="html/T_StaMa_RegionCollection.htm" />
+    <HelpKINode Title="about RegionCollection class" Url="html/T_StaMa_RegionCollection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_RegionCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_RegionCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionCollection.Count property" Url="html/P_StaMa_RegionCollection_Count.htm" />
+  <HelpKINode Title="RegionCollection.GetEnumerator method" Url="html/M_StaMa_RegionCollection_GetEnumerator.htm" />
+  <HelpKINode Title="RegionCollection.Item property" Url="html/P_StaMa_RegionCollection_Item.htm" />
+  <HelpKINode Title="Regions property" Url="html/P_StaMa_State_Regions.htm" />
+  <HelpKINode Title="Resume method" Url="html/M_StaMa_StateMachine_Resume.htm" />
+  <HelpKINode Title="Root property" Url="html/P_StaMa_StateMachineTemplate_Root.htm" />
+  <HelpKINode Title="SaveState method" Url="html/M_StaMa_StateMachine_SaveState.htm" />
+  <HelpKINode Title="SendTriggerEvent method" Url="html/Overload_StaMa_StateMachine_SendTriggerEvent.htm" />
+  <HelpKINode Title="SerializationSignatureGenerator property" Url="html/P_StaMa_StateMachineTemplate_SerializationSignatureGenerator.htm" />
+  <HelpKINode Title="SetContext method" Url="html/M_StaMa_StateMachine_SetContext.htm" />
+  <HelpKINode Title="Signature property" Url="html/P_StaMa_StateMachineTemplate_Signature.htm" />
+  <HelpKINode Title="SignatureGenerator delegate" Url="html/T_StaMa_SignatureGenerator.htm" />
+  <HelpKINode Title="SourceState property" Url="html/P_StaMa_Transition_SourceState.htm" />
+  <HelpKINode Title="StaMa namespace" Url="html/N_StaMa.htm" />
+  <HelpKINode Title="StaMa.IStateConfigurationVisitor interface" Url="html/T_StaMa_IStateConfigurationVisitor.htm" />
+  <HelpKINode Title="StaMa.IStateMachineTemplateVisitor interface" Url="html/T_StaMa_IStateMachineTemplateVisitor.htm" />
+  <HelpKINode Title="StaMa.Region class" Url="html/T_StaMa_Region.htm" />
+  <HelpKINode Title="StaMa.RegionCollection class" Url="html/T_StaMa_RegionCollection.htm" />
+  <HelpKINode Title="StaMa.SignatureGenerator delegate" Url="html/T_StaMa_SignatureGenerator.htm" />
+  <HelpKINode Title="StaMa.State class" Url="html/T_StaMa_State.htm" />
+  <HelpKINode Title="StaMa.StateCollection class" Url="html/T_StaMa_StateCollection.htm" />
+  <HelpKINode Title="StaMa.StateConfiguration class" Url="html/T_StaMa_StateConfiguration.htm" />
+  <HelpKINode Title="StaMa.StateMachine class" Url="html/T_StaMa_StateMachine.htm" />
+  <HelpKINode Title="StaMa.StateMachine.TraceDispatchTriggerEventEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceDispatchTriggerEventEventHandler.htm" />
+  <HelpKINode Title="StaMa.StateMachine.TraceStateChangeEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceStateChangeEventHandler.htm" />
+  <HelpKINode Title="StaMa.StateMachine.TraceTestTransitionEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceTestTransitionEventHandler.htm" />
+  <HelpKINode Title="StaMa.StateMachineActionCallback delegate" Url="html/T_StaMa_StateMachineActionCallback.htm" />
+  <HelpKINode Title="StaMa.StateMachineDoActionCallback delegate" Url="html/T_StaMa_StateMachineDoActionCallback.htm" />
+  <HelpKINode Title="StaMa.StateMachineException class" Url="html/T_StaMa_StateMachineException.htm" />
+  <HelpKINode Title="StaMa.StateMachineGuardCallback delegate" Url="html/T_StaMa_StateMachineGuardCallback.htm" />
+  <HelpKINode Title="StaMa.StateMachineOptions enumeration" Url="html/T_StaMa_StateMachineOptions.htm" />
+  <HelpKINode Title="StaMa.StateMachineTemplate class" Url="html/T_StaMa_StateMachineTemplate.htm" />
+  <HelpKINode Title="StaMa.Transition class" Url="html/T_StaMa_Transition.htm" />
+  <HelpKINode Title="StaMa.TransitionCollection class" Url="html/T_StaMa_TransitionCollection.htm" />
+  <HelpKINode Title="Startup method" Url="html/M_StaMa_StateMachine_Startup.htm" />
+  <HelpKINode Title="State class">
+    <HelpKINode Title="State Class" Url="html/T_StaMa_State.htm" />
+    <HelpKINode Title="about State class" Url="html/T_StaMa_State.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_State.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_State.htm" />
+  </HelpKINode>
+  <HelpKINode Title="State method">
+    <HelpKINode Title="IStateConfigurationVisitor.State Method " Url="html/M_StaMa_IStateConfigurationVisitor_State.htm" />
+    <HelpKINode Title="IStateMachineTemplateVisitor.State Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_State.htm" />
+    <HelpKINode Title="StateMachineTemplate.State Method " Url="html/Overload_StaMa_StateMachineTemplate_State.htm" />
+  </HelpKINode>
+  <HelpKINode Title="State.DoAction property" Url="html/P_StaMa_State_DoAction.htm" />
+  <HelpKINode Title="State.EntryAction property" Url="html/P_StaMa_State_EntryAction.htm" />
+  <HelpKINode Title="State.ExitAction property" Url="html/P_StaMa_State_ExitAction.htm" />
+  <HelpKINode Title="State.Name property" Url="html/P_StaMa_State_Name.htm" />
+  <HelpKINode Title="State.Parent property" Url="html/P_StaMa_State_Parent.htm" />
+  <HelpKINode Title="State.Regions property" Url="html/P_StaMa_State_Regions.htm" />
+  <HelpKINode Title="State.ToString method" Url="html/M_StaMa_State_ToString.htm" />
+  <HelpKINode Title="State.Transitions property" Url="html/P_StaMa_State_Transitions.htm" />
+  <HelpKINode Title="StateAny method" Url="html/M_StaMa_IStateConfigurationVisitor_StateAny.htm" />
+  <HelpKINode Title="StateCollection class">
+    <HelpKINode Title="StateCollection Class" Url="html/T_StaMa_StateCollection.htm" />
+    <HelpKINode Title="about StateCollection class" Url="html/T_StaMa_StateCollection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_StateCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_StateCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateCollection.Count property" Url="html/P_StaMa_StateCollection_Count.htm" />
+  <HelpKINode Title="StateCollection.GetEnumerator method" Url="html/M_StaMa_StateCollection_GetEnumerator.htm" />
+  <HelpKINode Title="StateCollection.Item property" Url="html/Overload_StaMa_StateCollection_Item.htm" />
+  <HelpKINode Title="StateConfiguration class">
+    <HelpKINode Title="StateConfiguration Class" Url="html/T_StaMa_StateConfiguration.htm" />
+    <HelpKINode Title="about StateConfiguration class" Url="html/T_StaMa_StateConfiguration.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_StateConfiguration.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_StateConfiguration.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateConfiguration.Clone method" Url="html/M_StaMa_StateConfiguration_Clone.htm" />
+  <HelpKINode Title="StateConfiguration.IsMatching method" Url="html/M_StaMa_StateConfiguration_IsMatching.htm" />
+  <HelpKINode Title="StateConfiguration.PassThrough method" Url="html/M_StaMa_StateConfiguration_PassThrough.htm" />
+  <HelpKINode Title="StateConfiguration.Template property" Url="html/P_StaMa_StateConfiguration_Template.htm" />
+  <HelpKINode Title="StateConfiguration.ToString method" Url="html/M_StaMa_StateConfiguration_ToString.htm" />
+  <HelpKINode Title="StateConfigurationIndex property" Url="html/P_StaMa_Region_StateConfigurationIndex.htm" />
+  <HelpKINode Title="StateConfigurationMax property" Url="html/P_StaMa_StateMachineTemplate_StateConfigurationMax.htm" />
+  <HelpKINode Title="StateMachine class">
+    <HelpKINode Title="StateMachine Class" Url="html/T_StaMa_StateMachine.htm" />
+    <HelpKINode Title="about StateMachine class" Url="html/T_StaMa_StateMachine.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_StateMachine.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_StateMachine.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateMachine.ActiveStateConfiguration property" Url="html/P_StaMa_StateMachine_ActiveStateConfiguration.htm" />
+  <HelpKINode Title="StateMachine.ClearEventQueue method" Url="html/M_StaMa_StateMachine_ClearEventQueue.htm" />
+  <HelpKINode Title="StateMachine.Context property" Url="html/P_StaMa_StateMachine_Context.htm" />
+  <HelpKINode Title="StateMachine.Finish method" Url="html/M_StaMa_StateMachine_Finish.htm" />
+  <HelpKINode Title="StateMachine.IsInState method" Url="html/M_StaMa_StateMachine_IsInState.htm" />
+  <HelpKINode Title="StateMachine.Resume method" Url="html/M_StaMa_StateMachine_Resume.htm" />
+  <HelpKINode Title="StateMachine.SaveState method" Url="html/M_StaMa_StateMachine_SaveState.htm" />
+  <HelpKINode Title="StateMachine.SendTriggerEvent method" Url="html/Overload_StaMa_StateMachine_SendTriggerEvent.htm" />
+  <HelpKINode Title="StateMachine.SetContext method" Url="html/M_StaMa_StateMachine_SetContext.htm" />
+  <HelpKINode Title="StateMachine.Startup method" Url="html/M_StaMa_StateMachine_Startup.htm" />
+  <HelpKINode Title="StateMachine.Template property" Url="html/P_StaMa_StateMachine_Template.htm" />
+  <HelpKINode Title="StateMachine.ToString method" Url="html/M_StaMa_StateMachine_ToString.htm" />
+  <HelpKINode Title="StateMachine.TraceDispatchTriggerEvent property" Url="html/P_StaMa_StateMachine_TraceDispatchTriggerEvent.htm" />
+  <HelpKINode Title="StateMachine.TraceDispatchTriggerEventEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceDispatchTriggerEventEventHandler.htm" />
+  <HelpKINode Title="StateMachine.TraceStateChange property" Url="html/P_StaMa_StateMachine_TraceStateChange.htm" />
+  <HelpKINode Title="StateMachine.TraceStateChangeEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceStateChangeEventHandler.htm" />
+  <HelpKINode Title="StateMachine.TraceTestTransition property" Url="html/P_StaMa_StateMachine_TraceTestTransition.htm" />
+  <HelpKINode Title="StateMachine.TraceTestTransitionEventHandler delegate" Url="html/T_StaMa_StateMachine_TraceTestTransitionEventHandler.htm" />
+  <HelpKINode Title="StateMachineActionCallback delegate" Url="html/T_StaMa_StateMachineActionCallback.htm" />
+  <HelpKINode Title="StateMachineDoActionCallback delegate" Url="html/T_StaMa_StateMachineDoActionCallback.htm" />
+  <HelpKINode Title="StateMachineException class">
+    <HelpKINode Title="StateMachineException Class" Url="html/T_StaMa_StateMachineException.htm" />
+    <HelpKINode Title="about StateMachineException class" Url="html/T_StaMa_StateMachineException.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_StaMa_StateMachineException__ctor.htm" />
+    <HelpKINode Title="fields" Url="html/Fields_T_StaMa_StateMachineException.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_StateMachineException.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_StateMachineException.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateMachineException.StateMachineException constructor" Url="html/Overload_StaMa_StateMachineException__ctor.htm" />
+  <HelpKINode Title="StateMachineGuardCallback delegate" Url="html/T_StaMa_StateMachineGuardCallback.htm" />
+  <HelpKINode Title="StateMachineOptions enumeration" Url="html/T_StaMa_StateMachineOptions.htm" />
+  <HelpKINode Title="StateMachineOptions property" Url="html/P_StaMa_StateMachineTemplate_StateMachineOptions.htm" />
+  <HelpKINode Title="StateMachineTemplate class">
+    <HelpKINode Title="StateMachineTemplate Class" Url="html/T_StaMa_StateMachineTemplate.htm" />
+    <HelpKINode Title="about StateMachineTemplate class" Url="html/T_StaMa_StateMachineTemplate.htm" />
+    <HelpKINode Title="constructor" Url="html/Overload_StaMa_StateMachineTemplate__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_StateMachineTemplate.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_StateMachineTemplate.htm" />
+  </HelpKINode>
+  <HelpKINode Title="StateMachineTemplate.ConcurrencyDegree property" Url="html/P_StaMa_StateMachineTemplate_ConcurrencyDegree.htm" />
+  <HelpKINode Title="StateMachineTemplate.CreateStateConfiguration method" Url="html/Overload_StaMa_StateMachineTemplate_CreateStateConfiguration.htm" />
+  <HelpKINode Title="StateMachineTemplate.CreateStateMachine method" Url="html/Overload_StaMa_StateMachineTemplate_CreateStateMachine.htm" />
+  <HelpKINode Title="StateMachineTemplate.EndRegion method" Url="html/M_StaMa_StateMachineTemplate_EndRegion.htm" />
+  <HelpKINode Title="StateMachineTemplate.EndState method" Url="html/M_StaMa_StateMachineTemplate_EndState.htm" />
+  <HelpKINode Title="StateMachineTemplate.HistoryMax property" Url="html/P_StaMa_StateMachineTemplate_HistoryMax.htm" />
+  <HelpKINode Title="StateMachineTemplate.IsValidIdentifier method" Url="html/M_StaMa_StateMachineTemplate_IsValidIdentifier.htm" />
+  <HelpKINode Title="StateMachineTemplate.PassThrough method" Url="html/M_StaMa_StateMachineTemplate_PassThrough.htm" />
+  <HelpKINode Title="StateMachineTemplate.Region method" Url="html/M_StaMa_StateMachineTemplate_Region.htm" />
+  <HelpKINode Title="StateMachineTemplate.Root property" Url="html/P_StaMa_StateMachineTemplate_Root.htm" />
+  <HelpKINode Title="StateMachineTemplate.SerializationSignatureGenerator property" Url="html/P_StaMa_StateMachineTemplate_SerializationSignatureGenerator.htm" />
+  <HelpKINode Title="StateMachineTemplate.Signature property" Url="html/P_StaMa_StateMachineTemplate_Signature.htm" />
+  <HelpKINode Title="StateMachineTemplate.State method" Url="html/Overload_StaMa_StateMachineTemplate_State.htm" />
+  <HelpKINode Title="StateMachineTemplate.StateConfigurationMax property" Url="html/P_StaMa_StateMachineTemplate_StateConfigurationMax.htm" />
+  <HelpKINode Title="StateMachineTemplate.StateMachineOptions property" Url="html/P_StaMa_StateMachineTemplate_StateMachineOptions.htm" />
+  <HelpKINode Title="StateMachineTemplate.StateMachineTemplate constructor" Url="html/Overload_StaMa_StateMachineTemplate__ctor.htm" />
+  <HelpKINode Title="StateMachineTemplate.Transition method" Url="html/Overload_StaMa_StateMachineTemplate_Transition.htm" />
+  <HelpKINode Title="States property" Url="html/P_StaMa_Region_States.htm" />
+  <HelpKINode Title="TargetState property" Url="html/P_StaMa_Transition_TargetState.htm" />
+  <HelpKINode Title="Template property">
+    <HelpKINode Title="StateConfiguration.Template Property " Url="html/P_StaMa_StateConfiguration_Template.htm" />
+    <HelpKINode Title="StateMachine.Template Property " Url="html/P_StaMa_StateMachine_Template.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToString method">
+    <HelpKINode Title="Region.ToString Method " Url="html/M_StaMa_Region_ToString.htm" />
+    <HelpKINode Title="State.ToString Method " Url="html/M_StaMa_State_ToString.htm" />
+    <HelpKINode Title="StateConfiguration.ToString Method " Url="html/M_StaMa_StateConfiguration_ToString.htm" />
+    <HelpKINode Title="StateMachine.ToString Method " Url="html/M_StaMa_StateMachine_ToString.htm" />
+    <HelpKINode Title="Transition.ToString Method " Url="html/M_StaMa_Transition_ToString.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TraceDispatchTriggerEvent property" Url="html/P_StaMa_StateMachine_TraceDispatchTriggerEvent.htm" />
+  <HelpKINode Title="TraceStateChange property" Url="html/P_StaMa_StateMachine_TraceStateChange.htm" />
+  <HelpKINode Title="TraceTestTransition property" Url="html/P_StaMa_StateMachine_TraceTestTransition.htm" />
+  <HelpKINode Title="Transition class">
+    <HelpKINode Title="Transition Class" Url="html/T_StaMa_Transition.htm" />
+    <HelpKINode Title="about Transition class" Url="html/T_StaMa_Transition.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_Transition.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_Transition.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Transition method">
+    <HelpKINode Title="IStateMachineTemplateVisitor.Transition Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_Transition.htm" />
+    <HelpKINode Title="StateMachineTemplate.Transition Method " Url="html/Overload_StaMa_StateMachineTemplate_Transition.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Transition.Guard property" Url="html/P_StaMa_Transition_Guard.htm" />
+  <HelpKINode Title="Transition.LeastCommonAncestor property" Url="html/P_StaMa_Transition_LeastCommonAncestor.htm" />
+  <HelpKINode Title="Transition.Name property" Url="html/P_StaMa_Transition_Name.htm" />
+  <HelpKINode Title="Transition.Parent property" Url="html/P_StaMa_Transition_Parent.htm" />
+  <HelpKINode Title="Transition.SourceState property" Url="html/P_StaMa_Transition_SourceState.htm" />
+  <HelpKINode Title="Transition.TargetState property" Url="html/P_StaMa_Transition_TargetState.htm" />
+  <HelpKINode Title="Transition.ToString method" Url="html/M_StaMa_Transition_ToString.htm" />
+  <HelpKINode Title="Transition.TransitionAction property" Url="html/P_StaMa_Transition_TransitionAction.htm" />
+  <HelpKINode Title="Transition.TriggerEvent property" Url="html/P_StaMa_Transition_TriggerEvent.htm" />
+  <HelpKINode Title="TransitionAction property" Url="html/P_StaMa_Transition_TransitionAction.htm" />
+  <HelpKINode Title="TransitionCollection class">
+    <HelpKINode Title="TransitionCollection Class" Url="html/T_StaMa_TransitionCollection.htm" />
+    <HelpKINode Title="about TransitionCollection class" Url="html/T_StaMa_TransitionCollection.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_StaMa_TransitionCollection.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_StaMa_TransitionCollection.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TransitionCollection.Count property" Url="html/P_StaMa_TransitionCollection_Count.htm" />
+  <HelpKINode Title="TransitionCollection.GetEnumerator method" Url="html/M_StaMa_TransitionCollection_GetEnumerator.htm" />
+  <HelpKINode Title="TransitionCollection.Item property" Url="html/P_StaMa_TransitionCollection_Item.htm" />
+  <HelpKINode Title="Transitions property" Url="html/P_StaMa_State_Transitions.htm" />
+  <HelpKINode Title="TriggerEvent property" Url="html/P_StaMa_Transition_TriggerEvent.htm" />
+  <HelpKINode Title="UseDoActions enumeration member" Url="html/T_StaMa_StateMachineOptions.htm" />
+  <HelpKINode Title="Visio Shapes">
+    <HelpKINode Title="Code Generator Shape" Url="html/0898043b-ab92-416b-9347-1ff54fcbd5a8.htm" />
+    <HelpKINode Title="Region Shape" Url="html/29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1.htm" />
+    <HelpKINode Title="State Shape" Url="html/31807e1f-17b3-484d-b250-1cc6eb0e85bf.htm" />
+    <HelpKINode Title="Transition Knot Shape" Url="html/9611a508-1db1-452a-8d6e-3ae59b29b5e1.htm" />
+    <HelpKINode Title="Transition Segment Shape" Url="html/20d05290-66a0-43f9-8210-b3f384666daf.htm" />
+  </HelpKINode>
+</HelpKI>

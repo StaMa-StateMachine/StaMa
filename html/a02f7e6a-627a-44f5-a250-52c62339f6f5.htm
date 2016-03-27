@@ -1,0 +1,75 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Event Driven and Scan Cycle Driven State Machines</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="a02f7e6a-627a-44f5-a250-52c62339f6f5" /><meta name="Description" content="Explains typical approaches how to execute a state machine within a thread." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ae34a73e-1561-4b10-ab33-a7564f4026e7.htm" title="Integrating the State Machine with the Application" tocid="ae34a73e-1561-4b10-ab33-a7564f4026e7">Integrating the State Machine with the Application</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="a02f7e6a-627a-44f5-a250-52c62339f6f5.htm" title="Event Driven and Scan Cycle Driven State Machines" tocid="a02f7e6a-627a-44f5-a250-52c62339f6f5">Event Driven and Scan Cycle Driven State Machines</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="a8e4100d-7357-49b1-80c8-7960bb51e540.htm" title="Error and Exception Handling" tocid="a8e4100d-7357-49b1-80c8-7960bb51e540">Error and Exception Handling</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16c7903d-977c-4d5d-bc01-5b0480e944fe.htm" title="Tracing State Changes, Transition Testing and Event Dispatching" tocid="16c7903d-977c-4d5d-bc01-5b0480e944fe">Tracing State Changes, Transition Testing and Event Dispatching</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="A98FB6B4-A211-412D-9D81-1DFF5695DDE9.htm" title="Persistence of State Machines" tocid="A98FB6B4-A211-412D-9D81-1DFF5695DDE9">Persistence of State Machines</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Event Driven and Scan Cycle Driven State Machines</td></tr></table><span class="introStyle"></span><div class="summary"><p>Explains typical approaches how to execute a state machine within a thread.</p></div><div class="introduction"><p>
+        Running a state machine means checking for enabled transitions.
+        The check can either be triggered when an event arrives or can be done periodically.
+        In case the check identifies an enabled transition, the transition must be executed.
+        In order to ensure consistency within the state machine, all checking and excution of transitions has to be done sequentially.
+        The most natural approach is to run this within a single thread to avoid synchronization and locking within the state machine.
+      </p><p>
+        In <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> transition checking and excution of transitions is triggered through the <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">StateMachine.SendTriggerEvent</a> method.
+        <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> is intended for the single threaded approach and explicitly omits usage of runtime system synchronisation mechanisms like locks, monitors, mutexes, semaphores or whatever may exist.
+        Provided that proper synchronization mechanisms are in place, it would in principle be possible to run every single invocation of <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> in an arbitrary thread,
+        however it is strongly recommended to execute <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> always in the same thread to avoid confusing execution of the actions from varying threads.
+      </p><p>
+        Different state machine instances may be run in the same or individual threads, as needed.
+      </p><p>
+        Often the state machine can be executed in the main thread while asynchronous operation requests, triggered through the actions, are executed in background threads and call back into the main thread when they are completed.
+      </p><p>
+        The <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">StateMachine.SendTriggerEvent</a> method runs an entire run-to-completion cycle which means that
+        this method synchronously checks for an enabled transition and executes the transition in a loop until the state machine has reached a stable state where no further transitions are enabled.
+      </p><p>
+        As suggested initially, there are two major strategies how to trigger checking for transitions of a state machine:
+      </p><ul><li><p>
+            Event driven state machines evaluate the state machine only when an event arrives.
+            Applications with a significant amount of asynchronous operations usually use this mode of operation.
+          </p></li><li><p>
+            Cycle driven state machines periodically evaluate the state machine at a fixed time interval.
+            This mode is particularly useful to coordinate the activation of binary or analog, open or closed loop controllers in programmable logic controller (PLC) like applications.
+            Such loop controller state machines typically utilize state specific do-actions which are executed in every cycle to calculate the current controller output variables.
+          </p></li></ul><p>
+        Mixtures of these strategies are possible, e.g. an event driven state machine might regularly check for elapsed timeouts of transitions or other changes.
+      </p><p> </p></div><div class="collapsibleAreaRegion" id="EventDrivenStateMachineOperation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Event driven state machine operation</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          Event driven state machines are typically executed in a message driven thread.
+        </p><p>
+          Typical message driven threads in <a href="http://msdn.microsoft.com/netframework/" target="_blank">.NET Windows Desktop Framework</a> applications are the UI main threads.
+        </p><p>
+          For WinForms the <a href="http://msdn2.microsoft.com/en-us/library/ms157900" target="_blank">Application.Run</a> methods start a message loop.
+          Messages can be sent to the thread using the <a href="http://msdn2.microsoft.com/en-us/library/7f1w416x" target="_blank">SynchronizationContext.Post</a> method of the
+          <a href="http://msdn2.microsoft.com/en-us/library/wx31754f" target="_blank">SynchronizationContext</a> instance
+          returned through the <a href="http://msdn2.microsoft.com/en-us/library/60k2dzad" target="_blank">SynchronizationContext.Current</a> property of the message loop thread.
+        </p><p>
+          For WPF the <a href="http://msdn2.microsoft.com/en-us/library/ms597010" target="_blank">Application.Run</a> methods internally start the <a href="http://msdn2.microsoft.com/en-us/library/ms591600" target="_blank">Dispatcher.Run</a> method.
+          Messages can be sent to the thread using the <span class="nolink">Dispatcher.InvokeAsync</span> methods on the
+          <a href="http://msdn2.microsoft.com/en-us/library/ms615907" target="_blank">Dispatcher</a> instance returned through
+          <a href="http://msdn2.microsoft.com/en-us/library/ms591591" target="_blank">Dispatcher.FromThread</a> or through the
+          <a href="http://msdn2.microsoft.com/en-us/library/ms605656" target="_blank">Dispatcher</a> property of most WPF related objects.
+        </p><p>
+          In <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> applications the <a href="http://msdn2.microsoft.com/en-us/library/bb285962" target="_blank">Dispatcher.Run</a> method executes a message loop.
+          Messages can be sent to the thread using the <a href="http://msdn2.microsoft.com/en-us/library/jj610905" target="_blank">Dispatcher.BeginInvoke</a> method of the
+          <a href="http://msdn2.microsoft.com/en-us/library/bb329261" target="_blank">Dispatcher</a> instance returned through
+          <a href="http://msdn2.microsoft.com/en-us/library/bb285542" target="_blank">Dispatcher.FromThread</a> or through the
+          <a href="http://msdn2.microsoft.com/en-us/library/bb329258" target="_blank">Dispatcher</a> property of objects that inherit from
+          <a href="http://msdn2.microsoft.com/en-us/library/bb329242" target="_blank">DispatcherObject</a>.
+        </p><p>
+          Definitely there are many other ways to set up a thread that runs a message loop, eventually more performant, however the easiest way is to reuse existing base library functionality.
+        </p><p> </p></div><div class="collapsibleAreaRegion" id="CycleDrivenStateMachineOperation"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Cycle driven state machine operation</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          Cycle driven state machines are usually a part of a control system.
+          They are executed in a thread that regularly activates itself in a loop.
+          A single loop of such a control system typically consists of reading the input from sensors, executing the logic and driving the actors.
+          The logic execution is (at least partially) implemented through a state machine that is typically solely based on guard conditions at the transitions.
+          The guard conditions evaluate the input from the sensors, while the entry and exit actions drive the actors.
+        </p><p>
+          Entry and exit actions of a state machine are only executed during state transitions, however open or closed loop control circuits need to respond to changes
+          of the sensors and do work while the state machine stays <em>in</em> a state.
+          In order to facilitate this mode, so called <span class="term">do actions</span> can be assigned to the states of the state machine, and the do actions are executed without a state change e.g. as part of the regular check for transitions.
+        </p><p><a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> supports this model of state machine operation through the
+          <a href="M_StaMa_StateMachineTemplate_State_2.htm">StateMachineTemplate.State</a> method overload that allows to specify a do action and
+          and through the <a href="M_StaMa_StateMachineTemplate__ctor_1.htm">StateMachineTemplate(StateMachineOptions.UseDoActions)</a> constructor that enables the
+          do action processing within the <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> method.
+        </p><p>
+          Do actions must be enabled explicitly as they cause an additional check for active transitions within every call to <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a>.
+          This is because executing the do actions may cause a change in variables used by guard conditions or may enqueue an event which has to be checked as part of the run-to-completion processing.
+          Event driven state machines don't need do actions, thus the small performance disadvantage can be avoided by only explicitly enabling do actions.
+        </p><p>
+          See also <a href="http://en.wikibooks.org/wiki/Introductory_PLC_Programming" target="_blank">Introductory PLC Programming</a>
+          for a short description how programmable logic controllers work.
+        </p></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

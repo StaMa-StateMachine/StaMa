@@ -1,0 +1,111 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Create a Join Transition Using StaMa Visio Shapes</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="5a2e1160-ce69-4b22-97fe-bf986343fd1e" /><meta name="Description" content="Explains how to extend a standard transition with additional transition source states to create a join transition in a StaMa Visio Shapes state diagram." /><meta name="Microsoft.Help.ContentType" content="How To" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm" title="Using Visio Shapes" tocid="ca217c97-dd3c-4c6c-a0e7-5893315663aa">Using Visio Shapes</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d84688d1-ab43-4437-b9fe-aeecc03b5d0e.htm" title="Step by Step Descriptions for Tasks" tocid="d84688d1-ab43-4437-b9fe-aeecc03b5d0e">Step by Step Descriptions for Tasks</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b118384c-7479-4dd8-82e8-18e9a13b35f6.htm" title="Create a Basic State Diagram and Generate Code from It" tocid="b118384c-7479-4dd8-82e8-18e9a13b35f6">Create a Basic State Diagram and Generate Code from It</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="c9b743d2-ae47-40d8-ad45-639e473271c1.htm" title="Add a State to a State Diagram and Control Its Generated Code" tocid="c9b743d2-ae47-40d8-ad45-639e473271c1">Add a State to a State Diagram and Control Its Generated Code</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm" title="Create a Plain Transition and Control Its Generated Code " tocid="1b54bfbf-f269-4c50-8695-8ff430dee73b">Create a Plain Transition and Control Its Generated Code </a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="2879867d-8e74-4dbd-861a-292bc54d505b.htm" title="Generate Code for Enumerations of States, Signal Events and Actions" tocid="2879867d-8e74-4dbd-861a-292bc54d505b">Generate Code for Enumerations of States, Signal Events and Actions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9d4e9992-3c8d-49a8-9818-18f5d488af7e.htm" title="Create a Composite State" tocid="9d4e9992-3c8d-49a8-9818-18f5d488af7e">Create a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="9110ef28-d0d9-40ac-a09d-2263809f5f45.htm" title="Add a Second, Orthogonal Region to a Composite State" tocid="9110ef28-d0d9-40ac-a09d-2263809f5f45">Add a Second, Orthogonal Region to a Composite State</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="6ac8c54b-c9fa-4085-80f9-b816430ae62d.htm" title="Create a Fork Transition" tocid="6ac8c54b-c9fa-4085-80f9-b816430ae62d">Create a Fork Transition</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="5a2e1160-ce69-4b22-97fe-bf986343fd1e.htm" title="Create a Join Transition" tocid="5a2e1160-ce69-4b22-97fe-bf986343fd1e">Create a Join Transition</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f3839c42-ee1f-4437-b495-b9522ba6d024.htm" title="Revert a Composite State Back to a Basic State" tocid="f3839c42-ee1f-4437-b495-b9522ba6d024">Revert a Composite State Back to a Basic State</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Create a Join Transition Using StaMa Visio Shapes</td></tr></table><span class="introStyle"></span><div class="summary"><p>
+        Explains how to extend a standard transition with additional transition source states to create a join transition in a <a href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm">StaMa Visio Shapes</a> state diagram.
+      </p></div><div class="introduction"><p>
+        Join transitions are transitions that require that a specific state configuration is active  multiple states within different sub-regions of a composite state like <em>Figure 1</em>.
+      </p><div class="mediaCenter"><img alt="Join Transition" src="../media/JoinTransition.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>Join transition</div></div><p>
+        Join transitions are composed of the same shapes as two ended transitions but have two or more additional transition segment shapes that address the source states.
+      </p><p>
+        The steps for creating a join transition are similar to the steps for the two ended transitions in <a href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm">Create a Plain Transition and Control Its Generated Code</a>.
+      </p><p>
+        The following description assumes a a composite state with two sub-regions each containing a simple state as the source states and a simple state as the target state.
+        A description how to create a composite state with multiple sub-regions can be found in <a href="9110ef28-d0d9-40ac-a09d-2263809f5f45.htm">Add a Second, Orthogonal Region to a Composite State</a>.
+      </p></div><h3 class="procedureSubHeading">Creating the transition knot and defining the transition anchor state</h3><div class="subSection"><ol><li><p>
+              In the <a href="a4db1100-01f4-4594-b23c-948cbd01b5e7.htm">Document Stencil</a> locate the <span class="ui">Transition Knot</span> shape and drag it over the border of the composite state in the state diagram.
+            </p><p>
+              Drag the line end of the transition knot over the composite state border until a small red rectangle appears on the composite state.
+            </p><div class="mediaCenter"><img alt="Join Transition Dragging Transition Knot" src="../media/JoinTransitionDraggingTransitionKnot.png" /><div class="caption"><span class="captionLead">Figure 2:
+						</span>Drag transition knot over the source state border</div></div><p>
+              Drop the transition knot shape.
+            </p></li><li><p>
+              The composite state itself is not the source state of the join transition, therefore the transition knot connection from the composite state has to be declared as the transition anchor:
+            </p><p>
+              Double click the transition knot connection line.
+              The <span class="ui">Shape data</span> properties dialog of the transition knot connection appears.
+              In the <span class="ui">Segment Type</span> combo box select <span class="ui">Anchor only</span>.
+            </p><div class="mediaCenter"><img alt="Join Transition Convert Transition Knot To Anchor Only" src="../media/JoinTransitionConvertTransitionKnotToAnchorOnly.png" /><div class="caption"><span class="captionLead">Figure 3:
+						</span>Convert transition segment to source state.</div></div><p>
+              Press <span class="ui">OK</span> to close the dialog.
+            </p></li></ol><p>
+            The transition knot is now prepared to be connected to the real source states.
+          </p><p>
+            Properties of the transition like the signal event, a guard condition, a transition action, the priority and a human readable identifier can be set as described in <a href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm">Create a Plain Transition and Control Its Generated Code</a>.
+          </p></div><h3 class="procedureSubHeading">Defining the first source state of the transition</h3><div class="subSection"><ol><li><p>
+              In the <a href="a4db1100-01f4-4594-b23c-948cbd01b5e7.htm">Document Stencil</a> locate the <span class="ui">Transition Segment</span> shape and drag it over the border of the source state in the first sub-region.
+            </p><p>
+              Drag the line end of the transition segment with the arrow over the source state border until a small red rectangle appears on the source state.
+            </p><div class="mediaCenter"><img alt="Join Transition Dragging Transition Segment SourceA" src="../media/JoinTransitionDraggingTransitionSegmentSourceA.png" /><div class="caption"><span class="captionLead">Figure 4:
+						</span>Drag transition segment over the source state border</div></div><p>
+              Drop the transition segment shape.
+            </p></li><li><p>
+              When the transition segment is selected, it has a small yellow diamond at its dangling end.
+              Drag the small yellow diamond over the center of the transition knot box until a small red rectangle appears.
+            </p><div class="mediaCenter"><img alt="Join Transition Connecting Transition Segment SourceA" src="../media/JoinTransitionConnectingTransitionSegmentSourceA.png" /><div class="caption"><span class="captionLead">Figure 5:
+						</span>Drag dangling transition segment end over transition knot box</div></div><p>
+              Drop (release the mouse button) to connect the dangling line end with the transition knot.
+            </p></li><li><p>
+              Convert the transition segment to a source state reference:
+            </p><p>
+              Double click the transition segment.
+              The <span class="ui">Shape data</span> properties dialog of the transition segment appears.
+              In the <span class="ui">Segment Type</span> combo box select <span class="ui">From state</span>.
+            </p><div class="mediaCenter"><img alt="Join Transition Convert Transition SegmentATo From State" src="../media/JoinTransitionConvertTransitionSegmentAToFromState.png" /><div class="caption"><span class="captionLead">Figure 6:
+						</span>Convert transition segment to source state.</div></div><p>
+              Press <span class="ui">OK</span> to close the dialog.
+            </p></li></ol><p>
+            The transition segment may start on any nested state of the transition anchor state.
+          </p><p>
+            In case the transition segments starts on a state outside of the anchor state and the resulting source state configuration is still valid, the outside state contributes to the enabled condition of the transition.
+          </p></div><h3 class="procedureSubHeading">Defining the second source state of the transition</h3><div class="subSection"><ul><li><p>
+              Repeat the above steps for the second source state.
+            </p><p>
+              The diagram should now look as in <em>Figure 7</em>.
+            </p><div class="mediaCenter"><img alt="Join Transition Added All Segment Sources" src="../media/JoinTransitionAddedAllSegmentSources.png" /><div class="caption"><span class="captionLead">Figure 7:
+						</span>Join transition intermediate result after adding second source state.</div></div></li></ul><p>
+            An arbitrary number of source states can be added this way. Consistency of the resulting state configuration will be checked at runtime of the generated state machine.
+          </p></div><h3 class="procedureSubHeading">Defining the target state of the transition</h3><div class="subSection"><ol><li><p>
+              In the <a href="a4db1100-01f4-4594-b23c-948cbd01b5e7.htm">Document Stencil</a> locate the <span class="ui">Transition Segment</span> shape and drag it over the border of the intended target state in the state diagram.
+            </p><p>
+              Drag the line end of the transition segment with the arrow over the target state border until a small red rectangle appears on the source state.
+            </p><div class="mediaCenter"><img alt="Join Transition Dragging Transition Segment Target" src="../media/JoinTransitionDraggingTransitionSegmentTarget.png" /><div class="caption"><span class="captionLead">Figure 8:
+						</span>Drag transition segment over the target state border</div></div><p>
+              Drop the transition segment shape.
+            </p></li><li><p>
+              When the transition segment is selected, it has a small yellow diamond at its dangling end.
+              Drag the small yellow diamond over the center of the transition knot box until a small red rectangle appears.
+            </p><div class="mediaCenter"><img alt="Join Transition Connecting Transition Segment Target" src="../media/JoinTransitionConnectingTransitionSegmentTarget.png" /><div class="caption"><span class="captionLead">Figure 9:
+						</span>Drag dangling transition segment end over transition knot box</div></div><p>
+              Drop (release the mouse button) to connect the dangling line end with the transition knot.
+            </p></li></ol><p>
+            The transition target may also be a nested state within a sub-region of a state.
+          </p><p>
+            In case the transition shall fork to multiple sub-regions, the single transition segment can be replaced with multiple transition segments as described in <a href="6ac8c54b-c9fa-4085-80f9-b816430ae62d.htm">Create a Fork Transition</a></p></div><h3 class="procedureSubHeading">Improving the visual appearance of the transition</h3><div class="subSection"><ol><li><p>
+              Depending on the order of adding the transition knot and the transition segment they now have an unwanted graphical z-order which causes the
+              transition segment to cross the transition knot box.
+              By lifting the transition knot to the topmost graphical z-order, the transition knot box will cover the transition segment which looks much better.
+            </p><p>
+              Open the context menu of the transition knot by right-clicking with the mouse on its line, not on the box.
+              The context menu appears (and the two yellow diamonds).
+            </p><p>
+              In the context menu select <span class="ui">Bring to front</span>. The part of the transition segment line that crosses the transition knot box disappears.
+            </p><div class="mediaCenter"><img alt="Join Transition Transition Knot Bring To Front" src="../media/JoinTransitionTransitionKnotBringToFront.png" /><div class="caption"><span class="captionLead">Figure 10:
+						</span>Bring transition knot shape to front</div></div></li><li><p>
+              The transition knot position, the transition knot connection line routing and transition segment line routing may be adapted as described in <a href="1b54bfbf-f269-4c50-8695-8ff430dee73b.htm">Create a Plain Transition and Control Its Generated Code</a>.
+            </p></li></ol></div><h3 class="procedureSubHeading">Checking the generated code</h3><div class="subSection"><ul><li><p>
+              Generate the code into the <span class="placeholder">target file</span> e.g. by pressing <span class="ui">Ctrl+G</span>.
+              Check that the transition has properly been generated, the <span class="placeholder">target file</span> should now contain a piece of code similar to the following:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAAABBAAA_tab1" class="codeSnippetContainerTabSingle">JoinTransition.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAAABBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAAABBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAAABBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">t.Region(CompositeState, <span class="highlight-keyword">false</span>);
+    t.State(CompositeState, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(TransiNN, <span class="highlight-keyword">new</span> <span class="highlight-keyword">string</span>[] {StateInSubRegionA, StateInSubRegionB}, SimpleState, Event, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Region(StateInSubRegionA, <span class="highlight-keyword">false</span>);
+            t.State(StateInSubRegionA, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+        t.Region(StateInSubRegionB, <span class="highlight-keyword">false</span>);
+            t.State(StateInSubRegionB, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+    t.State(SimpleState, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+t.EndRegion();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAAABBAAA");</script></li></ul></div><div class="collapsibleAreaRegion" id="seeAlsoSection"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />See Also</span></div><div id="ID1RBSection" class="collapsibleSection"><h4 class="subHeading">Other Resources</h4><div class="seeAlsoStyle"><a href="7e6981a4-284a-4027-9e21-50d195fe0169.htm">Orthogonal Regions</a></div></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

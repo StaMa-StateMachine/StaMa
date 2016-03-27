@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="2fe20d49-9cd6-4115-a896-1feb82560840" Title="Developer&#39;s Guide">
+    <HelpTOCNode Title="Welcome" Url="html/d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" />
+    <HelpTOCNode Title="License and Copyright" Url="html/04562727-a5a7-4eda-b96a-44800a77bc7e.htm" />
+    <HelpTOCNode Id="3207af09-84e6-4f3d-8d91-f6f3965ce4d3" Title="Getting Started" Url="html/003c5297-0c49-41e9-ac8b-9f603358ac66.htm">
+      <HelpTOCNode Title="Installing StaMa on a Developer Machine" Url="html/e33381e0-fa7d-494b-ba46-f728e47edec7.htm" />
+      <HelpTOCNode Title="Compiling the StaMa Assembly For a Specific Target Framework Version" Url="html/b2a532fd-f7bb-4cce-b601-7563bca224d1.htm" />
+      <HelpTOCNode Title="Implementing a Simple State Machine Application for .NET Micro Framework" Url="html/d94a3585-cd83-45b5-b16c-0487e3401337.htm" />
+      <HelpTOCNode Title="Implementing a Simple State Machine Application for .NET Windows Desktop Framework" Url="html/f5262f47-1501-476f-b1c0-25e83deba0b0.htm" />
+      <HelpTOCNode Title="Deploying the StaMa Assembly on the Target Machine" Url="html/afdec6d6-fee1-4b99-b160-1e45bd76d8a2.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="6675e2bf-ed3a-4a02-8c04-0c024cd26848" Title="Programming State Machines" Url="html/298801d3-40ad-4fae-816e-5a7e1afb0ff0.htm">
+      <HelpTOCNode Title="States, Transitions and Regions" Url="html/954456b3-e05a-4e1d-af00-4f400fd43f47.htm" />
+      <HelpTOCNode Title="StateMachineTemplate and StateMachine" Url="html/16986707-6029-42de-a453-8b359b07248a.htm" />
+      <HelpTOCNode Title="Composite States" Url="html/182b6093-fb30-4549-90d3-addc7c2dd2fb.htm" />
+      <HelpTOCNode Title="Orthogonal Regions" Url="html/7e6981a4-284a-4027-9e21-50d195fe0169.htm" />
+      <HelpTOCNode Title="State Configurations" Url="html/badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm" />
+      <HelpTOCNode Title="State Machine Entities and Relations" Url="html/93712910-2b27-4731-a3a5-38da29702b5e.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="0dafe129-0003-4aba-8cbd-402f1d9f4f2f" Title="Integrating the State Machine with the Application" Url="html/ae34a73e-1561-4b10-ab33-a7564f4026e7.htm">
+      <HelpTOCNode Title="Event Driven and Scan Cycle Driven State Machines" Url="html/a02f7e6a-627a-44f5-a250-52c62339f6f5.htm" />
+      <HelpTOCNode Title="Error and Exception Handling" Url="html/a8e4100d-7357-49b1-80c8-7960bb51e540.htm" />
+      <HelpTOCNode Title="Tracing State Changes, Transition Testing and Event Dispatching" Url="html/16c7903d-977c-4d5d-bc01-5b0480e944fe.htm" />
+      <HelpTOCNode Title="Persistence of State Machines" Url="html/A98FB6B4-A211-412D-9D81-1DFF5695DDE9.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="cf6ec414-3f60-49cd-bd28-f0fa03b4aa81" Title="Samples" Url="html/c9aa27b0-4173-4bcb-a275-908a0d0f8070.htm">
+      <HelpTOCNode Id="e6b7592c-2df6-41a3-ba61-a0ce62df0f2b" Title=".NET Micro Framework" Url="html/e703c27a-d129-4c7b-a3d9-880aa839e85a.htm">
+        <HelpTOCNode Title="Simple State Machine Sample .NET Micro Framework" Url="html/ee58caad-02cf-4d26-9b25-033cd452dd77.htm" />
+        <HelpTOCNode Title="Ticket Vending Sample" Url="html/29a68e43-5dbc-4a2c-894e-81a59e9c847b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="876ebf11-e01c-40ed-ab3b-b361ab27ce2e" Title=".NET Framework" Url="html/7ecae87c-d38a-4a66-9c61-438fd6a25dc9.htm">
+        <HelpTOCNode Title="Simple State Machine Sample .NET Framework" Url="html/57f842bf-bcdf-4aff-9720-d0bf87ad5103.htm" />
+        <HelpTOCNode Title="Clock Sample" Url="html/5c40f085-995b-40d4-b823-a4471a6ec564.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="7d4b889a-a796-48ef-9e69-7a7331068570" Title="Using Visio Shapes" Url="html/ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm">
+      <HelpTOCNode Id="d017b81b-e2ae-440b-b3a9-48ffb3f20ea1" Title="Shape Types" Url="html/a4db1100-01f4-4594-b23c-948cbd01b5e7.htm">
+        <HelpTOCNode Title="State Shape" Url="html/31807e1f-17b3-484d-b250-1cc6eb0e85bf.htm" />
+        <HelpTOCNode Title="Region Shape" Url="html/29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1.htm" />
+        <HelpTOCNode Title="Transition Knot Shape" Url="html/9611a508-1db1-452a-8d6e-3ae59b29b5e1.htm" />
+        <HelpTOCNode Title="Transition Segment Shape" Url="html/20d05290-66a0-43f9-8210-b3f384666daf.htm" />
+        <HelpTOCNode Title="Code Generator Shape" Url="html/0898043b-ab92-416b-9347-1ff54fcbd5a8.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="740be4d6-1505-4b63-8250-290b8d324944" Title="Step by Step Descriptions for Tasks" Url="html/d84688d1-ab43-4437-b9fe-aeecc03b5d0e.htm">
+        <HelpTOCNode Title="Create a Basic State Diagram and Generate Code from It" Url="html/b118384c-7479-4dd8-82e8-18e9a13b35f6.htm" />
+        <HelpTOCNode Title="Add a State to a State Diagram and Control Its Generated Code" Url="html/c9b743d2-ae47-40d8-ad45-639e473271c1.htm" />
+        <HelpTOCNode Title="Create a Plain Transition and Control Its Generated Code " Url="html/1b54bfbf-f269-4c50-8695-8ff430dee73b.htm" />
+        <HelpTOCNode Title="Generate Code for Enumerations of States, Signal Events and Actions" Url="html/2879867d-8e74-4dbd-861a-292bc54d505b.htm" />
+        <HelpTOCNode Title="Create a Composite State" Url="html/9d4e9992-3c8d-49a8-9818-18f5d488af7e.htm" />
+        <HelpTOCNode Title="Add a Second, Orthogonal Region to a Composite State" Url="html/9110ef28-d0d9-40ac-a09d-2263809f5f45.htm" />
+        <HelpTOCNode Title="Create a Fork Transition" Url="html/6ac8c54b-c9fa-4085-80f9-b816430ae62d.htm" />
+        <HelpTOCNode Title="Create a Join Transition" Url="html/5a2e1160-ce69-4b22-97fe-bf986343fd1e.htm" />
+        <HelpTOCNode Title="Revert a Composite State Back to a Basic State" Url="html/f3839c42-ee1f-4437-b495-b9522ba6d024.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Title="Glossary" Url="html/497592ea-471d-422b-b7fc-eff4b705ac37.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="1aeabf21-5545-4dee-b103-7322b284e89c" Title="API Reference" Url="html/R_Project_StaMaDevelopersGuide.htm">
+    <HelpTOCNode Id="8152da47-ac6d-4b0d-a0e9-9e144b03a010" Title="StaMa" Url="html/N_StaMa.htm">
+      <HelpTOCNode Id="d650d830-7a94-41ef-a2af-19a8708701b6" Title="IStateConfigurationVisitor Interface" Url="html/T_StaMa_IStateConfigurationVisitor.htm">
+        <HelpTOCNode Id="1b688195-3b7b-410d-93eb-29abd6451bd0" Title="IStateConfigurationVisitor Methods" Url="html/Methods_T_StaMa_IStateConfigurationVisitor.htm">
+          <HelpTOCNode Title="BeginSubStates Method " Url="html/M_StaMa_IStateConfigurationVisitor_BeginSubStates.htm" />
+          <HelpTOCNode Title="EndSubStates Method " Url="html/M_StaMa_IStateConfigurationVisitor_EndSubStates.htm" />
+          <HelpTOCNode Title="NextSubState Method " Url="html/M_StaMa_IStateConfigurationVisitor_NextSubState.htm" />
+          <HelpTOCNode Title="State Method " Url="html/M_StaMa_IStateConfigurationVisitor_State.htm" />
+          <HelpTOCNode Title="StateAny Method " Url="html/M_StaMa_IStateConfigurationVisitor_StateAny.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9d6d8478-44f3-4baa-96fa-3e90eaaa2c73" Title="IStateMachineTemplateVisitor Interface" Url="html/T_StaMa_IStateMachineTemplateVisitor.htm">
+        <HelpTOCNode Id="2554ccf7-b380-460f-ba9b-3e212dbb8e8b" Title="IStateMachineTemplateVisitor Methods" Url="html/Methods_T_StaMa_IStateMachineTemplateVisitor.htm">
+          <HelpTOCNode Title="EndRegion Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_EndRegion.htm" />
+          <HelpTOCNode Title="EndState Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_EndState.htm" />
+          <HelpTOCNode Title="Region Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_Region.htm" />
+          <HelpTOCNode Title="State Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_State.htm" />
+          <HelpTOCNode Title="Transition Method " Url="html/M_StaMa_IStateMachineTemplateVisitor_Transition.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="9167201c-67e5-4dd5-8625-15d02b4005ea" Title="Region Class" Url="html/T_StaMa_Region.htm">
+        <HelpTOCNode Id="714d94b8-a41a-41c4-82eb-98c2f2095452" Title="Region Properties" Url="html/Properties_T_StaMa_Region.htm">
+          <HelpTOCNode Title="ExecutionOrder Property " Url="html/P_StaMa_Region_ExecutionOrder.htm" />
+          <HelpTOCNode Title="HasHistory Property " Url="html/P_StaMa_Region_HasHistory.htm" />
+          <HelpTOCNode Title="HistoryIndex Property " Url="html/P_StaMa_Region_HistoryIndex.htm" />
+          <HelpTOCNode Title="InitialState Property " Url="html/P_StaMa_Region_InitialState.htm" />
+          <HelpTOCNode Title="Parent Property " Url="html/P_StaMa_Region_Parent.htm" />
+          <HelpTOCNode Title="StateConfigurationIndex Property " Url="html/P_StaMa_Region_StateConfigurationIndex.htm" />
+          <HelpTOCNode Title="States Property " Url="html/P_StaMa_Region_States.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="bf129023-bb81-43dd-9146-3945c1abacaa" Title="Region Methods" Url="html/Methods_T_StaMa_Region.htm">
+          <HelpTOCNode Title="ToString Method " Url="html/M_StaMa_Region_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="1ba87033-1849-4e69-b345-91d19a52474e" Title="RegionCollection Class" Url="html/T_StaMa_RegionCollection.htm">
+        <HelpTOCNode Id="8d768c66-d523-4580-b34f-790fb375e803" Title="RegionCollection Properties" Url="html/Properties_T_StaMa_RegionCollection.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_StaMa_RegionCollection_Count.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_StaMa_RegionCollection_Item.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="7af93a8b-7fda-408d-9b33-42429c9840c1" Title="RegionCollection Methods" Url="html/Methods_T_StaMa_RegionCollection.htm">
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/M_StaMa_RegionCollection_GetEnumerator.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="SignatureGenerator Delegate" Url="html/T_StaMa_SignatureGenerator.htm" />
+      <HelpTOCNode Id="81e0654f-8ad9-4242-8520-f4e1eafb2546" Title="State Class" Url="html/T_StaMa_State.htm">
+        <HelpTOCNode Id="036017fd-c0ca-4320-8efa-ebf675bd6d03" Title="State Properties" Url="html/Properties_T_StaMa_State.htm">
+          <HelpTOCNode Title="DoAction Property " Url="html/P_StaMa_State_DoAction.htm" />
+          <HelpTOCNode Title="EntryAction Property " Url="html/P_StaMa_State_EntryAction.htm" />
+          <HelpTOCNode Title="ExitAction Property " Url="html/P_StaMa_State_ExitAction.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_StaMa_State_Name.htm" />
+          <HelpTOCNode Title="Parent Property " Url="html/P_StaMa_State_Parent.htm" />
+          <HelpTOCNode Title="Regions Property " Url="html/P_StaMa_State_Regions.htm" />
+          <HelpTOCNode Title="Transitions Property " Url="html/P_StaMa_State_Transitions.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4c2acf28-304f-4258-b04c-ce865b69df02" Title="State Methods" Url="html/Methods_T_StaMa_State.htm">
+          <HelpTOCNode Title="ToString Method " Url="html/M_StaMa_State_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="e5727977-5db8-495c-b7f6-1591e1e2bf24" Title="StateCollection Class" Url="html/T_StaMa_StateCollection.htm">
+        <HelpTOCNode Id="35196d5d-daf6-4588-83a2-fb8f5fb65e2e" Title="StateCollection Properties" Url="html/Properties_T_StaMa_StateCollection.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_StaMa_StateCollection_Count.htm" />
+          <HelpTOCNode Id="60d3ce21-9bfc-4c55-9c5a-33c660a26abf" Title="Item Property " Url="html/Overload_StaMa_StateCollection_Item.htm">
+            <HelpTOCNode Title="Item Property (Int32)" Url="html/P_StaMa_StateCollection_Item.htm" />
+            <HelpTOCNode Title="Item Property (String)" Url="html/P_StaMa_StateCollection_Item_1.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+        <HelpTOCNode Id="14e8eb82-220b-4f1e-8c58-177ad0e10c53" Title="StateCollection Methods" Url="html/Methods_T_StaMa_StateCollection.htm">
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/M_StaMa_StateCollection_GetEnumerator.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="6d65e176-47a5-47b0-9878-7e95c0028586" Title="StateConfiguration Class" Url="html/T_StaMa_StateConfiguration.htm">
+        <HelpTOCNode Id="c52f3318-192e-498c-9cef-9163b489cd2b" Title="StateConfiguration Properties" Url="html/Properties_T_StaMa_StateConfiguration.htm">
+          <HelpTOCNode Title="Template Property " Url="html/P_StaMa_StateConfiguration_Template.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="4e2b8fd0-9f01-4e0b-8e49-d38a3a963067" Title="StateConfiguration Methods" Url="html/Methods_T_StaMa_StateConfiguration.htm">
+          <HelpTOCNode Title="Clone Method " Url="html/M_StaMa_StateConfiguration_Clone.htm" />
+          <HelpTOCNode Title="IsMatching Method " Url="html/M_StaMa_StateConfiguration_IsMatching.htm" />
+          <HelpTOCNode Title="PassThrough Method " Url="html/M_StaMa_StateConfiguration_PassThrough.htm" />
+          <HelpTOCNode Title="ToString Method " Url="html/M_StaMa_StateConfiguration_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="8d23446c-9000-4d00-a199-923a4ba44f45" Title="StateMachine Class" Url="html/T_StaMa_StateMachine.htm">
+        <HelpTOCNode Id="cc109853-1405-4341-8e2d-09d804c0a1c1" Title="StateMachine Properties" Url="html/Properties_T_StaMa_StateMachine.htm">
+          <HelpTOCNode Title="ActiveStateConfiguration Property " Url="html/P_StaMa_StateMachine_ActiveStateConfiguration.htm" />
+          <HelpTOCNode Title="Context Property " Url="html/P_StaMa_StateMachine_Context.htm" />
+          <HelpTOCNode Title="Template Property " Url="html/P_StaMa_StateMachine_Template.htm" />
+          <HelpTOCNode Title="TraceDispatchTriggerEvent Property " Url="html/P_StaMa_StateMachine_TraceDispatchTriggerEvent.htm" />
+          <HelpTOCNode Title="TraceStateChange Property " Url="html/P_StaMa_StateMachine_TraceStateChange.htm" />
+          <HelpTOCNode Title="TraceTestTransition Property " Url="html/P_StaMa_StateMachine_TraceTestTransition.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="9bfb47ae-5597-4a64-a6f1-ec4908026294" Title="StateMachine Methods" Url="html/Methods_T_StaMa_StateMachine.htm">
+          <HelpTOCNode Title="ClearEventQueue Method " Url="html/M_StaMa_StateMachine_ClearEventQueue.htm" />
+          <HelpTOCNode Title="Finish Method " Url="html/M_StaMa_StateMachine_Finish.htm" />
+          <HelpTOCNode Title="IsInState Method " Url="html/M_StaMa_StateMachine_IsInState.htm" />
+          <HelpTOCNode Title="Resume Method " Url="html/M_StaMa_StateMachine_Resume.htm" />
+          <HelpTOCNode Title="SaveState Method " Url="html/M_StaMa_StateMachine_SaveState.htm" />
+          <HelpTOCNode Id="3dbe5456-b6fc-4d88-bced-ced667a1c010" Title="SendTriggerEvent Method " Url="html/Overload_StaMa_StateMachine_SendTriggerEvent.htm">
+            <HelpTOCNode Title="SendTriggerEvent Method (Object)" Url="html/M_StaMa_StateMachine_SendTriggerEvent.htm" />
+            <HelpTOCNode Title="SendTriggerEvent Method (Object, EventArgs)" Url="html/M_StaMa_StateMachine_SendTriggerEvent_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="SetContext Method " Url="html/M_StaMa_StateMachine_SetContext.htm" />
+          <HelpTOCNode Title="Startup Method " Url="html/M_StaMa_StateMachine_Startup.htm" />
+          <HelpTOCNode Title="ToString Method " Url="html/M_StaMa_StateMachine_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Title="StateMachine.TraceDispatchTriggerEventEventHandler Delegate" Url="html/T_StaMa_StateMachine_TraceDispatchTriggerEventEventHandler.htm" />
+      <HelpTOCNode Title="StateMachine.TraceStateChangeEventHandler Delegate" Url="html/T_StaMa_StateMachine_TraceStateChangeEventHandler.htm" />
+      <HelpTOCNode Title="StateMachine.TraceTestTransitionEventHandler Delegate" Url="html/T_StaMa_StateMachine_TraceTestTransitionEventHandler.htm" />
+      <HelpTOCNode Title="StateMachineActionCallback Delegate" Url="html/T_StaMa_StateMachineActionCallback.htm" />
+      <HelpTOCNode Title="StateMachineDoActionCallback Delegate" Url="html/T_StaMa_StateMachineDoActionCallback.htm" />
+      <HelpTOCNode Id="c4b3ea1a-8746-4988-948f-7500304f0848" Title="StateMachineException Class" Url="html/T_StaMa_StateMachineException.htm">
+        <HelpTOCNode Id="5d25be67-9a11-45c2-8479-2439f4b823e5" Title="StateMachineException Constructor " Url="html/Overload_StaMa_StateMachineException__ctor.htm">
+          <HelpTOCNode Title="StateMachineException Constructor " Url="html/M_StaMa_StateMachineException__ctor.htm" />
+          <HelpTOCNode Title="StateMachineException Constructor (String)" Url="html/M_StaMa_StateMachineException__ctor_1.htm" />
+          <HelpTOCNode Title="StateMachineException Constructor (String, Exception)" Url="html/M_StaMa_StateMachineException__ctor_2.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="StateMachineException Properties" Url="html/Properties_T_StaMa_StateMachineException.htm" />
+        <HelpTOCNode Title="StateMachineException Methods" Url="html/Methods_T_StaMa_StateMachineException.htm" />
+        <HelpTOCNode Title="StateMachineException Fields" Url="html/Fields_T_StaMa_StateMachineException.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="StateMachineGuardCallback Delegate" Url="html/T_StaMa_StateMachineGuardCallback.htm" />
+      <HelpTOCNode Title="StateMachineOptions Enumeration" Url="html/T_StaMa_StateMachineOptions.htm" />
+      <HelpTOCNode Id="3bf40ce6-2821-4615-b01d-726793c4054b" Title="StateMachineTemplate Class" Url="html/T_StaMa_StateMachineTemplate.htm">
+        <HelpTOCNode Id="c16b377c-05e3-4d56-af6f-b935759b4001" Title="StateMachineTemplate Constructor " Url="html/Overload_StaMa_StateMachineTemplate__ctor.htm">
+          <HelpTOCNode Title="StateMachineTemplate Constructor " Url="html/M_StaMa_StateMachineTemplate__ctor.htm" />
+          <HelpTOCNode Title="StateMachineTemplate Constructor (StateMachineOptions)" Url="html/M_StaMa_StateMachineTemplate__ctor_1.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a9a30341-e562-434b-b723-d7bc38879ee8" Title="StateMachineTemplate Properties" Url="html/Properties_T_StaMa_StateMachineTemplate.htm">
+          <HelpTOCNode Title="ConcurrencyDegree Property " Url="html/P_StaMa_StateMachineTemplate_ConcurrencyDegree.htm" />
+          <HelpTOCNode Title="HistoryMax Property " Url="html/P_StaMa_StateMachineTemplate_HistoryMax.htm" />
+          <HelpTOCNode Title="Root Property " Url="html/P_StaMa_StateMachineTemplate_Root.htm" />
+          <HelpTOCNode Title="SerializationSignatureGenerator Property " Url="html/P_StaMa_StateMachineTemplate_SerializationSignatureGenerator.htm" />
+          <HelpTOCNode Title="Signature Property " Url="html/P_StaMa_StateMachineTemplate_Signature.htm" />
+          <HelpTOCNode Title="StateConfigurationMax Property " Url="html/P_StaMa_StateMachineTemplate_StateConfigurationMax.htm" />
+          <HelpTOCNode Title="StateMachineOptions Property " Url="html/P_StaMa_StateMachineTemplate_StateMachineOptions.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="d818ac56-b34a-42f6-9250-5cc315a6893b" Title="StateMachineTemplate Methods" Url="html/Methods_T_StaMa_StateMachineTemplate.htm">
+          <HelpTOCNode Id="c44166c5-3d68-4df7-b84c-38a4b53dc57d" Title="CreateStateConfiguration Method " Url="html/Overload_StaMa_StateMachineTemplate_CreateStateConfiguration.htm">
+            <HelpTOCNode Title="CreateStateConfiguration Method (String)" Url="html/M_StaMa_StateMachineTemplate_CreateStateConfiguration.htm" />
+            <HelpTOCNode Title="CreateStateConfiguration Method (String[])" Url="html/M_StaMa_StateMachineTemplate_CreateStateConfiguration_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="069485e5-f933-45b3-8509-fb74099a76a7" Title="CreateStateMachine Method " Url="html/Overload_StaMa_StateMachineTemplate_CreateStateMachine.htm">
+            <HelpTOCNode Title="CreateStateMachine Method " Url="html/M_StaMa_StateMachineTemplate_CreateStateMachine.htm" />
+            <HelpTOCNode Title="CreateStateMachine Method (Object)" Url="html/M_StaMa_StateMachineTemplate_CreateStateMachine_1.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Title="EndRegion Method " Url="html/M_StaMa_StateMachineTemplate_EndRegion.htm" />
+          <HelpTOCNode Title="EndState Method " Url="html/M_StaMa_StateMachineTemplate_EndState.htm" />
+          <HelpTOCNode Title="IsValidIdentifier Method " Url="html/M_StaMa_StateMachineTemplate_IsValidIdentifier.htm" />
+          <HelpTOCNode Title="PassThrough Method " Url="html/M_StaMa_StateMachineTemplate_PassThrough.htm" />
+          <HelpTOCNode Title="Region Method " Url="html/M_StaMa_StateMachineTemplate_Region.htm" />
+          <HelpTOCNode Id="4355ea1b-51d2-4e28-8432-15993065ef4e" Title="State Method " Url="html/Overload_StaMa_StateMachineTemplate_State.htm">
+            <HelpTOCNode Title="State Method (String)" Url="html/M_StaMa_StateMachineTemplate_State.htm" />
+            <HelpTOCNode Title="State Method (String, StateMachineActionCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_State_1.htm" />
+            <HelpTOCNode Title="State Method (String, StateMachineActionCallback, StateMachineActionCallback, StateMachineDoActionCallback)" Url="html/M_StaMa_StateMachineTemplate_State_2.htm" />
+          </HelpTOCNode>
+          <HelpTOCNode Id="be864a50-9bef-4f83-92f6-8a590fb28197" Title="Transition Method " Url="html/Overload_StaMa_StateMachineTemplate_Transition.htm">
+            <HelpTOCNode Title="Transition Method (String, String, Object)" Url="html/M_StaMa_StateMachineTemplate_Transition.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], Object)" Url="html/M_StaMa_StateMachineTemplate_Transition_6.htm" />
+            <HelpTOCNode Title="Transition Method (String, String, String, Object)" Url="html/M_StaMa_StateMachineTemplate_Transition_2.htm" />
+            <HelpTOCNode Title="Transition Method (String, String, String[], Object)" Url="html/M_StaMa_StateMachineTemplate_Transition_4.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], String, Object)" Url="html/M_StaMa_StateMachineTemplate_Transition_8.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], String[], Object)" Url="html/M_StaMa_StateMachineTemplate_Transition_10.htm" />
+            <HelpTOCNode Title="Transition Method (String, String, Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_1.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_7.htm" />
+            <HelpTOCNode Title="Transition Method (String, String, String, Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_3.htm" />
+            <HelpTOCNode Title="Transition Method (String, String, String[], Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_5.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], String, Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_9.htm" />
+            <HelpTOCNode Title="Transition Method (String, String[], String[], Object, StateMachineGuardCallback, StateMachineActionCallback)" Url="html/M_StaMa_StateMachineTemplate_Transition_11.htm" />
+          </HelpTOCNode>
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="d9c123a9-0f94-4dfb-bb73-217ce8dfd1b7" Title="Transition Class" Url="html/T_StaMa_Transition.htm">
+        <HelpTOCNode Id="25e7a610-e1de-4c18-863d-eb640163465c" Title="Transition Properties" Url="html/Properties_T_StaMa_Transition.htm">
+          <HelpTOCNode Title="Guard Property " Url="html/P_StaMa_Transition_Guard.htm" />
+          <HelpTOCNode Title="LeastCommonAncestor Property " Url="html/P_StaMa_Transition_LeastCommonAncestor.htm" />
+          <HelpTOCNode Title="Name Property " Url="html/P_StaMa_Transition_Name.htm" />
+          <HelpTOCNode Title="Parent Property " Url="html/P_StaMa_Transition_Parent.htm" />
+          <HelpTOCNode Title="SourceState Property " Url="html/P_StaMa_Transition_SourceState.htm" />
+          <HelpTOCNode Title="TargetState Property " Url="html/P_StaMa_Transition_TargetState.htm" />
+          <HelpTOCNode Title="TransitionAction Property " Url="html/P_StaMa_Transition_TransitionAction.htm" />
+          <HelpTOCNode Title="TriggerEvent Property " Url="html/P_StaMa_Transition_TriggerEvent.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="2c6ec430-5e5d-4686-b3fb-b55e2b52f721" Title="Transition Methods" Url="html/Methods_T_StaMa_Transition.htm">
+          <HelpTOCNode Title="ToString Method " Url="html/M_StaMa_Transition_ToString.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="0f34c4f6-339f-4d24-8cae-98487a778eea" Title="TransitionCollection Class" Url="html/T_StaMa_TransitionCollection.htm">
+        <HelpTOCNode Id="02994fb2-fd8b-4e23-b894-c8898bc7aad2" Title="TransitionCollection Properties" Url="html/Properties_T_StaMa_TransitionCollection.htm">
+          <HelpTOCNode Title="Count Property " Url="html/P_StaMa_TransitionCollection_Count.htm" />
+          <HelpTOCNode Title="Item Property " Url="html/P_StaMa_TransitionCollection_Item.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Id="a2e80b2d-1c30-4f0b-bb4f-284a233e57a2" Title="TransitionCollection Methods" Url="html/Methods_T_StaMa_TransitionCollection.htm">
+          <HelpTOCNode Title="GetEnumerator Method " Url="html/M_StaMa_TransitionCollection_GetEnumerator.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

@@ -1,0 +1,426 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Implementing a Simple State Machine Application for .NET Micro Framework</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="d94a3585-cd83-45b5-b16c-0487e3401337" /><meta name="Description" content="Describes how to integrate a StaMa https://StaMa-StateMachine.github.io/ state machine into a .NET Micro Framework http://www.netmf.com/ based application." /><meta name="Microsoft.Help.ContentType" content="How To" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="003c5297-0c49-41e9-ac8b-9f603358ac66.htm" title="Getting Started" tocid="003c5297-0c49-41e9-ac8b-9f603358ac66">Getting Started</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="e33381e0-fa7d-494b-ba46-f728e47edec7.htm" title="Installing StaMa on a Developer Machine" tocid="e33381e0-fa7d-494b-ba46-f728e47edec7">Installing StaMa on a Developer Machine</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="b2a532fd-f7bb-4cce-b601-7563bca224d1.htm" title="Compiling the StaMa Assembly For a Specific Target Framework Version" tocid="b2a532fd-f7bb-4cce-b601-7563bca224d1">Compiling the StaMa Assembly For a Specific Target Framework Version</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="d94a3585-cd83-45b5-b16c-0487e3401337.htm" title="Implementing a Simple State Machine Application for .NET Micro Framework" tocid="d94a3585-cd83-45b5-b16c-0487e3401337">Implementing a Simple State Machine Application for .NET Micro Framework</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="f5262f47-1501-476f-b1c0-25e83deba0b0.htm" title="Implementing a Simple State Machine Application for .NET Windows Desktop Framework" tocid="f5262f47-1501-476f-b1c0-25e83deba0b0">Implementing a Simple State Machine Application for .NET Windows Desktop Framework</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="afdec6d6-fee1-4b99-b160-1e45bd76d8a2.htm" title="Deploying the StaMa Assembly on the Target Machine" tocid="afdec6d6-fee1-4b99-b160-1e45bd76d8a2">Deploying the StaMa Assembly on the Target Machine</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Implementing a Simple State Machine Application for .NET Micro Framework</td></tr></table><span class="introStyle"></span><div class="summary"><p>
+        Describes how to integrate a <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> state machine into a <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> based application.
+      </p></div><div class="introduction"><p>
+        This step by step description shows how to create a simple state machine application with two states and transitions between them.
+      </p><p>
+        The <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> project and the source code is also available in the release package at <em>StaMa_State_Machine_Controller_Library\Samples\netmf\SampleSimpleStateMachineNETMF\SampleSimpleStateMachineNETMF.csproj</em>.
+      </p><p>
+        The following environment is assumed to be installed:
+      </p><ul><li><p><a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> 2012
+          </p></li><li><p><a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> 4.3
+          </p></li></ul><p>
+        Newer or older versions of the above software will probably not affect the below steps as such, however references to files, paths and versions might be different.
+      </p></div><h3 class="procedureSubHeading">Creating the Microsoft Visual Studio application project</h3><div class="subSection"><ol><li><p>
+              Open <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a>.
+            </p><p>
+              From the <span class="ui">File</span> menu select <span class="ui">New</span>, then <span class="ui">Project...</span>. The <span class="ui">New Project</span> dialog appears.
+            </p><p>
+              In the <span class="ui">New Project</span> dialog select <span class="ui">Templates</span> / <span class="ui">Visual C#</span> / <span class="ui">Windows</span> / <span class="ui">Console Application</span>.
+            </p><p>
+              Name the new solution and project <em>SampleSimpleStateMachineNETMF</em>. Close the dialog and create the solution by pressing <span class="ui">OK</span>.
+            </p></li><li><p>
+              Add assembly references to <em>Microsoft.SPOT.Hardware.dll</em> and <em>Microsoft.SPOT.TinyCore.dll</em>.
+            </p></li><li><p>
+              Add a new class with file name <em>GPIOButtonInputProvider.cs</em> to the project.
+            </p><p>
+              Copy the following code into the <em>GPIOButtonInputProvider.cs</em> file:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABAFBCAAA_tab1" class="codeSnippetContainerTabSingle">GPIOButtonInputProvider.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABAFBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABAFBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABAFBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Hardware;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Input;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">internal</span> <span class="highlight-keyword">class</span> GPIOButtonInputProvider
+    {
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">delegate</span> <span class="highlight-keyword">void</span> GPIOButtonInputHandler(InputReportArgs arg);
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">readonly</span> Dispatcher m_dispatcher;
+        <span class="highlight-keyword">private</span> ButtonPad[] m_buttons;
+        <span class="highlight-keyword">private</span> GPIOButtonInputHandler m_buttonInputHandler;
+
+        <span class="highlight-keyword">public</span> GPIOButtonInputProvider(GPIOButtonInputHandler buttonInputHandler)
+        {
+            <span class="highlight-keyword">if</span> (buttonInputHandler == <span class="highlight-keyword">null</span>)
+            {
+                <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentNullException(<span class="highlight-literal">"buttonInputHandler"</span>);
+            }
+            m_buttonInputHandler = buttonInputHandler;
+            m_dispatcher = Dispatcher.CurrentDispatcher;
+
+            <span class="highlight-comment">// Create a hardware provider.</span>
+            HardwareProvider hwProvider = <span class="highlight-keyword">new</span> HardwareProvider();
+
+            <span class="highlight-comment">// Create the pins that are needed for the buttons.</span>
+            <span class="highlight-comment">// Default their values for the emulator.</span>
+            Cpu.Pin pinLeft = Cpu.Pin.GPIO_Pin0;
+            Cpu.Pin pinRight = Cpu.Pin.GPIO_Pin1;
+            Cpu.Pin pinUp = Cpu.Pin.GPIO_Pin2;
+            Cpu.Pin pinSelect = Cpu.Pin.GPIO_Pin3;
+            Cpu.Pin pinDown = Cpu.Pin.GPIO_Pin4;
+
+            <span class="highlight-comment">// Use the hardware provider to get the pins.  If the left pin is  </span>
+            <span class="highlight-comment">// not set, assume none of the pins are set, and set the left pin  </span>
+            <span class="highlight-comment">// back to the default emulator value. </span>
+            <span class="highlight-keyword">if</span> ((pinLeft = hwProvider.GetButtonPins(Button.VK_LEFT)) == Cpu.Pin.GPIO_NONE)
+            {
+                pinLeft = Cpu.Pin.GPIO_Pin0;
+            }
+            <span class="highlight-keyword">else</span>
+            {
+                pinRight = hwProvider.GetButtonPins(Button.VK_RIGHT);
+                pinUp = hwProvider.GetButtonPins(Button.VK_UP);
+                pinSelect = hwProvider.GetButtonPins(Button.VK_SELECT);
+                pinDown = hwProvider.GetButtonPins(Button.VK_DOWN);
+            }
+
+            <span class="highlight-comment">// Allocate button pads and assign the (emulated) hardware pins as input from specific buttons.</span>
+            m_buttons = <span class="highlight-keyword">new</span> ButtonPad[]
+                        {
+                            <span class="highlight-comment">// Associate the buttons to the pins as discovered or set above.</span>
+                            <span class="highlight-keyword">new</span> ButtonPad(<span class="highlight-keyword">this</span>, Button.VK_LEFT  , pinLeft),
+                            <span class="highlight-keyword">new</span> ButtonPad(<span class="highlight-keyword">this</span>, Button.VK_RIGHT , pinRight),
+                            <span class="highlight-keyword">new</span> ButtonPad(<span class="highlight-keyword">this</span>, Button.VK_UP    , pinUp),
+                            <span class="highlight-keyword">new</span> ButtonPad(<span class="highlight-keyword">this</span>, Button.VK_SELECT, pinSelect),
+                            <span class="highlight-keyword">new</span> ButtonPad(<span class="highlight-keyword">this</span>, Button.VK_DOWN  , pinDown),
+                        };
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">class</span> ButtonPad : IDisposable
+        {
+            <span class="highlight-keyword">private</span> Button m_button;
+            <span class="highlight-keyword">private</span> InterruptPort m_port;
+            <span class="highlight-keyword">private</span> GPIOButtonInputProvider m_sink;
+            <span class="highlight-keyword">private</span> ButtonDevice m_buttonDevice;
+
+            <span class="highlight-keyword">public</span> ButtonPad(GPIOButtonInputProvider sink, Button button, Cpu.Pin pin)
+            {
+                m_sink = sink;
+                m_button = button;
+                m_buttonDevice = InputManager.CurrentInputManager.ButtonDevice;
+
+                <span class="highlight-comment">// Do not set an InterruptPort with GPIO_NONE. </span>
+                <span class="highlight-keyword">if</span> (pin != Cpu.Pin.GPIO_NONE)
+                {
+                    <span class="highlight-comment">// When this GPIO pin is true, call the Interrupt method.</span>
+                    m_port = <span class="highlight-keyword">new</span> InterruptPort(pin,
+                                                <span class="highlight-keyword">true</span>,
+                                                Port.ResistorMode.PullUp,
+                                                Port.InterruptMode.InterruptEdgeBoth);
+                    m_port.OnInterrupt += <span class="highlight-keyword">new</span> NativeEventHandler(<span class="highlight-keyword">this</span>.Interrupt);
+                }
+            }
+
+            <span class="highlight-keyword">protected</span> <span class="highlight-keyword">virtual</span> <span class="highlight-keyword">void</span> Dispose(<span class="highlight-keyword">bool</span> disposing)
+            {
+                <span class="highlight-keyword">if</span> (disposing)
+                {
+                    <span class="highlight-comment">// Dispose managed resources.</span>
+                    <span class="highlight-keyword">if</span> (m_port != <span class="highlight-keyword">null</span>)
+                    {
+                        m_port.Dispose();
+                        m_port = <span class="highlight-keyword">null</span>;
+                    }
+                }
+                <span class="highlight-comment">// Free native resources.</span>
+            }
+
+            <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> Dispose()
+            {
+                Dispose(<span class="highlight-keyword">true</span>);
+                GC.SuppressFinalize(<span class="highlight-keyword">this</span>);
+            }
+
+            <span class="highlight-keyword">void</span> Interrupt(<span class="highlight-keyword">uint</span> data1, <span class="highlight-keyword">uint</span> data2, DateTime time)
+            {
+                RawButtonActions action = (data2 != <span class="highlight-number">0</span>) ? RawButtonActions.ButtonUp : RawButtonActions.ButtonDown;
+                RawButtonInputReport report = <span class="highlight-keyword">new</span> RawButtonInputReport(<span class="highlight-keyword">null</span>, time, m_button, action);
+
+                <span class="highlight-comment">// Queue the button press to the handler.</span>
+                m_sink.m_dispatcher.BeginInvoke(<span class="highlight-keyword">delegate</span>(<span class="highlight-keyword">object</span> arg)
+                                              {
+                                                  m_sink.m_buttonInputHandler((InputReportArgs)arg);
+                                                  <span class="highlight-keyword">return</span> <span class="highlight-keyword">null</span>;
+                                              },
+                                              <span class="highlight-keyword">new</span> InputReportArgs(m_buttonDevice, report));
+            }
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABAFBCAAA");</script><p>
+              The code is not related to <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a>.
+              Similar code is created by the .NET Micro Framework code wizard as part of the <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> <span class="ui">Window Application</span> default project.
+              The class is a driver for the button pad of the <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> emulator and invokes a handler passed in to the <span class="code">GPIOButtonInputProvider</span> constructor whenever a button connected to the <span class="code">Microsoft.SPOT.Hardware.Cpu.Pin.GPIO_Pin0</span>..<span class="code">GPIO_Pin4</span> is pressed.
+              The handler is called in the thread where the <span class="code">GPIOButtonInputProvider</span> instance was created.
+            </p></li><li><p>
+              Add a new class with file name <em>Display.cs</em> to the project.
+            </p><p>
+              Copy the following code into the <em>Display.cs</em> file:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EACAEBCAAA_tab1" class="codeSnippetContainerTabSingle">Display.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EACAEBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EACAEBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EACAEBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Hardware;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">static</span> <span class="highlight-keyword">class</span> Display
+    {
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> Bitmap m_screen;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">string</span>[] m_lines;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> Font m_font;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> m_fontHeight;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">int</span> m_screenLines;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">readonly</span> <span class="highlight-keyword">char</span>[] m_newLineSeparators;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">int</span> m_linesIndex;
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">int</span> m_linesCount;
+
+        <span class="highlight-keyword">static</span> Display()
+        {
+            <span class="highlight-keyword">int</span> width, height, bitsPerPixel, orientationDeg;
+            HardwareProvider.HwProvider.GetLCDMetrics(<span class="highlight-keyword">out</span> width, <span class="highlight-keyword">out</span> height, <span class="highlight-keyword">out</span> bitsPerPixel, <span class="highlight-keyword">out</span> orientationDeg);
+            m_screen = <span class="highlight-keyword">new</span> Bitmap(width, height);
+            m_newLineSeparators = <span class="highlight-keyword">new</span> <span class="highlight-keyword">char</span>[] { <span class="highlight-literal">'\n'</span> };
+            m_font = Resources.GetFont(Resources.FontResources.small);
+            m_fontHeight = m_font.Height;
+            m_screenLines = height / m_fontHeight;
+            m_lines = <span class="highlight-keyword">new</span> <span class="highlight-keyword">string</span>[m_screenLines];
+            m_linesCount = <span class="highlight-number">0</span>;
+
+            m_screen.Clear();
+            m_screen.Flush();
+        }
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> WriteLine(<span class="highlight-keyword">string</span> text)
+        {
+            <span class="highlight-keyword">if</span> (text == <span class="highlight-keyword">null</span>)
+            {
+                <span class="highlight-keyword">throw</span> <span class="highlight-keyword">new</span> ArgumentNullException(<span class="highlight-literal">"text"</span>);
+            }
+            <span class="highlight-keyword">string</span>[] lines = text.Split(m_newLineSeparators);
+            <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; lines.Length; i++)
+            {
+                <span class="highlight-keyword">string</span> line = lines[i];
+                m_lines[m_linesIndex] = (line[line.Length - <span class="highlight-number">1</span>] != <span class="highlight-literal">'\r'</span>) ? line : line.Substring(<span class="highlight-number">0</span>, line.Length - <span class="highlight-number">1</span>);
+                m_linesIndex = GetLinesIndexModulo(m_linesIndex + <span class="highlight-number">1</span>);
+                m_linesCount = System.Math.Min(m_linesCount + <span class="highlight-number">1</span>, m_screenLines);
+            }
+            m_screen.Clear();
+            <span class="highlight-keyword">for</span> (<span class="highlight-keyword">int</span> i = <span class="highlight-number">0</span>; i &lt; m_linesCount; i++)
+            {
+                <span class="highlight-keyword">int</span> index = GetLinesIndexModulo(m_linesIndex + i + (m_screenLines - m_linesCount));
+                m_screen.DrawText(m_lines[index], m_font, Microsoft.SPOT.Presentation.Media.Color.White, <span class="highlight-number">0</span>, i * m_fontHeight);
+            }
+            m_screen.Flush();
+        }
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">int</span> GetLinesIndexModulo(<span class="highlight-keyword">int</span> index)
+        {
+            <span class="highlight-keyword">return</span> index &lt; m_screenLines ? index : index - m_screenLines;
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EACAEBCAAA");</script><p>
+              The code is not related to <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a>.
+              The class provides a driver for the display of the <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> emulator and provides a method to write text line by line onto the display.
+            </p><p /></li><li><p>
+              Copy the following code into the <em>Program.cs</em> file:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAADBCAAA_tab1" class="codeSnippetContainerTabSingle">Program.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAADBCAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAADBCAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAADBCAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Hardware;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Input;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Program
+    {
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main()
+        {
+            GPIOButtonInputProvider buttonInputProvider = <span class="highlight-keyword">new</span> GPIOButtonInputProvider(GPIOButtonInputProvider_ButtonInput);
+            Dispatcher.Run();
+        }
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> GPIOButtonInputProvider_ButtonInput(InputReportArgs arg)
+        {
+            InputReportArgs args = (InputReportArgs)arg;
+            RawButtonInputReport report = (RawButtonInputReport)args.Report;
+            <span class="highlight-keyword">string</span> info = report.Timestamp.ToLocalTime().ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) +
+                          <span class="highlight-literal">" Button="</span> + report.Button.ToString() +
+                          <span class="highlight-literal">" Action="</span> + report.Actions.ToString();
+            Debug.Print(info);
+            Display.WriteLine(info);
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAADBCAAA");</script></li><li><p>
+              Compile the solution. No compiler errors appear.
+            </p></li><li><p>
+              Execute the solution by selecting "Start Debugging" from the "Debug" menu or by pressing F5.
+            </p><p>
+              The <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> emulator application appears.
+            </p></li><li><p>
+              Set a breakpoint to the <span class="code">GPIOButtonInputProvider_ButtonInput</span> method in file <em>Program.cs</em>.
+            </p><p>
+              Click the center button of the button pad on the emulator application.
+            </p><p>
+              The breakpoint in <em>Program.cs</em> is hit (twice, first for button down, then for button up)
+              Information about the button action is shown in the <a href="http://www.visualstudio.com/" target="_blank">Microsoft Visual Studio</a> Output panel.
+            </p></li></ol><p>
+            The above project provides generic application frame with basic input capabilities, hosted within the emulator application.
+            The steps in the next section will add a simple state machine based on <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a>.
+          </p></div><h3 class="procedureSubHeading">Adding the simple StaMa state machine.</h3><div class="subSection"><ol><li><p>
+              Add assembly references to <em>StaMa.dll</em> and <em>System.Text.RegularExpressions.dll</em>.
+            </p></li><li><p>
+              Add a new class with file name <em>SampleSimpleStateMachineNETMF.cs</em> to the project.
+            </p><p>
+              Copy the following code into the <em>SampleSimpleStateMachineNETMF.cs</em> file:
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADACBBAAA_tab1" class="codeSnippetContainerTabSingle">SampleSimpleStateMachineNETMF.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADACBBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADACBBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADACBBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> StaMa;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">class</span> SampleSimpleStateMachineNETMF
+    {
+        <span class="highlight-keyword">private</span> StateMachine m_stateMachine;
+        <span class="highlight-keyword">private</span> DispatcherTimer m_timeoutTimer;
+
+
+        <span class="highlight-keyword">public</span> SampleSimpleStateMachineNETMF()
+        {
+            StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+            t.Region(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">false</span>);
+                t.State(<span class="highlight-literal">"State1"</span>, EnterState1, ExitState1);
+                    t.Transition(<span class="highlight-literal">"Transition1to2"</span>, <span class="highlight-literal">"State2"</span>, <span class="highlight-literal">"Event1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+                t.State(<span class="highlight-literal">"State2"</span>, EnterState2, ExitState2);
+                    t.Transition(<span class="highlight-literal">"Transition2to1"</span>, <span class="highlight-literal">"State1"</span>, <span class="highlight-literal">"TimeoutState2"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+            t.EndRegion();
+
+            m_stateMachine = t.CreateStateMachine();
+            m_stateMachine.TraceStateChange = <span class="highlight-keyword">this</span>.TraceStateChange;
+
+            m_timeoutTimer = <span class="highlight-keyword">new</span> DispatcherTimer();
+            m_timeoutTimer.Tick += TimeoutTimer_Tick;
+
+            m_stateMachine.Startup();
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"EnterState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"ExitState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"EnterState2"</span>);
+            m_timeoutTimer.Tag = <span class="highlight-literal">"TimeoutState2"</span>;
+            m_timeoutTimer.Interval = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">2</span>);
+            m_timeoutTimer.Start();
+        }
+
+        <span class="highlight-keyword">void</span> TimeoutTimer_Tick(<span class="highlight-keyword">object</span> sender, EventArgs e)
+        {
+            m_timeoutTimer.Stop();
+            m_stateMachine.SendTriggerEvent(m_timeoutTimer.Tag);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            m_timeoutTimer.Stop();
+            Display.WriteLine(<span class="highlight-literal">"ExitState2"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> TraceStateChange(StateMachine stateMachine,
+                                      StateConfiguration stateConfigurationFrom,
+                                      StateConfiguration stateConfigurationTo,
+                                      Transition transition)
+        {
+            <span class="highlight-keyword">string</span> info = DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) +
+                          <span class="highlight-literal">" ActiveState=\""</span> + stateConfigurationTo.ToString() + <span class="highlight-literal">"\""</span> +
+                          <span class="highlight-literal">" Transition="</span> + ((transition != <span class="highlight-keyword">null</span>) ? <span class="highlight-literal">"\""</span> + transition.Name + <span class="highlight-literal">"\""</span> : <span class="highlight-literal">"Startup/Finish"</span>);
+            Debug.Print(info);
+            Display.WriteLine(info);
+        }
+
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> ButtonUp()
+        {
+            m_stateMachine.SendTriggerEvent(<span class="highlight-literal">"Event1"</span>);
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADACBBAAA");</script><p>
+              The above code adds a state machine with two states "State1" and "State2", a transition "Transition1to2" from "State1" to "State2" which is triggered through signal "Event1" and a
+              transition "Transition2to1" from "State2" to "State1" which is triggered through signal "TimeoutState2" sent from the tick event handler of a <a href="http://msdn2.microsoft.com/en-us/library/bb329253" target="_blank">Microsoft.Spot.DispatcherTimer</a> after 2 seconds.
+            </p><p>
+              "State1" has an entry action <span class="code">EnterState1</span> and an exit action <span class="code">ExitState1</span> and
+              "State2" has an entry action <span class="code">EnterState2</span> and an exit action <span class="code">ExitState2</span>.
+              These are executed when the state machine switches the state from "State1" to "State2" or back from "State2" to "State1" .
+            </p><p>
+              The <span class="code">ButtonUp</span> method sends the signal "Event1" to the state machine, triggering "Transition1to2" when the state machine is in state "State1".
+            </p></li><li><p>
+              Create a new <span class="code">SampleSimpleStateMachineNETMF</span> instance at the beginning of the <span class="code">Main</span> method in file <em>Program.cs</em>.
+            </p><p>
+              Invoke the <span class="code">SampleSimpleStateMachine.ButtonUp</span> method from within in the <span class="code">GPIOButtonInputProvider_ButtonInput</span> handler when a button is released.
+            </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAAABBBAAA_tab1" class="codeSnippetContainerTabSingle">Program.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAAABBBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAAABBBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAAABBBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Hardware;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Input;
+<span class="highlight-keyword">using</span> SampleSimpleStateMachineNETMF;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Program
+    {
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> SampleSimpleStateMachineNETMF m_sampleSimpleStateMachine;
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main()
+        {
+            m_sampleSimpleStateMachine = <span class="highlight-keyword">new</span> SampleSimpleStateMachineNETMF();
+            GPIOButtonInputProvider buttonInputProvider = <span class="highlight-keyword">new</span> GPIOButtonInputProvider(GPIOButtonInputProvider_ButtonInput);
+            Dispatcher.Run();
+        }
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> GPIOButtonInputProvider_ButtonInput(InputReportArgs arg)
+        {
+            InputReportArgs args = (InputReportArgs)arg;
+            RawButtonInputReport report = (RawButtonInputReport)args.Report;
+            <span class="highlight-keyword">string</span> info = report.Timestamp.ToLocalTime().ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) +
+                          <span class="highlight-literal">" Button="</span> + report.Button.ToString() +
+                          <span class="highlight-literal">" Action="</span> + report.Actions.ToString();
+            Debug.Print(info);
+            Display.WriteLine(info);
+
+            <span class="highlight-keyword">if</span> (report.Actions == RawButtonActions.ButtonUp)
+            {
+                m_sampleSimpleStateMachine.ButtonUp();
+            }
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAAABBBAAA");</script></li><li><p>
+              Set a breakpoint at the end of method <span class="code">SampleSimpleStateMachine.TraceStateChange</span> and start the debugger e.g. by pressing F5.
+            </p><p>
+              Click the center button of the button pad on the emulator application.
+              Releasing the button on the emulator button panel triggers the <span class="code">GPIOButtonInputProvider</span> which invokes the <span class="code">Program.GPIOButtonInputProvider_ButtonInput</span> method on the main thread which in turn invokes <span class="code">SampleSimpleStateMachineNETMF.ButtonUp</span> method.
+            </p><p>
+              The breakpoint in <span class="code">SampleSimpleStateMachine.TraceStateChange</span> is hit (three times):
+            </p><ol><li><p>
+                  During startup when the state machine enters its initial state.
+                </p></li><li><p>
+                  Triggered through "Transition1to2" when the state machine transitions from "State1" to "State2" in response to the signal "Event1".
+                </p></li><li><p>
+                  Triggered through "Transition2to1" when the state machine transitions from "State2" to "State1" in response to the timeout signal "TimeoutState2".
+                </p></li></ol></li></ol><p>
+            The above code provides a minimal executable state machine that can be extended with composite states or orthogonal sub-regions.
+          </p></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

@@ -1,0 +1,139 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Simple State Machine Sample .NET Micro Framework</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="ee58caad-02cf-4d26-9b25-033cd452dd77" /><meta name="Description" content="The simple state machine sample demonstrates a minimal StaMa https://StaMa-StateMachine.github.io/ based state machine with two states and transtions between them. It runs on the Microsoft .NET Micro Framework http://www.netmf.com/ emulator." /><meta name="Microsoft.Help.ContentType" content="Samples" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="c9aa27b0-4173-4bcb-a275-908a0d0f8070.htm" title="Samples" tocid="c9aa27b0-4173-4bcb-a275-908a0d0f8070">Samples</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="e703c27a-d129-4c7b-a3d9-880aa839e85a.htm" title=".NET Micro Framework" tocid="e703c27a-d129-4c7b-a3d9-880aa839e85a">.NET Micro Framework</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="ee58caad-02cf-4d26-9b25-033cd452dd77.htm" title="Simple State Machine Sample .NET Micro Framework" tocid="ee58caad-02cf-4d26-9b25-033cd452dd77">Simple State Machine Sample .NET Micro Framework</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="29a68e43-5dbc-4a2c-894e-81a59e9c847b.htm" title="Ticket Vending Sample" tocid="29a68e43-5dbc-4a2c-894e-81a59e9c847b">Ticket Vending Sample</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Simple State Machine Sample .NET Micro Framework</td></tr></table><span class="introStyle"></span><div class="introduction"><p>
+        The simple state machine sample demonstrates a minimal <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> based state machine with two states and transtions between them.
+        It runs on the Microsoft <a href="http://www.netmf.com/" target="_blank">.NET Micro Framework</a> emulator.
+      </p><p>
+        The sample doesn't have relevant real world functionality but can be used as a ready to use base for experiments with state machines.
+      </p><div class="mediaCenter"><img alt="Sample Simple State MachineNETMF" src="../media/SampleSimpleStateMachineNETMF.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>Sample simple state machine in the emulator</div></div></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID0RB')" onkeypress="SectionExpandCollapse_CheckKey('ID0RB', event)" tabindex="0"><img id="ID0RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Demonstrates</span></div><div id="ID0RBSection" class="collapsibleSection"><p>
+          The basic programming model for a <a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> based state machine.
+        </p><p>
+          How the run-to-completion processing executes multiple transitions within one call to <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a>.
+        </p></div><div class="collapsibleAreaRegion"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Example</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+            The sample runs a <a href="http://msdn2.microsoft.com/en-us/library/bb329261" target="_blank">Microsoft.Spot.Dispatcher</a> in the main thread.
+            Pressing a button on the button pad creates an interrupt which is routed to the main thread through the
+            <a href="http://msdn2.microsoft.com/en-us/library/jj610905" target="_blank">Dispatcher.BeginInvoke</a> method,
+            which in turn invokes the <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">SendTriggerEvent</a> method.
+          </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EABBAAA_tab1" class="codeSnippetContainerTabSingle">Program.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EABBAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EABBAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EABBAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> System.Collections;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Hardware;
+<span class="highlight-keyword">using</span> Microsoft.SPOT.Input;
+<span class="highlight-keyword">using</span> SampleSimpleStateMachineNETMF;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">class</span> Program
+    {
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> SampleSimpleStateMachineNETMF m_sampleSimpleStateMachine;
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> Main()
+        {
+            m_sampleSimpleStateMachine = <span class="highlight-keyword">new</span> SampleSimpleStateMachineNETMF();
+            GPIOButtonInputProvider buttonInputProvider = <span class="highlight-keyword">new</span> GPIOButtonInputProvider(GPIOButtonInputProvider_ButtonInput);
+            Dispatcher.Run();
+        }
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> GPIOButtonInputProvider_ButtonInput(InputReportArgs arg)
+        {
+            InputReportArgs args = (InputReportArgs)arg;
+            RawButtonInputReport report = (RawButtonInputReport)args.Report;
+            <span class="highlight-keyword">string</span> info = report.Timestamp.ToLocalTime().ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) +
+                          <span class="highlight-literal">" Button="</span> + report.Button.ToString() +
+                          <span class="highlight-literal">" Action="</span> + report.Actions.ToString();
+            Debug.Print(info);
+            Display.WriteLine(info);
+
+            <span class="highlight-keyword">if</span> (report.Actions == RawButtonActions.ButtonUp)
+            {
+                m_sampleSimpleStateMachine.ButtonUp();
+            }
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EABBAAA");</script><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID1EAABAAA_tab1" class="codeSnippetContainerTabSingle">SampleSimpleStateMachineNETMF.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID1EAABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID1EAABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID1EAABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">using</span> System;
+<span class="highlight-keyword">using</span> Microsoft.SPOT;
+<span class="highlight-keyword">using</span> StaMa;
+
+<span class="highlight-keyword">namespace</span> SampleSimpleStateMachineNETMF
+{
+    <span class="highlight-keyword">class</span> SampleSimpleStateMachineNETMF
+    {
+        <span class="highlight-keyword">private</span> StateMachine m_stateMachine;
+        <span class="highlight-keyword">private</span> DispatcherTimer m_timeoutTimer;
+
+
+        <span class="highlight-keyword">public</span> SampleSimpleStateMachineNETMF()
+        {
+            StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+            t.Region(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">false</span>);
+                t.State(<span class="highlight-literal">"State1"</span>, EnterState1, ExitState1);
+                    t.Transition(<span class="highlight-literal">"Transition1to2"</span>, <span class="highlight-literal">"State2"</span>, <span class="highlight-literal">"Event1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+                t.State(<span class="highlight-literal">"State2"</span>, EnterState2, ExitState2);
+                    t.Transition(<span class="highlight-literal">"Transition2to1"</span>, <span class="highlight-literal">"State1"</span>, <span class="highlight-literal">"TimeoutState2"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+            t.EndRegion();
+
+            m_stateMachine = t.CreateStateMachine();
+            m_stateMachine.TraceStateChange = <span class="highlight-keyword">this</span>.TraceStateChange;
+
+            m_timeoutTimer = <span class="highlight-keyword">new</span> DispatcherTimer();
+            m_timeoutTimer.Tick += TimeoutTimer_Tick;
+
+            m_stateMachine.Startup();
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"EnterState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"ExitState1"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            Display.WriteLine(<span class="highlight-literal">"EnterState2"</span>);
+            m_timeoutTimer.Tag = <span class="highlight-literal">"TimeoutState2"</span>;
+            m_timeoutTimer.Interval = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">2</span>);
+            m_timeoutTimer.Start();
+        }
+
+        <span class="highlight-keyword">void</span> TimeoutTimer_Tick(<span class="highlight-keyword">object</span> sender, EventArgs e)
+        {
+            m_timeoutTimer.Stop();
+            m_stateMachine.SendTriggerEvent(m_timeoutTimer.Tag);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+        {
+            m_timeoutTimer.Stop();
+            Display.WriteLine(<span class="highlight-literal">"ExitState2"</span>);
+        }
+
+
+        <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> TraceStateChange(StateMachine stateMachine,
+                                      StateConfiguration stateConfigurationFrom,
+                                      StateConfiguration stateConfigurationTo,
+                                      Transition transition)
+        {
+            <span class="highlight-keyword">string</span> info = DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) +
+                          <span class="highlight-literal">" ActiveState=\""</span> + stateConfigurationTo.ToString() + <span class="highlight-literal">"\""</span> +
+                          <span class="highlight-literal">" Transition="</span> + ((transition != <span class="highlight-keyword">null</span>) ? <span class="highlight-literal">"\""</span> + transition.Name + <span class="highlight-literal">"\""</span> : <span class="highlight-literal">"Startup/Finish"</span>);
+            Debug.Print(info);
+            Display.WriteLine(info);
+        }
+
+
+        <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> ButtonUp()
+        {
+            m_stateMachine.SendTriggerEvent(<span class="highlight-literal">"Event1"</span>);
+        }
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID1EAABAAA");</script></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

@@ -1,0 +1,129 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Orthogonal Regions</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="7e6981a4-284a-4027-9e21-50d195fe0169" /><meta name="Description" content="Describes how orthogonal regions are created, how they entail the concept of fork and join transitions and how this all functions." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="298801d3-40ad-4fae-816e-5a7e1afb0ff0.htm" title="Programming State Machines" tocid="298801d3-40ad-4fae-816e-5a7e1afb0ff0">Programming State Machines</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="954456b3-e05a-4e1d-af00-4f400fd43f47.htm" title="States, Transitions and Regions" tocid="954456b3-e05a-4e1d-af00-4f400fd43f47">States, Transitions and Regions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="16986707-6029-42de-a453-8b359b07248a.htm" title="StateMachineTemplate and StateMachine" tocid="16986707-6029-42de-a453-8b359b07248a">StateMachineTemplate and StateMachine</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="182b6093-fb30-4549-90d3-addc7c2dd2fb.htm" title="Composite States" tocid="182b6093-fb30-4549-90d3-addc7c2dd2fb">Composite States</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="7e6981a4-284a-4027-9e21-50d195fe0169.htm" title="Orthogonal Regions" tocid="7e6981a4-284a-4027-9e21-50d195fe0169">Orthogonal Regions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm" title="State Configurations" tocid="badfe5ab-643a-45d2-bd27-ad6536a62b6c">State Configurations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="93712910-2b27-4731-a3a5-38da29702b5e.htm" title="State Machine Entities and Relations" tocid="93712910-2b27-4731-a3a5-38da29702b5e">State Machine Entities and Relations</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">Orthogonal Regions</td></tr></table><span class="introStyle"></span><div class="summary"><p>Describes how orthogonal regions are created, how they entail the concept of fork and join transitions and how this all functions.</p></div><div class="introduction"><p>
+        Systems controlled through state machines can often be de-composed into largely separate sub-systems.
+        It is definitely a reasonable strategy to model the sub-systems with separate state machines and coordinate them through events.
+      </p><p>
+        However the state chart formalism provides the possibility to model such systems within the <u>same</u> state machine diagram through the concept of orthogonal sub-regions.
+        This allows to keep the system description on the visual level.
+      </p><p>
+        An orthogonal sub-region is an additional separate region within a composite state.
+        Entering the composite state enters all sub-regions collectively.
+        The fundamental extension is that the state machine may now be in multiple states at the same time.
+        This introduces a further level of possibilities for transition source and target states within the state machine.
+      </p><p>
+        The below state diagram has a state with two orthogonal regions and shows a few typical cases for transitions.
+      </p><div class="mediaCenter"><img alt="State Machine Concepts Orthogonal Region Fork Join" src="../media/StateMachineConceptsOrthogonalRegionForkJoin.png" /><div class="caption"><span class="captionLead">Figure 1:
+						</span>State machine diagram with orthogonal regions, fork transitions and join transitions.</div></div><div class="mediaCenter"><img alt="State Machine Concepts Orthogonal Region Fork Join State Machine Tree" src="../media/StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png" /><div class="caption"><span class="captionLead">Figure 2:
+						</span>Tree structure for the above state machine with orthogonal regions.</div></div><p>
+        All transitions that target the composite state ultimately bring the state machine into a state where two states are active at the same time:
+      </p><p>
+        If the transition forks and ends at individual sub-states, the intended states to enter are obvious.
+        If the transition ends at the composite state border, the initial states of the involved sub-regions are entered.
+        And finally a transition, that explicitly targets only a subset of the sub-regions while leaving other sub-regions unspecified, is executed by entering the initial state for each unspecified sub-region and entering the defined states for all directly targeted sub-regions.
+      </p><p>
+        Similar situations arise for transitions that leave composite states with orthogonal sub-regions:
+      </p><p>
+        If the transition joins from the individual sub-states it will be considered as reached when all of these sub-states are active.
+        The transition can then execute if the corresponding event arrives or the guard condition is fulfilled.
+        If the transition starts on the composite state border, it will be considered as reached if the state machine is in any <a href="badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm">configuration of states</a> of the orthogonal sub-regions.
+        And finally, if only some of the orthogonal sub-regions are defined as source states while other sub-regions are unspecified, the transition is considered as reached when the <a href="badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm">configuration</a> of defined sub-states matches while the other unspecified sub-regions are not considered and may be in any state.
+      </p><p>
+        Transitions may also be both join and fork in case the source state <u>and</u> the target state are composite states with orthogonal sub-regions.
+      </p><p>
+        As all these transitions enter or leave multiple states, the state machine also executes the corresponding entry and exit actions of the sub-states when the transition is executed.
+        The sequence of the sub-regions in the code determines the sequence how entry actions are executed.
+        Exit actions are executed in reverse order.
+      </p><p>
+        Orthogonal sub-regions of a composite state are added through multiple <a href="M_StaMa_StateMachineTemplate_Region.htm">Region</a>..<a href="M_StaMa_StateMachineTemplate_EndRegion.htm">EndRegion</a> statement blocks,
+        embedded within the <a href="Overload_StaMa_StateMachineTemplate_State.htm">State</a>..<a href="M_StaMa_StateMachineTemplate_EndState.htm">EndState</a> statement pair of the
+        composite state, after any <a href="Overload_StaMa_StateMachineTemplate_Transition.htm">Transition</a> statements of the composite state.
+      </p><p>
+        The <a href="Overload_StaMa_StateMachineTemplate_Transition.htm">Transition</a> statement accepts arrays of state names instead of a single state name, in order to specify individual sub-states within orthogonal sub-regions.
+        Arrays of state names can be passed in for both the source and the target state of the transition.
+      </p><p>
+        The source state must be specified in case it references a sub-state of the composite state where the transition belongs to.
+      </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADDAAA_tab1" class="codeSnippetContainerTabSingle">StateMachineTemplate creation code for the state machine with orthogonal sub-regions</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADDAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADDAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADDAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+t.Region(StateA, <span class="highlight-keyword">false</span>);
+    t.State(StateA, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit1, <span class="highlight-keyword">new</span> <span class="highlight-keyword">string</span>[] {StateB1B, StateB2B}, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit2, StateB, Event2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit3, StateB1B, Event3, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+    t.State(StateB, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit4, <span class="highlight-keyword">new</span> <span class="highlight-keyword">string</span>[] {StateB1B, StateB2B}, StateC, Event4, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Transition(Transit5, StateC, Event5, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Region(StateB1A, <span class="highlight-keyword">false</span>);
+            t.State(StateB1A, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transit99, StateB1B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(StateB1B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transit6, StateC, Event6, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+        t.Region(StateB2A, <span class="highlight-keyword">false</span>);
+            t.State(StateB2A, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transit98, StateB2B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(StateB2B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+    t.State(StateC, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+    t.EndState();
+t.EndRegion();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADDAAA");</script><p>
+        In case a sub-state of an orthogonal sub-region is itself again a composite state, then all entry actions of this composite state are executed before any entry actions of the next sibling orthogonal sub-region.
+      </p><p>
+        Unlike the other transitions, <span class="code">Transit4</span> explicitly specifies the source states <span class="code">StateB1B</span> and <span class="code">StateB2B</span> to indicate that the
+        transition starts from these sub-states.
+      </p><div class="alert"><table><tr><th><img src="../icons/AlertNote.png" alt="Note" /> Note</th></tr><tr><td><p>
+          The <a href="http://www.omg.org/spec/UML/2.5/Beta2/PDF/" target="_blank">OMG UML Specification</a> describes the possibility to build transitions as a directed acyclic graph with multiple intermediate vertices including choice and junction vertices, named compound transitions.
+          While this provides an enormous flexibility and comfort for the possibilities to define transitions, there are also downsides like the undefined precedence of execution in case of conflicting transition paths.
+        </p><p><a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> provides a rigorous reduced model, where each transition has a single event signal and guard condition per transition but still allows to specify source and target states of orthogonal sub-regions.
+        </p></td></tr></table></div></div><div class="collapsibleAreaRegion" id="EventDispatchingSubRegions"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Event Dispatching to Orthogonal Sub-Regions</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          Events are distributed separately to orthogonal sub-regions.
+        </p><p>
+          Each orthogonal sub-region individually and separately evaluates the event.
+          In case the orthogonal sub-regions have reached transitions that are triggered through the same event signal, these transitions are reported to the state machine execution logic,
+          and after complete traversal of the entire state machine these transitions are excuted within the same run-to-completion step.
+          The order of execution of the transitions is according to the order of the orthogonal sub-regions in the code.
+        </p><p> </p></div><div class="collapsibleAreaRegion" id="StateGuardedTransition"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Guarding a Transition through a State within a Separate Orthogonal Region</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          Transitions local to a single orthogonal sub-region may still reference source states from sibling, "external" orthogonal sub-regions.
+          Local means in this case that the transition is aggregated at a state within a region.
+        </p><p>
+          At first sight this source state topology could be interpreted that it should cause the least common ancestor to be elevated to the common ancestor region of all source states.
+          Elevating the least common ancestor would in turn cause that the enclosing composite state would be left when the transition is executed and re-entered with the effect that all sub-regions are left and re-entered.
+          However this is visually somewhat unexpected as none of the transition segments crosses the enclosing composite state.
+        </p><p><a href="https://StaMa-StateMachine.github.io/" target="_blank">StaMa</a> defines the semantic for such transitions as follows:
+          The transition is considered reached, if all source states are active, however the least common ancestor of the transition is calculated from the subtree of the source states that are offspring of the
+          state where the transition is aggregated, with the target state.
+        </p><p>
+          If the transition aggregation state and the target state are within the same orthogonal sub-region, then the additional source state acts only as a guard for the transition.
+        </p><p>
+          Below state diagram shows such a transition:
+        </p><div class="mediaCenter"><img alt="State Machine Concepts State Guarded Transition" src="../media/StateMachineConceptsStateGuardedTransition.png" /><div class="caption"><span class="captionLead">Figure 2:
+						</span>State machine diagram with orthogonal regions and state guarded transition.</div></div><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EAEABAAA_tab1" class="codeSnippetContainerTabSingle">StateMachineTemplate creation code for the state guarded transition</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EAEABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EAEABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EAEABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve">StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+t.Region(StateA, <span class="highlight-keyword">false</span>);
+    t.State(StateA, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+        t.Region(StateA1A, <span class="highlight-keyword">false</span>);
+            t.State(StateA1A, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transi20, StateA1B, Event1, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(StateA1B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+        t.Region(StateA2A, <span class="highlight-keyword">false</span>);
+            t.State(StateA2A, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.Transition(Transi11, <span class="highlight-keyword">new</span> <span class="highlight-keyword">string</span>[] {StateA1B, StateA2A}, StateA2B, Event2, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(StateA2B, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+    t.EndState();
+t.EndRegion();</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EAEABAAA");</script><p>
+          When the state machine starts, it enters <span class="code">StateA1A</span> and <span class="code">StateA2A</span>.
+        </p><p>
+          Sending <span class="code">Event2</span> in this situation will not have an effect, as the transition of <span class="code">Event2</span> is guarded with <span class="code">StateA1B</span>.
+        </p><p>
+          Sending <span class="code">Event1</span> in this situation will execute the transition from <span class="code">StateA1A</span> to <span class="code">StateA1B</span>. The transition of <span class="code">Event2</span> is now reached.
+        </p><p>
+          Now sending <span class="code">Event2</span> will execute the transition from <span class="code">StateA2A</span> to <span class="code">StateA2B</span> but won't leave <span class="code">StateA1B</span> or <span class="code">StateA</span> in its entirety.
+        </p></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>

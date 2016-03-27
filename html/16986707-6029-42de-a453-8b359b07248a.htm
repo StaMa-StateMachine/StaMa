@@ -1,0 +1,199 @@
+﻿<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel="shortcut icon" href="../icons/favicon.ico" /><link rel="stylesheet" type="text/css" href="../styles/branding.css" /><link rel="stylesheet" type="text/css" href="../styles/branding-en-US.css" /><script type="text/javascript" src="../scripts/branding.js"> </script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>StateMachineTemplate and StateMachine</title><meta name="Language" content="en-us" /><meta name="Microsoft.Help.Id" content="16986707-6029-42de-a453-8b359b07248a" /><meta name="Description" content="Describes how a state machine is started and how the state machine is triggered to do its work." /><meta name="Microsoft.Help.ContentType" content="Concepts" /><meta name="BrandingAware" content="true" /><link type="text/css" rel="stylesheet" href="../styles/highlight.css" /><script type="text/javascript" src="../scripts/highlight.js"> </script><link rel="stylesheet" type="text/css" href="../styles/branding-Website.css" /><script type="text/javascript" src="../scripts/jquery-1.11.0.min.js"></script><script type="text/javascript" src="../scripts/branding-Website.js"></script></head><body onload="OnLoad('cs')"><input type="hidden" id="userDataCache" class="userDataStyle" /><div class="pageHeader" id="PageHeader">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference<form id="SearchForm" method="get" action="#" onsubmit="javascript:TransferToSearchPage(); return false;"><input id="SearchTextBox" type="text" maxlength="200" /><button id="SearchButton" type="submit"></button></form></div><div class="pageBody"><div class="leftNav" id="leftNav"><div id="tocNav"><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference" tocid="roottoc">StaMa - State Machine Controller Library 2.3.0.2 - Developers Guide and Reference</a></div><div class="toclevel0" data-toclevel="0"><a class="tocCollapsed" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="d3287120-e3fa-45ed-8986-ba6d78244c1c.htm" title="Developer's Guide" tocid="2fe20d49-9cd6-4115-a896-1feb82560840">Developer's Guide</a></div><div class="toclevel1" data-toclevel="1" data-childrenloaded="true"><a class="tocExpanded" onclick="javascript: Toggle(this);" href="#!" /><a data-tochassubtree="true" href="298801d3-40ad-4fae-816e-5a7e1afb0ff0.htm" title="Programming State Machines" tocid="298801d3-40ad-4fae-816e-5a7e1afb0ff0">Programming State Machines</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="954456b3-e05a-4e1d-af00-4f400fd43f47.htm" title="States, Transitions and Regions" tocid="954456b3-e05a-4e1d-af00-4f400fd43f47">States, Transitions and Regions</a></div><div class="toclevel2 current" data-toclevel="2"><a data-tochassubtree="false" href="16986707-6029-42de-a453-8b359b07248a.htm" title="StateMachineTemplate and StateMachine" tocid="16986707-6029-42de-a453-8b359b07248a">StateMachineTemplate and StateMachine</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="182b6093-fb30-4549-90d3-addc7c2dd2fb.htm" title="Composite States" tocid="182b6093-fb30-4549-90d3-addc7c2dd2fb">Composite States</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="7e6981a4-284a-4027-9e21-50d195fe0169.htm" title="Orthogonal Regions" tocid="7e6981a4-284a-4027-9e21-50d195fe0169">Orthogonal Regions</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="badfe5ab-643a-45d2-bd27-ad6536a62b6c.htm" title="State Configurations" tocid="badfe5ab-643a-45d2-bd27-ad6536a62b6c">State Configurations</a></div><div class="toclevel2" data-toclevel="2"><a data-tochassubtree="false" href="93712910-2b27-4731-a3a5-38da29702b5e.htm" title="State Machine Entities and Relations" tocid="93712910-2b27-4731-a3a5-38da29702b5e">State Machine Entities and Relations</a></div></div><div id="tocResizableEW" onmousedown="OnMouseDown(event);"></div><div id="TocResize" class="tocResize"><img id="ResizeImageIncrease" src="../icons/TocOpen.gif" onclick="OnIncreaseToc()" alt="Click or drag to resize" title="Click or drag to resize" /><img id="ResizeImageReset" src="../icons/TocClose.gif" style="display:none" onclick="OnResetToc()" alt="Click or drag to resize" title="Click or drag to resize" /></div></div><div class="topicContent" id="TopicContent"><table class="titleTable"><tr><td class="logoColumn"><img alt="StaMa" src="../icons/StaMa32x32.png" /></td><td class="titleColumn">StateMachineTemplate and StateMachine</td></tr></table><span class="introStyle"></span><div class="summary"><p>Describes how a state machine is started and how the state machine is triggered to do its work.</p></div><div class="introduction"><p>
+        When the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> is successfully prepared, it allows to create <a href="T_StaMa_StateMachine.htm">StateMachine</a> instances through
+        the <a href="M_StaMa_StateMachineTemplate_CreateStateMachine.htm">StateMachineTemplate.CreateStateMachine</a> method.
+      </p><p>
+        A <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance holds all the mutable data of a state machine. Actually this is not very much:
+      </p><ul><li><p>
+            A reference to the <a href="T_StaMa_State.htm">State</a> instance that is currently active.
+            In case the state machine has composite states or orthogonal sub-regions there may also be multiple of them, depending on the nesting depth and orthogonality rank.
+          </p></li><li><p>
+            In case the history mechanism is used within the state machine, references to the last active <a href="T_StaMa_State.htm">State</a> instances have to be stored per <a href="T_StaMa_Region.htm">Region</a> that uses the history mechanism.
+          </p></li><li><p>
+            A queue of event instances that are sent to the state machine.
+          </p></li><li><p>
+            A reference to an arbitrary client specific context object which is usually a reference to the wrapper class that hosts the state machine.
+          </p></li><li><p>
+            A backward reference to the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> instance from which the <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance was created.
+          </p></li><li><p>
+            A few internal references to tracing related delegate functions.
+          </p></li></ul><p>
+        The following code sample shows how a <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance is created from a <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> through the
+        <a href="M_StaMa_StateMachineTemplate_CreateStateMachine.htm">StateMachineTemplate.CreateStateMachine</a> method.
+        The <a href="M_StaMa_StateMachine_Startup.htm">StateMachine.Startup</a> method enters the initial state and the
+        <a href="Overload_StaMa_StateMachine_SendTriggerEvent.htm">StateMachine.SendTriggerEvent</a> method sends the <span class="code">"Event1"</span> signal to the state machine which triggers
+        the transition <span class="code">"Transit1"</span>.
+      </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EADDAAA_tab1" class="codeSnippetContainerTabSingle">StateMachine creation, startup and sending an event</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EADDAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EADDAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EADDAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">class</span> SimpleStateMachine
+{
+    <span class="highlight-keyword">private</span> StateMachine m_stateMachine;
+
+    <span class="highlight-keyword">public</span> SimpleStateMachine()
+    {
+        StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+        t.Region(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">false</span>);
+            t.State(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">null</span>, ExitState1);
+                t.Transition(<span class="highlight-literal">"Transit1"</span>, <span class="highlight-literal">"State2"</span>, <span class="highlight-literal">"Event1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+            t.State(<span class="highlight-literal">"State2"</span>, EnterState2, <span class="highlight-keyword">null</span>);
+                t.Transition(<span class="highlight-literal">"Transit2"</span>, <span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+            t.EndState();
+        t.EndRegion();
+
+        m_stateMachine = t.CreateInstance();
+        m_stateMachine.Startup();
+        m_stateMachine.SendTriggerEvent(<span class="highlight-literal">"Event1"</span>);
+    }
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+    }
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EADDAAA");</script><p>
+        The following sections will discuss:
+      </p><ul><li><p>
+            How to enable tracing to find out what's going on in the state machine.
+          </p></li><li><p>
+            How to reuse the same <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> for multiple <a href="T_StaMa_StateMachine.htm">StateMachine</a> instances.
+          </p></li></ul><p> </p></div><div class="collapsibleAreaRegion" id="StateMachineTracing"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID1RB')" onkeypress="SectionExpandCollapse_CheckKey('ID1RB', event)" tabindex="0"><img id="ID1RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Enable Tracing for State Changes, for Event Processing and for Transition Checking</span></div><div id="ID1RBSection" class="collapsibleSection"><p>
+          The <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance has properties to set callback methods that are called in the following situations:
+        </p><div class="tableSection"><table><tr><td><p><a href="P_StaMa_StateMachine_TraceStateChange.htm">StateMachine.TraceStateChange</a></p></td><td><p>
+                The state machine executes a transition and switches to a state.
+              </p></td></tr><tr><td><p><a href="P_StaMa_StateMachine_TraceDispatchTriggerEvent.htm">StateMachine.TraceDispatchTriggerEvent</a></p></td><td><p>
+                The state machine fetches an event instance from the queue as part of the run-to-completion processing and dispatches it.
+              </p></td></tr><tr><td><p><a href="P_StaMa_StateMachine_TraceTestTransition.htm">StateMachine.TraceTestTransition</a></p></td><td><p>
+                The state machine dispatched an event and reached a transition that will be tested if it can be executed.
+              </p></td></tr></table></div><p>
+          See also <a href="16c7903d-977c-4d5d-bc01-5b0480e944fe.htm">Tracing State Changes, Transition Testing and Event Dispatching</a>.
+        </p><p> </p></div><div class="collapsibleAreaRegion" id="ReuseStateMachineTemplate"><span class="collapsibleRegionTitle" onclick="SectionExpandCollapse('ID2RB')" onkeypress="SectionExpandCollapse_CheckKey('ID2RB', event)" tabindex="0"><img id="ID2RBToggle" class="collapseToggle" src="../icons/SectionExpanded.png" />Reuse the StateMachineTemplate for multiple StateMachine instances</span></div><div id="ID2RBSection" class="collapsibleSection"><p>
+          The above sample code chunk creates a <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> instance for every instance of the <span class="code">SimpleStateMachine</span> class and <a href="T_StaMa_StateMachine.htm">StateMachine</a> instance.
+          This is usually a reasonable programming style as it allows to directly use member methods of the wrapper class in the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> tree definition.
+        </p><p>
+          However there may be cases, where many <a href="T_StaMa_StateMachine.htm">StateMachine</a> instances are needed and instance creation performance and footprint require further optimization.
+          In such cases it is possible to create multiple <a href="T_StaMa_StateMachine.htm">StateMachine</a> instances from the same <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> instance.
+          This approach takes advantage of fact that the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> is immutable after the tree definition is completed.
+          The somewhat complex <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> tree definition with syntax and consistency checks are needed only once.
+        </p><p>
+          For this coding approach the <a href="T_StaMa_StateMachineTemplate.htm">StateMachineTemplate</a> is created as a static member of the wrapper class and the action callbacks are mede static methods of the wrapper class.
+          In order to invoke instance methods of the wrapper class, the static methods fetch the <a href="P_StaMa_StateMachine_Context.htm">StateMachine.Context</a> property value,
+          cast it to the wrapper class type and invoke the corresponding instance method of the wrapper class.
+          The <a href="P_StaMa_StateMachine_Context.htm">StateMachine.Context</a> property is initialized through the context parameter of the <a href="M_StaMa_StateMachineTemplate_CreateStateMachine_1.htm">StateMachineTemplate.CreateStateMachine(Object)</a> factory method.
+        </p><p>
+          The following code sample shows the approach:
+        </p><div class="codeSnippetContainer"><div class="codeSnippetContainerTabs"><div id="ID0EABABAAA_tab1" class="codeSnippetContainerTabSingle">SampleSimpleStateMachineNETMFMultiInstance.cs</div></div><div class="codeSnippetContainerCodeContainer"><div class="codeSnippetToolBar"><div class="codeSnippetToolBarText"><a id="ID0EABABAAA_copyCode" href="#" onclick="javascript:CopyToClipboard('ID0EABABAAA');return false;" title="Copy">Copy</a></div></div><div id="ID0EABABAAA_code_Div1" class="codeSnippetContainerCode" style="display: block"><pre xml:space="preserve"><span class="highlight-keyword">class</span> SampleSimpleStateMachineNETMFMultiInstance
+{
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> StateMachineTemplate m_stateMachineTemplate;
+    <span class="highlight-keyword">private</span> StateMachine m_stateMachine;
+    <span class="highlight-keyword">private</span> DispatcherTimer m_timeoutTimer;
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> StateMachineTemplate GetStateMachineTemplate()
+    {
+        <span class="highlight-keyword">if</span> (m_stateMachineTemplate == <span class="highlight-keyword">null</span>)
+        {
+            StateMachineTemplate t = <span class="highlight-keyword">new</span> StateMachineTemplate();
+
+            t.Region(<span class="highlight-literal">"State1"</span>, <span class="highlight-keyword">false</span>);
+                t.State(<span class="highlight-literal">"State1"</span>, EnterState1, ExitState1);
+                    t.Transition(<span class="highlight-literal">"Transition1to2"</span>, <span class="highlight-literal">"State2"</span>, <span class="highlight-literal">"Event1"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+                t.State(<span class="highlight-literal">"State2"</span>, EnterState2, ExitState2);
+                    t.Transition(<span class="highlight-literal">"Transition2to1"</span>, <span class="highlight-literal">"State1"</span>, <span class="highlight-literal">"TimeoutState2"</span>, <span class="highlight-keyword">null</span>, <span class="highlight-keyword">null</span>);
+                t.EndState();
+            t.EndRegion();
+
+            m_stateMachineTemplate = t;
+        }
+
+        <span class="highlight-keyword">return</span> m_stateMachineTemplate;
+    }
+
+
+    <span class="highlight-keyword">public</span> SampleSimpleStateMachineNETMFMultiInstance()
+    {
+        StateMachineTemplate stateMachineTemplate = GetStateMachineTemplate();
+        m_stateMachine = stateMachineTemplate.CreateStateMachine(<span class="highlight-keyword">this</span>);
+        m_stateMachine.TraceStateChange = <span class="highlight-keyword">this</span>.TraceStateChange;
+
+        m_timeoutTimer = <span class="highlight-keyword">new</span> DispatcherTimer();
+        m_timeoutTimer.Tick += TimeoutTimer_Tick;
+
+        m_stateMachine.Startup();
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> EnterState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        ((SampleSimpleStateMachineNETMFMultiInstance)stateMachine.Context).EnterState1Instance(stateMachine, triggerEvent, eventArgs);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> ExitState1(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        ((SampleSimpleStateMachineNETMFMultiInstance)stateMachine.Context).ExitState1Instance(stateMachine, triggerEvent, eventArgs);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> EnterState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        ((SampleSimpleStateMachineNETMFMultiInstance)stateMachine.Context).EnterState2Instance(stateMachine, triggerEvent, eventArgs);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">static</span> <span class="highlight-keyword">void</span> ExitState2(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        ((SampleSimpleStateMachineNETMFMultiInstance)stateMachine.Context).ExitState2Instance(stateMachine, triggerEvent, eventArgs);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState1Instance(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        Display.WriteLine(<span class="highlight-literal">"EnterState1Instance"</span>);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState1Instance(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        Display.WriteLine(<span class="highlight-literal">"ExitState1Instance"</span>);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> EnterState2Instance(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        Display.WriteLine(<span class="highlight-literal">"EnterState2Instance"</span>);
+        m_timeoutTimer.Tag = <span class="highlight-literal">"TimeoutState2"</span>;
+        m_timeoutTimer.Interval = <span class="highlight-keyword">new</span> TimeSpan(<span class="highlight-number">0</span>, <span class="highlight-number">0</span>, <span class="highlight-number">2</span>);
+        m_timeoutTimer.Start();
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> ExitState2Instance(StateMachine stateMachine, <span class="highlight-keyword">object</span> triggerEvent, EventArgs eventArgs)
+    {
+        m_timeoutTimer.Stop();
+        Display.WriteLine(<span class="highlight-literal">"ExitState2Instance"</span>);
+    }
+
+
+    <span class="highlight-keyword">void</span> TimeoutTimer_Tick(<span class="highlight-keyword">object</span> sender, EventArgs e)
+    {
+        m_timeoutTimer.Stop();
+        m_stateMachine.SendTriggerEvent(m_timeoutTimer.Tag);
+    }
+
+
+    <span class="highlight-keyword">private</span> <span class="highlight-keyword">void</span> TraceStateChange(StateMachine stateMachine, StateConfiguration stateConfigurationFrom, StateConfiguration stateConfigurationTo, Transition transition)
+    {
+        <span class="highlight-keyword">string</span> info = DateTime.Now.ToString(<span class="highlight-literal">"HH:mm:ss.fff"</span>) + <span class="highlight-literal">" ActiveState=\""</span> + stateConfigurationTo.ToString() + <span class="highlight-literal">"\""</span> + <span class="highlight-literal">" Transition="</span> + ((transition != <span class="highlight-keyword">null</span>) ? <span class="highlight-literal">"\""</span> + transition.Name + <span class="highlight-literal">"\""</span> : <span class="highlight-literal">"Startup/Finish"</span>);
+        Debug.Print(info);
+        Display.WriteLine(info);
+    }
+
+
+    <span class="highlight-keyword">public</span> <span class="highlight-keyword">void</span> ButtonUp()
+    {
+        m_stateMachine.SendTriggerEvent(<span class="highlight-literal">"Event1"</span>);
+    }
+}</pre></div></div></div><script type="text/javascript">AddLanguageTabSet("ID0EABABAAA");</script><p>
+          The repeated coding of static to instance routing methods can be automated through a code generator shape in <a href="ca217c97-dd3c-4c6c-a0e7-5893315663aa.htm">StaMa Visio Shapes</a>.
+        </p></div></div></div><div id="pageFooter" class="pageFooter">Documentation generated on 28-Mrz-2016  <p><a href="https://github.com/StaMa-StateMachine/StaMa/issues" target="_blank">Report issues at https://github.com/StaMa-StateMachine/StaMa/</a></p></div></body></html>
