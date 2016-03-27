@@ -30,7 +30,7 @@ using Microsoft.SPOT;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("https://StaMa-StateMachine.github.io/")]
 [assembly: AssemblyProduct("StaMa")]
-[assembly: AssemblyCopyright("Copyright (c) 2005-2015, Roland Schneider. All rights reserved.")]
+[assembly: AssemblyCopyright("Copyright (c) 2005-2016, Roland Schneider. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
@@ -45,7 +45,7 @@ using Microsoft.SPOT;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("2.3.0.2")]
+[assembly: AssemblyVersion("2.3.0.3")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
