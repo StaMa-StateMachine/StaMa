@@ -31,29 +31,29 @@ namespace StaMaTest
             StaMa.BinaryReader reader = new StaMa.BinaryReader(new MemoryStream(new Byte[] { }), System.Text.Encoding.UTF8);
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { reader.ReadByte(); }), Throws.TypeOf(typeof(IOException)));
-            Assert.That(new TestDelegate(delegate() { reader.Dispose(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { reader.ReadByte(); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { reader.ReadInt16(); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { reader.ReadString(); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { reader.ToString(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { reader.Dispose(); }), Throws.Nothing); // 2nd Dispose doesn't access any cleared members.
-            Assert.That(new TestDelegate(delegate() { reader.Close(); }), Throws.Nothing);
+            Assert.That(delegate() { reader.ReadByte(); }, Throws.TypeOf(typeof(IOException)));
+            Assert.That(delegate() { reader.Dispose(); }, Throws.Nothing);
+            Assert.That(delegate() { reader.ReadByte(); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { reader.ReadInt16(); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { reader.ReadString(); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { reader.ToString(); }, Throws.Nothing);
+            Assert.That(delegate() { reader.Dispose(); }, Throws.Nothing); // 2nd Dispose doesn't access any cleared members.
+            Assert.That(delegate() { reader.Close(); }, Throws.Nothing);
 
             // Act
             StaMa.BinaryReader reader2 = new StaMa.BinaryReader(new MemoryStream(new Byte[] { }), System.Text.Encoding.UTF8);
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { reader2.Close(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { reader2.ReadByte(); }), Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { reader2.Close(); }, Throws.Nothing);
+            Assert.That(delegate() { reader2.ReadByte(); }, Throws.TypeOf(typeof(ObjectDisposedException)));
         }
 
 
         [Test]
         public void BinaryReaderConstructor_InvalidArguments_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { new StaMa.BinaryReader(null, System.Text.Encoding.UTF8); }), Throws.TypeOf(typeof(ArgumentNullException)));
-            Assert.That(new TestDelegate(delegate() { new StaMa.BinaryReader(new MemoryStream(new Byte[] { }), null); }), Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { new StaMa.BinaryReader(null, System.Text.Encoding.UTF8); }, Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { new StaMa.BinaryReader(new MemoryStream(new Byte[] { }), null); }, Throws.TypeOf(typeof(ArgumentNullException)));
         }
 
 
@@ -85,7 +85,7 @@ namespace StaMaTest
             }
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { reader.ReadByte(); }), Throws.TypeOf(typeof(IOException)));
+            Assert.That(delegate() { reader.ReadByte(); }, Throws.TypeOf(typeof(IOException)));
         }
 
 
@@ -121,7 +121,7 @@ namespace StaMaTest
             }
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { reader.ReadInt16(); }), Throws.TypeOf(typeof(IOException)));
+            Assert.That(delegate() { reader.ReadInt16(); }, Throws.TypeOf(typeof(IOException)));
         }
 
 
@@ -165,7 +165,7 @@ namespace StaMaTest
             }
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { reader.ReadString(); }), Throws.TypeOf(typeof(IOException)));
+            Assert.That(delegate() { reader.ReadString(); }, Throws.TypeOf(typeof(IOException)));
         }
 
 
@@ -176,30 +176,30 @@ namespace StaMaTest
             StaMa.BinaryWriter writer = new StaMa.BinaryWriter(new MemoryStream(), System.Text.Encoding.UTF8);
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { writer.Flush(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { writer.Dispose(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { writer.Write((Byte)0); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { writer.Write((Int16)0); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { writer.Write(String.Empty); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { writer.Flush(); }), Throws.TypeOf(typeof(ObjectDisposedException)));
-            Assert.That(new TestDelegate(delegate() { writer.ToString(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { writer.Dispose(); }), Throws.Nothing); // 2nd Dispose doesn't access any cleared members.
-            Assert.That(new TestDelegate(delegate() { writer.Close(); }), Throws.Nothing);
+            Assert.That(delegate() { writer.Flush(); }, Throws.Nothing);
+            Assert.That(delegate() { writer.Dispose(); }, Throws.Nothing);
+            Assert.That(delegate() { writer.Write((Byte)0); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { writer.Write((Int16)0); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { writer.Write(String.Empty); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { writer.Flush(); }, Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { writer.ToString(); }, Throws.Nothing);
+            Assert.That(delegate() { writer.Dispose(); }, Throws.Nothing); // 2nd Dispose doesn't access any cleared members.
+            Assert.That(delegate() { writer.Close(); }, Throws.Nothing);
 
             // Act
             StaMa.BinaryWriter writer2 = new StaMa.BinaryWriter(new MemoryStream(new Byte[] { }), System.Text.Encoding.UTF8);
 
             // Assert
-            Assert.That(new TestDelegate(delegate() { writer2.Close(); }), Throws.Nothing);
-            Assert.That(new TestDelegate(delegate() { writer2.Write((Byte)0); }), Throws.TypeOf(typeof(ObjectDisposedException)));
+            Assert.That(delegate() { writer2.Close(); }, Throws.Nothing);
+            Assert.That(delegate() { writer2.Write((Byte)0); }, Throws.TypeOf(typeof(ObjectDisposedException)));
         }
 
 
         [Test]
         public void BinaryWriterConstructor_InvalidArguments_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { new StaMa.BinaryWriter(null, System.Text.Encoding.UTF8); }), Throws.TypeOf(typeof(ArgumentNullException)));
-            Assert.That(new TestDelegate(delegate() { new StaMa.BinaryWriter(new MemoryStream(), null); }), Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { new StaMa.BinaryWriter(null, System.Text.Encoding.UTF8); }, Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { new StaMa.BinaryWriter(new MemoryStream(), null); }, Throws.TypeOf(typeof(ArgumentNullException)));
         }
 
 

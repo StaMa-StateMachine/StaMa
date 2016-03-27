@@ -2,19 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>StaMa.StateMachine</id>
-    <version>2.3.0.2</version>
-    <authors>RolandSchneider</authors>
-    <owners>RolandSchneider</owners>
-    <licenseUrl>http://stama.codeplex.com/license</licenseUrl>
-    <projectUrl>http://stama.codeplex.com/</projectUrl>
-    <iconUrl>http://www.7fun.de/StaMa/StaMa120x120.png</iconUrl>
+    <version>2.3.0.3</version>
+    <authors>Roland Schneider</authors>
+    <owners>Roland Schneider</owners>
+    <licenseUrl>https://github.com/StaMa-StateMachine/StaMa/raw/master/LICENSE</licenseUrl>
+    <projectUrl>https://StaMa-StateMachine.github.io/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/StaMa-StateMachine/StaMa-StateMachine.github.io/master/StaMa120x120.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>
       UML and Statechart inspired state machine library with hierarchical and orthogonal states.
     </summary>
     <description>
 UML and Statechart inspired state machine library with hierarchical and orthogonal states.
-See description on http://StaMa.org/.
+See description on https://StaMa-StateMachine.github.io/StaMa/.
 This package includes:
 - Portable assembly for .NET Framework 4, Silverlight 5, Windows 8, Windows Phone 8.1, Windows Phone Silverlight 8 and higher versions. Runs on Mono.
 - Assembly for .NET Micro Framework 4.3
@@ -30,7 +30,7 @@ Free from runtime thread synchronization calls.
 Multiple state machine instances can be created from a single state machine definition.
 Optional code generation based on Microsoft Visio diagrams.
     </description>
-    <releaseNotes>See http://stama.codeplex.com/releases. </releaseNotes>
+    <releaseNotes>See https://github.com/StaMa-StateMachine/StaMa/releases </releaseNotes>
     <tags>state-machine statechart netmf mono linux android xamarin macos ios gadgeteer netduino embedded</tags>
     <!--<frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="net40" />

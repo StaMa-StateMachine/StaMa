@@ -85,8 +85,8 @@
       </Filter>
     </ApiFilter>
     <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, ProtectedInternalAsProtected</VisibleItems>
-    <CopyrightText>Report issues at http://stama.codeplex.com/</CopyrightText>
-    <CopyrightHref>http://stama.codeplex.com/workitem/list/basic</CopyrightHref>
+    <CopyrightText>Report issues at https://github.com/StaMa-StateMachine/StaMa/</CopyrightText>
+    <CopyrightHref>https://github.com/StaMa-StateMachine/StaMa/issues</CopyrightHref>
     <FooterText>Documentation generated on {%40BuildDate:dd-MMM-yyyy} &amp;amp%3b#160%3b</FooterText>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="StaMa" isDocumented="True" />

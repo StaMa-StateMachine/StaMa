@@ -12,7 +12,7 @@
       </para>
       <para>
         The assembly is provided through the <token>NuGet</token>&#160;<localUri>StaMa.StateMachine</localUri> package
-        or through the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file on the <externalLink><linkText>Codeplex project home</linkText><linkUri>http://stama.codeplex.com/releases/</linkUri><linkTarget>_blank</linkTarget></externalLink>.
+        or through the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file on the <externalLink><linkText>GitHub project home</linkText><linkUri>https://github.com/StaMa-StateMachine/StaMa/releases</linkUri><linkTarget>_blank</linkTarget></externalLink>.
       </para>
       <para>
         Samples are available through the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> file.
@@ -26,7 +26,7 @@
             The contained <localUri>StaMa.dll</localUri> assembly might not match Your .NET Framework version.
           </para>
           <para>
-            In this case please obtain the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> from the <externalLink><linkText>Codeplex project home</linkText><linkUri>http://stama.codeplex.com/releases/</linkUri><linkTarget>_blank</linkTarget></externalLink>, extract the contents
+            In this case please obtain the <localUri>StaMa_State_Machine_Contoller_Library_Vx.y.zip</localUri> from the <externalLink><linkText>GitHub project home</linkText><linkUri>https://github.com/StaMa-StateMachine/StaMa/releases</linkUri><linkTarget>_blank</linkTarget></externalLink>, extract the contents
             to a local folder and re-compile <localUri>StaMa.dll</localUri> after adapting the <localUri>StaMa.csproj</localUri> or <localUri>StaMaNETMF.csproj</localUri> file to Your projects needs.
           </para>
           <para>

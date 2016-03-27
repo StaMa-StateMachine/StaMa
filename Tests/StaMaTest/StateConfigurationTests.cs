@@ -128,28 +128,28 @@ namespace StaMaTest
         [Test]
         public void CreateStateConfiguration_IncompatibleSameRegion_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { m_stmTmplat.CreateStateConfiguration(new string[] { StateA1A1A, StateA1B }); }), Throws.TypeOf(typeof(ArgumentOutOfRangeException)));
+            Assert.That(delegate() { m_stmTmplat.CreateStateConfiguration(new string[] { StateA1A1A, StateA1B }); }, Throws.TypeOf(typeof(ArgumentOutOfRangeException)));
         }
 
 
         [Test]
         public void CreateStateConfiguration_Unknown_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { m_stmTmplat.CreateStateConfiguration(new string[] { "wrztlbrnft" }); }), Throws.TypeOf(typeof(ArgumentOutOfRangeException)));
+            Assert.That(delegate() { m_stmTmplat.CreateStateConfiguration(new string[] { "wrztlbrnft" }); }, Throws.TypeOf(typeof(ArgumentOutOfRangeException)));
         }
 
 
         [Test]
         public void CreateStateConfiguration_NullStateList_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { m_stmTmplat.CreateStateConfiguration((string[])null); }), Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { m_stmTmplat.CreateStateConfiguration((string[])null); }, Throws.TypeOf(typeof(ArgumentNullException)));
         }
 
 
         [Test]
         public void CreateStateConfiguration_NullSingleState_Throws()
         {
-            Assert.That(new TestDelegate(delegate() { m_stmTmplat.CreateStateConfiguration((string)null); }), Throws.TypeOf(typeof(ArgumentNullException)));
+            Assert.That(delegate() { m_stmTmplat.CreateStateConfiguration((string)null); }, Throws.TypeOf(typeof(ArgumentNullException)));
         }
     }
 }

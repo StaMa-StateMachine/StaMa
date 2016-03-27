@@ -22,24 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMaTestNETMF", "Tests\StaMaTest\StaMaTestNETMF.csproj", "{9FA3731F-BAB2-46BD-BB19-17A4D8E6799D}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = StaMa\\StaMaNETMF.csproj
-		SccProjectName1 = StaMa
-		SccLocalPath1 = StaMa
-		SccProjectUniqueName2 = Samples\\netmf\\TicketVendingNETMF\\TicketVendingNETMF.csproj
-		SccProjectName2 = Samples/netmf/TicketVendingNETMF
-		SccLocalPath2 = Samples\\netmf\\TicketVendingNETMF
-		SccProjectUniqueName3 = Samples\\netmf\\SampleSimpleStateMachineNETMF\\SampleSimpleStateMachineNETMF.csproj
-		SccProjectName3 = Samples/netmf/SampleSimpleStateMachineNETMF
-		SccLocalPath3 = Samples\\netmf\\SampleSimpleStateMachineNETMF
-		SccProjectUniqueName4 = Tests\\StaMaTestNETMF\\StaMaTestNETMF.csproj
-		SccProjectName4 = Tests/StaMaTestNETMF
-		SccLocalPath4 = Tests\\StaMaTestNETMF
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

@@ -23,11 +23,11 @@
   <item id="Region">Region</item>
   <item id="StaMa"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
     <ddue:linkText>StaMa</ddue:linkText>
-    <ddue:linkUri>http://stama.codeplex.com</ddue:linkUri>
+    <ddue:linkUri>https://StaMa-StateMachine.github.io/</ddue:linkUri>
 </ddue:externalLink></item>
   <item id="StaMaLib"><ddue:externalLink xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">
     <ddue:linkText>StaMa State Machine Controller Library</ddue:linkText>
-    <ddue:linkUri>http://stama.codeplex.com</ddue:linkUri>
+    <ddue:linkUri>https://StaMa-StateMachine.github.io/</ddue:linkUri>
 </ddue:externalLink></item>
   <item id="StaMaShapes"><ddue:link xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="ca217c97-dd3c-4c6c-a0e7-5893315663aa">StaMa Visio Shapes</ddue:link></item>
   <item id="State">State</item>

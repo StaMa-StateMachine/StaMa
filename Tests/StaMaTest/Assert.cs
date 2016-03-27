@@ -29,57 +29,57 @@ namespace MFUnitTest.Framework
 
             try
             {
-                Assert.That(new TestDelegate(delegate() { }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { throw new ArgumentException("message"); }), Throws.TypeOf(typeof(ArgumentException)));
-                Assert.That(new TestDelegate(delegate() { throw new ArgumentException("message"); }), Throws.TypeOf(typeof(ArgumentException)).With.Message.EqualTo("message"));
-                Assert.That(new TestDelegate(delegate() { throw new ArgumentException("message asdf text"); }), Throws.TypeOf(typeof(ArgumentException)).With.Message.ContainsSubstring("asdf"));
-                Assert.That(new TestDelegate(delegate() { throw new ArgumentException("message AsdF text"); }), Throws.TypeOf(typeof(ArgumentException)).With.Message.ContainsSubstring("asdf").IgnoreCase);
+                Assert.That(delegate() { }, Throws.Nothing);
+                Assert.That(delegate() { throw new ArgumentException("message"); }, Throws.TypeOf(typeof(ArgumentException)));
+                Assert.That(delegate() { throw new ArgumentException("message"); }, Throws.TypeOf(typeof(ArgumentException)).With.Message.EqualTo("message"));
+                Assert.That(delegate() { throw new ArgumentException("message asdf text"); }, Throws.TypeOf(typeof(ArgumentException)).With.Message.Contains("asdf"));
+                Assert.That(delegate() { throw new ArgumentException("message AsdF text"); }, Throws.TypeOf(typeof(ArgumentException)).With.Message.Contains("asdf").IgnoreCase);
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(new TestDelegate(delegate() { throw new Exception("Exception of type 'System.Exception' was thrown."); }), Throws.Nothing, messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.StartsWith(messageText + "\r\n  Expected: No Exception to be thrown\r\n  But was:   (Exception of type 'System.Exception' was thrown.)"));
+                Assert.That(delegate() { Assert.That(delegate() { throw new Exception("Exception of type 'System.Exception' was thrown."); }, Throws.Nothing, messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.StartsWith(messageText + "\r\n  Expected: No Exception to be thrown\r\n  But was:   (Exception of type 'System.Exception' was thrown.)"));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(new TestDelegate(delegate() { }), Throws.TypeOf(typeof(ArgumentException)), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.ArgumentException>\r\n  But was:  no exception thrown\r\n"));
-                Assert.That(new TestDelegate(delegate() { throw new ArgumentException("other"); }), Throws.TypeOf(typeof(ArgumentException)).With.Message.Not.EqualTo("message"));
+                Assert.That(delegate() { Assert.That(delegate() { }, Throws.TypeOf(typeof(ArgumentException)), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.ArgumentException>\r\n  But was:  no exception thrown\r\n"));
+                Assert.That(delegate() { throw new ArgumentException("other"); }, Throws.TypeOf(typeof(ArgumentException)).With.Message.Not.EqualTo("message"));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(true, Is.EqualTo(true)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(false, Is.EqualTo(false)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(false, Is.EqualTo(true), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: True\r\n  But was:  False\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(true, Is.EqualTo(false), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: False\r\n  But was:  True\r\n"));
+                Assert.That(delegate() { Assert.That(true, Is.EqualTo(true)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(false, Is.EqualTo(false)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(false, Is.EqualTo(true), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: True\r\n  But was:  False\r\n"));
+                Assert.That(delegate() { Assert.That(true, Is.EqualTo(false), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: False\r\n  But was:  True\r\n"));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(0, Is.EqualTo(0)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(5, Is.EqualTo(5)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(5, Is.EqualTo(0), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: 0\r\n  But was:  5\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(5, Is.Not.EqualTo(0), messageText); }), Throws.Nothing);
+                Assert.That(delegate() { Assert.That(0, Is.EqualTo(0)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(5, Is.EqualTo(5)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(5, Is.EqualTo(0), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: 0\r\n  But was:  5\r\n"));
+                Assert.That(delegate() { Assert.That(5, Is.Not.EqualTo(0), messageText); }, Throws.Nothing);
 
-                Assert.That(new TestDelegate(delegate() { Assert.That("Hello", Is.EqualTo("Hello")); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That("", Is.EqualTo("")); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That("Hello", Is.EqualTo(""), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <string.Empty>\r\n  But was:  \"Hello\"\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That("Hello", Is.Not.EqualTo(""), messageText); }), Throws.Nothing);
+                Assert.That(delegate() { Assert.That("Hello", Is.EqualTo("Hello")); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That("", Is.EqualTo("")); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That("Hello", Is.EqualTo(""), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <string.Empty>\r\n  But was:  \"Hello\"\r\n"));
+                Assert.That(delegate() { Assert.That("Hello", Is.Not.EqualTo(""), messageText); }, Throws.Nothing);
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(null, Is.EqualTo(null)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(object1, Is.Not.EqualTo(null)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(object1, Is.EqualTo(object1)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(object1, Is.EqualTo(object2), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.Object>\r\n  But was:  <System.Object>\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(object1, Is.EqualTo(null), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: null\r\n  But was:  <System.Object>\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(null, Is.EqualTo(new Object()), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.Object>\r\n  But was:  null\r\n"));
+                Assert.That(delegate() { Assert.That(null, Is.EqualTo(null)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(object1, Is.Not.EqualTo(null)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(object1, Is.EqualTo(object1)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(object1, Is.EqualTo(object2), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.Object>\r\n  But was:  <System.Object>\r\n"));
+                Assert.That(delegate() { Assert.That(object1, Is.EqualTo(null), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: null\r\n  But was:  <System.Object>\r\n"));
+                Assert.That(delegate() { Assert.That(null, Is.EqualTo(new Object()), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.Object>\r\n  But was:  null\r\n"));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection1)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection2)); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection3), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected is <System.String[1]>, actual is <System.String[2]>\r\n  Values differ at index [1]\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection4), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.String[2]>\r\n  Values differ at index [1]\r\n  Expected: \"s3\"\r\n  But was:  \"s2\"\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection5), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.String[2]>\r\n  Values differ at index [0]\r\n  Expected: \"s2\"\r\n  But was:  \"s1\"\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection1, Is.EqualTo(collection6), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected is <System.Object[2]>, actual is <System.String[2]>\r\n  Values differ at index [1]\r\n  Expected: 4\r\n  But was:  \"s2\"\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(null, Is.EqualTo(collection1), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.String[]>\r\n  But was:  null\r\n"));
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection1)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection2)); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection3), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected is <System.String[1]>, actual is <System.String[2]>\r\n  Values differ at index [1]\r\n"));
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection4), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.String[2]>\r\n  Values differ at index [1]\r\n  Expected: \"s3\"\r\n  But was:  \"s2\"\r\n"));
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection5), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.String[2]>\r\n  Values differ at index [0]\r\n  Expected: \"s2\"\r\n  But was:  \"s1\"\r\n"));
+                Assert.That(delegate() { Assert.That(collection1, Is.EqualTo(collection6), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected is <System.Object[2]>, actual is <System.String[2]>\r\n  Values differ at index [1]\r\n  Expected: 4\r\n  But was:  \"s2\"\r\n"));
+                Assert.That(delegate() { Assert.That(null, Is.EqualTo(collection1), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: <System.String[]>\r\n  But was:  null\r\n"));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(5, Is.EqualTo("5").Using(NumberEqualityComparer.Instance), messageText); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(3, Is.EqualTo("5").Using(NumberEqualityComparer.Instance), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: \"5\"\r\n  But was:  3\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection6, Is.EqualTo(collection7), messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.Object[2]>\r\n  Values differ at index [1]\r\n  Expected: \"4\"\r\n  But was:  4\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(collection6, Is.EqualTo(collection7).Using(NumberEqualityComparer.Instance), messageText); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(5, Is.EqualTo("5").Using(null), messageText); }), Throws.TypeOf(typeof(ArgumentNullException)));
+                Assert.That(delegate() { Assert.That(5, Is.EqualTo("5").Using(NumberEqualityComparer.Instance), messageText); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(3, Is.EqualTo("5").Using(NumberEqualityComparer.Instance), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: \"5\"\r\n  But was:  3\r\n"));
+                Assert.That(delegate() { Assert.That(collection6, Is.EqualTo(collection7), messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected and actual are both <System.Object[2]>\r\n  Values differ at index [1]\r\n  Expected: \"4\"\r\n  But was:  4\r\n"));
+                Assert.That(delegate() { Assert.That(collection6, Is.EqualTo(collection7).Using(NumberEqualityComparer.Instance), messageText); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(5, Is.EqualTo("5").Using(null), messageText); }, Throws.TypeOf(typeof(ArgumentNullException)));
 
-                Assert.That(new TestDelegate(delegate() { Assert.That(null, Is.Null); }), Throws.Nothing);
-                Assert.That(new TestDelegate(delegate() { Assert.That(new Object(), Is.Null, messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: null\r\n  But was:  <System.Object>\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(null, Is.Not.Null, messageText); }), Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: not null\r\n  But was:  null\r\n"));
-                Assert.That(new TestDelegate(delegate() { Assert.That(new Object(), Is.Not.Null); }), Throws.Nothing);
+                Assert.That(delegate() { Assert.That(null, Is.Null); }, Throws.Nothing);
+                Assert.That(delegate() { Assert.That(new Object(), Is.Null, messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: null\r\n  But was:  <System.Object>\r\n"));
+                Assert.That(delegate() { Assert.That(null, Is.Not.Null, messageText); }, Throws.TypeOf(typeof(AssertionException)).With.Message.EqualTo(messageText + "\r\n  Expected: not null\r\n  But was:  null\r\n"));
+                Assert.That(delegate() { Assert.That(new Object(), Is.Not.Null); }, Throws.Nothing);
             }
             catch (AssertionException ex)
             {
@@ -168,6 +168,11 @@ namespace MFUnitTest.Framework
         public static void That(TestDelegate code, IResolveConstraint expression)
         {
             That((object)code, expression, null);
+        }
+
+        public static void That(TestDelegate code, IResolveConstraint expression, string message)
+        {
+            That((object)code, expression, message);
         }
 
         public static void That(object actual, IResolveConstraint expression, string message)
@@ -1351,7 +1356,7 @@ namespace MFUnitTest.Framework.Constraints
             return (ExactTypeConstraint)base.Append(new ExactTypeConstraint(expectedType));
         }
 
-        public SubstringConstraint ContainsSubstring(string expected)
+        public SubstringConstraint Contains(string expected)
         {
             return (SubstringConstraint)base.Append(new SubstringConstraint(expected));
         }

@@ -109,7 +109,13 @@ class Program
       <title>Older Versions</title>
       <content>
         <para>
-          <externalLink><linkText>Online Help V2.2.0.2</linkText><linkUri>http://stama.org/V2202/</linkUri><linkTarget>_blank</linkTarget></externalLink>
+          <externalLink><linkText>Online Help V2.3.0.2 (forwarded from StaMa.org)</linkText><linkUri>http://www.7fun.de/StaMa/</linkUri><linkTarget>_blank</linkTarget></externalLink>
+        </para>
+        <para>
+          <externalLink><linkText>Online Help V2.2.0.2 (forwarded from StaMa.org)</linkText><linkUri>http://www.7fun.de/StaMa/V2202/</linkUri><linkTarget>_blank</linkTarget></externalLink>
+        </para>
+        <para>
+          <externalLink><linkText>Source Code V2.2.0.2 and V2.3.0.2 (on CodePlex)</linkText><linkUri>http://stama.codeplex.com/</linkUri><linkTarget>_blank</linkTarget></externalLink>
         </para>
       </content>
     </section>

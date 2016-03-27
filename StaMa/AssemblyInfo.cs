@@ -1,8 +1,8 @@
 #region AssemblyInfo.cs file
 //
-// StaMa state machine controller library, http://stama.codeplex.com/
+// StaMa state machine controller library, https://github.com/StaMa-StateMachine/StaMa
 //
-// Copyright (c) 2005-2014, Roland Schneider. All rights reserved.
+// Copyright (c) 2005-2016, Roland Schneider. All rights reserved.
 //
 #endregion
 
@@ -28,7 +28,7 @@ using Microsoft.SPOT;
 [assembly: AssemblyTitle("StaMa")]
 [assembly: AssemblyDescription("StaMa state machine controller library")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("http://stama.codeplex.com/")]
+[assembly: AssemblyCompany("https://StaMa-StateMachine.github.io/")]
 [assembly: AssemblyProduct("StaMa")]
 [assembly: AssemblyCopyright("Copyright (c) 2005-2015, Roland Schneider. All rights reserved.")]
 [assembly: AssemblyTrademark("")]

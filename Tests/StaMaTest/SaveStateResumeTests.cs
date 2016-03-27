@@ -153,7 +153,7 @@ namespace StaMaTest
             memoryStream.Position = 0;
 
             // Act, Assert
-            Assert.That(new TestDelegate(delegate() { s2.Resume(memoryStream, false); }), Throws.TypeOf(typeof(ArgumentException)).With.Message.ContainsSubstring("state machine structure").IgnoreCase);
+            Assert.That(delegate() { s2.Resume(memoryStream, false); }, Throws.TypeOf(typeof(ArgumentException)).With.Message.Contains("state machine structure").IgnoreCase);
 
             // Act
             s2.Startup();
@@ -345,7 +345,7 @@ namespace StaMaTest
 
             // Assert
             Assert.That(signature, Is.EqualTo(expectedSignature));
-            Assert.That(new TestDelegate(() => { t.SerializationSignatureGenerator = TestSignatureGenerator; }), Throws.TypeOf(typeof(InvalidOperationException)));
+            Assert.That(() => { t.SerializationSignatureGenerator = TestSignatureGenerator; }, Throws.TypeOf(typeof(InvalidOperationException)));
         }
 
 

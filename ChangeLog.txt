@@ -1,6 +1,11 @@
 
 Changes in reverse chronological order:
 
+StaMa 2.3.0.3
+- .NET FWK + NETMF: Checked compatibility with Visual Studio 2015 Community, no changes necessary
+- .NET FWK: Upgraded NUnit from 2.6.3 to 3.2.0 and changed "Target framework" for StaMaTest.csproj from ".NET Framework 4 Client Profile" to ".NET Framework 4.5"
+- Documentation now hosted on https://StaMa-StateMachine.github.io/StaMa/
+
 StaMa 2.3.0.2
 - Adapt Visio files to load in Visio 64-bit version and show a warning about missing code generator functionality. Document the limitation in developers guide.
 

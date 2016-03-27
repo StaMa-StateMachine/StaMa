@@ -1,8 +1,8 @@
 #region StateMachineTemplate.cs file
 //
-// StaMa state machine controller library, http://stama.codeplex.com/
+// StaMa state machine controller library, https://github.com/StaMa-StateMachine/StaMa
 //
-// Copyright (c) 2005-2014, Roland Schneider. All rights reserved.
+// Copyright (c) 2005-2016, Roland Schneider. All rights reserved.
 //
 #endregion
 

@@ -21,24 +21,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaMaTest", "Tests\StaMaTest\StaMaTest.csproj", "{53625CF7-9255-4C91-9D33-085E0EE7D48A}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs06
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = StaMa\\StaMa.csproj
-		SccProjectName1 = StaMa
-		SccLocalPath1 = StaMa
-		SccProjectUniqueName2 = Samples\\netfwk\\Clock\\Clock.csproj
-		SccProjectName2 = Samples/netfwk/Clock
-		SccLocalPath2 = Samples\\netfwk\\Clock
-		SccProjectUniqueName3 = Samples\\netfwk\\SampleSimpleStateMachineNETFWK\\SampleSimpleStateMachineNETFWK.csproj
-		SccProjectName3 = Samples/netfwk/SampleSimpleStateMachineNETFWK
-		SccLocalPath3 = Samples\\netfwk\\SampleSimpleStateMachineNETFWK
-		SccProjectUniqueName4 = Tests\\StaMaTest\\StaMaTest.csproj
-		SccProjectName4 = Tests/StaMaTest
-		SccLocalPath4 = Tests\\StaMaTest
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64

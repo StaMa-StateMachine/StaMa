@@ -181,3 +181,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# NETMF Emulator data files
+OnBoardFlash.dat
+OnBoardFlash.dat.smd
