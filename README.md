@@ -1,4 +1,4 @@
-## StaMa - State Machine Controller Library ##
+### StaMa - State Machine Controller Library ###
 <br>
 **[Project Overview Page](https://StaMa-StateMachine.github.io/)**
 
