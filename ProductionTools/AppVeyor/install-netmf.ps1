@@ -5,5 +5,5 @@ Write-Host "Downloading from $downloadSource to $msiPath ..."
 (New-Object Net.WebClient).DownloadFile($downloadSource, $msiPath)
 Write-Host "Download completed."
 Write-Host "Installing ..."
-testmsiexec /i $msiPath /quiet | Out-default
+msiexec /i $msiPath /quiet | Out-default
 Write-Host "Installed." -ForegroundColor green 
