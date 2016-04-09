@@ -1,5 +1,5 @@
 @setlocal
-msbuild StaMa.sln /t:Clean,Build /p:Configuration=Release /p:Platform="Any CPU"
-msbuild StaMaNETMF.sln /t:Clean,Build /p:Configuration=Release /p:Platform="Any CPU"
-msbuild DevelopersGuide\StaMaDevelopersGuide.shfbproj /t:Clean,Build /p:Configuration=Release /p:Platform="AnyCPU"
+msbuild StaMa.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
+msbuild StaMaNETMF.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
+msbuild DevelopersGuide\StaMaDevelopersGuide.shfbproj /t:Clean,Build /p:Configuration=Debug /p:Platform="AnyCPU"
 @endlocal
