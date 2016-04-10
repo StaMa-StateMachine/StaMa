@@ -15,7 +15,8 @@ for /f %%i in ('dir /b /s OnBoardFlash.*') do del %%i
 
 :: Generating nuget package
 nuget pack StaMa.StateMachine.nuspec -Symbols -OutputDirectory bin\
-appveyor PushArtifact "bin\*.nupkg"
+appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.nupkg"
+appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.symbols.nupkg"
 
 :: Generating github release package
 set StaMaZip=bin\StaMa_State_Machine_Controller_Library.%APPVEYOR_BUILD_VERSION%.zip
