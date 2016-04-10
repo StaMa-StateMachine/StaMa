@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>StaMa.StateMachine</id>
-    <version>2.3.0.3</version>
+    <version>$version$</version>
     <authors>Roland Schneider</authors>
     <owners>Roland Schneider</owners>
     <licenseUrl>https://github.com/StaMa-StateMachine/StaMa/raw/master/LICENSE</licenseUrl>
