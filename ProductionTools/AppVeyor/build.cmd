@@ -14,7 +14,7 @@ for /f %%i in ('dir /b /s /a:d DOTNETMF_FS_EMULATION') do rd /s /q %%i
 for /f %%i in ('dir /b /s OnBoardFlash.*') do del %%i
 
 :: Generating nuget package
-nuget pack StaMa.StateMachine.nuspec -Symbols -OutputDirectory bin\
+nuget pack StaMa.StateMachine.nuspec -Version %APPVEYOR_BUILD_VERSION% -Symbols -OutputDirectory bin\
 appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.nupkg"
 appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.symbols.nupkg"
 
