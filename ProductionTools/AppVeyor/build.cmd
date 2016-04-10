@@ -7,18 +7,18 @@ msbuild StaMa.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
 msbuild StaMaNETMF.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
 msbuild DevelopersGuide\StaMaDevelopersGuide.shfbproj /t:Clean,Build /p:Configuration=Debug /p:Platform="AnyCPU"
 
+xcopy /S /F /Y ProductionTools\ExtractVisioPages\Artifacts\*.vs* .
+del StaMa\StaMa.snk
+for /f %%i in ('dir /b /s /a:d obj') do rd /s /q %%i
+for /f %%i in ('dir /b /s /a:d DOTNETMF_FS_EMULATION') do rd /s /q %%i
+for /f %%i in ('dir /b /s OnBoardFlash.*') do del %%i
+
 :: Generating nuget package
 nuget pack StaMa.StateMachine.nuspec -Symbols -OutputDirectory bin\
 appveyor PushArtifact "bin\*.nupkg"
 
 :: Generating github release package
 set StaMaZip=bin\StaMa_State_Machine_Controller_Library.%APPVEYOR_BUILD_VERSION%.zip
-
-xcopy /S /F /Y ProductionTools\ExtractVisioPages\Artifacts\*.vs* .
-del StaMa\StaMa.snk
-for /f %%i in ('dir /b /s /a:d obj') do rd /s /q %%i
-for /f %%i in ('dir /b /s /a:d DOTNETMF_FS_EMULATION') do rd /s /q %%i
-for /f %%i in ('dir /b /s OnBoardFlash.*') do del %%i
 
 @pushd ..
 7z a StaMa\%StaMaZip% StaMa\StaMa
