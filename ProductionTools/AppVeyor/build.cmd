@@ -1,40 +1,41 @@
 @setlocal
 
-@echo Platform=%PLATFORM%
-@echo Configuration=%CONFIGURATION%
+@set
+
+@echo Info: Platform=%PLATFORM%
+@echo Info: Configuration=%CONFIGURATION%
 
 msbuild StaMa.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
 msbuild StaMaNETMF.sln /t:Clean,Build /p:Configuration=Debug /p:Platform="Any CPU"
 msbuild DevelopersGuide\StaMaDevelopersGuide.shfbproj /t:Clean,Build /p:Configuration=Debug /p:Platform="AnyCPU"
 
-xcopy /S /F /Y ProductionTools\ExtractVisioPages\Artifacts\*.vs* .
-del StaMa\StaMa.snk
-for /f %%i in ('dir /b /s /a:d obj') do rd /s /q %%i
-for /f %%i in ('dir /b /s /a:d DOTNETMF_FS_EMULATION') do rd /s /q %%i
-for /f %%i in ('dir /b /s OnBoardFlash.*') do del %%i
+
+if "%APPVEYOR_REPO_COMMIT%" EQU "" set APPVEYOR_REPO_COMMIT=999.999.999.999
+set ArtifactVersionTag=%APPVEYOR_REPO_COMMIT%
+if "%APPVEYOR_REPO_TAG%"=="true" set ProductVersion=%APPVEYOR_REPO_TAG_NAME%
+@echo Info: ArtifactVersionTag=%ArtifactVersionTag%
+
 
 :: Generating nuget package
-nuget pack StaMa.StateMachine.nuspec -Version %APPVEYOR_BUILD_VERSION% -Symbols -OutputDirectory bin\
-appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.nupkg"
-appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.symbols.nupkg"
+nuget pack StaMa.StateMachine.nuspec -Version %ArtifactVersionTag% -Symbols -Verbosity detailed -OutputDirectory bin\
+appveyor PushArtifact "bin\StaMa.StateMachine.%ArtifactVersionTag%.nupkg" -DeploymentName NuGetPackage
+appveyor PushArtifact "bin\StaMa.StateMachine.%ArtifactVersionTag%.symbols.nupkg" -DeploymentName NuGetSymbolsPackage
+
 
 :: Generating github release package
-set StaMaZip=bin\StaMa_State_Machine_Controller_Library.%APPVEYOR_BUILD_VERSION%.zip
+robocopy /S . bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library ChangeLog.txt LICENSE StaMa.sln StaMaNETMF.sln /xd bin /fp /ndl
+robocopy /S StaMa bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\StaMa /xd obj /xf *.snk *.enc /fp /ndl
+robocopy /S Tests bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\Tests /xd obj DOTNETMF_FS_EMULATION /xf OnBoardFlash.dat* /fp /ndl
+robocopy /S Samples bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\Samples /xd obj DOTNETMF_FS_EMULATION /xf OnBoardFlash.dat* /fp /ndl
+robocopy /S bin\netmf\AnyCPU bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\bin\netmf\AnyCPU /fp /ndl
+robocopy /S bin\net-4.0\AnyCPU bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\bin\net-4.0\AnyCPU /fp /ndl
+robocopy /S bin\netmf\DevelopersGuide bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library\bin\netmf\DevelopersGuide StaMaDevelopersGuide.chm /fp /ndl
+robocopy /S ProductionTools\ExtractVisioPages\Artifacts bin\SourceCodeAndBinariesZip\StaMa_State_Machine_Controller_Library /fp /ndl
 
-@pushd ..
-7z a StaMa\%StaMaZip% StaMa\StaMa
-7z a StaMa\%StaMaZip% StaMa\Tests
-7z a StaMa\%StaMaZip% StaMa\Samples
-7z a StaMa\%StaMaZip% StaMa\bin\netmf\AnyCPU
-7z a StaMa\%StaMaZip% StaMa\bin\net-4.0\AnyCPU
-7z a StaMa\%StaMaZip% StaMa\bin\netmf\DevelopersGuide\StaMaDevelopersGuide.chm
-7z a StaMa\%StaMaZip% StaMa\ChangeLog.txt
-7z a StaMa\%StaMaZip% StaMa\LICENSE
-7z a StaMa\%StaMaZip% StaMa\StaMa.sln
-7z a StaMa\%StaMaZip% StaMa\StaMaNETMF.sln
-7z a StaMa\%StaMaZip% StaMa\StaMaShapes.vst
+set StaMaZip=bin\StaMa_State_Machine_Controller_Library.%ArtifactVersionTag%.zip
+@pushd bin\SourceCodeAndBinariesZip
+7z a ..\..\%StaMaZip% StaMa_State_Machine_Controller_Library
 @popd
-
-appveyor PushArtifact "%StaMaZip%"
+appveyor PushArtifact "%StaMaZip%" -DeploymentName SourceCodeAndBinariesZip
 
 @endlocal

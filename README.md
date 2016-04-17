@@ -1,5 +1,9 @@
 ### StaMa - State Machine Controller Library ###
 <br>
+[![AppVeyor build status](https://ci.AppVeyor.com/api/projects/status/GitHub/StaMa-StateMachine/StaMa?branch=master&svg=true)](https://ci.AppVeyor.com/project/Roland-Schneider/StaMa/branch/master)
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+[![NuGet Version](https://img.shields.io/nuget/v/StaMa.StateMachine.svg)](https://www.nuget.org/packages/StaMa.StateMachine/)
+
 **[Project Overview Page](https://StaMa-StateMachine.github.io/)**
 
 **[Developer's Guide](https://StaMa-StateMachine.GitHub.io/StaMa/)**

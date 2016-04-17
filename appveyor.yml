@@ -1,0 +1,28 @@
+version: '{build}'
+branches:
+  only:
+  - master
+image: Visual Studio 2013
+configuration: Debug
+platform: Any CPU
+assembly_info:
+  patch: true
+  file: StaMa\AssemblyInfo.cs
+  assembly_version: $(APPVEYOR_BUILD_VERSION)
+environment:
+  STAMA_SNK:
+    secure: vrpiJsD4F/gBwmJCuQbEc3nYczlxYaEK48foLrmLfwQ=
+  SHFBROOT: $(APPVEYOR_BUILD_FOLDER)\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\
+install:
+- cmd: ProductionTools\AppVeyor\install.cmd
+build_script:
+- cmd: ProductionTools\AppVeyor\build.cmd
+deploy:
+- provider: GitHub
+  tag: $(APPVEYOR_REPO_TAG_NAME)
+  release: StaMa $(APPVEYOR_REPO_TAG_NAME)
+  auth_token:
+    secure: akUQwzHwwBo5F6S+cNPn2DUqE5igCF2MwY9sGNFhbnD4aAYjxHNveOjb0yBXvLHZ
+  artifact: SourceCodeAndBinariesZip
+  on:
+    APPVEYOR_REPO_TAG: true
