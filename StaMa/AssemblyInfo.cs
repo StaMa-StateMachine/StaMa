@@ -45,8 +45,7 @@ using Microsoft.SPOT;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*'.
 
-// Assembly version commented out by intention. Will be filled in by AppVeyor build system.
-//[assembly: AssemblyVersion("0.0.0.0")]
+[assembly: AssemblyVersion("0.0.0.0")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
