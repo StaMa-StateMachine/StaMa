@@ -69,6 +69,7 @@ Optional code generation based on Microsoft Visio diagrams.
 
     <file src="bin\netmf\DevelopersGuide\StaMaDevelopersGuide.chm" target="tools"/>
     <file src="ProductionTools\ExtractVisioPages\Artifacts\StaMaShapes.vst" target="tools"/>
+    <file src="VersionInfo.txt" target="tools"/>
   </files>
   <!-- nuget pack \StaMa_State_Machine_Controller_Library\StaMa.StateMachine.nuspec -Symbols -OutputDirectory \StaMa_State_Machine_Controller_Library\bin -->
 </package>
