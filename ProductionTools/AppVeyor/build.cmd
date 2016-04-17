@@ -19,8 +19,8 @@ if "%APPVEYOR_REPO_TAG%"=="true" @echo Release: https://github.com/StaMa-StateMa
 
 :: Generating nuget package
 nuget pack StaMa.StateMachine.nuspec -Version %APPVEYOR_BUILD_VERSION% -Symbols -Verbosity detailed -OutputDirectory bin\
-appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.nupkg" -DeploymentName NuGetPackage
-appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.symbols.nupkg" -DeploymentName NuGetSymbolsPackage
+appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.nupkg" -DeploymentName NuGetPackage -Type NuGetPackage
+appveyor PushArtifact "bin\StaMa.StateMachine.%APPVEYOR_BUILD_VERSION%.symbols.nupkg" -DeploymentName NuGetSymbolsPackage -Type NuGetPackage
 
 
 :: Generating github release package
@@ -38,5 +38,13 @@ set StaMaZip=bin\StaMa_State_Machine_Controller_Library.%APPVEYOR_BUILD_VERSION%
 7z a ..\..\%StaMaZip% StaMa_State_Machine_Controller_Library
 @popd
 appveyor PushArtifact "%StaMaZip%" -DeploymentName SourceCodeAndBinariesZip
+
+:: Save developers guide web content
+set DevelopersGuideZip=bin\StaMa_DevelopersGuidePages.%APPVEYOR_BUILD_VERSION%.zip
+@pushd bin\netmf\DevelopersGuide
+del *.chm
+7z a ..\..\..\%DevelopersGuideZip% .
+@popd
+appveyor PushArtifact "%DevelopersGuideZip%" -DeploymentName DevelopersGuideZip
 
 @endlocal
