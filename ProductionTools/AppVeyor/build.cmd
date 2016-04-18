@@ -1,6 +1,6 @@
 @setlocal
 
-@set
+@set APPVEYOR_
 
 @echo Info: Platform=%PLATFORM%
 @echo Info: Configuration=%CONFIGURATION%
