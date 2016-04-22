@@ -13,6 +13,8 @@ environment:
   STAMA_SNK:
     secure: vrpiJsD4F/gBwmJCuQbEc3nYczlxYaEK48foLrmLfwQ=
   SHFBROOT: $(APPVEYOR_BUILD_FOLDER)\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\
+  git_gh_pages_access_token:
+    secure: akUQwzHwwBo5F6S+cNPn2DUqE5igCF2MwY9sGNFhbnD4aAYjxHNveOjb0yBXvLHZ
 install:
 - cmd: ProductionTools\AppVeyor\install.cmd
 build_script:
@@ -32,3 +34,5 @@ deploy:
   artifact: /bin\\.*\.nupkg/
   on:
     APPVEYOR_REPO_TAG: true
+after_deploy:
+- ps: ProductionTools\AppVeyor\deploy-gh-pages.ps1
