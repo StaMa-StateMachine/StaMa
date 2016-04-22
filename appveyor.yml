@@ -28,7 +28,7 @@ deploy:
 - provider: NuGet
   api_key:
     secure: GBpIIkXETw54p3DOke5gFes6zIzxtR23hrbAy2xOn2UzM87pt/naFBxXs+TKMRIk
-  artifact: /bin\\.*\.nupkg/
+  artifact: NuGetPackage;NuGetSymbolsPackage
   on:
     APPVEYOR_REPO_TAG: true
 after_deploy:
