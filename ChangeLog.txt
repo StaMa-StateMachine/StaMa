@@ -1,5 +1,5 @@
 
-Changes in reverse chronological order:
+Changes in reverse chronological order: 
 
 StaMa 2.3.1
 - Build and release automated through AppVeyor
