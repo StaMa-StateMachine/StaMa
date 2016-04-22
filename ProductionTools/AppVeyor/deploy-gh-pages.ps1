@@ -12,7 +12,7 @@
 	git config --global user.email "$($env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL)"
 	git checkout gh-pages
 	git rm -rf *
-	robocopy /S $($env:APPVEYOR_BUILD_FOLDER)\bin\netmf\DevelopersGuide . /fp /ndl
+	robocopy /S "$($env:APPVEYOR_BUILD_FOLDER)\bin\netmf\DevelopersGuide" . /fp /ndl
 	git add .
 	git commit -am "Automated checkin v$($env:APPVEYOR_BUILD_VERSION)"
 	git push --dry-run -f -u origin gh-pages
