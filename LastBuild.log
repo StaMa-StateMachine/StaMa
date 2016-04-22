@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="S:\StaMa\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="28.03.2016 01:36:20">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\projects\stama\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="4/22/2016 10:33:14 PM">
 <buildStep step="Initializing">
 Finding tools...
-The Sandcastle tools are located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\&#39;
+The Sandcastle tools are located in &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\&#39;
 Searching for HTML Help 1 compiler...
 Found HTML Help 1 compiler in &#39;C:\Program Files (x86)\HTML Help Workshop\&#39;
 Locating components in the following folder(s):
-    S:\StaMa\DevelopersGuide
+    C:\projects\stama\DevelopersGuide
     C:\ProgramData\EWSoftware\Sandcastle Help File Builder\Components and Plug-Ins\
-    C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\
-Framework reflection data location: C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\Data\.NETMicroFramework
-Using presentation style &#39;VS2013&#39; located in &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013&#39;
+    C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\
+Framework reflection data location: C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.NETMicroFramework.4.3\tools\Data\.NETMicroFramework
+Using presentation style &#39;VS2013&#39; located in &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013&#39;
 Loading and initializing plug-ins...
+Assembly Binding Redirection Version 2015.10.10.0
+Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
 Lightweight Website Style Version 2015.10.10.0
 Copyright &#169; 2006-2015, Eric Woodruff, All Rights Reserved
 Portions Copyright &#169; 2014, Sam Harwell, All Rights Reserved
@@ -20,64 +22,68 @@ Clearing any prior web/markdown output...
 </buildStep>
 <buildStep step="ValidatingDocumentationSources">
 Validating and copying documentation source information
-Source: S:\StaMa\bin\netmf\AnyCPU\Debug\StaMa.dll
-    Found assembly &#39;S:\StaMa\bin\netmf\AnyCPU\Debug\StaMa.dll&#39;
-Source: S:\StaMa\bin\netmf\AnyCPU\Debug\StaMa.xml
+Source: C:\projects\stama\bin\netmf\AnyCPU\Debug\StaMa.dll
+    Found assembly &#39;C:\projects\stama\bin\netmf\AnyCPU\Debug\StaMa.dll&#39;
+Source: C:\projects\stama\bin\netmf\AnyCPU\Debug\StaMa.xml
 
 Copying XML comments files
-    S:\StaMa\bin\netmf\AnyCPU\Debug\StaMa.xml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\StaMa.xml
+    C:\projects\stama\bin\netmf\AnyCPU\Debug\StaMa.xml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\StaMa.xml
 </buildStep>
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00,0156
+</plugIn>    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
-    Last step completed in 00:00:00,0156
+    Last step completed in 00:00:00.0157
 </buildStep>
 <buildStep step="GenerateReflectionInfo">
 Generating reflection information...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - GenerateRefInfo.proj]
-Build started 28.03.2016 01:36:20.
-Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+<plugIn name="Assembly Binding Redirection" behavior="Before" priority="1000">
+Adding ignored assembly names to assembly resolver configuration:
+    BusinessObjects.Licensing.KeycodeDecoder
+    Microsoft.VisualStudio.TestTools.UITest.Playback
+    System.Text.RegularExpressions
+</plugIn>[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - GenerateRefInfo.proj]
+Build started 4/22/2016 10:33:16 PM.
+Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
-  Creating directory &quot;obj\Debug\&quot;.
+  Creating directory &quot;obj\Any CPU\Debug\&quot;.
 GenerateRefInfo:
   MRefBuilder (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
   Loaded 1 assemblies for reflection and 0 dependency assemblies.
+MRefBuilder : warning : Ignoring unresolved assembly reference: System.Text.RegularExpressions (System.Text.RegularExpressions, Version=4.3.1.0, Culture=neutral, PublicKeyToken=null) required by StaMa [C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj]
   Wrote information on 1 namespaces, 20 types, and 104 members
   Copying file from &quot;reflection.org&quot; to &quot;reflection.all&quot;.
   XslTransform (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\MergeDuplicates.xsl&#39;.
-Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; (default targets).
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\ProductionTransforms\MergeDuplicates.xsl&#39;.
+Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.07
-    Last step completed in 00:00:01,4063
+Time Elapsed 00:00:01.12
+    Last step completed in 00:00:01.2344
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - TransformManifest.proj]
-Build started 28.03.2016 01:36:22.
-Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; on node 1 (default targets).
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - TransformManifest.proj]
+Build started 4/22/2016 10:33:17 PM.
+Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\\ProductionTransforms\ApplyVSDocModel.xsl&#39;.
   Copying file from &quot;reflection.xml&quot; to &quot;reflection.nofilenames&quot;.
   XslTransform (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\AddFilenames.xsl&#39;.
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\ProductionTransforms\AddFilenames.xsl&#39;.
     Unique name P_StaMa_StateCollection_Item_1 generated for P:StaMa.StateCollection.Item(System.String)
     Unique name M_StaMa_StateMachine_SendTriggerEvent_1 generated for M:StaMa.StateMachine.SendTriggerEvent(System.Object,Microsoft.SPOT.EventArgs)
     Unique name M_StaMa_StateMachineException__ctor_1 generated for M:StaMa.StateMachineException.#ctor(System.String)
@@ -99,501 +105,499 @@ TransformManifest:
     Unique name M_StaMa_StateMachineTemplate_Transition_10 generated for M:StaMa.StateMachineTemplate.Transition(System.String,System.String[],System.String[],System.Object)
     Unique name M_StaMa_StateMachineTemplate_Transition_11 generated for M:StaMa.StateMachineTemplate.Transition(System.String,System.String[],System.String[],System.Object,StaMa.StateMachineGuardCallback,StaMa.StateMachineActionCallback)
   XslTransform (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\ProductionTransforms\ReflectionToManifest.xsl&#39;.
-Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; (default targets).
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\ProductionTransforms\ReflectionToManifest.xsl&#39;.
+Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.81
-    Last step completed in 00:00:01,1094
+Time Elapsed 00:00:00.51
+    Last step completed in 00:00:00.5781
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00,0156
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
 Copying standard token shared content file...
 Checking for other token files...
-    S:\StaMa\DevelopersGuide\StaMaDevelopersGuide.tokens -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.tokens
+    C:\projects\stama\DevelopersGuide\StaMaDevelopersGuide.tokens -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.tokens
 Checking for code snippets files...
 Copying images and creating the media map file...
-    S:\StaMa\DevelopersGuide\Images\DropTransitionSegment.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\DropTransitionSegment.png
-    S:\StaMa\DevelopersGuide\Images\DropTransitionKnot.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\DropTransitionKnot.png
-    S:\StaMa\DevelopersGuide\Images\ConnectTransitionSegmentToTransitionKnot.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ConnectTransitionSegmentToTransitionKnot.png
-    S:\StaMa\DevelopersGuide\Images\TransitionKnotShapeProperties.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeProperties.png
-    S:\StaMa\DevelopersGuide\Images\CreateStateAskNameDialog.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CreateStateAskNameDialog.png
-    S:\StaMa\DevelopersGuide\Images\StateProperties.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateProperties.png
-    S:\StaMa\DevelopersGuide\Images\CreateStateDragChangesRegionBorder.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CreateStateDragChangesRegionBorder.png
-    S:\StaMa\DevelopersGuide\Images\RegionContainingSimpleState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RegionContainingSimpleState.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateContainingTwoRegions.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingTwoRegions.png
-    S:\StaMa\DevelopersGuide\Images\TransitionSegmentShapeProperties.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionSegmentShapeProperties.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateContainingOneRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingOneRegion.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegions2ndRegionSized.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegions2ndRegionSized.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsAdding2ndRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsAdding2ndRegion.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsClosed2ndRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsClosed2ndRegion.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsDraggingState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsDraggingState.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsExecOrder.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsExecOrder.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsMakeRoomEnlargeContainer.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsMakeRoomEnlargeContainer.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateTwoRegionsMakeRoomReduce1stRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsMakeRoomReduce1stRegion.png
-    S:\StaMa\DevelopersGuide\Images\RegionProperties.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RegionProperties.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransition.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransition.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionConnectingTransitionSegmentA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionConnectingTransitionSegmentA.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionConnectingTransitionSegmentB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionConnectingTransitionSegmentB.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionDraggingTransitionKnot.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionKnot.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionDraggingTransitionSegmentA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionSegmentA.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionDraggingTransitionSegmentB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionSegmentB.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionTransitionKnotBringToFront.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionTransitionKnotBringToFront.png
-    S:\StaMa\DevelopersGuide\Images\DocumentStencilWindow.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\DocumentStencilWindow.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransition.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransition.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentSourceA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentSourceA.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentSourceB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentSourceB.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentTarget.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentTarget.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionConvertTransitionKnotToAnchorOnly.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConvertTransitionKnotToAnchorOnly.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionConvertTransitionSegmentAToFromState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConvertTransitionSegmentAToFromState.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionDraggingTransitionKnot.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionKnot.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentSourceA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentSourceA.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentSourceB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentSourceB.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentTarget.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentTarget.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionTransitionKnotBringToFront.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionTransitionKnotBringToFront.png
-    S:\StaMa\DevelopersGuide\Images\JoinTransitionAddedAllSegmentSources.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\JoinTransitionAddedAllSegmentSources.png
-    S:\StaMa\DevelopersGuide\Images\ForkTransitionAddedAllSegmentTargets.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\ForkTransitionAddedAllSegmentTargets.png
-    S:\StaMa\DevelopersGuide\Images\CodegenDraggingOverRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenDraggingOverRegion.png
-    S:\StaMa\DevelopersGuide\Images\CodegenPropertiesAdvanced.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenPropertiesAdvanced.png
-    S:\StaMa\DevelopersGuide\Images\CodegenPropertiesBasic.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenPropertiesBasic.png
-    S:\StaMa\DevelopersGuide\Images\CodegenConstsArrange.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenConstsArrange.png
-    S:\StaMa\DevelopersGuide\Images\CodegenConstsDraggingOverRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenConstsDraggingOverRegion.png
-    S:\StaMa\DevelopersGuide\Images\CodegenConstsPropertiesBasic.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenConstsPropertiesBasic.png
-    S:\StaMa\DevelopersGuide\Images\CodegenReferenceStateMachine.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenReferenceStateMachine.png
-    S:\StaMa\DevelopersGuide\Images\CodegenShapeConnected.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenShapeConnected.png
-    S:\StaMa\DevelopersGuide\Images\CodegenVariables.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CodegenVariables.png
-    S:\StaMa\DevelopersGuide\Images\StateShapeSimpleAndComposite.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateShapeSimpleAndComposite.png
-    S:\StaMa\DevelopersGuide\Images\RegionShapeRootRegionAndSubRegion.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RegionShapeRootRegionAndSubRegion.png
-    S:\StaMa\DevelopersGuide\Images\TransitionKnotShapeAndTransitionSegmentShape.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeAndTransitionSegmentShape.png
-    S:\StaMa\DevelopersGuide\Images\StateShapeConnectionPoints.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateShapeConnectionPoints.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringConvertToSimpleState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringConvertToSimpleState.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringDragStateA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringDragStateA.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringDragStateB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringDragStateB.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringDropStateA.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringDropStateA.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringDropStateB.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringDropStateB.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringInitial.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringInitial.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringSubRegionDeleted.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringSubRegionDeleted.png
-    S:\StaMa\DevelopersGuide\Images\RefactoringSubRegionSelected.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RefactoringSubRegionSelected.png
-    S:\StaMa\DevelopersGuide\Images\RegionShapeHistory.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RegionShapeHistory.png
-    S:\StaMa\DevelopersGuide\Images\RegionShapeRootRegionAndCompositeState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\RegionShapeRootRegionAndCompositeState.png
-    S:\StaMa\DevelopersGuide\Images\TransitionKnotShapeConnectorLineProperties.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeConnectorLineProperties.png
-    S:\StaMa\DevelopersGuide\Images\TransitionKnotShapeSimpleAndForkAndJoin.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeSimpleAndForkAndJoin.png
-    S:\StaMa\DevelopersGuide\Images\TransitionKnotShapePriorities.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapePriorities.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineAlgorithm.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineAlgorithm.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsSimpleStateMachine.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsSimpleStateMachine.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsSimpleStateMachineTree.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsSimpleStateMachineTree.png
-    S:\StaMa\DevelopersGuide\Images\TransitionSegmentShapeSimpleAndForkAndJoinAndInitial.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\TransitionSegmentShapeSimpleAndForkAndJoinAndInitial.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsCompositeStateTransitions.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsCompositeStateTransitions.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsCompositeStateMachineTree.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsCompositeStateMachineTree.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsOrthogonalRegionForkJoin.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsOrthogonalRegionForkJoin.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsClassDiagram.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsClassDiagram.png
-    S:\StaMa\DevelopersGuide\Images\SampleClockUserInterface.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleClockUserInterface.png
-    S:\StaMa\DevelopersGuide\Images\SampleClockStateMachine.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleClockStateMachine.png
-    S:\StaMa\DevelopersGuide\Images\SampleTicketVendingEmulator.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleTicketVendingEmulator.png
-    S:\StaMa\DevelopersGuide\Images\SampleTicketVendingStateMachine.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleTicketVendingStateMachine.png
-    S:\StaMa\DevelopersGuide\Images\StateMachineConceptsStateGuardedTransition.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsStateGuardedTransition.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateConfigSubRegionsAligned.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsAligned.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateConfigSubRegionsDropped.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsDropped.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateConfigSubRegionsEmpty.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsEmpty.png
-    S:\StaMa\DevelopersGuide\Images\CompositeStateContainingOneRegionDragState.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingOneRegionDragState.png
-    S:\StaMa\DevelopersGuide\Images\SampleSimpleStateMachineNETFWK.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleSimpleStateMachineNETFWK.png
-    S:\StaMa\DevelopersGuide\Images\SampleSimpleStateMachineNETMF.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\SampleSimpleStateMachineNETMF.png
-    S:\StaMa\DevelopersGuide\Images\WelcomeSample.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\WelcomeSample.png
-    S:\StaMa\DevelopersGuide\Images\NuGetManagePackages.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\NuGetManagePackages.png
-    S:\StaMa\DevelopersGuide\Images\Visio64WarningMsComCtlOcx.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\Visio64WarningMsComCtlOcx.png
-    S:\StaMa\DevelopersGuide\Images\Visio64WarningStaMaCodegen.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\Visio64WarningStaMaCodegen.png
-    S:\StaMa\DevelopersGuide\Images\Visio64WarningVbaCompileError.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\media\Visio64WarningVbaCompileError.png
+    C:\projects\stama\DevelopersGuide\Images\DropTransitionSegment.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\DropTransitionSegment.png
+    C:\projects\stama\DevelopersGuide\Images\DropTransitionKnot.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\DropTransitionKnot.png
+    C:\projects\stama\DevelopersGuide\Images\ConnectTransitionSegmentToTransitionKnot.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ConnectTransitionSegmentToTransitionKnot.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionKnotShapeProperties.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeProperties.png
+    C:\projects\stama\DevelopersGuide\Images\CreateStateAskNameDialog.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CreateStateAskNameDialog.png
+    C:\projects\stama\DevelopersGuide\Images\StateProperties.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateProperties.png
+    C:\projects\stama\DevelopersGuide\Images\CreateStateDragChangesRegionBorder.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CreateStateDragChangesRegionBorder.png
+    C:\projects\stama\DevelopersGuide\Images\RegionContainingSimpleState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RegionContainingSimpleState.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateContainingTwoRegions.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingTwoRegions.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionSegmentShapeProperties.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionSegmentShapeProperties.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateContainingOneRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingOneRegion.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegions2ndRegionSized.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegions2ndRegionSized.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsAdding2ndRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsAdding2ndRegion.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsClosed2ndRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsClosed2ndRegion.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsDraggingState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsDraggingState.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsExecOrder.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsExecOrder.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsMakeRoomEnlargeContainer.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsMakeRoomEnlargeContainer.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateTwoRegionsMakeRoomReduce1stRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateTwoRegionsMakeRoomReduce1stRegion.png
+    C:\projects\stama\DevelopersGuide\Images\RegionProperties.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RegionProperties.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransition.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransition.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionConnectingTransitionSegmentA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionConnectingTransitionSegmentA.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionConnectingTransitionSegmentB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionConnectingTransitionSegmentB.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionDraggingTransitionKnot.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionKnot.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionDraggingTransitionSegmentA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionSegmentA.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionDraggingTransitionSegmentB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionDraggingTransitionSegmentB.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionTransitionKnotBringToFront.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionTransitionKnotBringToFront.png
+    C:\projects\stama\DevelopersGuide\Images\DocumentStencilWindow.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\DocumentStencilWindow.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransition.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransition.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentSourceA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentSourceA.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentSourceB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentSourceB.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionConnectingTransitionSegmentTarget.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConnectingTransitionSegmentTarget.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionConvertTransitionKnotToAnchorOnly.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConvertTransitionKnotToAnchorOnly.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionConvertTransitionSegmentAToFromState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionConvertTransitionSegmentAToFromState.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionDraggingTransitionKnot.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionKnot.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentSourceA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentSourceA.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentSourceB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentSourceB.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionDraggingTransitionSegmentTarget.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionDraggingTransitionSegmentTarget.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionTransitionKnotBringToFront.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionTransitionKnotBringToFront.png
+    C:\projects\stama\DevelopersGuide\Images\JoinTransitionAddedAllSegmentSources.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\JoinTransitionAddedAllSegmentSources.png
+    C:\projects\stama\DevelopersGuide\Images\ForkTransitionAddedAllSegmentTargets.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\ForkTransitionAddedAllSegmentTargets.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenDraggingOverRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenDraggingOverRegion.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenPropertiesAdvanced.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenPropertiesAdvanced.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenPropertiesBasic.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenPropertiesBasic.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenConstsArrange.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenConstsArrange.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenConstsDraggingOverRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenConstsDraggingOverRegion.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenConstsPropertiesBasic.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenConstsPropertiesBasic.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenReferenceStateMachine.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenReferenceStateMachine.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenShapeConnected.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenShapeConnected.png
+    C:\projects\stama\DevelopersGuide\Images\CodegenVariables.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CodegenVariables.png
+    C:\projects\stama\DevelopersGuide\Images\StateShapeSimpleAndComposite.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateShapeSimpleAndComposite.png
+    C:\projects\stama\DevelopersGuide\Images\RegionShapeRootRegionAndSubRegion.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RegionShapeRootRegionAndSubRegion.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionKnotShapeAndTransitionSegmentShape.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeAndTransitionSegmentShape.png
+    C:\projects\stama\DevelopersGuide\Images\StateShapeConnectionPoints.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateShapeConnectionPoints.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringConvertToSimpleState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringConvertToSimpleState.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringDragStateA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringDragStateA.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringDragStateB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringDragStateB.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringDropStateA.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringDropStateA.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringDropStateB.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringDropStateB.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringInitial.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringInitial.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringSubRegionDeleted.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringSubRegionDeleted.png
+    C:\projects\stama\DevelopersGuide\Images\RefactoringSubRegionSelected.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RefactoringSubRegionSelected.png
+    C:\projects\stama\DevelopersGuide\Images\RegionShapeHistory.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RegionShapeHistory.png
+    C:\projects\stama\DevelopersGuide\Images\RegionShapeRootRegionAndCompositeState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\RegionShapeRootRegionAndCompositeState.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionKnotShapeConnectorLineProperties.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeConnectorLineProperties.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionKnotShapeSimpleAndForkAndJoin.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapeSimpleAndForkAndJoin.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionKnotShapePriorities.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionKnotShapePriorities.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineAlgorithm.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineAlgorithm.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsSimpleStateMachine.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsSimpleStateMachine.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsSimpleStateMachineTree.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsSimpleStateMachineTree.png
+    C:\projects\stama\DevelopersGuide\Images\TransitionSegmentShapeSimpleAndForkAndJoinAndInitial.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\TransitionSegmentShapeSimpleAndForkAndJoinAndInitial.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsCompositeStateTransitions.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsCompositeStateTransitions.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsCompositeStateMachineTree.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsCompositeStateMachineTree.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsOrthogonalRegionForkJoin.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsOrthogonalRegionForkJoin.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsOrthogonalRegionForkJoinStateMachineTree.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsClassDiagram.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsClassDiagram.png
+    C:\projects\stama\DevelopersGuide\Images\SampleClockUserInterface.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleClockUserInterface.png
+    C:\projects\stama\DevelopersGuide\Images\SampleClockStateMachine.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleClockStateMachine.png
+    C:\projects\stama\DevelopersGuide\Images\SampleTicketVendingEmulator.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleTicketVendingEmulator.png
+    C:\projects\stama\DevelopersGuide\Images\SampleTicketVendingStateMachine.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleTicketVendingStateMachine.png
+    C:\projects\stama\DevelopersGuide\Images\StateMachineConceptsStateGuardedTransition.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\StateMachineConceptsStateGuardedTransition.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateConfigSubRegionsAligned.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsAligned.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateConfigSubRegionsDropped.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsDropped.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateConfigSubRegionsEmpty.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateConfigSubRegionsEmpty.png
+    C:\projects\stama\DevelopersGuide\Images\CompositeStateContainingOneRegionDragState.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\CompositeStateContainingOneRegionDragState.png
+    C:\projects\stama\DevelopersGuide\Images\SampleSimpleStateMachineNETFWK.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleSimpleStateMachineNETFWK.png
+    C:\projects\stama\DevelopersGuide\Images\SampleSimpleStateMachineNETMF.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\SampleSimpleStateMachineNETMF.png
+    C:\projects\stama\DevelopersGuide\Images\WelcomeSample.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\WelcomeSample.png
+    C:\projects\stama\DevelopersGuide\Images\NuGetManagePackages.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\NuGetManagePackages.png
+    C:\projects\stama\DevelopersGuide\Images\Visio64WarningMsComCtlOcx.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\Visio64WarningMsComCtlOcx.png
+    C:\projects\stama\DevelopersGuide\Images\Visio64WarningStaMaCodegen.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\Visio64WarningStaMaCodegen.png
+    C:\projects\stama\DevelopersGuide\Images\Visio64WarningVbaCompileError.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\media\Visio64WarningVbaCompileError.png
 Generating conceptual topic files
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Welcome.aml&#39;
-    S:\StaMa\DevelopersGuide\Welcome.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\d3287120-e3fa-45ed-8986-ba6d78244c1c.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\LicenseAndCopyright.aml&#39;
-    S:\StaMa\DevelopersGuide\LicenseAndCopyright.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\04562727-a5a7-4eda-b96a-44800a77bc7e.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\GettingStarted.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\GettingStarted.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\003c5297-0c49-41e9-ac8b-9f603358ac66.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\InstallingStaMaOnADeveloperMachine.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\InstallingStaMaOnADeveloperMachine.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\e33381e0-fa7d-494b-ba46-f728e47edec7.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\CompilingStaMaAssemblyForASpecificTargetFrameworkVersion.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\CompilingStaMaAssemblyForASpecificTargetFrameworkVersion.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\b2a532fd-f7bb-4cce-b601-7563bca224d1.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationNETMF.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationNETMF.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\d94a3585-cd83-45b5-b16c-0487e3401337.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationWinDesktop.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationWinDesktop.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\f5262f47-1501-476f-b1c0-25e83deba0b0.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\GettingStarted\DeployingStaMaOnATargetMachine.aml&#39;
-    S:\StaMa\DevelopersGuide\GettingStarted\DeployingStaMaOnATargetMachine.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\afdec6d6-fee1-4b99-b160-1e45bd76d8a2.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\Concepts.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\Concepts.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\298801d3-40ad-4fae-816e-5a7e1afb0ff0.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\StateAndRegionAndTransition.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\StateAndRegionAndTransition.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\954456b3-e05a-4e1d-af00-4f400fd43f47.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\StateMachineTemplateAndStateMachine.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\StateMachineTemplateAndStateMachine.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\16986707-6029-42de-a453-8b359b07248a.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\CompositeState.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\CompositeState.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\182b6093-fb30-4549-90d3-addc7c2dd2fb.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\OrthogonalRegions.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\OrthogonalRegions.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\7e6981a4-284a-4027-9e21-50d195fe0169.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\StateConfigurations.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\StateConfigurations.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\badfe5ab-643a-45d2-bd27-ad6536a62b6c.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Concepts\EntitiesAndRelations.aml&#39;
-    S:\StaMa\DevelopersGuide\Concepts\EntitiesAndRelations.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\93712910-2b27-4731-a3a5-38da29702b5e.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\IntegratingWithTheApplication.aml&#39;
-    S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\IntegratingWithTheApplication.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\ae34a73e-1561-4b10-ab33-a7564f4026e7.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\EventDrivenAndScanCycle.aml&#39;
-    S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\EventDrivenAndScanCycle.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\a02f7e6a-627a-44f5-a250-52c62339f6f5.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\ExceptionHandlingInActions.aml&#39;
-    S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\ExceptionHandlingInActions.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\a8e4100d-7357-49b1-80c8-7960bb51e540.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\Tracing.aml&#39;
-    S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\Tracing.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\16c7903d-977c-4d5d-bc01-5b0480e944fe.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\PersistenceAndResumingStateMachines.aml&#39;
-    S:\StaMa\DevelopersGuide\IntegratingWithTheApplication\PersistenceAndResumingStateMachines.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\A98FB6B4-A211-412D-9D81-1DFF5695DDE9.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\Samples.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\Samples.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\c9aa27b0-4173-4bcb-a275-908a0d0f8070.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SamplesNETMF.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SamplesNETMF.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\e703c27a-d129-4c7b-a3d9-880aa839e85a.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SampleSimpleStateMachineNETMF.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SampleSimpleStateMachineNETMF.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\ee58caad-02cf-4d26-9b25-033cd452dd77.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SampleTicketVendingNETMF.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetMicroFramework\SampleTicketVendingNETMF.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\29a68e43-5dbc-4a2c-894e-81a59e9c847b.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SamplesNetFwk.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SamplesNetFwk.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\7ecae87c-d38a-4a66-9c61-438fd6a25dc9.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SampleSimpleStateMachineNETFWK.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SampleSimpleStateMachineNETFWK.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\57f842bf-bcdf-4aff-9720-d0bf87ad5103.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SampleClock.aml&#39;
-    S:\StaMa\DevelopersGuide\Samples\DotNetFramework\SampleClock.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\5c40f085-995b-40d4-b823-a4471a6ec564.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\UsingStaMaVisioShapes.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\UsingStaMaVisioShapes.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\ca217c97-dd3c-4c6c-a0e7-5893315663aa.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioShapeTypes.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioShapeTypes.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\a4db1100-01f4-4594-b23c-948cbd01b5e7.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioStateShape.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioStateShape.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\31807e1f-17b3-484d-b250-1cc6eb0e85bf.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioRegionShape.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioRegionShape.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionKnotShape.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionKnotShape.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\9611a508-1db1-452a-8d6e-3ae59b29b5e1.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionSegmentShape.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionSegmentShape.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\20d05290-66a0-43f9-8210-b3f384666daf.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioCodeGeneratorShape.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioCodeGeneratorShape.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\0898043b-ab92-416b-9347-1ff54fcbd5a8.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowTo.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowTo.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\d84688d1-ab43-4437-b9fe-aeecc03b5d0e.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAStateDiagram.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAStateDiagram.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\b118384c-7479-4dd8-82e8-18e9a13b35f6.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToAddAStateToARegion.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToAddAStateToARegion.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\c9b743d2-ae47-40d8-ad45-639e473271c1.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateASimpleTransition.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateASimpleTransition.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\1b54bfbf-f269-4c50-8695-8ff430dee73b.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToGenerateCodeFromADiagram.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToGenerateCodeFromADiagram.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\2879867d-8e74-4dbd-861a-292bc54d505b.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateACompositeState.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateACompositeState.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\9d4e9992-3c8d-49a8-9818-18f5d488af7e.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAnOrthogonalRegion.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAnOrthogonalRegion.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\9110ef28-d0d9-40ac-a09d-2263809f5f45.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAForkTransition.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAForkTransition.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\6ac8c54b-c9fa-4085-80f9-b816430ae62d.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAJoinTransition.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAJoinTransition.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\5a2e1160-ce69-4b22-97fe-bf986343fd1e.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml&#39;
-    S:\StaMa\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\f3839c42-ee1f-4437-b495-b9522ba6d024.xml
-    Parsing topic file &#39;S:\StaMa\DevelopersGuide\Glossary.aml&#39;
-    S:\StaMa\DevelopersGuide\Glossary.aml -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\ddueXml\497592ea-471d-422b-b7fc-eff4b705ac37.xml
-    Last step completed in 00:00:00,2656
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Welcome.aml&#39;
+    C:\projects\stama\DevelopersGuide\Welcome.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\d3287120-e3fa-45ed-8986-ba6d78244c1c.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\LicenseAndCopyright.aml&#39;
+    C:\projects\stama\DevelopersGuide\LicenseAndCopyright.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\04562727-a5a7-4eda-b96a-44800a77bc7e.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\GettingStarted.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\GettingStarted.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\003c5297-0c49-41e9-ac8b-9f603358ac66.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\InstallingStaMaOnADeveloperMachine.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\InstallingStaMaOnADeveloperMachine.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\e33381e0-fa7d-494b-ba46-f728e47edec7.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\CompilingStaMaAssemblyForASpecificTargetFrameworkVersion.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\CompilingStaMaAssemblyForASpecificTargetFrameworkVersion.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\b2a532fd-f7bb-4cce-b601-7563bca224d1.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationNETMF.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationNETMF.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\d94a3585-cd83-45b5-b16c-0487e3401337.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationWinDesktop.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\ImplementingASimpleStateMachineApplicationWinDesktop.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\f5262f47-1501-476f-b1c0-25e83deba0b0.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\GettingStarted\DeployingStaMaOnATargetMachine.aml&#39;
+    C:\projects\stama\DevelopersGuide\GettingStarted\DeployingStaMaOnATargetMachine.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\afdec6d6-fee1-4b99-b160-1e45bd76d8a2.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\Concepts.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\Concepts.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\298801d3-40ad-4fae-816e-5a7e1afb0ff0.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\StateAndRegionAndTransition.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\StateAndRegionAndTransition.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\954456b3-e05a-4e1d-af00-4f400fd43f47.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\StateMachineTemplateAndStateMachine.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\StateMachineTemplateAndStateMachine.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\16986707-6029-42de-a453-8b359b07248a.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\CompositeState.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\CompositeState.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\182b6093-fb30-4549-90d3-addc7c2dd2fb.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\OrthogonalRegions.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\OrthogonalRegions.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\7e6981a4-284a-4027-9e21-50d195fe0169.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\StateConfigurations.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\StateConfigurations.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\badfe5ab-643a-45d2-bd27-ad6536a62b6c.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Concepts\EntitiesAndRelations.aml&#39;
+    C:\projects\stama\DevelopersGuide\Concepts\EntitiesAndRelations.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\93712910-2b27-4731-a3a5-38da29702b5e.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\IntegratingWithTheApplication.aml&#39;
+    C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\IntegratingWithTheApplication.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\ae34a73e-1561-4b10-ab33-a7564f4026e7.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\EventDrivenAndScanCycle.aml&#39;
+    C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\EventDrivenAndScanCycle.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\a02f7e6a-627a-44f5-a250-52c62339f6f5.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\ExceptionHandlingInActions.aml&#39;
+    C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\ExceptionHandlingInActions.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\a8e4100d-7357-49b1-80c8-7960bb51e540.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\Tracing.aml&#39;
+    C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\Tracing.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\16c7903d-977c-4d5d-bc01-5b0480e944fe.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\PersistenceAndResumingStateMachines.aml&#39;
+    C:\projects\stama\DevelopersGuide\IntegratingWithTheApplication\PersistenceAndResumingStateMachines.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\A98FB6B4-A211-412D-9D81-1DFF5695DDE9.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\Samples.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\Samples.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\c9aa27b0-4173-4bcb-a275-908a0d0f8070.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SamplesNETMF.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SamplesNETMF.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\e703c27a-d129-4c7b-a3d9-880aa839e85a.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SampleSimpleStateMachineNETMF.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SampleSimpleStateMachineNETMF.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\ee58caad-02cf-4d26-9b25-033cd452dd77.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SampleTicketVendingNETMF.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetMicroFramework\SampleTicketVendingNETMF.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\29a68e43-5dbc-4a2c-894e-81a59e9c847b.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SamplesNetFwk.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SamplesNetFwk.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\7ecae87c-d38a-4a66-9c61-438fd6a25dc9.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SampleSimpleStateMachineNETFWK.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SampleSimpleStateMachineNETFWK.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\57f842bf-bcdf-4aff-9720-d0bf87ad5103.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SampleClock.aml&#39;
+    C:\projects\stama\DevelopersGuide\Samples\DotNetFramework\SampleClock.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\5c40f085-995b-40d4-b823-a4471a6ec564.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\UsingStaMaVisioShapes.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\UsingStaMaVisioShapes.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\ca217c97-dd3c-4c6c-a0e7-5893315663aa.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioShapeTypes.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioShapeTypes.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\a4db1100-01f4-4594-b23c-948cbd01b5e7.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioStateShape.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioStateShape.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\31807e1f-17b3-484d-b250-1cc6eb0e85bf.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioRegionShape.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioRegionShape.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\29cbc4cc-2c35-40ca-b3eb-cc08ff2cd7e1.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionKnotShape.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionKnotShape.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\9611a508-1db1-452a-8d6e-3ae59b29b5e1.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionSegmentShape.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioTransitionSegmentShape.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\20d05290-66a0-43f9-8210-b3f384666daf.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioCodeGeneratorShape.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapeTypes\StaMaVisioCodeGeneratorShape.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\0898043b-ab92-416b-9347-1ff54fcbd5a8.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowTo.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowTo.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\d84688d1-ab43-4437-b9fe-aeecc03b5d0e.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAStateDiagram.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAStateDiagram.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\b118384c-7479-4dd8-82e8-18e9a13b35f6.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToAddAStateToARegion.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToAddAStateToARegion.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\c9b743d2-ae47-40d8-ad45-639e473271c1.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateASimpleTransition.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateASimpleTransition.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\1b54bfbf-f269-4c50-8695-8ff430dee73b.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToGenerateCodeFromADiagram.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToGenerateCodeFromADiagram.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\2879867d-8e74-4dbd-861a-292bc54d505b.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateACompositeState.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateACompositeState.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\9d4e9992-3c8d-49a8-9818-18f5d488af7e.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAnOrthogonalRegion.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAnOrthogonalRegion.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\9110ef28-d0d9-40ac-a09d-2263809f5f45.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAForkTransition.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAForkTransition.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\6ac8c54b-c9fa-4085-80f9-b816430ae62d.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAJoinTransition.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToCreateAJoinTransition.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\5a2e1160-ce69-4b22-97fe-bf986343fd1e.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml&#39;
+    C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\f3839c42-ee1f-4437-b495-b9522ba6d024.xml
+    Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Glossary.aml&#39;
+    C:\projects\stama\DevelopersGuide\Glossary.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\497592ea-471d-422b-b7fc-eff4b705ac37.xml
+    Last step completed in 00:00:00.4375
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
     Companion files
     _ContentMetadata_.xml
     ConceptualManifest.xml
-    Last step completed in 00:00:00,0625
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CopyAdditionalContent">
 Copying additional content files...
-S:\StaMa\DevelopersGuide\icons\StaMa32x32.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\StaMa32x32.png
-S:\StaMa\DevelopersGuide\icons\StaMa32x32.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\StaMa32x32.png
-    Last step completed in 00:00:00,0156
+C:\projects\stama\DevelopersGuide\icons\StaMa32x32.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\StaMa32x32.png
+C:\projects\stama\DevelopersGuide\icons\StaMa32x32.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\StaMa32x32.png
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="MergeTablesOfContents">
 Merging conceptual and additional tables of contents...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 28.03.2016 01:36:23.
-Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - GenerateIntermediateTOC.proj]
+Build started 4/22/2016 10:33:18 PM.
+Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
-  Applying XSL transformation &#39;C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\\ProductionTransforms\CreateVSToc.xsl&#39;.
-Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; (default targets).
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
+  Applying XSL transformation &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\\ProductionTransforms\CreateVSToc.xsl&#39;.
+Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.59
+Time Elapsed 00:00:00.10
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00,9219
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00,1250
+    Last step completed in 00:00:00.0937
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
-S:\StaMa\bin\netmf\DevelopersGuide\Working\sandcastle.config
-S:\StaMa\bin\netmf\DevelopersGuide\Working\conceptual.config
+C:\projects\stama\bin\netmf\DevelopersGuide\Working\sandcastle.config
+C:\projects\stama\bin\netmf\DevelopersGuide\Working\conceptual.config
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - BuildConceptualTopics.proj]
-Build started 28.03.2016 01:36:24.
-Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - BuildConceptualTopics.proj]
+Build started 4/22/2016 10:33:19 PM.
+Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 BuildConceptualTopics:
   BuildAssembler (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
   Loading configuration...
+  ResolveReferenceLinksComponent: The MSDN content ID cache &#39;C:\Users\appveyor\AppData\Local\EWSoftware\Sandcastle Help File Builder\Cache\MsdnContentId.cache&#39; does not exist yet.  All IDs will be looked up in this build which will slow it down.
   Processing topics...
-BuildAssembler : warning : ResolveReferenceLinksComponent: [a02f7e6a-627a-44f5-a250-52c62339f6f5] Unknown reference link target &#39;Overload:System.Windows.Threading.Dispatcher.InvokeAsync&#39;. [S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj]
-BuildAssembler : warning : ResolveReferenceLinksComponent: [a02f7e6a-627a-44f5-a250-52c62339f6f5] Unknown reference link target &#39;Overload:System.Windows.Threading.Dispatcher.InvokeAsync&#39;. [S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [a02f7e6a-627a-44f5-a250-52c62339f6f5] Unknown reference link target &#39;Overload:System.Windows.Threading.Dispatcher.InvokeAsync&#39;. [C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj]
+BuildAssembler : warning : ResolveReferenceLinksComponent: [a02f7e6a-627a-44f5-a250-52c62339f6f5] Unknown reference link target &#39;Overload:System.Windows.Threading.Dispatcher.InvokeAsync&#39;. [C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj]
   Processed 45 topic(s)
   2 warning(s)
   CopyFromIndexComponent: &quot;metadata&quot; in-memory cache entries used: 1 of 15.
-Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; (default targets).
+  ResolveReferenceLinksComponent: New MSDN content ID cache size: 33 entries
+Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.28
-    Last step completed in 00:00:02,5781
+Time Elapsed 00:00:12.35
+    Last step completed in 00:00:12.4222
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - BuildReferenceTopics.proj]
-Build started 28.03.2016 01:36:27.
-Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - BuildReferenceTopics.proj]
+Build started 4/22/2016 10:33:31 PM.
+Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.10.10.0)
-  Copyright &#184; 2006-2015, Microsoft Corporation, All Rights Reserved.
-  Portions Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved.
+  Copyright c 2006-2015, Microsoft Corporation, All Rights Reserved.
+  Portions Copyright c 2006-2015, Eric Woodruff, All Rights Reserved.
   Loading configuration...
   Processing topics...
   Processed 155 topic(s)
   CopyFromIndexComponent: &quot;reflection&quot; in-memory cache entries used: 5 of 15.
   CopyFromIndexComponent: &quot;comments&quot; in-memory cache entries used: 1 of 30.
-Done Building Project &quot;S:\StaMa\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; (default targets).
+  ResolveReferenceLinksComponent: New MSDN content ID cache size: 54 entries
+Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; (default targets).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.73
-    Last step completed in 00:00:04,0469
+Time Elapsed 00:00:08.17
+    Last step completed in 00:00:08.2502
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
-    Last step completed in 00:00:00,0156
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="ExtractingHtmlInfo">
 Extracting HTML info for HTML Help 1 and/or website...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - ExtractHtmlInfo.proj]
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - ExtractHtmlInfo.proj]
 Sandcastle Help File Builder and Tools, version 2015.10.10.0
-Copyright &#184; 2006-2015, Eric Woodruff, All Rights Reserved
+Copyright c 2006-2015, Eric Woodruff, All Rights Reserved
 E-Mail: Eric@EWoodruff.us
 
 Using LCID &#39;1033&#39;, code page &#39;65001&#39;, encoding charset &#39;UTF-8&#39;.
 
-Processing Help 1 files in S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1
+Processing Help 1 files in C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1
 Processed 200 HTML files
 Sorting keywords and generating See Also indices
-Saving HTML Help 1 keyword index to S:\StaMa\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.hhk
-Saving HTML Help 1 table of contents to S:\StaMa\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.hhc
+Saving HTML Help 1 keyword index to C:\projects\stama\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.hhk
+Saving HTML Help 1 table of contents to C:\projects\stama\bin\netmf\DevelopersGuide\Working\StaMaDevelopersGuide.hhc
 
-Processing website files in S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website
+Processing website files in C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website
 Processed 200 HTML files
 Sorting keywords and generating See Also indices
-Saving website keyword index to S:\StaMa\bin\netmf\DevelopersGuide\Working\WebKI.xml
-Saving website table of contents to S:\StaMa\bin\netmf\DevelopersGuide\Working\WebTOC.xml
-    Last step completed in 00:00:01,2031
+Saving website keyword index to C:\projects\stama\bin\netmf\DevelopersGuide\Working\WebKI.xml
+Saving website table of contents to C:\projects\stama\bin\netmf\DevelopersGuide\Working\WebTOC.xml
+    Last step completed in 00:00:00.4531
 </buildStep>
 <buildStep step="CopyStandardHelpContent">
 Copying standard help content...
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertCaution.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertNote.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertSecurity.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\CFW.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\CodeExample.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\favicon.ico
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protoperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\puboperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\SectionExpanded.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\slMobile.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\static.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\xna.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\scripts\branding.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-de-DE.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-en-US.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-es-ES.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-Help1.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-it-IT.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-Website.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertCaution.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertNote.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertNote.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertSecurity.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CFW.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\CFW.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\CodeExample.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\CodeExample.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\favicon.ico -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\favicon.ico
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\privstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protoperator.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protoperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\protstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubclass.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubclass.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubdelegate.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubenumeration.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubevent.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubevent.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubextension.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubextension.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubfield.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubfield.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubinterface.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubmethod.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\puboperator.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\puboperator.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubproperty.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubstructure.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\SectionCollapsed.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\SectionExpanded.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\slMobile.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\slMobile.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\static.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\static.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\icons\xna.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\xna.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\scripts\branding.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-cs-CZ.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-de-DE.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-en-US.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-es-ES.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-fr-FR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-Help1.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-HelpViewer.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-it-IT.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ja-JP.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ko-KR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-pl-PL.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-pt-BR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ru-RU.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-tr-TR.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-Website.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-Website.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-zh-CN.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-zh-TW.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\styles\branding.css -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding.css
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\index.html -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\index.html
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\search.html -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\search.html
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.aspx -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.aspx
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.inc.php -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.inc.php
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\SearchHelp.php -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.php
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\Web.Config -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\Web.Config
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\Search.png -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\Search.png
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocClose.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocClose.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocCollapsed.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocCollapsed.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocExpanded.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocExpanded.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocOpen.gif
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding-Website.js
-C:\Program Files (x86)\EWSoftware\Sandcastle Help File Builder\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; S:\StaMa\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:00,2500
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertCaution.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertNote.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\AlertSecurity.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\CFW.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\CodeExample.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\favicon.ico
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\privstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protoperator.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\protstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\puboperator.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\pubstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\SectionCollapsed.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\SectionExpanded.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\slMobile.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\static.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\static.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\icons\xna.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\scripts\branding.js
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-cs-CZ.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-de-DE.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-en-US.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-es-ES.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-fr-FR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-Help1.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-HelpViewer.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-it-IT.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ja-JP.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ko-KR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-pl-PL.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-pt-BR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-ru-RU.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-tr-TR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-Website.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-zh-CN.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding-zh-TW.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\styles\branding.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertCaution.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertCaution.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertNote.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertNote.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\AlertSecurity.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\AlertSecurity.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\CFW.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\CFW.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\CodeExample.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\CodeExample.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\favicon.ico -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\favicon.ico
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\privstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\privstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protoperator.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protoperator.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\protstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\protstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubclass.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubclass.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubdelegate.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubdelegate.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubenumeration.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubenumeration.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubevent.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubevent.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubextension.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubextension.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubfield.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubfield.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubinterface.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubinterface.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubmethod.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubmethod.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\puboperator.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\puboperator.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubproperty.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubproperty.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\pubstructure.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\pubstructure.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\SectionCollapsed.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\SectionCollapsed.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\SectionExpanded.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\SectionExpanded.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\slMobile.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\slMobile.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\static.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\static.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\icons\xna.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\xna.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\scripts\branding.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding.js
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-cs-CZ.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-cs-CZ.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-de-DE.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-de-DE.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-en-US.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-en-US.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-es-ES.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-es-ES.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-fr-FR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-fr-FR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-Help1.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-Help1.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-HelpViewer.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-HelpViewer.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-it-IT.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-it-IT.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ja-JP.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ja-JP.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ko-KR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ko-KR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-pl-PL.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-pl-PL.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-pt-BR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-pt-BR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-ru-RU.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-ru-RU.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-tr-TR.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-tr-TR.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-Website.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-Website.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-zh-CN.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-zh-CN.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding-zh-TW.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding-zh-TW.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\styles\branding.css -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\styles\branding.css
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\index.html -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\index.html
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\search.html -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\search.html
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\SearchHelp.aspx -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.aspx
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\SearchHelp.inc.php -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.inc.php
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\SearchHelp.php -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\SearchHelp.php
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\Web.Config -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\Web.Config
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\Search.png -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\Search.png
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\TocClose.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocClose.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\TocCollapsed.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocCollapsed.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\TocExpanded.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocExpanded.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocOpen.gif
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding-Website.js
+C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\jquery-1.11.0.min.js
+    Last step completed in 00:00:00.4531
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpFileIndex">
 Generating HTML Help 1 index file...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateHelpProject">
 Generating HTML Help 1 project file...
-    Last step completed in 00:00:00,0156
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CompilingHelpFile">
 Compiling HTML Help 1 file...
-[C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe - Build1xHelpFile.proj]
-Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown or missing, in which case you may be able to resolve this by installing the appropriate version of MSBuild, or the build may have been forced to a particular ToolsVersion for policy reasons. Treating the project as if it had ToolsVersion=&quot;4.0&quot;. For more information, please see http://go.microsoft.com/fwlink/?LinkId=291333.
+[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - Build1xHelpFile.proj]
   Microsoft HTML Help Compiler 4.74.8702
   
   
   
-  Compiling s:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm
+  Compiling c:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm
   
   
   
   
   
-  Compile time: 0 minutes, 3 seconds
+  Compile time: 0 minutes, 1 second
   
   202	Topics
   
@@ -607,36 +611,36 @@ Project file contains ToolsVersion=&quot;12.0&quot;. This toolset may be unknown
   
   
   
-  Created s:\StaMa\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,866 bytes
+  Created c:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,800 bytes
   
-  Compression decreased file by 1,881,293 bytes.
+  Compression decreased file by 1,881,395 bytes.
   
-    Last step completed in 00:00:05,2344
+    Last step completed in 00:00:02.1719
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
-    Last step completed in 00:00:00,0000
+    Last step completed in 00:00:00.0000
 </buildStep>
 <buildStep step="GenerateFullTextIndex">
 Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:00,8594
+</plugIn>    Last step completed in 00:00:00.6406
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
 Copied 442 files for the website content
-    Last step completed in 00:00:01,5469
+    Last step completed in 00:00:00.2344
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:01,1094
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 28.03.2016 01:36:41.  Total time: 00:00:21,3750
+Build completed successfully at 4/22/2016 10:33:43 PM.  Total time: 00:00:29.5632
 
 </buildStep>
 </shfbBuild>
