@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\projects\stama\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="4/22/2016 11:29:19 PM">
+<shfbBuild product="Sandcastle Help File Builder and Tools" version="2015.10.10.0" projectFile="C:\projects\stama\DevelopersGuide\StaMaDevelopersGuide.shfbproj" started="4/22/2016 11:42:40 PM">
 <buildStep step="Initializing">
 Finding tools...
 The Sandcastle tools are located in &#39;C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\&#39;
@@ -32,7 +32,7 @@ Copying XML comments files
 <buildStep step="GenerateSharedContent">
 Generating shared content files (en-US, English (United States))...
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
-</plugIn>    Last step completed in 00:00:00.0328
+</plugIn>    Last step completed in 00:00:00.0313
 </buildStep>
 <buildStep step="GenerateApiFilter">
 Generating API filter for MRefBuilder...
@@ -46,7 +46,7 @@ Adding ignored assembly names to assembly resolver configuration:
     Microsoft.VisualStudio.TestTools.UITest.Playback
     System.Text.RegularExpressions
 </plugIn>[C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - GenerateRefInfo.proj]
-Build started 4/22/2016 11:29:20 PM.
+Build started 4/22/2016 11:42:42 PM.
 Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateRefInfo.proj&quot; on node 1 (default targets).
 PrepareForBuild:
   Creating directory &quot;obj\Any CPU\Debug\&quot;.
@@ -66,13 +66,13 @@ Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\
 
 Build succeeded.
 
-Time Elapsed 00:00:00.59
-    Last step completed in 00:00:00.7171
+Time Elapsed 00:00:00.62
+    Last step completed in 00:00:00.7657
 </buildStep>
 <buildStep step="TransformReflectionInfo">
 Transforming reflection output...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - TransformManifest.proj]
-Build started 4/22/2016 11:29:21 PM.
+Build started 4/22/2016 11:42:43 PM.
 Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\TransformManifest.proj&quot; on node 1 (default targets).
 TransformManifest:
   XslTransform (v2015.10.10.0)
@@ -112,12 +112,12 @@ Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\
 
 Build succeeded.
 
-Time Elapsed 00:00:00.60
-    Last step completed in 00:00:00.6562
+Time Elapsed 00:00:00.62
+    Last step completed in 00:00:00.6875
 </buildStep>
 <buildStep step="GenerateNamespaceSummaries">
 Generating namespace summary information...
-    Last step completed in 00:00:00.0313
+    Last step completed in 00:00:00.0156
 </buildStep>
 <buildStep step="CopyConceptualContent">
 Copying conceptual content...
@@ -308,7 +308,7 @@ Generating conceptual topic files
     C:\projects\stama\DevelopersGuide\UsingStaMaVisioShapes\StaMaVisioShapesHowTo\StaMaVisioShapesHowToRevertCompositeStateToSimpleState.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\f3839c42-ee1f-4437-b495-b9522ba6d024.xml
     Parsing topic file &#39;C:\projects\stama\DevelopersGuide\Glossary.aml&#39;
     C:\projects\stama\DevelopersGuide\Glossary.aml -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\ddueXml\497592ea-471d-422b-b7fc-eff4b705ac37.xml
-    Last step completed in 00:00:00.6250
+    Last step completed in 00:00:00.6563
 </buildStep>
 <buildStep step="CreateConceptualTopicConfigs">
 Creating conceptual topic configuration files...
@@ -330,7 +330,7 @@ Merging conceptual and additional tables of contents...
 <buildStep step="GenerateIntermediateTableOfContents">
 Generating intermediate table of contents file...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - GenerateIntermediateTOC.proj]
-Build started 4/22/2016 11:29:22 PM.
+Build started 4/22/2016 11:42:44 PM.
 Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\GenerateIntermediateTOC.proj&quot; on node 1 (default targets).
 GenerateIntermediateTOC:
   XslTransform (v2015.10.10.0)
@@ -341,27 +341,27 @@ Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.10
 Generating conceptual content intermediate TOC file...
-    Last step completed in 00:00:00.1875
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="CreateBuildAssemblerConfigs">
 Creating Sandcastle configuration files...
     sandcastle.config
     conceptual.config
-    Last step completed in 00:00:00.0938
+    Last step completed in 00:00:00.0943
 </buildStep>
 <buildStep step="MergeCustomConfigs">
 Merging custom build component configurations
 C:\projects\stama\bin\netmf\DevelopersGuide\Working\sandcastle.config
 C:\projects\stama\bin\netmf\DevelopersGuide\Working\conceptual.config
     Removing unused ExampleComponent.
-    Last step completed in 00:00:00.0000
+    Last step completed in 00:00:00.0151
 </buildStep>
 <buildStep step="BuildConceptualTopics">
 Building conceptual help topics...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - BuildConceptualTopics.proj]
-Build started 4/22/2016 11:29:23 PM.
+Build started 4/22/2016 11:42:44 PM.
 Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildConceptualTopics.proj&quot; on node 1 (default targets).
 BuildConceptualTopics:
   BuildAssembler (v2015.10.10.0)
@@ -380,13 +380,13 @@ Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\
 
 Build succeeded.
 
-Time Elapsed 00:00:11.18
-    Last step completed in 00:00:11.2507
+Time Elapsed 00:00:12.11
+    Last step completed in 00:00:12.1725
 </buildStep>
 <buildStep step="BuildReferenceTopics">
 Building reference help topics...
 [C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe - BuildReferenceTopics.proj]
-Build started 4/22/2016 11:29:34 PM.
+Build started 4/22/2016 11:42:56 PM.
 Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\BuildReferenceTopics.proj&quot; on node 1 (default targets).
 BuildReferenceTopics:
   BuildAssembler (v2015.10.10.0)
@@ -402,8 +402,8 @@ Done Building Project &quot;C:\projects\stama\bin\netmf\DevelopersGuide\Working\
 
 Build succeeded.
 
-Time Elapsed 00:00:11.04
-    Last step completed in 00:00:11.1101
+Time Elapsed 00:00:20.76
+    Last step completed in 00:00:20.8448
 </buildStep>
 <buildStep step="CombiningIntermediateTocFiles">
 Combining conceptual and API intermediate TOC files...
@@ -570,7 +570,7 @@ C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\Presentatio
 C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\icons\TocOpen.gif -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\icons\TocOpen.gif
 C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\scripts\branding-Website.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\branding-Website.js
 C:\projects\stama\DevelopersGuide\EWSoftware.SHFB.2015.10.10.0\tools\PresentationStyles\VS2013\Web\scripts\jquery-1.11.0.min.js -&gt; C:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\Website\scripts\jquery-1.11.0.min.js
-    Last step completed in 00:00:00.7500
+    Last step completed in 00:00:00.6719
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating HTML Help 1 table of contents file...
@@ -611,11 +611,11 @@ Compiling HTML Help 1 file...
   
   
   
-  Created c:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,858 bytes
+  Created c:\projects\stama\bin\netmf\DevelopersGuide\Working\Output\HtmlHelp1\StaMaDevelopersGuide.chm, 2,069,850 bytes
   
-  Compression decreased file by 1,881,337 bytes.
+  Compression decreased file by 1,881,345 bytes.
   
-    Last step completed in 00:00:02.4064
+    Last step completed in 00:00:02.5158
 </buildStep>
 <buildStep step="GenerateHelpFormatTableOfContents">
 Generating website table of contents file...
@@ -626,21 +626,21 @@ Generating full-text index for the website...
 
 <plugIn name="Lightweight Website Style" behavior="After" priority="1000">
 Adding lightweight search and TOC elements to each topic...
-</plugIn>    Last step completed in 00:00:00.7657
+</plugIn>    Last step completed in 00:00:00.7343
 </buildStep>
 <buildStep step="CopyingWebsiteFiles">
 Copying website files to output folder...
 
 Copied 442 files for the website content
-    Last step completed in 00:00:00.2031
+    Last step completed in 00:00:00.2188
 </buildStep>
 <buildStep step="CleanIntermediates">
 Removing intermediate files...
-    Last step completed in 00:00:00.1875
+    Last step completed in 00:00:00.1719
 </buildStep>
 <buildStep step="Completed">
 
-Build completed successfully at 4/22/2016 11:29:50 PM.  Total time: 00:00:30.7520
+Build completed successfully at 4/22/2016 11:43:22 PM.  Total time: 00:00:41.7677
 
 </buildStep>
 </shfbBuild>
