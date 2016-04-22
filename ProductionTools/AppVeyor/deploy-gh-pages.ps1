@@ -1,6 +1,6 @@
 if ($env:APPVEYOR_REPO_TAG -eq "true")
 {
-    Write-Host "Deploying documentation v$($env:APPVEYOR_BUILD_VERSION) to gh-pages ..."
+    Write-Host "Deploying documentation v$($env:APPVEYOR_BUILD_VERSION) to `"gh-pages`" ..."
     $gitUrl = "https://github.com/StaMa-StateMachine/StaMa.git"
     $ghPagesGitWorkspacePath = "$($env:APPVEYOR_BUILD_FOLDER)\..\StaMa.gh-pages"
     mkdir $ghPagesGitWorkspacePath
@@ -17,9 +17,9 @@ if ($env:APPVEYOR_REPO_TAG -eq "true")
     git add .
     git commit -am "Automated checkin v$($env:APPVEYOR_BUILD_VERSION)"
     git push -f -u origin gh-pages
-    Write-Host "Deployed documentation v$($env:APPVEYOR_BUILD_VERSION) to gh-pages."
+    Write-Host "Deployed documentation v$($env:APPVEYOR_BUILD_VERSION) to `"gh-pages`"."
 }
 else
 {
-	Write-Host "Skip gh-pages deployment as environment variable has not matched ("APPVEYOR_REPO_TAG" is "false", should be "true")
+	Write-Host "Skip `"gh-pages`" deployment as environment variable has not matched (`"APPVEYOR_REPO_TAG`" is `"false`", should be `"true`")"
 }
