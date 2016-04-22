@@ -1,3 +1,5 @@
+Write-Host "Deploy gh-pages..."
+
 #if ($env:APPVEYOR_REPO_TAG -eq "true")
 #{
 	Write-Host "Deploying documentation v$($env:APPVEYOR_BUILD_FOLDER) to gh-pages ..."

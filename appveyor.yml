@@ -19,6 +19,8 @@ install:
 - cmd: ProductionTools\AppVeyor\install.cmd
 build_script:
 - cmd: ProductionTools\AppVeyor\build.cmd
+before_deploy:
+- ps: Invoke-Expression ProductionTools\AppVeyor\deploy-gh-pages.ps1
 deploy:
 - provider: GitHub
   tag: $(APPVEYOR_REPO_TAG_NAME)
@@ -34,5 +36,3 @@ deploy:
   artifact: /bin\\.*\.nupkg/
   on:
     APPVEYOR_REPO_TAG: true
-after_deploy:
-- ps: ProductionTools\AppVeyor\deploy-gh-pages.ps1
