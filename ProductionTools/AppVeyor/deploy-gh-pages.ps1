@@ -1,10 +1,8 @@
-Write-Host "Deploy gh-pages..."
-
 #if ($env:APPVEYOR_REPO_TAG -eq "true")
 #{
-	Write-Host "Deploying documentation v$($env:APPVEYOR_BUILD_FOLDER) to gh-pages ..."
+	Write-Host "Deploying documentation v$($env:APPVEYOR_BUILD_VERSION) to gh-pages ..."
 	$gitUrl = "https://github.com/StaMa-StateMachine/StaMa.git"
-	$ghPagesGitWorkspacePath = "$($env:APPVEYOR_BUILD_FOLDER)..\StaMa.gh-pages"
+	$ghPagesGitWorkspacePath = "$($env:APPVEYOR_BUILD_FOLDER)\..\StaMa.gh-pages"
 	mkdir $ghPagesGitWorkspacePath
 	cd $ghPagesGitWorkspacePath
 	git clone $gitUrl .
@@ -14,11 +12,11 @@ Write-Host "Deploy gh-pages..."
 	git config --global user.email "$($env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL)"
 	git checkout gh-pages
 	git rm -rf *
-	robocopy /S $($env:APPVEYOR_BUILD_FOLDER)bin\netmf\DevelopersGuide . /fp /ndl
+	robocopy /S $($env:APPVEYOR_BUILD_FOLDER)\bin\netmf\DevelopersGuide . /fp /ndl
 	git add .
 	git commit -am "Automated checkin v$($env:APPVEYOR_BUILD_VERSION)"
 	git push --dry-run -f -u origin gh-pages
-	Write-Host "Deployed documentation v$($env:APPVEYOR_BUILD_FOLDER) to gh-pages."
+	Write-Host "Deployed documentation v$($env:APPVEYOR_BUILD_VERSION) to gh-pages."
 #}
 #else
 #{
