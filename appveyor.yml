@@ -1,7 +1,4 @@
 version: '{build}'
-branches:
-  only:
-  - master
 image: Visual Studio 2013
 configuration: Debug
 platform: Any CPU
