@@ -19,8 +19,6 @@ install:
 - cmd: ProductionTools\AppVeyor\install.cmd
 build_script:
 - cmd: ProductionTools\AppVeyor\build.cmd
-after_test:
-- cmd: powershell .\ProductionTools\AppVeyor\deploy-gh-pages.ps1
 deploy:
 - provider: GitHub
   tag: $(APPVEYOR_REPO_TAG_NAME)
@@ -30,9 +28,11 @@ deploy:
   artifact: SourceCodeAndBinariesZip
   on:
     APPVEYOR_REPO_TAG: true
-- provider: NuGet
-  api_key:
-    secure: GBpIIkXETw54p3DOke5gFes6zIzxtR23hrbAy2xOn2UzM87pt/naFBxXs+TKMRIk
-  artifact: /bin\\.*\.nupkg/
-  on:
-    APPVEYOR_REPO_TAG: true
+# - provider: NuGet
+#  api_key:
+#    secure: GBpIIkXETw54p3DOke5gFes6zIzxtR23hrbAy2xOn2UzM87pt/naFBxXs+TKMRIk
+#  artifact: /bin\\.*\.nupkg/
+#  on:
+#    APPVEYOR_REPO_TAG: true
+after_deploy:
+- cmd: powershell ProductionTools\AppVeyor\deploy-gh-pages.ps1
